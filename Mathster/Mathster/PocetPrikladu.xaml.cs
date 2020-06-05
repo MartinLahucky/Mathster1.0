@@ -25,6 +25,26 @@ namespace Mathster
         {
             InitializeComponent();
             this.druhPrikladu = druhPrikladu;
+            
+            switch (druhPrikladu)
+            {
+                case 1:
+                    Title = "Sčítání";
+                    break;
+                case 2:
+                    Title = "Odečítání";
+                    break;
+                case 3:
+                    Title = "Násobení";
+                    break;
+                case 4:
+                    Title = "Dělení";
+                    break;
+                case 5:
+                    Title = "Náhodné";
+                    break;
+            }
+            
             switch (velikostCisel)
             {
                 case 1:

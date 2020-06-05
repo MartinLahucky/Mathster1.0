@@ -28,9 +28,11 @@ namespace Mathster
             switch (druhPrikladu)
             {
                 case 3:
+                    Title = "Násobení";
                     ZvolDelitelANasobitelLabel.Text = "Zvolte násobitele";
                     break;
                 case 4:
+                    Title = "Dělení";
                     ZvolDelitelANasobitelLabel.Text = "Zvolte dělitele";
                     break;
                 case 5:
