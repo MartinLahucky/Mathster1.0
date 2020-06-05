@@ -33,5 +33,10 @@ namespace Mathster
         { 
             await Navigation.PushAsync(new DeleniANasobeni(4));
         }
+
+        private async void NahodneButton_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ScitaniAOdcitani(5));
+        }
     }
 }

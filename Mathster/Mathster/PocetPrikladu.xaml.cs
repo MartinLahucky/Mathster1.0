@@ -16,9 +16,11 @@ namespace Mathster
         private int max;
         private byte druhPrikladu;
         private int pocetPrikladu = 1;
+        private byte velikostScitaniAOdcitani;
+        private byte velikostDeleniANasobei;
         private List<Priklad> fronta;
         
-        public PocetPrikladu(byte velikostCisel, byte druhPrikladu)
+        public PocetPrikladu(byte velikostCisel, byte druhPrikladu, byte velikostScitaniAOdcitani = 1)
         {
             InitializeComponent();
             this.druhPrikladu = druhPrikladu;
@@ -56,7 +58,7 @@ namespace Mathster
                         break;
                 }
             }
-            else
+            else if (druhPrikladu == 3 || druhPrikladu == 4)
             {
                 switch (velikostCisel)
                 {
@@ -78,6 +80,11 @@ namespace Mathster
                         break;
                 }
             }
+            else
+            {
+                this.velikostScitaniAOdcitani = velikostScitaniAOdcitani;
+                velikostDeleniANasobei = velikostCisel;
+            }
         }
 
         private void Pridat2Button_OnClicked(object sender, EventArgs e)
@@ -95,10 +102,22 @@ namespace Mathster
         private async void GenerujButton_OnClicked(object sender, EventArgs e)
         {
             fronta = new List<Priklad>();
-            for (byte i = 0; i < pocetPrikladu; i++)
+            switch (druhPrikladu)
             {
-                fronta.Add(new Priklad().VygenerujPriklad(i, min, max, druhPrikladu));
+                case 5:
+                    for (byte i = 0; i < pocetPrikladu; i++)
+                    {
+                        fronta.Add(new Priklad().VygenerujNahodnyPriklad(i, velikostScitaniAOdcitani, velikostDeleniANasobei));
+                    }
+                    break;
+                default:
+                    for (byte i = 0; i < pocetPrikladu; i++)
+                    {
+                        fronta.Add(new Priklad().VygenerujPriklad(i, min, max, druhPrikladu));
+                    }
+                    break;
             }
+
             await Navigation.PushAsync(new Priklady(0, fronta));
             // TODO Zapnou do full bety
             // Vynuluvání navigace

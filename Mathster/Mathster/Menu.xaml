@@ -16,7 +16,7 @@
                     <Button x:Name="OdcitaniButton" Text="Odečítání" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="OdcitaniButton_OnClicked" />
                     <Button x:Name="NasobeniButton" Text="Násobení" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="NasobeniButton_OnClicked" />
                     <Button x:Name="DeleniButton" Text="Dělení" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="DeleniButton_OnClicked" />
-                    <Button x:Name="NahodneButton" Text="Náhodně" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20"  />
+                    <Button x:Name="NahodneButton" Text="Náhodně" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="NahodneButton_OnClicked" />
                 </StackLayout>
             </ScrollView>
         </StackLayout>

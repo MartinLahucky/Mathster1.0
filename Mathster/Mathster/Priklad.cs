@@ -80,5 +80,69 @@ namespace Mathster
             priklad.Id = id;
             return priklad;
         }
+
+        public Priklad VygenerujNahodnyPriklad(byte id, byte velikostScitaniAOdcitani, byte velikostDeleniANasobei)
+        {
+            int min = 0, max = 0;
+            Random random = new Random();
+            druhPrikladu = Byte.Parse(random.Next(1, 5).ToString());
+            
+            if (druhPrikladu == 1 || druhPrikladu == 2)
+            {
+                switch (velikostScitaniAOdcitani)
+                {
+                    case 1:
+                        min = 1;
+                        max = 10;
+                        break;
+                    case 2:
+                        min = 10;
+                        max = 100;
+                        break;
+                    case 3:
+                        min = 100;
+                        max = 1000;
+                        break;
+                    case 4:
+                        min = 1000;
+                        max = 10000;
+                        break;
+                    case 5:
+                        min = 10000;
+                        max = 100000;
+                        break;
+                    case 6:
+                        max = 1000000;
+                        break;
+                    default:
+                        min = 1;
+                        max = 10;
+                        break;
+                }
+            }
+            else
+            {
+                switch (velikostDeleniANasobei)
+                {
+                    case 1:
+                        min = 2;
+                        max = 6;
+                        break;
+                    case 2:
+                        min = 2;
+                        max = 11;
+                        break;
+                    case 3:
+                        min = 2;
+                        max = 21;
+                        break;
+                    default:
+                        min = 2;
+                        max = 6;
+                        break;
+                }
+            }
+            return VygenerujPriklad(id, min, max, druhPrikladu);
+        }
     }
 }

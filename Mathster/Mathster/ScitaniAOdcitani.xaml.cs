@@ -27,6 +27,11 @@ private byte velikostCisel = 1;
                 case 2:
                     Title = "Odečítání";
                     break;
+                case 5:
+                    //TODO Změnit velikost labelu při této volbě
+                    Title = "Náhodné";
+                    Info2Label.Text = "Zvolte velikost čísel pro sčítání a odčítání";
+                    break;
             }
         }
         private void PridatButton_OnClicked(object sender, EventArgs e)
@@ -82,7 +87,15 @@ private byte velikostCisel = 1;
 
         private async void DalsiButton_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PocetPrikladu(velikostCisel, druhPrikladu));
+            switch (druhPrikladu)
+            {
+                case 5:
+                    await Navigation.PushAsync(new DeleniANasobeni(5, velikostCisel));
+                    break;
+                default:
+                    await Navigation.PushAsync(new PocetPrikladu(velikostCisel, druhPrikladu));
+                    break;
+            }
         }
     }
 }

@@ -13,11 +13,13 @@ namespace Mathster
     public partial class DeleniANasobeni : ContentPage
     {
         private byte druhPrikladu;
-        public DeleniANasobeni(byte druhPrikladu)
+        private byte velikostScitaniAOdcitani;
+        public DeleniANasobeni(byte druhPrikladu, byte velikostScitaniAOdcitani = 1)
         {
             InitializeComponent();
             this.druhPrikladu = druhPrikladu;
-
+            this.velikostScitaniAOdcitani = velikostScitaniAOdcitani;
+            
             switch (druhPrikladu)
             {
                 case 3:
@@ -25,23 +27,51 @@ namespace Mathster
                     break;
                 case 4:
                     ZvolDelitelANasobitelLabel.Text = "Zvolte dělitele";
-                    break;                    
+                    break;         
+                case 5:
+                    //TODO Změnit velikost labelu při této volbě
+                    ZvolDelitelANasobitelLabel.Text = "Zvolte dělitele a násobitel";
+                    break;
             }
         }
 
         private async void NizkaButton_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PocetPrikladu(1, druhPrikladu));
+            switch (druhPrikladu)
+            {
+                case 5:
+                    await Navigation.PushAsync(new PocetPrikladu(1, druhPrikladu, velikostScitaniAOdcitani));
+                    break;
+                default:
+                    await Navigation.PushAsync(new PocetPrikladu(1, druhPrikladu));
+                    break;
+            }
         }
 
         private async void StredniButton_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PocetPrikladu(2, druhPrikladu));
+            switch (druhPrikladu)
+            {
+                case 5:
+                    await Navigation.PushAsync(new PocetPrikladu(2, druhPrikladu, velikostScitaniAOdcitani));
+                    break;
+                default:
+                    await Navigation.PushAsync(new PocetPrikladu(2, druhPrikladu));
+                    break;
+            }
         }
 
         private async void VysokaButton_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PocetPrikladu(3, druhPrikladu));
+            switch (druhPrikladu)
+            {
+                case 5:
+                    await Navigation.PushAsync(new PocetPrikladu(3, druhPrikladu, velikostScitaniAOdcitani));
+                    break;
+                default:
+                    await Navigation.PushAsync(new PocetPrikladu(3, druhPrikladu));
+                    break;
+            }
         }
     }
 }
