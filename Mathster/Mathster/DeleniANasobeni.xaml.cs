@@ -30,7 +30,7 @@ namespace Mathster
                     break;         
                 case 5:
                     Title = "Náhodné";
-                    ZvolDelitelANasobitelLabel.HeightRequest = 0;
+                    ZvolDelitelANasobitelLabel.HeightRequest = 30;
                     ZvolDelitelANasobitelLabel.Text = "Zvolte dělitele a násobitel";
                     break;
             }

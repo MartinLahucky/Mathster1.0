@@ -13,13 +13,13 @@
             <StackLayout x:Name="MainLayout">
                 <ScrollView x:Name="View">
                     <StackLayout x:Name="SecondLayer"  VerticalOptions="Center" Margin="50">
-                        <Frame CornerRadius="15" Padding="0" Margin="20,10,20,10" HasShadow="False" >
+                        <Frame CornerRadius="15" Padding="0" Margin="20,8,20,10" HasShadow="False" >
                             <StackLayout>
                                 <Label x:Name="Info2Label" Text="Zvolte velikost čísel" StyleClass="InfoLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" HeightRequest="30" />
                             </StackLayout>
                         </Frame>
                     
-                        <ImageButton x:Name="PridatButton" Source="sipkah.png" BackgroundColor="Transparent" CornerRadius="13" Margin="0, 50,0,20" HeightRequest="50" WidthRequest="30" Clicked="PridatButton_OnClicked" />
+                        <ImageButton x:Name="PridatButton" Source="sipkah.png" BackgroundColor="Transparent" CornerRadius="13" Margin="0, 40,0,20" HeightRequest="50" WidthRequest="30" Clicked="PridatButton_OnClicked" />
                     
                         <Frame CornerRadius="15" Padding="0" Margin="0,20,0,20" HasShadow="False" >
                             <StackLayout>
