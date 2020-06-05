@@ -31,6 +31,7 @@ private byte velikostCisel = 1;
                     //TODO Změnit velikost labelu při této volbě
                     Title = "Náhodné";
                     Info2Label.Text = "Zvolte velikost čísel pro sčítání a odčítání";
+                     
                     break;
             }
         }

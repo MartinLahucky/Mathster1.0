@@ -12,7 +12,7 @@ namespace Mathster
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Menu())
+            MainPage = new NavigationPage(new MainPage()) //Menu()
             {
                 BarTextColor = Color.DarkGreen,
             };
