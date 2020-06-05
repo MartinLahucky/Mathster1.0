@@ -1,0 +1,73 @@
+﻿.PrikladLabel
+{
+    font-size: 30;
+    text-align: center;
+    width: 130;
+    background-color: #89e771;
+}
+
+.InfoLabel
+{
+    font-size: 20;
+    text-align: center;
+    width: 130;
+    background-color: #6ece25;
+}
+
+.SpatneNadLabel
+{
+    font-size: 15;
+    text-align: center;
+
+    background-color: #f36f16;
+}
+
+.SpatneLabel
+{
+    font-size: 30;
+    text-align: center;
+
+    background-color: #ffb54c;
+}
+
+.VysledekInput
+{
+    font-size: 30;
+    text-align: center;
+    width: 130;
+    background-color: #ffce85;
+}
+
+.Zelena
+{
+    font-size: 15;
+    text-align: center;
+
+    background-color: #33a716;
+}
+
+.ZelenaNadpis
+{
+    font-size: 30;
+    text-align: center;
+    width: 130;
+    background-color: #33a716;
+
+}
+
+.CervenaNadpis
+{
+    font-size: 30;
+    text-align: center;
+    width: 130;
+    background-color: #bf3600;
+
+}
+
+.ZelenaTlacitka
+{
+
+    font-size: 30;
+    background-color: #33a716;
+
+}

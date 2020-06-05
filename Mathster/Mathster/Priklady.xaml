@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mathster.Priklady">
+    <ContentPage.Resources>
+        <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout x:Name="MainLayout">
+            <ScrollView x:Name="View">
+                <StackLayout x:Name="SecondLayer"  VerticalOptions="Center"  Margin="60,30,60,0" >
+                        
+                    <Frame CornerRadius="15" Padding="0" Margin="0,60,0,30" HasShadow="False" >
+                        <StackLayout>
+                            <Label x:Name="PrikladLabel" TextColor="Black" VerticalTextAlignment="Center" StyleClass="PrikladLabel"  />
+                        </StackLayout>
+                    </Frame>
+                        
+                    <Frame CornerRadius="15" Padding="0" Margin="0,0,0,60" HasShadow="False" >
+                        <StackLayout>
+                            <Entry x:Name="VysledekInput" Keyboard="Numeric" TextColor="Black" StyleClass="VysledekInput"  />
+                        </StackLayout>
+                    </Frame>
+                    
+                    <Button x:Name="DalsiButton" Text="Další" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,40,0,20" Clicked="DalsiButton_OnClicked" />
+                    <Button x:Name="OdvezdatButton" Text="Odevzdat" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,0,0,30" Clicked="OdvezdatButton_OnClicked" />
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
