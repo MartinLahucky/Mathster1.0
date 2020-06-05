@@ -29,7 +29,7 @@ private byte velikostCisel = 1;
                     break;
                 case 5:
                     Title = "Náhodné";
-                    Info2Label.HeightRequest = 60;
+                    Info2Label.HeightRequest = 80;
                     Info2Label.Text = "Zvolte velikost čísel pro sčítání a odčítání";
                      
                     break;

@@ -20,7 +20,7 @@
                         
                     <Frame CornerRadius="15" Padding="0" Margin="0,0,0,60" HasShadow="False" >
                         <StackLayout>
-                            <Entry x:Name="VysledekInput" Keyboard="Numeric" TextColor="Black" StyleClass="VysledekInput"  />
+                            <Entry x:Name="VysledekInput" Keyboard="Numeric" TextColor="Black" StyleClass="VysledekInput" />
                         </StackLayout>
                     </Frame>
                     

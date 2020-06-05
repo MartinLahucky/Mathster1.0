@@ -136,5 +136,11 @@ namespace Mathster
                 await DisplayAlert("Upozornění", "Prosím, zadejte číslo", "Ok");
             }
         }
+        protected override void OnAppearing ()
+        {
+            base.OnAppearing ();
+
+            VysledekInput.Focus();
+        }
     }
 }
