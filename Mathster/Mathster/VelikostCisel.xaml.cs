@@ -10,11 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace Mathster
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ScitaniAOdcitani : ContentPage
+    public partial class VelikostCisel : ContentPage
     {
-private byte velikostCisel = 1;
+        private byte velikostCisel = 1;
         private byte druhPrikladu;
-        public ScitaniAOdcitani(byte vyber)
+        public VelikostCisel(byte vyber)
         {
             InitializeComponent();
             druhPrikladu = vyber;
@@ -27,11 +27,16 @@ private byte velikostCisel = 1;
                 case 2:
                     Title = "Odečítání";
                     break;
+                case 3:
+                    Title = "Násobení";
+                    break;
+                case 4:
+                    Title = "Dělení";
+                    break;
                 case 5:
                     Title = "Náhodné";
                     Info2Label.HeightRequest = 80;
-                    Info2Label.Text = "Zvolte velikost čísel pro sčítání a odčítání";
-                     
+                    Info2Label.Text = "Zvolte velikost všech prvních čísel";
                     break;
             }
         }
@@ -88,14 +93,13 @@ private byte velikostCisel = 1;
 
         private async void DalsiButton_OnClicked(object sender, EventArgs e)
         {
-            switch (druhPrikladu)
+            if (druhPrikladu == 1 || druhPrikladu == 2)
             {
-                case 5:
-                    await Navigation.PushAsync(new DeleniANasobeni(5, velikostCisel));
-                    break;
-                default:
-                    await Navigation.PushAsync(new PocetPrikladu(velikostCisel, druhPrikladu));
-                    break;
+                await Navigation.PushAsync(new PocetPrikladu(velikostCisel, druhPrikladu, velikostCisel));
+            }
+            else
+            {
+                await Navigation.PushAsync(new DeleniANasobeni(druhPrikladu, velikostCisel));
             }
         }
     }

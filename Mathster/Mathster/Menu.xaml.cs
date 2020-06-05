@@ -19,25 +19,25 @@ namespace Mathster
         }
         private async void ScitaniButton_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ScitaniAOdcitani(1));
+            await Navigation.PushAsync(new VelikostCisel(1));
         }
         private async void OdcitaniButton_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ScitaniAOdcitani(2));
+            await Navigation.PushAsync(new VelikostCisel(2));
         }
         private async void NasobeniButton_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new DeleniANasobeni(3));
+            await Navigation.PushAsync(new VelikostCisel(3));
         }
 
         private async void DeleniButton_OnClicked(object sender, EventArgs e)
         { 
-            await Navigation.PushAsync(new DeleniANasobeni(4));
+            await Navigation.PushAsync(new VelikostCisel(4));
         }
 
         private async void NahodneButton_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ScitaniAOdcitani(5));
+            await Navigation.PushAsync(new VelikostCisel(5));
         }
     }
 }

@@ -14,7 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <EmbeddedResource Update="ScitaniAOdcitani.xaml">
+      <EmbeddedResource Update="VelikostCisel.xaml">
         <SubType>Designer</SubType>
         <Generator></Generator>
       </EmbeddedResource>
@@ -45,8 +45,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="ScitaniAOdcitani.xaml.cs">
-        <DependentUpon>ScitaniAOdcitani.xaml</DependentUpon>
+      <Compile Update="VelikostCisel.xaml.cs">
+        <DependentUpon>VelikostCisel.xaml</DependentUpon>
       </Compile>
       <Compile Update="Menu.xaml.cs">
         <DependentUpon>Menu.xaml</DependentUpon>
