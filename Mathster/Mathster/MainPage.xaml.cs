@@ -22,7 +22,6 @@ namespace Mathster
                     {
                         Navigation.RemovePage(page);
                     }
-
                 });
                 return false;
             });

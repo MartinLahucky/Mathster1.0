@@ -15,7 +15,7 @@
                     
                     <Frame CornerRadius="15" Padding="0" Margin="20,8,20,10" HasShadow="False" >
                         <StackLayout>
-                            <Label x:Name="Info2Label" Text="Zvol počet příkladů" StyleClass="InfoLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" HeightRequest="30" />
+                            <Label x:Name="Info2Label" Text="Zvolte počet příkladů" StyleClass="InfoLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" HeightRequest="30" />
                         </StackLayout>
                     </Frame>
                     
