@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+using System.Timers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,8 +13,7 @@ namespace Mathster
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new MainPage()) //Menu()
+            MainPage = new NavigationPage(new MainPage())
             {
                 BarTextColor = Color.DarkGreen,
             };

@@ -12,6 +12,20 @@ namespace Mathster
         public MainPage()
         {
             InitializeComponent();
+            Device.StartTimer(new TimeSpan(0, 0, 0, 3), () =>
+            {
+                Device.BeginInvokeOnMainThread (() =>
+                {
+                    Navigation.PushAsync(new Menu());
+                    var existingPages = Navigation.NavigationStack.ToList();
+                    foreach(var page in existingPages)
+                    {
+                        Navigation.RemovePage(page);
+                    }
+
+                });
+                return false;
+            });
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Mathster
         public Menu()
         {
             InitializeComponent();
+            Title = "Menu";
         }
         private async void ScitaniButton_OnClicked(object sender, EventArgs e)
         {

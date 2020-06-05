@@ -8,7 +8,7 @@ using Android.OS;
 
 namespace Mathster.Android
 {
-    [Activity(Label = "Mathster", Icon = "@drawable/ikona",Theme = "@style/MainTheme", MainLauncher = true,
+    [Activity(Label = "Mathster", Icon = "@drawable/ikonaKruh",Theme = "@style/MainTheme", MainLauncher = true,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {

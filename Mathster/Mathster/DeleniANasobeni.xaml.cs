@@ -29,7 +29,8 @@ namespace Mathster
                     ZvolDelitelANasobitelLabel.Text = "Zvolte dělitele";
                     break;         
                 case 5:
-                    //TODO Změnit velikost labelu při této volbě
+                    Title = "Náhodné";
+                    ZvolDelitelANasobitelLabel.HeightRequest = 0;
                     ZvolDelitelANasobitelLabel.Text = "Zvolte dělitele a násobitel";
                     break;
             }

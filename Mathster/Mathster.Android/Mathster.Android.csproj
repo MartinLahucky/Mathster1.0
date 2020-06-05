@@ -67,6 +67,7 @@
     <ItemGroup>
         <AndroidResource Include="Resources\drawable\ikona.png" />
         <AndroidResource Include="Resources\drawable\ikonatext.png" />
+        <AndroidResource Include="Resources\drawable\ikonaKruh.png" />
         <AndroidResource Include="Resources\drawable\sipkad.png" />
         <AndroidResource Include="Resources\drawable\sipkad2.png" />
         <AndroidResource Include="Resources\drawable\sipkah.png" />
