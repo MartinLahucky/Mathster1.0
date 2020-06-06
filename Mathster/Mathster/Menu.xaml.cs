@@ -15,7 +15,16 @@ namespace Mathster
         public Menu()
         {
             InitializeComponent();
-            Title = "Menu";
+            Device.StartTimer(new TimeSpan(0, 0, 0, 0, 50), () =>
+            {
+                Device.BeginInvokeOnMainThread (() =>
+                {
+                    Title = "Menu";
+                });
+                return false;
+            });
+            
+            
         }
         private async void ScitaniButton_OnClicked(object sender, EventArgs e)
         {

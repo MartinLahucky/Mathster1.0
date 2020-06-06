@@ -17,11 +17,6 @@ namespace Mathster
                 Device.BeginInvokeOnMainThread (() =>
                 {
                     Navigation.PushAsync(new Menu());
-                    var existingPages = Navigation.NavigationStack.ToList();
-                    foreach(var page in existingPages)
-                    {
-                        Navigation.RemovePage(page);
-                    }
                 });
                 return false;
             });
