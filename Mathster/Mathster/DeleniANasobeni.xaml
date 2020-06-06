@@ -13,7 +13,7 @@
                 <StackLayout x:Name="SecondLayer"  VerticalOptions="Center" Margin="50">
                     <Frame CornerRadius="15" Padding="0" Margin="10,8,10,10" HasShadow="False" >
                         <StackLayout>
-                            <Label x:Name="ZvolDelitelANasobitelLabel" StyleClass="InfoLabel"  HeightRequest="50" VerticalTextAlignment="Center" TextColor="Black" HorizontalTextAlignment="Center" />
+                            <Label x:Name="ZvolDelitelANasobitelLabel" StyleClass="InfoLabel"  HeightRequest="50" VerticalTextAlignment="Center"  HorizontalTextAlignment="Center" />
                         </StackLayout>
                     </Frame>
                     <Button x:Name="NizkaButton" Text="do 5" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0, 80,0,10" Clicked="NizkaButton_OnClicked" />

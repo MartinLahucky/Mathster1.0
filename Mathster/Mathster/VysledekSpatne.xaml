@@ -14,7 +14,7 @@
                 <StackLayout x:Name="SecondLayer"  VerticalOptions="Center" Margin="50" >
                     <Frame CornerRadius="15" Padding="0" Margin="0,0,0,10" HasShadow="False" >
                         <StackLayout>
-                            <Label x:Name="SpatneLabel" Text="Špatně" StyleClass="CervenaNadpis" HeightRequest="50" TextColor="White" />
+                            <Label x:Name="SpatneLabel" Text="Špatně" StyleClass="CervenaNadpis" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
                         </StackLayout>
                     </Frame>      
                     

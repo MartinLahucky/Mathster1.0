@@ -1,9 +1,11 @@
-﻿.PrikladLabel
+﻿/* color = TextColor */
+.PrikladLabel
 {
     font-size: 30;
     text-align: center;
     width: 130;
     background-color: #89e771;
+    color: black;
 }
 
 .InfoLabel
@@ -12,21 +14,21 @@
     text-align: center;
     width: 130;
     background-color: #6ece25;
+    color: black;
 }
 
 .SpatneNadLabel
 {
     font-size: 15;
     text-align: center;
-
     background-color: #f36f16;
+    color: black;
 }
 
 .SpatneLabel
 {
     font-size: 30;
     text-align: center;
-
     background-color: #ffb54c;
 }
 
@@ -36,14 +38,15 @@
     text-align: center;
     width: 130;
     background-color: #ffce85;
+    color: black;
 }
 
 .Zelena
 {
     font-size: 15;
     text-align: center;
-
     background-color: #33a716;
+    color: black;
 }
 
 .ZelenaNadpis
@@ -52,7 +55,7 @@
     text-align: center;
     width: 130;
     background-color: #33a716;
-
+    color: black;
 }
 
 .CervenaNadpis
@@ -61,7 +64,7 @@
     text-align: center;
     width: 130;
     background-color: #bf3600;
-
+    color: white;
 }
 
 .ZelenaTlacitka
@@ -69,5 +72,5 @@
 
     font-size: 30;
     background-color: #33a716;
-
+    color: white;
 }
