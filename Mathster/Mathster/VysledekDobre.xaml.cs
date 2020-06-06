@@ -94,25 +94,12 @@ namespace Mathster
                     }
                     break;
             }
-            // // TODO Zapnou do full bety
-            // Vynuluvání navigace
-            var existingPages = Navigation.NavigationStack.ToList();
-            foreach(var page in existingPages)
-            {
-                Navigation.RemovePage(page);
-            }
         }
 
 
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Menu());
-            // Vynuluvání navigace
-            var existingPages = Navigation.NavigationStack.ToList();
-            foreach(var page in existingPages)
-            {
-                Navigation.RemovePage(page);
-            }
         }
     }
 }
