@@ -135,13 +135,6 @@ namespace Mathster
                 }
             }
             await Navigation.PushAsync(new Priklady(0, fronta));
-            // TODO Zapnou do full bety
-            // Vynuluvání navigace
-            var existingPages = Navigation.NavigationStack.ToList();
-            foreach(var page in existingPages)
-            {
-                Navigation.RemovePage(page);
-            }
         }
     }
 }

@@ -59,7 +59,8 @@ namespace Mathster
             try
             {
                 fronta[ID].UzivateluvVstup = int.Parse(VysledekInput.Text);
-                switch (priklad.DruhPrikladu)
+                ID = 0;
+                switch (fronta[ID].DruhPrikladu)
                 {
                     case 1:
                         if (fronta[0].PrvniCislo + fronta[0].DruheCislo == fronta[0].UzivateluvVstup)
