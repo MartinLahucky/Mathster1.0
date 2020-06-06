@@ -20,9 +20,10 @@ namespace Mathster
             this.druhPrikladu = druhPrikladu;
             this.velikostCisel = velikostCisel;
 
-            if (velikostCisel == 1)
+            if (velikostCisel == 1 && druhPrikladu == 4)
             {
                 VysokaButton.IsVisible = false;
+                StredniButton.IsVisible = false;
             }
             
             switch (druhPrikladu)

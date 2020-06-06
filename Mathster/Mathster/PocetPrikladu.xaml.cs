@@ -48,7 +48,7 @@ namespace Mathster
             switch (velikostCisel)
             {
                 case 1:
-                    minCisel = 0;
+                    minCisel = 1;
                     maxCisel = 10;
                     break;
                 case 2:
@@ -68,6 +68,7 @@ namespace Mathster
                     maxCisel = 100000;
                     break;
                 case 6:
+                    minCisel = 100000;
                     maxCisel = 1000000;
                     break;
                 default:
