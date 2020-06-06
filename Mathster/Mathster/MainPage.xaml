@@ -8,7 +8,7 @@
  
     <StackLayout>
         <!-- Place new controls here -->
-        <Image Source="@drawable/ikonatextb.png" Margin="0,55,0,0" />
+        <Image Source="@drawable/ikonastart.png" Margin="0,55,0,0" />
     </StackLayout>
 
 </ContentPage>

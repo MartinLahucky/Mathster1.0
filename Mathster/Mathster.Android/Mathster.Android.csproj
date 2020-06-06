@@ -65,7 +65,7 @@
         <None Include="Properties\AndroidManifest.xml" />
     </ItemGroup>
     <ItemGroup>
-        <AndroidResource Include="Resources\drawable\ikona.png" />
+        <AndroidResource Include="Resources\drawable\ikonastart.png" />
         <AndroidResource Include="Resources\drawable\ikonatext.png" />
         <AndroidResource Include="Resources\drawable\ikonaKruh.png" />
         <AndroidResource Include="Resources\drawable\sipkad.png" />
