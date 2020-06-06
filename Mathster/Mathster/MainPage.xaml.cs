@@ -12,7 +12,7 @@ namespace Mathster
         public MainPage()
         {
             InitializeComponent();
-            Device.StartTimer(new TimeSpan(0, 0, 0, 3), () =>
+            Device.StartTimer(new TimeSpan(0, 0, 0, 2, 50), () =>
             {
                 Device.BeginInvokeOnMainThread (() =>
                 {
