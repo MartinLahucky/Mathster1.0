@@ -70,7 +70,6 @@ namespace Mathster
                     {
                         await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
                     }
-
                     break;
                 case 3:
                     if (fronta[ID].PrvniCislo * fronta[ID].DruheCislo == fronta[ID].UzivateluvVstup)
@@ -81,7 +80,6 @@ namespace Mathster
                     {
                         await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
                     }
-
                     break;
                 case 4:
                     if (fronta[ID].PrvniCislo / fronta[ID].DruheCislo == fronta[ID].UzivateluvVstup)

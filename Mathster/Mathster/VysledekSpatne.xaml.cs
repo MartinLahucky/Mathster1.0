@@ -57,18 +57,11 @@ namespace Mathster
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Menu());
-            // Vynuluvání navigace
-            var existingPages = Navigation.NavigationStack.ToList();
-            foreach(var page in existingPages)
-            {
-                Navigation.RemovePage(page);
-            }
         }
 
         private async void DalsiPrikladButton_OnClicked(object sender, EventArgs e)
         {
             ID++;
-            await Navigation.PopAsync();
             switch (fronta[ID].DruhPrikladu)
             {
                 case 1:
@@ -80,7 +73,6 @@ namespace Mathster
                     {
                         await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
                     }
-
                     break;
                 case 2:
                     if (fronta[ID].PrvniCislo - fronta[ID].DruheCislo == fronta[ID].UzivateluvVstup)
@@ -91,7 +83,6 @@ namespace Mathster
                     {
                         await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
                     }
-
                     break;
                 case 3:
                     if (fronta[ID].PrvniCislo * fronta[ID].DruheCislo == fronta[ID].UzivateluvVstup)
@@ -102,7 +93,6 @@ namespace Mathster
                     {
                         await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
                     }
-
                     break;
                 case 4:
                     if (fronta[ID].PrvniCislo / fronta[ID].DruheCislo == fronta[ID].UzivateluvVstup)
@@ -114,13 +104,6 @@ namespace Mathster
                         await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
                     }
                     break;
-            }
-            // // TODO Zapnou do full bety
-            // Vynuluvání navigace
-            var existingPages = Navigation.NavigationStack.ToList();
-            foreach(var page in existingPages)
-            {
-                Navigation.RemovePage(page);
             }
         }
     }
