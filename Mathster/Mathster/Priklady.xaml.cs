@@ -65,41 +65,41 @@ namespace Mathster
                     case 1:
                         if (fronta[0].PrvniCislo + fronta[0].DruheCislo == fronta[0].UzivateluvVstup)
                         {
-                            await Navigation.PushAsync(new VysledekDobre(0, fronta));
+                            await Navigation.PushAsync(new VysledekDobre(ID, fronta));
                         }
                         else
                         {
-                            await Navigation.PushAsync(new VysledekSpatne(0, fronta));
+                            await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
                         }
                         break;
                     case 2:
                         if (fronta[0].PrvniCislo - fronta[0].DruheCislo == fronta[0].UzivateluvVstup)
                         {
-                            await Navigation.PushAsync(new VysledekDobre(0, fronta));
+                            await Navigation.PushAsync(new VysledekDobre(ID, fronta));
                         }
                         else
                         {
-                            await Navigation.PushAsync(new VysledekSpatne(0, fronta));
+                            await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
                         }
                         break;
                     case 3:
                         if (fronta[0].PrvniCislo * fronta[0].DruheCislo == fronta[0].UzivateluvVstup)
                         {
-                            await Navigation.PushAsync(new VysledekDobre(0, fronta));
+                            await Navigation.PushAsync(new VysledekDobre(ID, fronta));
                         }
                         else
                         {
-                            await Navigation.PushAsync(new VysledekSpatne(0, fronta));
+                            await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
                         }
                         break;
                     case 4:
                         if (fronta[0].PrvniCislo / fronta[0].DruheCislo == fronta[0].UzivateluvVstup)
                         {
-                            await Navigation.PushAsync(new VysledekDobre(0, fronta));
+                            await Navigation.PushAsync(new VysledekDobre(ID, fronta));
                         }
                         else
                         {
-                            await Navigation.PushAsync(new VysledekSpatne(0, fronta));
+                            await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
                         }
                         break;
                     }
