@@ -25,7 +25,10 @@ namespace Mathster
                 VysokaButton.IsVisible = false;
                 StredniButton.IsVisible = false;
             }
-            
+            else if (velikostCisel == 1 && druhPrikladu == 5)
+            {
+                VysokaButton.IsVisible = false;
+            }
             switch (druhPrikladu)
             {
                 case 3:
