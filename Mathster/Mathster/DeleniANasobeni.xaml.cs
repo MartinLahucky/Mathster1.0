@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,6 +20,10 @@ namespace Mathster
             this.druhPrikladu = druhPrikladu;
             this.velikostCisel = velikostCisel;
 
+            NizkaButton.Text = AppResource.DoPeti;
+            StredniButton.Text = AppResource.DoDeseti;
+            VysokaButton.Text = AppResource.DoDvaceti;
+            
             if (velikostCisel == 1 && druhPrikladu == 4)
             {
                 VysokaButton.IsVisible = false;
@@ -32,17 +36,17 @@ namespace Mathster
             switch (druhPrikladu)
             {
                 case 3:
-                    Title = "Násobení";
-                    ZvolDelitelANasobitelLabel.Text = "Zvolte násobitele";
+                    Title = AppResource.Nasobeni;
+                    ZvolDelitelANasobitelLabel.Text = AppResource.ZvolteNasobitele;
                     break;
                 case 4:
-                    Title = "Dělení";
-                    ZvolDelitelANasobitelLabel.Text = "Zvolte dělitele";
+                    Title = AppResource.Deleni;
+                    ZvolDelitelANasobitelLabel.Text = AppResource.ZvolteDelitele;
                     break;
                 case 5:
-                    Title = "Náhodné";
+                    Title = AppResource.Nahodne;
                     ZvolDelitelANasobitelLabel.HeightRequest = 50;
-                    ZvolDelitelANasobitelLabel.Text = "Zvolte dělitele a násobitele";
+                    ZvolDelitelANasobitelLabel.Text = AppResource.ZvolitNasobitelADelitel;
                     break;
             }
         }

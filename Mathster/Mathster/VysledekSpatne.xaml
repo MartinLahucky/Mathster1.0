@@ -3,7 +3,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mathster.VysledekSpatne"
-             Title="Řešení"
              NavigationPage.HasBackButton="False">
     <ContentPage.Resources>
         <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
@@ -15,26 +14,26 @@
                 <StackLayout x:Name="SecondLayer"  VerticalOptions="Center" Margin="50" >
                     <Frame CornerRadius="15" Padding="0" Margin="0,0,0,10" HasShadow="False" >
                         <StackLayout>
-                            <Label x:Name="SpatneLabel" Text="Špatně" StyleClass="CervenaNadpis" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                            <Label x:Name="SpatneLabel" StyleClass="CervenaNadpis" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
                         </StackLayout>
                     </Frame>      
                     
                     <Frame CornerRadius="15" Padding="0" Margin="0,0,0,10" HasShadow="False" >
                         <StackLayout>
-                            <Label x:Name="NadSpatnaOdpovedLabel" Text="Vaše řešení" StyleClass="SpatneNadLabel" Margin="0,0,0,-7" />
+                            <Label x:Name="NadSpatnaOdpovedLabel" StyleClass="SpatneNadLabel" Margin="0,0,0,-7" />
                             <Label x:Name="SpatnaOdpovedLabel" StyleClass="SpatneLabel"  HeightRequest="60" VerticalOptions="Center"  />
                         </StackLayout>
                     </Frame> 
                     
                     <Frame CornerRadius="15" Padding="0" Margin="0,0,0,10" HasShadow="False" >
                         <StackLayout>
-                            <Label x:Name="ReseniNadLabel" Text="Správné řešení" StyleClass="Zelena" Margin="0,0,0,-7" />
+                            <Label x:Name="ReseniNadLabel" StyleClass="Zelena" Margin="0,0,0,-7" />
                             <Label x:Name="ReseniLabel" StyleClass="PrikladLabel"  HeightRequest="60" VerticalOptions="Center"  />
                         </StackLayout>
                     </Frame> 
                     
-                    <Button x:Name="DalsiPrikladButton" Text="Další" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,50,0,20" Clicked="DalsiPrikladButton_OnClicked" />
-                    <Button x:Name="MenuButton" Text="Menu" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="MenuButton_OnClicked" />
+                    <Button x:Name="DalsiPrikladButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,50,0,20" Clicked="DalsiPrikladButton_OnClicked" />
+                    <Button x:Name="MenuButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="MenuButton_OnClicked" />
                 </StackLayout>
             </ScrollView>
         </StackLayout>

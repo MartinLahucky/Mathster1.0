@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,25 +18,28 @@ namespace Mathster
         {
             InitializeComponent();
             druhPrikladu = vyber;
-
+            ZvolitVelikostLabel.Text = AppResource.Jednociferne;
+            Info2Label.Text = AppResource.VelikostCisel;
+            DalsiButton.Text = AppResource.Dalsi;
+            
             switch (vyber)
             {
                 case 1:
-                    Title = "Sčítání";
+                    Title = AppResource.Scitani;
                     break;
                 case 2:
-                    Title = "Odečítání";
+                    Title = AppResource.Odecitani;
                     break;
                 case 3:
-                    Title = "Násobení";
+                    Title = AppResource.Nasobeni;
                     break;
                 case 4:
-                    Title = "Dělení";
+                    Title = AppResource.Deleni;
                     break;
                 case 5:
-                    Title = "Náhodné";
+                    Title = AppResource.Nahodne;
                     Info2Label.HeightRequest = 80;
-                    Info2Label.Text = "Zvolte velikost všech prvních čísel";
+                    Info2Label.Text = AppResource.VelikostVsechPrvnichCisel;
                     break;
             }
         }
@@ -46,22 +49,22 @@ namespace Mathster
             switch (velikostCisel)
             {
                 case 1:
-                    ZvolitVelikostLabel.Text = "Jednociferné";
+                    ZvolitVelikostLabel.Text = AppResource.Jednociferne;
                     break;
                 case 2:
-                    ZvolitVelikostLabel.Text = "Dvouciferné";
+                    ZvolitVelikostLabel.Text = AppResource.Dvouciferne;
                     break;
                 case 3:
-                    ZvolitVelikostLabel.Text = "Trojciferné";
+                    ZvolitVelikostLabel.Text = AppResource.Trojciferne;
                     break;
                 case 4:
-                    ZvolitVelikostLabel.Text = "Čtyřciferné";
+                    ZvolitVelikostLabel.Text = AppResource.Ctyrciferne;
                     break;
                 case 5:
-                    ZvolitVelikostLabel.Text = "Pěticiferné";
+                    ZvolitVelikostLabel.Text = AppResource.Peticiferne;
                     break;
                 case 6:
-                    ZvolitVelikostLabel.Text = "Šesticiferné";
+                    ZvolitVelikostLabel.Text = AppResource.Seticiferne;
                     break;
             }                
         }
@@ -71,22 +74,22 @@ namespace Mathster
             switch (velikostCisel)
             {
                 case 1:
-                    ZvolitVelikostLabel.Text = "Jednociferné";
+                    ZvolitVelikostLabel.Text = AppResource.Jednociferne;
                     break;
                 case 2:
-                    ZvolitVelikostLabel.Text = "Dvouciferné";
+                    ZvolitVelikostLabel.Text = AppResource.Dvouciferne;
                     break;
                 case 3:
-                    ZvolitVelikostLabel.Text = "Trojciferné";
+                    ZvolitVelikostLabel.Text = AppResource.Trojciferne;
                     break;
                 case 4:
-                    ZvolitVelikostLabel.Text = "Čtyřciferné";
+                    ZvolitVelikostLabel.Text = AppResource.Ctyrciferne;
                     break;
                 case 5:
-                    ZvolitVelikostLabel.Text = "Pěticiferné";
+                    ZvolitVelikostLabel.Text = AppResource.Peticiferne;
                     break;
                 case 6:
-                    ZvolitVelikostLabel.Text = "Šesticiferné";
+                    ZvolitVelikostLabel.Text = AppResource.Seticiferne;
                     break;
             }
         }

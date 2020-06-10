@@ -15,7 +15,7 @@
                     
                     <Frame CornerRadius="15" Padding="0" Margin="20,0,20,10" HasShadow="False" >
                         <StackLayout>
-                            <Label x:Name="Info2Label" Text="Zvolte počet příkladů" StyleClass="InfoLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  HeightRequest="50" />
+                            <Label x:Name="Info2Label" StyleClass="InfoLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  HeightRequest="50" />
                         </StackLayout>
                     </Frame>
                     
@@ -28,7 +28,7 @@
                     </Frame>
                     
                     <ImageButton x:Name="Ubrat2Button" Source="sipkad2.png"  CornerRadius="13" BackgroundColor="Transparent" Margin="0,20,0,20" HeightRequest="50" Clicked="Ubrat2Button_OnClicked" />
-                    <Button x:Name="GenerujButton" Text="Generuj" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,30,0,20" Clicked="GenerujButton_OnClicked" />
+                    <Button x:Name="GenerujButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,30,0,20" Clicked="GenerujButton_OnClicked" />
                 </StackLayout>
             </ScrollView>
         </StackLayout>

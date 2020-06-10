@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,24 +18,27 @@ namespace Mathster
         public Priklady(byte id, List<Priklad> fronta)
         {
             InitializeComponent();
+            DalsiButton.Text = AppResource.Dalsi;
+            OdvezdatButton.Text = AppResource.Odevzdat;
+            
             priklad = fronta[id];
 
             switch (priklad.DruhPrikladu)
             {
                 case 1:
-                    Title = "Sčítání";
+                    Title = AppResource.Scitani;
                     PrikladLabel.Text = $"{priklad.PrvniCislo} + {priklad.DruheCislo} =";
                     break;
                 case 2:
-                    Title = "Odečítání";
+                    Title = AppResource.Odecitani;
                     PrikladLabel.Text = $"{priklad.PrvniCislo} - {priklad.DruheCislo} =";
                     break;
                 case 3:
-                    Title = "Násobení";
+                    Title = AppResource.Nasobeni;
                     PrikladLabel.Text = $"{priklad.PrvniCislo} X {priklad.DruheCislo} =";
                     break;
                 case 4:
-                    Title = "Dělení";
+                    Title = AppResource.Deleni;
                     PrikladLabel.Text = $"{priklad.PrvniCislo} ÷ {priklad.DruheCislo} =";
                     break;
             }
@@ -106,7 +109,7 @@ namespace Mathster
             }
             catch (Exception exception)
             {
-                await DisplayAlert("Upozornění", "Prosím, zadejte číslo", "Ok");
+                await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniZadejteCislo, AppResource.Ok);
             }
         }
 
@@ -120,7 +123,7 @@ namespace Mathster
             }
             catch (Exception exception)
             {
-                await DisplayAlert("Upozornění", "Prosím, zadejte číslo", "Ok");
+                await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniZadejteCislo, AppResource.Ok);
             }
         }
         protected override void OnAppearing ()

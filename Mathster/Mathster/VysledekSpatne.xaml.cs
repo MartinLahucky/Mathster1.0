@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,6 +18,12 @@ namespace Mathster
         {
             InitializeComponent();
 
+            ReseniNadLabel.Text = AppResource.SpravneReseni;
+            NadSpatnaOdpovedLabel.Text = AppResource.VaseReseni;
+            SpatneLabel.Text = AppResource.Spatne;
+            DalsiPrikladButton.Text = AppResource.Dalsi;
+            MenuButton.Text = AppResource.Menu;
+            
             switch (fronta[id].DruhPrikladu)
             {
                 case 1:

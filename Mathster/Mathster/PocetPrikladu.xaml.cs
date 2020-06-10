@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -29,21 +29,24 @@ namespace Mathster
             switch (druhPrikladu)
             {
                 case 1:
-                    Title = "Sčítání";
+                    Title = AppResource.Scitani;
                     break;
                 case 2:
-                    Title = "Odečítání";
+                    Title = AppResource.Odecitani;
                     break;
                 case 3:
-                    Title = "Násobení";
+                    Title = AppResource.Nasobeni;
                     break;
                 case 4:
-                    Title = "Dělení";
+                    Title = AppResource.Deleni;
                     break;
                 case 5:
-                    Title = "Náhodné";
+                    Title = AppResource.Nahodne;
                     break;
             }
+
+            Info2Label.Text = AppResource.ZvolitPocetPrikladu;
+            GenerujButton.Text = AppResource.Start;
             
             switch (velikostCisel)
             {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,12 +19,15 @@ namespace Mathster
             {
                 Device.BeginInvokeOnMainThread (() =>
                 {
-                    Title = "Menu";
+                    Title = AppResource.Menu;
                 });
                 return false;
             });
-            
-            
+            ScitaniButton.Text = AppResource.Scitani;
+            OdcitaniButton.Text = AppResource.Odecitani;
+            NasobeniButton.Text = AppResource.Nasobeni;
+            DeleniButton.Text = AppResource.Deleni;
+            NahodneButton.Text = AppResource.Nahodne;
         }
         private async void ScitaniButton_OnClicked(object sender, EventArgs e)
         {
