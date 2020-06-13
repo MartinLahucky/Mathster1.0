@@ -138,6 +138,11 @@ namespace Mathster
                 }
             }
             await Navigation.PushAsync(new Priklady(0, fronta));
+            var existingPages = Navigation.NavigationStack.ToList();
+            foreach(var page in existingPages)
+            {
+                Navigation.RemovePage(page);
+            }
         }
     }
 }

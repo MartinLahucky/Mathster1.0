@@ -23,6 +23,7 @@ namespace Mathster
             SpatneLabel.Text = AppResource.Spatne;
             DalsiPrikladButton.Text = AppResource.Dalsi;
             MenuButton.Text = AppResource.Menu;
+            Title = AppResource.Reseni;
             
             switch (fronta[id].DruhPrikladu)
             {

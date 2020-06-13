@@ -106,6 +106,11 @@ namespace Mathster
                         }
                         break;
                     }
+                var existingPages = Navigation.NavigationStack.ToList();
+                foreach(var page in existingPages)
+                {
+                    Navigation.RemovePage(page);
+                }
             }
             catch (Exception exception)
             {
@@ -120,6 +125,11 @@ namespace Mathster
                 fronta[ID].UzivateluvVstup = int.Parse(VysledekInput.Text);
                 ID++;
                 await Navigation.PushAsync(new Priklady(ID, fronta));
+                var existingPages = Navigation.NavigationStack.ToList();
+                foreach(var page in existingPages)
+                {
+                    Navigation.RemovePage(page);
+                }
             }
             catch (Exception exception)
             {

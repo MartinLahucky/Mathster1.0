@@ -22,6 +22,7 @@ namespace Mathster
             ReseniNadLabel.Text = AppResource.SpravneReseni;
             DalsiPrikladButton.Text = AppResource.Dalsi;
             MenuButton.Text = AppResource.Menu;
+            Title = AppResource.Reseni;
             
             switch (fronta[id].DruhPrikladu)
             {
