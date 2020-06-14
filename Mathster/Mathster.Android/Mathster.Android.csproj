@@ -76,10 +76,12 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ikonastart.png" />
     <AndroidResource Include="Resources\drawable\ikonaKruh.png" />
+    <AndroidResource Include="Resources\drawable\ikonastart3.png" />
     <AndroidResource Include="Resources\drawable\sipkad.png" />
     <AndroidResource Include="Resources\drawable\sipkad2.png" />
     <AndroidResource Include="Resources\drawable\sipkah.png" />
     <AndroidResource Include="Resources\drawable\sipkah2.png" />
+    <AndroidResource Include="Resources\drawable\splash_screen.xml" />
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />

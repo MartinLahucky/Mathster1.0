@@ -50,6 +50,10 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>AppResource.cs-CZ.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+      <EmbeddedResource Update="Vysledek.xaml">
+        <SubType>Designer</SubType>
+        <Generator></Generator>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -73,6 +77,9 @@
       </Compile>
       <Compile Update="VysledekSpatne.xaml.cs">
         <DependentUpon>VysledekSpatne.xaml</DependentUpon>
+      </Compile>
+      <Compile Update="Vysledek.xaml.cs">
+        <DependentUpon>Vysledek.xaml</DependentUpon>
       </Compile>
       <Compile Update="Helpers\Resources\AppResource.Designer.cs">
         <DesignTime>True</DesignTime>
