@@ -14,23 +14,22 @@
         <StackLayout x:Name="MainLayout">
             <ScrollView x:Name="View">
                 <StackLayout x:Name="SecondLayer"  VerticalOptions="Center" Margin="50">
-                    
                     <Frame CornerRadius="15" Padding="0" Margin="20,0,20,10" HasShadow="False" >
                         <StackLayout>
-                            <Label x:Name="Info2Label" StyleClass="InfoLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  HeightRequest="50" />
+                            <Label x:Name="Info2Label" StyleClass="InfoLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  HeightRequest="30" />
                         </StackLayout>
                     </Frame>
                     
-                    <ImageButton x:Name="Pridat2Button" Source="sipkah2.png" BackgroundColor="Transparent" CornerRadius="13" Margin="0, 30,0,20" HeightRequest="50" WidthRequest="30" Clicked="Pridat2Button_OnClicked" />
+                    <ImageButton x:Name="Pridat2Button" Source="sipkah2.png" BackgroundColor="Transparent" CornerRadius="13" Margin="0,20,0,20" HeightRequest="50" WidthRequest="30" Clicked="Pridat2Button_OnClicked" />
                     
                     <Frame CornerRadius="15" Padding="0" Margin="0,20,0,20" HasShadow="False" >
                         <StackLayout>
-                            <Label x:Name="ZvolitPocetLabel" Text="1" StyleClass="PrikladLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            <Label x:Name="ZvolitPocetLabel" Text="1" StyleClass="PrikladLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HeightRequest="50" />
                         </StackLayout>
                     </Frame>
                     
-                    <ImageButton x:Name="Ubrat2Button" Source="sipkad2.png"  CornerRadius="13" BackgroundColor="Transparent" Margin="0,20,0,20" HeightRequest="50" Clicked="Ubrat2Button_OnClicked" />
-                    <Button x:Name="GenerujButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,30,0,20" Clicked="GenerujButton_OnClicked" />
+                    <ImageButton x:Name="Ubrat2Button" Source="sipkad2.png"  CornerRadius="13" BackgroundColor="Transparent" Margin="0,20,0,30" HeightRequest="50" Clicked="Ubrat2Button_OnClicked" />
+                    <Button x:Name="GenerujButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="GenerujButton_OnClicked" />
                 </StackLayout>
             </ScrollView>
         </StackLayout>

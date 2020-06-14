@@ -20,7 +20,7 @@
                             </StackLayout>
                         </Frame>
                     
-                        <ImageButton x:Name="PridatButton" Source="sipkah.png" BackgroundColor="Transparent" CornerRadius="13" Margin="0, 20,0,20" HeightRequest="50" WidthRequest="30" Clicked="PridatButton_OnClicked" />
+                        <ImageButton x:Name="PridatButton" Source="sipkah.png" BackgroundColor="Transparent" CornerRadius="13" Margin="0,20,0,20" HeightRequest="50" WidthRequest="30" Clicked="PridatButton_OnClicked" />
                     
                         <Frame CornerRadius="15" Padding="0" Margin="0,20,0,20" HasShadow="False" >
                             <StackLayout>
