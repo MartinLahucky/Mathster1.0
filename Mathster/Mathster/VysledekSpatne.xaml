@@ -17,20 +17,20 @@
                     <Frame CornerRadius="15" Padding="0" Margin="0,0,0,10" HasShadow="False" >
                         <StackLayout>
                             <Label x:Name="SpatneLabel" StyleClass="CervenaNadpis" HeightRequest="50" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-                        </StackLayout>
+                        </StackLayout> 
                     </Frame>      
                     
                     <Frame CornerRadius="15" Padding="0" Margin="0,0,0,10" HasShadow="False" >
                         <StackLayout>
                             <Label x:Name="NadSpatnaOdpovedLabel" StyleClass="SpatneNadLabel" Margin="0,0,0,-7" />
-                            <Label x:Name="SpatnaOdpovedLabel" StyleClass="SpatneLabel"  HeightRequest="60" VerticalOptions="Center"  />
+                            <Label x:Name="SpatnaOdpovedLabel" StyleClass="SpatneLabel"  HeightRequest="50" VerticalOptions="Center"  />
                         </StackLayout>
                     </Frame> 
                     
                     <Frame CornerRadius="15" Padding="0" Margin="0,0,0,10" HasShadow="False" >
                         <StackLayout>
                             <Label x:Name="ReseniNadLabel" StyleClass="Zelena" Margin="0,0,0,-7" />
-                            <Label x:Name="ReseniLabel" StyleClass="PrikladLabel"  HeightRequest="60" VerticalOptions="Center"  />
+                            <Label x:Name="ReseniLabel" StyleClass="PrikladLabel"  HeightRequest="50" VerticalOptions="Center"  />
                         </StackLayout>
                     </Frame> 
                     
