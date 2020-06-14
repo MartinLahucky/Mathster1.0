@@ -27,6 +27,7 @@ namespace Mathster
             
             if (fronta[id].PrvniCislo >= 10000)
             {
+                SpatnaOdpovedLabel.HeightRequest = 75;
                 ReseniLabel.HeightRequest = 75;
             } 
             
