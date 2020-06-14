@@ -23,6 +23,11 @@ namespace Mathster
             DalsiPrikladButton.Text = AppResource.Dalsi;
             MenuButton.Text = AppResource.Menu;
             Title = AppResource.Reseni;
+
+            if (fronta[id].PrvniCislo >= 10000)
+            {
+                ReseniLabel.HeightRequest = 75;
+            } 
             
             switch (fronta[id].DruhPrikladu)
             {

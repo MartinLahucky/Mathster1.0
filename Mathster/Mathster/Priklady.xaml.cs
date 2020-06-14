@@ -112,7 +112,7 @@ namespace Mathster
                     Navigation.RemovePage(page);
                 }
             }
-            catch (Exception exception)
+            catch
             {
                 await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniZadejteCislo, AppResource.Ok);
             }
@@ -131,7 +131,7 @@ namespace Mathster
                     Navigation.RemovePage(page);
                 }
             }
-            catch (Exception exception)
+            catch
             {
                 await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniZadejteCislo, AppResource.Ok);
             }
