@@ -54,7 +54,7 @@
         <SubType>Designer</SubType>
         <Generator></Generator>
       </EmbeddedResource>
-      <EmbeddedResource Update="Vysledek.xaml">
+      <EmbeddedResource Update="Vysledky.xaml">
         <SubType>Designer</SubType>
         <Generator></Generator>
       </EmbeddedResource>
@@ -82,9 +82,6 @@
       <Compile Update="VysledekSpatne.xaml.cs">
         <DependentUpon>VysledekSpatne.xaml</DependentUpon>
       </Compile>
-      <Compile Update="Vysledek.xaml.cs">
-        <DependentUpon>Vysledek.xaml</DependentUpon>
-      </Compile>
       <Compile Update="Helpers\Resources\AppResource.Designer.cs">
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
@@ -94,6 +91,9 @@
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
         <DependentUpon>AppResource.cs-CZ.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Vysledky.xaml.cs">
+        <DependentUpon>Vysledky.xaml</DependentUpon>
       </Compile>
     </ItemGroup>
 </Project>
