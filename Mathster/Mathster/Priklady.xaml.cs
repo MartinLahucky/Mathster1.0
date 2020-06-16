@@ -63,16 +63,16 @@ namespace Mathster
             try
             {
                 fronta[ID].UzivateluvVstup = int.Parse(VysledekInput.Text);
+                await Navigation.PushAsync(new Souhrn(fronta));
+                var existingPages = Navigation.NavigationStack.ToList();
+                foreach(var page in existingPages)
+                {
+                    Navigation.RemovePage(page);
+                }
             }
             catch (Exception exception)
             {
                 await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniZadejteCislo, AppResource.Ok);
-            }
-            await Navigation.PushAsync(new Souhrn(fronta));
-            var existingPages = Navigation.NavigationStack.ToList();
-            foreach(var page in existingPages)
-            {
-                Navigation.RemovePage(page);
             }
         }
 
