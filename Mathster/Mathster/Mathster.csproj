@@ -54,7 +54,7 @@
         <SubType>Designer</SubType>
         <Generator></Generator>
       </EmbeddedResource>
-      <EmbeddedResource Update="Vysledky.xaml">
+      <EmbeddedResource Update="Souhrn.xaml">
         <SubType>Designer</SubType>
         <Generator></Generator>
       </EmbeddedResource>
@@ -94,6 +94,9 @@
       </Compile>
       <Compile Update="Vysledky.xaml.cs">
         <DependentUpon>Vysledky.xaml</DependentUpon>
+      </Compile>
+      <Compile Update="Souhrn.xaml.cs">
+        <DependentUpon>Souhrn.xaml</DependentUpon>
       </Compile>
     </ItemGroup>
 </Project>

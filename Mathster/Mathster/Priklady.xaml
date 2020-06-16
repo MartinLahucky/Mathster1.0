@@ -6,7 +6,7 @@
              NavigationPage.HasBackButton="False">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="PodSebeButton" Order="Primary" Priority="1"  IconImageSource="podsebe.png"/>
+        <ToolbarItem x:Name="PodSebeButton" Order="Primary" Priority="1" IconImageSource="podsebe.png" Clicked="PodSebeButton_OnClicked"/>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Resources>

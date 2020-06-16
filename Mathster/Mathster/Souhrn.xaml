@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mathster.Souhrn"
+             NavigationPage.HasBackButton="False">
+    <ContentPage.Resources>
+        <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView x:Name="View">
+                <StackLayout x:Name="SecondLayer"  VerticalOptions="Center" Margin="50">
+                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+                   <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="2*" />
+                        </Grid.RowDefinitions>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                       
+                       <!-- zelený okýnko -->
+                       <Frame CornerRadius="15" Padding="0"  HasShadow="False" Grid.Column="0" Grid.Row="1" BackgroundColor="#6ece25" >
+                            <StackLayout>
+                              <Label x:Name="NadDobreLabel" BackgroundColor="#6ece25"  HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="18"/>
+                              <Label x:Name="DobrePocetLabel" StyleClass="PrikladLabel" HorizontalOptions="Center" VerticalOptions="Center" />
+                            </StackLayout>
+                        </Frame>
+                        
+                       <!-- oranžový okýnko -->
+                       <Frame CornerRadius="15" Padding="0"  HasShadow="False" Grid.Column="2" Grid.Row="1" BackgroundColor="#ffb54c">
+                           <StackLayout>
+                              <Label x:Name="NadSpatneLabel" BackgroundColor="#ffb54c" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="18"/>
+                              <Label x:Name="SpatnePocetLabel" StyleClass="VysledekInput" HorizontalOptions="Center" VerticalOptions="Center" />
+                           </StackLayout>
+                       </Frame>
+                   </Grid>
+                    
+                    <!-- listview -->
+                   <Frame StyleClass="Zelena" Padding="0" Margin="0,30,0,25" HasShadow="False" CornerRadius="15" >
+                       <StackLayout>
+                           <Label x:Name="NadVysledkyLabel" StyleClass="Zelena"   HeightRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black" />
+                           <ListView x:Name="VysledkyList" Margin="10, -7, 10, 5" BackgroundColor="#89e771" HeightRequest="250" ItemTapped="VysledkyList_OnItemTapped">
+                               <ListView.ItemTemplate>
+                                   <DataTemplate>
+                                       <ViewCell x:Name="VysledekCell" >
+                                           <StackLayout x:Name="BarvaCellu" BackgroundColor="{Binding BarvaCellu}">
+                                                <Label x:Name="VysledekLabel" Text="{Binding TextovaPodobaPrikladu}" FontSize="30" TextColor="Black"/>
+                                            </StackLayout>
+                                       </ViewCell>
+                                   </DataTemplate>
+                               </ListView.ItemTemplate>
+                           </ListView>
+                       </StackLayout>
+                   </Frame>
+                   <Button x:Name="MenuButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="MenuButton_OnClicked"/>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

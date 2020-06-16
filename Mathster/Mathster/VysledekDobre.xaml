@@ -2,8 +2,7 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mathster.VysledekDobre"
-             NavigationPage.HasBackButton="False">
+             x:Class="Mathster.VysledekDobre">
     
     <ContentPage.Resources>
         <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
@@ -26,8 +25,8 @@
                         </StackLayout>
                     </Frame>
                     
-                    <Button x:Name="DalsiPrikladButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,70,0,20" Clicked="DalsiPrikladButton_OnClicked" />
-                    <Button x:Name="MenuButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="MenuButton_OnClicked" />
+                    <Button x:Name="DalsiPrikladButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,0,0,20" Clicked="DalsiPrikladButton_OnClicked" />
+                    <Button x:Name="PrehledButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="PrehledButton_OnClicked" />
                 </StackLayout>
             </ScrollView>
         </StackLayout>

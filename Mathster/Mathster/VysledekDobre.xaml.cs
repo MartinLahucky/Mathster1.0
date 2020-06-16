@@ -21,7 +21,7 @@ namespace Mathster
             SpravneLabel.Text = AppResource.Spravne;
             ReseniNadLabel.Text = AppResource.SpravneReseni;
             DalsiPrikladButton.Text = AppResource.Dalsi;
-            MenuButton.Text = AppResource.Menu;
+            PrehledButton.Text = AppResource.Souhrn;
             Title = AppResource.Reseni;
 
             if (fronta[id].PrvniCislo >= 10000)
@@ -49,7 +49,7 @@ namespace Mathster
             ID = id;
             if (id < (fronta.Count - 1))
             {
-                MenuButton.IsVisible = false;
+                PrehledButton.IsVisible = true;
             }
             else
             {
@@ -106,9 +106,9 @@ namespace Mathster
         }
 
 
-        private async void MenuButton_OnClicked(object sender, EventArgs e)
+        private async void PrehledButton_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Menu());
+            await Navigation.PushAsync(new Souhrn(fronta));
         }
     }
 }

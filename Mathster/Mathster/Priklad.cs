@@ -9,14 +9,12 @@ namespace Mathster
         private int druheCislo;
         private int uzivateluvVstup;
         private byte druhPrikladu;
-        
         public Priklad(int prvniCislo, int druheCislo, byte druhPrikladu)
         {
             this.prvniCislo = prvniCislo;
             this.druheCislo = druheCislo;
             this.druhPrikladu = druhPrikladu;
         }
-
         public Priklad() { }
 
         public byte Id
@@ -77,13 +75,27 @@ namespace Mathster
             priklad.Id = id;
             return priklad;
         }
-
         public Priklad VygenerujNahodnyPriklad(byte id, int minCisel, int maxCisel, int minDeleniANasobeni, int maxDeleniANasobeni)
         {
             Random random = new Random();
             druhPrikladu = Byte.Parse(random.Next(1, 5).ToString());
             return VygenerujPriklad(id, minCisel, maxCisel, minDeleniANasobeni, maxDeleniANasobeni, druhPrikladu);
-            
         }
+        public string VratPriklad()
+        {
+            switch (DruhPrikladu)
+            {
+                case 1:
+                    return $"{PrvniCislo} + {DruheCislo} = {UzivateluvVstup}";
+                case 2:
+                    return $"{PrvniCislo} - {DruheCislo} = {UzivateluvVstup}";
+                case 3:
+                    return $"{PrvniCislo} X {DruheCislo} = {UzivateluvVstup}";
+                case 4:
+                    return $"{PrvniCislo} ÷ {DruheCislo} = {UzivateluvVstup}";
+                default:
+                    return "";
+            }
+        } 
     }
 }

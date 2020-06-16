@@ -15,6 +15,7 @@ namespace Mathster
         private Priklad priklad;
         private byte ID;
         private List<Priklad> fronta;
+        private bool podsebe = true;
         public Priklady(byte id, List<Priklad> fronta)
         {
             InitializeComponent();
@@ -27,19 +28,19 @@ namespace Mathster
             {
                 case 1:
                     Title = AppResource.Scitani;
-                    PrikladLabel.Text = $"{priklad.PrvniCislo} + {priklad.DruheCislo} =";
+                    PrikladLabel.Text = $"{priklad.PrvniCislo} + {priklad.DruheCislo} = ";
                     break;
                 case 2:
                     Title = AppResource.Odecitani;
-                    PrikladLabel.Text = $"{priklad.PrvniCislo} - {priklad.DruheCislo} =";
+                    PrikladLabel.Text = $"{priklad.PrvniCislo} - {priklad.DruheCislo} = ";
                     break;
                 case 3:
                     Title = AppResource.Nasobeni;
-                    PrikladLabel.Text = $"{priklad.PrvniCislo} X {priklad.DruheCislo} =";
+                    PrikladLabel.Text = $"{priklad.PrvniCislo} X {priklad.DruheCislo} = ";
                     break;
                 case 4:
                     Title = AppResource.Deleni;
-                    PrikladLabel.Text = $"{priklad.PrvniCislo} ÷ {priklad.DruheCislo} =";
+                    PrikladLabel.Text = $"{priklad.PrvniCislo} ÷ {priklad.DruheCislo} = ";
                     break;
             }
 
@@ -62,59 +63,16 @@ namespace Mathster
             try
             {
                 fronta[ID].UzivateluvVstup = int.Parse(VysledekInput.Text);
-                ID = 0;
-                switch (fronta[ID].DruhPrikladu)
-                {
-                    case 1:
-                        if (fronta[0].PrvniCislo + fronta[0].DruheCislo == fronta[0].UzivateluvVstup)
-                        {
-                            await Navigation.PushAsync(new VysledekDobre(ID, fronta));
-                        }
-                        else
-                        {
-                            await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
-                        }
-                        break;
-                    case 2:
-                        if (fronta[0].PrvniCislo - fronta[0].DruheCislo == fronta[0].UzivateluvVstup)
-                        {
-                            await Navigation.PushAsync(new VysledekDobre(ID, fronta));
-                        }
-                        else
-                        {
-                            await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
-                        }
-                        break;
-                    case 3:
-                        if (fronta[0].PrvniCislo * fronta[0].DruheCislo == fronta[0].UzivateluvVstup)
-                        {
-                            await Navigation.PushAsync(new VysledekDobre(ID, fronta));
-                        }
-                        else
-                        {
-                            await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
-                        }
-                        break;
-                    case 4:
-                        if (fronta[0].PrvniCislo / fronta[0].DruheCislo == fronta[0].UzivateluvVstup)
-                        {
-                            await Navigation.PushAsync(new VysledekDobre(ID, fronta));
-                        }
-                        else
-                        {
-                            await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
-                        }
-                        break;
-                    }
-                var existingPages = Navigation.NavigationStack.ToList();
-                foreach(var page in existingPages)
-                {
-                    Navigation.RemovePage(page);
-                }
             }
-            catch
+            catch (Exception exception)
             {
                 await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniZadejteCislo, AppResource.Ok);
+            }
+            await Navigation.PushAsync(new Souhrn(fronta));
+            var existingPages = Navigation.NavigationStack.ToList();
+            foreach(var page in existingPages)
+            {
+                Navigation.RemovePage(page);
             }
         }
 
@@ -131,7 +89,7 @@ namespace Mathster
                     Navigation.RemovePage(page);
                 }
             }
-            catch
+            catch (Exception exception)
             {
                 await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniZadejteCislo, AppResource.Ok);
             }
@@ -141,6 +99,57 @@ namespace Mathster
             base.OnAppearing ();
 
             VysledekInput.Focus();
+        }
+
+        private void PodSebeButton_OnClicked(object sender, EventArgs e)
+        {
+            switch (podsebe)
+            {
+                case true:
+                    switch (priklad.DruhPrikladu)
+                    {
+                        case 1:
+                            Title = AppResource.Scitani;
+                            PrikladLabel.Text = $" {priklad.PrvniCislo}\n+{priklad.DruheCislo}\n—";
+                            break;
+                        case 2:
+                            Title = AppResource.Odecitani;
+                            PrikladLabel.Text = $" {priklad.PrvniCislo}\n-{priklad.DruheCislo}\n—";
+                            break;
+                        case 3:
+                            Title = AppResource.Nasobeni;
+                            PrikladLabel.Text = $" {priklad.PrvniCislo}\nX{priklad.DruheCislo}\n—";
+                            break;
+                        case 4:
+                            Title = AppResource.Deleni;
+                            PrikladLabel.Text = $"{priklad.PrvniCislo}\n—\n{priklad.DruheCislo}";
+                            break;
+                    }
+                    podsebe = false;
+                    break;
+                case false:
+                    switch (priklad.DruhPrikladu)
+                    {
+                        case 1:
+                            Title = AppResource.Scitani;
+                            PrikladLabel.Text = $"{priklad.PrvniCislo} + {priklad.DruheCislo} = ";
+                            break;
+                        case 2:
+                            Title = AppResource.Odecitani;
+                            PrikladLabel.Text = $"{priklad.PrvniCislo} - {priklad.DruheCislo} = ";
+                            break;
+                        case 3:
+                            Title = AppResource.Nasobeni;
+                            PrikladLabel.Text = $"{priklad.PrvniCislo} X {priklad.DruheCislo} = ";
+                            break;
+                        case 4:
+                            Title = AppResource.Deleni;
+                            PrikladLabel.Text = $"{priklad.PrvniCislo} ÷ {priklad.DruheCislo} = ";
+                            break;
+                    }
+                    podsebe = true;
+                    break;
+            }
         }
     }
 }
