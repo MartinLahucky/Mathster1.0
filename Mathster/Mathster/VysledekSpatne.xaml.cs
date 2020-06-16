@@ -59,7 +59,7 @@ namespace Mathster
             ID = id;
             if (id < (fronta.Count - 1))
             {
-                PrehledButton.IsVisible = false;
+                PrehledButton.IsVisible = true;
             }
             else
             {
