@@ -15,7 +15,7 @@
                 <StackLayout x:Name="SecondLayer"  VerticalOptions="Center" Margin="50">
                     <Frame CornerRadius="15" Padding="0" Margin="20,0,20,10" HasShadow="False" >
                         <StackLayout>
-                            <Label x:Name="Info2Label" StyleClass="InfoLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  HeightRequest="40" />
+                            <Label x:Name="Info2Label" StyleClass="InfoLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  HeightRequest="50" />
                         </StackLayout>
                     </Frame>
                     
