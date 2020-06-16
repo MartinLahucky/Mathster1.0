@@ -45,12 +45,12 @@
                     <!-- listview -->
                    <Frame StyleClass="Zelena" Padding="0" Margin="0,30,0,25" HasShadow="False" CornerRadius="15" >
                        <StackLayout>
-                           <Label x:Name="NadVysledkyLabel" StyleClass="Zelena"   HeightRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black" />
+                           <Label x:Name="NadVysledkyLabel" StyleClass="Zelena" HeightRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black" />
                            <ListView x:Name="VysledkyList" Margin="10, -7, 10, 5" BackgroundColor="#89e771" HeightRequest="250" ItemTapped="VysledkyList_OnItemTapped">
                                <ListView.ItemTemplate>
                                    <DataTemplate>
                                        <ViewCell x:Name="VysledekCell" >
-                                           <StackLayout x:Name="BarvaCellu" BackgroundColor="{Binding BarvaCellu}">
+                                           <StackLayout x:Name="BarvaCellu" BackgroundColor="{Binding BarvaCellu}" Margin="10,0,0,0">
                                                 <Label x:Name="VysledekLabel" Text="{Binding TextovaPodobaPrikladu}" FontSize="30" TextColor="Black"/>
                                             </StackLayout>
                                        </ViewCell>
