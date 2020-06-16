@@ -50,8 +50,8 @@
                                <ListView.ItemTemplate>
                                    <DataTemplate>
                                        <ViewCell x:Name="VysledekCell" >
-                                           <StackLayout x:Name="BarvaCellu" BackgroundColor="{Binding BarvaCellu}" Margin="10,0,0,0">
-                                                <Label x:Name="VysledekLabel" Text="{Binding TextovaPodobaPrikladu}" FontSize="30" TextColor="Black"/>
+                                           <StackLayout x:Name="BarvaCellu" BackgroundColor="{Binding BarvaCellu}" >
+                                                <Label x:Name="VysledekLabel" Text="{Binding TextovaPodobaPrikladu}" FontSize="30" TextColor="Black" Margin="10,0,0,0"/>
                                             </StackLayout>
                                        </ViewCell>
                                    </DataTemplate>
