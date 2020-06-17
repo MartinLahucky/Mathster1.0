@@ -28,10 +28,13 @@ namespace Mathster
 
             byte pocitadloSpravne = 0;
             byte pocitadloSpatne = 0;
-            
             foreach (var priklad in fronta)
             {
                 priklady.Add(new Vysledek(priklad.VratPriklad()));
+                if (priklad.PrvniCislo >= 1000)
+                {
+                    VysledkyList.RowHeight = 80;
+                }
                 switch (priklad.DruhPrikladu)
                 {
                     case 1:

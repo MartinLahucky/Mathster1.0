@@ -46,7 +46,6 @@ namespace Mathster
             get => druhPrikladu;
             private set => druhPrikladu = value;
         }
-        
         public Priklad VygenerujPriklad(byte id, int minCisel, int maxCisel, int minDeleniANasobeni, int maxDeleniANasobeni, byte druhPrikladu)
         {
             Random random = new Random();
@@ -83,18 +82,37 @@ namespace Mathster
         }
         public string VratPriklad()
         {
-            switch (DruhPrikladu)
+            if (prvniCislo >= 1000)
             {
-                case 1:
-                    return $"{PrvniCislo} + {DruheCislo} = {UzivateluvVstup}";
-                case 2:
-                    return $"{PrvniCislo} - {DruheCislo} = {UzivateluvVstup}";
-                case 3:
-                    return $"{PrvniCislo} X {DruheCislo} = {UzivateluvVstup}";
-                case 4:
-                    return $"{PrvniCislo} ÷ {DruheCislo} = {UzivateluvVstup}";
-                default:
-                    return "";
+                switch (DruhPrikladu)
+                {
+                    case 1:
+                        return $"{PrvniCislo} + {DruheCislo} =\n= {UzivateluvVstup}";
+                    case 2:
+                        return $"{PrvniCislo} - {DruheCislo} =\n= {UzivateluvVstup}";
+                    case 3:
+                        return $"{PrvniCislo} X {DruheCislo} =\n= {UzivateluvVstup}";
+                    case 4:
+                        return $"{PrvniCislo} ÷ {DruheCislo} =\n= {UzivateluvVstup}";
+                    default:
+                        return "";
+                }
+            }
+            else
+            {
+                switch (DruhPrikladu)
+                {
+                    case 1:
+                        return $"{PrvniCislo} + {DruheCislo} = {UzivateluvVstup}";
+                    case 2:
+                        return $"{PrvniCislo} - {DruheCislo} = {UzivateluvVstup}";
+                    case 3:
+                        return $"{PrvniCislo} X {DruheCislo} = {UzivateluvVstup}";
+                    case 4:
+                        return $"{PrvniCislo} ÷ {DruheCislo} = {UzivateluvVstup}";
+                    default:
+                        return "";
+                }
             }
         } 
     }

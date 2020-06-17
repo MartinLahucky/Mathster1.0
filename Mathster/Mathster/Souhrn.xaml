@@ -49,7 +49,7 @@
                            <ListView x:Name="VysledkyList" Margin="10, -7, 10, 5" BackgroundColor="#89e771" HeightRequest="250" ItemTapped="VysledkyList_OnItemTapped">
                                <ListView.ItemTemplate>
                                    <DataTemplate>
-                                       <ViewCell x:Name="VysledekCell" >
+                                       <ViewCell>
                                            <StackLayout x:Name="BarvaCellu" BackgroundColor="{Binding BarvaCellu}" >
                                                 <Label x:Name="VysledekLabel" Text="{Binding TextovaPodobaPrikladu}" FontSize="30" TextColor="Black" Margin="10,0,0,0"/>
                                             </StackLayout>
