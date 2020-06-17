@@ -31,7 +31,7 @@ namespace Mathster
             foreach (var priklad in fronta)
             {
                 priklady.Add(new Vysledek(priklad.VratPriklad()));
-                if (priklad.UzivateluvVstup >= 1000)
+                if (priklad.PrvniCislo >= 1000 || priklad.PrvniCislo >= 1000 && priklad.UzivateluvVstup >= 1000)
                 {
                     VysledkyList.RowHeight = 80;
                 }
