@@ -165,6 +165,9 @@
   <data name="PocetPrikladu" xml:space="preserve">
     <value>Počet příkladů</value>
   </data>
+  <data name="Predchozi" xml:space="preserve">
+    <value>Předchozí</value>
+  </data>
   <data name="Reseni" xml:space="preserve">
     <value>Řešení</value>
   </data>

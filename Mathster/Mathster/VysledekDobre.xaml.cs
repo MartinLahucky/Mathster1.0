@@ -20,6 +20,7 @@ namespace Mathster
 
             SpravneLabel.Text = AppResource.Spravne;
             ReseniNadLabel.Text = AppResource.SpravneReseni;
+            PredchoziPrikladButton.Text = AppResource.Predchozi;
             DalsiPrikladButton.Text = AppResource.Dalsi;
             PrehledButton.Text = AppResource.Souhrn;
             Title = AppResource.Reseni;
@@ -47,13 +48,13 @@ namespace Mathster
 
             this.fronta = fronta;
             ID = id;
-            if (id < (fronta.Count - 1))
-            {
-                PrehledButton.IsVisible = true;
-            }
-            else
+            if (id == (fronta.Count - 1))
             {
                 DalsiPrikladButton.IsVisible = false;
+            }
+            if (id == 0)
+            {
+                PredchoziPrikladButton.IsVisible = false;
             }
         }
 
@@ -109,6 +110,54 @@ namespace Mathster
         private async void PrehledButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Souhrn(fronta));
+        }
+
+        private async void PredchoziPrikladButton_OnClicked(object sender, EventArgs e)
+        {
+            ID--;
+            switch (fronta[ID].DruhPrikladu)
+            {
+                case 1:
+                    if (fronta[ID].PrvniCislo + fronta[ID].DruheCislo == fronta[ID].UzivateluvVstup)
+                    {
+                        await Navigation.PushAsync(new VysledekDobre(ID, fronta));
+                    }
+                    else
+                    {
+                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
+                    }
+                    break;
+                case 2:
+                    if (fronta[ID].PrvniCislo - fronta[ID].DruheCislo == fronta[ID].UzivateluvVstup)
+                    {
+                        await Navigation.PushAsync(new VysledekDobre(ID, fronta));
+                    }
+                    else
+                    {
+                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
+                    }
+                    break;
+                case 3:
+                    if (fronta[ID].PrvniCislo * fronta[ID].DruheCislo == fronta[ID].UzivateluvVstup)
+                    {
+                        await Navigation.PushAsync(new VysledekDobre(ID, fronta));
+                    }
+                    else
+                    {
+                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
+                    }
+                    break;
+                case 4:
+                    if (fronta[ID].PrvniCislo / fronta[ID].DruheCislo == fronta[ID].UzivateluvVstup)
+                    {
+                        await Navigation.PushAsync(new VysledekDobre(ID, fronta));
+                    }
+                    else
+                    {
+                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
+                    }
+                    break;
+            }
         }
     }
 }

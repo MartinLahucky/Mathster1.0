@@ -165,6 +165,9 @@
   <data name="PocetPrikladu" xml:space="preserve">
     <value>Select the number of exercises</value>
   </data>
+  <data name="Predchozi" xml:space="preserve">
+    <value>Previous</value>
+  </data>
   <data name="Reseni" xml:space="preserve">
     <value>Answer</value>
   </data>
