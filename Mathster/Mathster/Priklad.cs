@@ -82,7 +82,7 @@ namespace Mathster
         }
         public string VratPriklad()
         {
-            if (prvniCislo >= 1000)
+            if (PrvniCislo >= 100000 || DruheCislo >= 100000 || UzivateluvVstup >= 100000)
             {
                 switch (DruhPrikladu)
                 {
