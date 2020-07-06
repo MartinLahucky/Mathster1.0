@@ -198,6 +198,12 @@
   <data name="Upozorneni" xml:space="preserve">
     <value>Alert</value>
   </data>
+  <data name="UpozorneniVseDobre" xml:space="preserve">
+    <value>You didn't make a single mistake. Congratulations!</value>
+  </data>
+  <data name="UpozorneniVseSpatne" xml:space="preserve">
+    <value>Unfortunetly You didn't have a single exercise right. You should practice more.</value>
+  </data>
   <data name="UpozorneniZadejteCislo" xml:space="preserve">
     <value>Please input a number</value>
   </data>

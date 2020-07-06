@@ -29,7 +29,7 @@
                        <Frame CornerRadius="15" Padding="0"  HasShadow="False" Grid.Column="0" Grid.Row="1" BackgroundColor="#6ece25" >
                             <StackLayout>
                               <Label x:Name="NadDobreLabel" BackgroundColor="#6ece25"  HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="18"/>
-                              <Label x:Name="DobrePocetLabel" StyleClass="PrikladLabel" HorizontalOptions="Center" VerticalOptions="Center" />
+                              <Button x:Name="DobreButton" StyleClass="PrikladLabel" HorizontalOptions="Center" VerticalOptions="Center" Clicked="DobreButton_OnClicked" />
                             </StackLayout>
                         </Frame>
                         
@@ -37,7 +37,7 @@
                        <Frame CornerRadius="15" Padding="0"  HasShadow="False" Grid.Column="2" Grid.Row="1" BackgroundColor="#ffb54c">
                            <StackLayout>
                               <Label x:Name="NadSpatneLabel" BackgroundColor="#ffb54c" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="18"/>
-                              <Label x:Name="SpatnePocetLabel" StyleClass="VysledekInput" HorizontalOptions="Center" VerticalOptions="Center" />
+                              <Button x:Name="SpatneButton" StyleClass="VysledekInput" HorizontalOptions="Center" VerticalOptions="Center" Clicked="SpatneButton_OnClicked" />
                            </StackLayout>
                        </Frame>
                    </Grid>

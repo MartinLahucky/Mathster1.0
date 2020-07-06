@@ -18,10 +18,9 @@ namespace Mathster
         {
             InitializeComponent();
             druhPrikladu = vyber;
-            ZvolitVelikostLabel.Text = AppResource.Jednociferne;
+            DalsiButton.Text = AppResource.Jednociferne;
             Info2Label.Text = AppResource.VelikostCisel;
-            DalsiButton.Text = AppResource.Dalsi;
-            
+
             switch (vyber)
             {
                 case 1:
@@ -49,22 +48,22 @@ namespace Mathster
             switch (velikostCisel)
             {
                 case 1:
-                    ZvolitVelikostLabel.Text = AppResource.Jednociferne;
+                    DalsiButton.Text = AppResource.Jednociferne;
                     break;
                 case 2:
-                    ZvolitVelikostLabel.Text = AppResource.Dvouciferne;
+                    DalsiButton.Text = AppResource.Dvouciferne;
                     break;
                 case 3:
-                    ZvolitVelikostLabel.Text = AppResource.Trojciferne;
+                    DalsiButton.Text = AppResource.Trojciferne;
                     break;
                 case 4:
-                    ZvolitVelikostLabel.Text = AppResource.Ctyrciferne;
+                    DalsiButton.Text = AppResource.Ctyrciferne;
                     break;
                 case 5:
-                    ZvolitVelikostLabel.Text = AppResource.Peticiferne;
+                    DalsiButton.Text = AppResource.Peticiferne;
                     break;
                 case 6:
-                    ZvolitVelikostLabel.Text = AppResource.Seticiferne;
+                    DalsiButton.Text = AppResource.Seticiferne;
                     break;
             }                
         }
@@ -74,22 +73,22 @@ namespace Mathster
             switch (velikostCisel)
             {
                 case 1:
-                    ZvolitVelikostLabel.Text = AppResource.Jednociferne;
+                    DalsiButton.Text = AppResource.Jednociferne;
                     break;
                 case 2:
-                    ZvolitVelikostLabel.Text = AppResource.Dvouciferne;
+                    DalsiButton.Text = AppResource.Dvouciferne;
                     break;
                 case 3:
-                    ZvolitVelikostLabel.Text = AppResource.Trojciferne;
+                    DalsiButton.Text = AppResource.Trojciferne;
                     break;
                 case 4:
-                    ZvolitVelikostLabel.Text = AppResource.Ctyrciferne;
+                    DalsiButton.Text = AppResource.Ctyrciferne;
                     break;
                 case 5:
-                    ZvolitVelikostLabel.Text = AppResource.Peticiferne;
+                    DalsiButton.Text = AppResource.Peticiferne;
                     break;
                 case 6:
-                    ZvolitVelikostLabel.Text = AppResource.Seticiferne;
+                    DalsiButton.Text = AppResource.Seticiferne;
                     break;
             }
         }

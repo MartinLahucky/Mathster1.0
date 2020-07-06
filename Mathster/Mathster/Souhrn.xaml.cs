@@ -84,8 +84,8 @@ namespace Mathster
                 }
             }
             VysledkyList.ItemsSource = priklady;
-            DobrePocetLabel.Text = pocitadloSpravne.ToString();
-            SpatnePocetLabel.Text = pocitadloSpatne.ToString();
+            DobreButton.Text = pocitadloSpravne.ToString();
+            SpatneButton.Text = pocitadloSpatne.ToString();
         }
 
         private async void MenuButton_OnClicked(object sender, EventArgs e)
@@ -141,6 +141,106 @@ namespace Mathster
             }
             Task.Delay(500);
             if (sender is ListView lv) lv.SelectedItem = null;
+        }
+
+        private async void DobreButton_OnClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                int vysledek = 0;
+                List<Priklad> prikladyDobre = new List<Priklad>();
+
+                foreach (var priklad in fronta)
+                {
+                    switch (priklad.DruhPrikladu)
+                    {
+                        case 1:
+                            vysledek = priklad.PrvniCislo + priklad.DruheCislo;
+                            if (priklad.UzivateluvVstup == vysledek)
+                            {
+                                prikladyDobre.Add(priklad);
+                            }
+                            break;
+                        case 2:
+                            vysledek = priklad.PrvniCislo - priklad.DruheCislo;
+                            if (priklad.UzivateluvVstup == vysledek)
+                            {
+                                prikladyDobre.Add(priklad);
+                            }
+                            break;
+                        case 3:
+                            vysledek = priklad.PrvniCislo * priklad.DruheCislo;
+                            if (priklad.UzivateluvVstup == vysledek)
+                            {
+                                prikladyDobre.Add(priklad);
+                            }
+                            break;
+                        case 4:
+                            vysledek = priklad.PrvniCislo / priklad.DruheCislo;
+                            if (priklad.UzivateluvVstup == vysledek)
+                            {
+                                prikladyDobre.Add(priklad);
+                            }
+                            break;
+                    }
+                }
+                await Navigation.PushAsync(new VysledekDobre(0, prikladyDobre));
+            }
+            catch
+            {
+                await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniVseSpatne, AppResource.Ok);
+            }
+
+        }
+
+        private async void SpatneButton_OnClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                int vysledek = 0;
+                List<Priklad> prikladySpatne = new List<Priklad>();
+
+                foreach (var priklad in fronta)
+                {
+                    switch (priklad.DruhPrikladu)
+                    {
+                        case 1:
+                            vysledek = priklad.PrvniCislo + priklad.DruheCislo;
+                            if (priklad.UzivateluvVstup != vysledek)
+                            {
+                                prikladySpatne.Add(priklad);
+                            }
+                            break;
+                        case 2:
+                            vysledek = priklad.PrvniCislo - priklad.DruheCislo;
+                            if (priklad.UzivateluvVstup != vysledek)
+                            {
+                                prikladySpatne.Add(priklad);
+                            }
+                            break;
+                        case 3:
+                            vysledek = priklad.PrvniCislo * priklad.DruheCislo;
+                            if (priklad.UzivateluvVstup != vysledek)
+                            {
+                                prikladySpatne.Add(priklad);
+                            }
+                            break;
+                        case 4:
+                            vysledek = priklad.PrvniCislo / priklad.DruheCislo;
+                            if (priklad.UzivateluvVstup != vysledek)
+                            {
+                                prikladySpatne.Add(priklad);
+                            }
+                            break;
+                    }
+                }
+                await Navigation.PushAsync(new VysledekSpatne(0, prikladySpatne));
+            }
+            catch
+            {
+                await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniVseDobre, AppResource.Ok);
+            }
+            
         }
     }
 

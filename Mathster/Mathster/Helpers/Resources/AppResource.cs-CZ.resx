@@ -198,6 +198,12 @@
   <data name="Upozorneni" xml:space="preserve">
     <value>Upozornění</value>
   </data>
+  <data name="UpozorneniVseDobre" xml:space="preserve">
+    <value>Všechny výsledky jsou správně. Velká gratulace!</value>
+  </data>
+  <data name="UpozorneniVseSpatne" xml:space="preserve">
+    <value>Bohužel, všechny výsledky jsou špatně. Měli by jste více procvičovat.</value>
+  </data>
   <data name="UpozorneniZadejteCislo" xml:space="preserve">
     <value>Prosím zadejte číslo</value>
   </data>

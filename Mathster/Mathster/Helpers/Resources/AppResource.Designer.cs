@@ -304,6 +304,24 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You didn&apos;t make a single mistake. Congratulations!.
+        /// </summary>
+        internal static string UpozorneniVseDobre {
+            get {
+                return ResourceManager.GetString("UpozorneniVseDobre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unfortunetly You didn&apos;t have a single exercise right. You should practice more..
+        /// </summary>
+        internal static string UpozorneniVseSpatne {
+            get {
+                return ResourceManager.GetString("UpozorneniVseSpatne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please input a number.
         /// </summary>
         internal static string UpozorneniZadejteCislo {
