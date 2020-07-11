@@ -13,10 +13,7 @@ namespace Mathster
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new Menu())
-            {
-                BarTextColor = Color.DarkGreen,
-            };
+            MainPage = new MasterMenu();
         }
 
         protected override void OnStart()
@@ -29,7 +26,7 @@ namespace Mathster
             // Handle when your app sleeps
         }
 
-        protected override void OnResume()
+        protected override void OnResume() 
         {
             // Handle when your app resumes
         }
