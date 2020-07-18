@@ -76,6 +76,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ikonaKruh.png" />
     <AndroidResource Include="Resources\drawable\ikonastart.png" />
+    <AndroidResource Include="Resources\drawable\matap.png" />
     <AndroidResource Include="Resources\drawable\podsebe.png" />
     <AndroidResource Include="Resources\drawable\sipkad.png" />
     <AndroidResource Include="Resources\drawable\sipkad2.png" />

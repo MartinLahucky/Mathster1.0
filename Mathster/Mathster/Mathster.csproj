@@ -98,9 +98,6 @@
         <AutoGen>True</AutoGen>
         <DependentUpon>AppResource.cs-CZ.resx</DependentUpon>
       </Compile>
-      <Compile Update="Vysledky.xaml.cs">
-        <DependentUpon>Vysledky.xaml</DependentUpon>
-      </Compile>
       <Compile Update="Souhrn.xaml.cs">
         <DependentUpon>Souhrn.xaml</DependentUpon>
       </Compile>

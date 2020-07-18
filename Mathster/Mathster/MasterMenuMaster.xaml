@@ -21,24 +21,62 @@
           </x:Array>
       </d:ListView.ItemsSource>
       <ListView.Header>
+        
+        
         <Grid BackgroundColor="#FFA927">
+          
+          <!-- šířka -->
           <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="40"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="40"/>
           </Grid.ColumnDefinitions>
+          <!-- výška -->
           <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="10"/>
+             <RowDefinition Height="140"/>
+             <RowDefinition Height="30"/>
+             <RowDefinition Height="15"/>
+             <RowDefinition Height="5"/>
+           
           </Grid.RowDefinitions>
+          
+          <Image
+            Grid.Column="1"
+            Grid.Row="0"
+            Source="matap.png" BackgroundColor="Transparent"  />
+          
+          
+          <!--level -->
           <Label
-              Grid.Column="1"
-              Grid.Row="2"
-              Text="Mathster"
-              Style="{DynamicResource SubtitleStyle}"/>
-        </Grid>
+            Grid.Column="1"
+            Grid.Row="1"
+            Text="level: " 
+            Style="{DynamicResource SubtitleStyle}"/>
+          
+          <Label
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="50,0,0,0"
+            Text="-9 " 
+            Style="{DynamicResource SubtitleStyle}"/>
+           
+          <!-- bar -->
+          <ProgressBar 
+            Grid.Column="1"
+            Grid.Row="2"
+            ProgressColor="#33A715"
+            Progress="0.33" />
+          
+          </Grid>
+          
+        
+        
+        
+          
+          
+        
+        
+        
       </ListView.Header>
       <ListView.ItemTemplate>
         <DataTemplate>
