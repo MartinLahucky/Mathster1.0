@@ -23,7 +23,7 @@
       <ListView.Header>
         
         
-        <Grid BackgroundColor="#FFA927">
+        <Grid BackgroundColor="#FFA927" Margin="0,0,0,10">
           
           <!-- šířka -->
           <Grid.ColumnDefinitions>
@@ -50,6 +50,7 @@
           <Label
             Grid.Column="1"
             Grid.Row="1"
+            FontSize="20"
             Text="level: " 
             Style="{DynamicResource SubtitleStyle}"/>
           
@@ -57,6 +58,7 @@
             Grid.Column="1"
             Grid.Row="1"
             Margin="50,0,0,0"
+            FontSize="20"
             Text="-9 " 
             Style="{DynamicResource SubtitleStyle}"/>
            
@@ -68,26 +70,26 @@
             Progress="0.33" />
           
           </Grid>
-          
-        
-        
-        
-          
-          
-        
-        
         
       </ListView.Header>
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
-              <Label VerticalOptions="FillAndExpand" 
-                    VerticalTextAlignment="Center" 
-                    Text="{Binding Title}" 
+            
+            <Frame BackgroundColor="#33A715" CornerRadius="20" Padding="0" Margin="-13,10,60,5" HasShadow="False" >
+              <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
+              <Label VerticalOptions="FillAndExpand"
+                     StyleClass="MiniMenu"
+                     Padding="2"
+                     TextColor="White"
+                     TextType="Html"
+                     VerticalTextAlignment="Center" 
+                    Text=" {Binding Title} "
                     d:Text="{Binding .}"
                     FontSize="24"/>
             </StackLayout>
+            </Frame>
+            
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>

@@ -72,3 +72,10 @@
     background-color: #33a716;
     color: white;
 }
+
+.MiniMenu
+{
+    font-size: 30;
+    -moz-outline-radius-bottomright: 30;
+    -moz-outline-radius-topright: 30;
+}
