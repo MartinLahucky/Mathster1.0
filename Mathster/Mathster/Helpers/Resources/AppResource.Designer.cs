@@ -160,6 +160,24 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        internal static string Nastaveni {
+            get {
+                return ResourceManager.GetString("Nastaveni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Application.
+        /// </summary>
+        internal static string OAplikaci {
+            get {
+                return ResourceManager.GetString("OAplikaci", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subtraction.
         /// </summary>
         internal static string Odecitani {
@@ -282,6 +300,15 @@ namespace Mathster.Helpers.Resources {
         internal static string Start {
             get {
                 return ResourceManager.GetString("Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statistics.
+        /// </summary>
+        internal static string Statistiky {
+            get {
+                return ResourceManager.GetString("Statistiky", resourceCulture);
             }
         }
         

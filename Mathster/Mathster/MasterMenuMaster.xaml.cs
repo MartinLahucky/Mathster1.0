@@ -34,11 +34,9 @@ namespace Mathster
                 MenuItems = new ObservableCollection<MasterMenuMasterMenuItem>(new[]
                 {
                     new MasterMenuMasterMenuItem { Id = 0, Title = AppResource.Menu, TargetType = typeof(Menu)},
-                    // new MasterMenuMasterMenuItem { Id = 1, Title = AppResource.Scitani },
-                    // new MasterMenuMasterMenuItem { Id = 2, Title = AppResource.Odecitani },
-                    // new MasterMenuMasterMenuItem { Id = 3, Title = AppResource.Nasobeni },
-                    // new MasterMenuMasterMenuItem { Id = 4, Title = AppResource.Deleni },
-                    // new MasterMenuMasterMenuItem { Id = 5, Title = AppResource.Nahodne },
+                    new MasterMenuMasterMenuItem { Id = 1, Title = AppResource.Statistiky, TargetType = typeof(Menu)},
+                    new MasterMenuMasterMenuItem { Id = 2, Title = AppResource.Nastaveni, TargetType = typeof(Menu)},
+                    new MasterMenuMasterMenuItem { Id = 3, Title = AppResource.OAplikaci, TargetType = typeof(Menu)},
                 });
             }
 

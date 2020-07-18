@@ -150,6 +150,12 @@
   <data name="Nasobeni" xml:space="preserve">
     <value>Násobení</value>
   </data>
+  <data name="Nastaveni" xml:space="preserve">
+    <value>Nastavení</value>
+  </data>
+  <data name="OAplikaci" xml:space="preserve">
+    <value>O Aplikaci</value>
+  </data>
   <data name="Odecitani" xml:space="preserve">
     <value>Odečítání</value>
   </data>
@@ -191,6 +197,9 @@
   </data>
   <data name="Start" xml:space="preserve">
     <value>Začít</value>
+  </data>
+  <data name="Statistiky" xml:space="preserve">
+    <value>Statistiky</value>
   </data>
   <data name="Trojciferne" xml:space="preserve">
     <value>Trojciferné</value>

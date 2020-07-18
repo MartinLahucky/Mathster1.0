@@ -150,6 +150,12 @@
   <data name="Nasobeni" xml:space="preserve">
     <value>Multiplication</value>
   </data>
+  <data name="Nastaveni" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="OAplikaci" xml:space="preserve">
+    <value>About Application</value>
+  </data>
   <data name="Odecitani" xml:space="preserve">
     <value>Subtraction</value>
   </data>
@@ -191,6 +197,9 @@
   </data>
   <data name="Start" xml:space="preserve">
     <value>Start</value>
+  </data>
+  <data name="Statistiky" xml:space="preserve">
+    <value>Statistics</value>
   </data>
   <data name="Trojciferne" xml:space="preserve">
     <value>Three digit</value>
