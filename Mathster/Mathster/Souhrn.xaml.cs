@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,6 +10,7 @@ namespace Mathster
     public partial class Souhrn : ContentPage
     {
         private List<Priklad> fronta;
+
         public Souhrn(List<Priklad> fronta)
         {
             InitializeComponent();
@@ -139,7 +137,6 @@ namespace Mathster
                     }
                     break;
             }
-            Task.Delay(500);
             if (sender is ListView lv) lv.SelectedItem = null;
         }
 
@@ -246,18 +243,20 @@ namespace Mathster
 
     public class Vysledek
     {
-        private string textovaPodobaPrikladu;
         private Color barvaCellu;
+        private string textovaPodobaPrikladu;
 
         public Vysledek(string textovaPodobaPrikladu)
         {
             this.textovaPodobaPrikladu = textovaPodobaPrikladu;
         }
+
         public string TextovaPodobaPrikladu
         {
             get => textovaPodobaPrikladu;
             set => textovaPodobaPrikladu = value;
         }
+
         public Color BarvaCellu
         {
             get => barvaCellu;
