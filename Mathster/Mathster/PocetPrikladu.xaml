@@ -23,12 +23,12 @@
                     
                     <Frame CornerRadius="15" Padding="0" Margin="0,20,0,20" HasShadow="False" >
                         <StackLayout>
-                            <Label x:Name="ZvolitPocetLabel" Text="1" StyleClass="PrikladLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HeightRequest="50" />
+                            <Button x:Name="GenerujButton" Text="1" StyleClass="PrikladLabel" HeightRequest="60" Clicked="GenerujButton_OnClicked" />
                         </StackLayout>
                     </Frame>
                     
                     <ImageButton x:Name="Ubrat2Button" Source="sipkad2.png"  CornerRadius="13" BackgroundColor="Transparent" Margin="0,20,0,30" HeightRequest="50" Clicked="Ubrat2Button_OnClicked" />
-                    <Button x:Name="GenerujButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="GenerujButton_OnClicked" />
+                    <Button x:Name="GenerujButtonMain" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="GenerujButton_OnClicked" />
                 </StackLayout>
             </ScrollView>
         </StackLayout>

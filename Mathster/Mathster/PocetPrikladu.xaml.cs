@@ -24,6 +24,7 @@ namespace Mathster
             InitializeComponent();
             this.druhPrikladu = druhPrikladu;
             
+            
             switch (druhPrikladu)
             {
                 case 1:
@@ -44,7 +45,7 @@ namespace Mathster
             }
 
             Info2Label.Text = AppResource.ZvolitPocetPrikladu;
-            GenerujButton.Text = AppResource.Start;
+            GenerujButtonMain.Text = AppResource.Start;
             
             switch (velikostCisel)
             {
@@ -103,12 +104,12 @@ namespace Mathster
         private void Pridat2Button_OnClicked(object sender, EventArgs e)
         {
             if (pocetPrikladu < 20) pocetPrikladu++;
-            ZvolitPocetLabel.Text = $"{pocetPrikladu}";
+            GenerujButton.Text = $"{pocetPrikladu}";
         }
         private void Ubrat2Button_OnClicked(object sender, EventArgs e)
         {
             if (pocetPrikladu > 1) pocetPrikladu--;
-            ZvolitPocetLabel.Text = $"{pocetPrikladu}";
+            GenerujButton.Text = $"{pocetPrikladu}";
         }
         private async void GenerujButton_OnClicked(object sender, EventArgs e)
         {

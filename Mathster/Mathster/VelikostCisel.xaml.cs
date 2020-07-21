@@ -16,6 +16,7 @@ namespace Mathster
             druhPrikladu = vyber;
             DalsiButton.Text = AppResource.Jednociferne;
             Info2Label.Text = AppResource.VelikostCisel;
+            DalsiButtonMain.Text = AppResource.Dalsi;
 
             switch (vyber)
             {
