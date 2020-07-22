@@ -64,6 +64,10 @@
         <SubType>Designer</SubType>
         <Generator></Generator>
       </EmbeddedResource>
+      <EmbeddedResource Update="ONas.xaml">
+        <SubType>Designer</SubType>
+        <Generator></Generator>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -100,6 +104,9 @@
       </Compile>
       <Compile Update="Souhrn.xaml.cs">
         <DependentUpon>Souhrn.xaml</DependentUpon>
+      </Compile>
+      <Compile Update="ONas.xaml.cs">
+        <DependentUpon>ONas.xaml</DependentUpon>
       </Compile>
     </ItemGroup>
 </Project>
