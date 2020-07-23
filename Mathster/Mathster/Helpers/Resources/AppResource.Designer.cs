@@ -178,6 +178,15 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This application was designed to practice so that even more complex numbers can be handled easily and you do not have to constantly reach for a calculator..
+        /// </summary>
+        internal static string OAplikaciText {
+            get {
+                return ResourceManager.GetString("OAplikaciText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subtraction.
         /// </summary>
         internal static string Odecitani {
@@ -201,6 +210,24 @@ namespace Mathster.Helpers.Resources {
         internal static string Ok {
             get {
                 return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About us.
+        /// </summary>
+        internal static string ONas {
+            get {
+                return ResourceManager.GetString("ONas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A group of crazy individuals looking at things from a different angle and trying to move technology forward..
+        /// </summary>
+        internal static string ONasText {
+            get {
+                return ResourceManager.GetString("ONasText", resourceCulture);
             }
         }
         
@@ -399,6 +426,24 @@ namespace Mathster.Helpers.Resources {
         internal static string Vysledky {
             get {
                 return ResourceManager.GetString("Vysledky", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interface and Graphics: Martin Borka.
+        /// </summary>
+        internal static string VyvojGrafika {
+            get {
+                return ResourceManager.GetString("VyvojGrafika", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Programming: Martin Lahučký.
+        /// </summary>
+        internal static string VyvojProgramovani {
+            get {
+                return ResourceManager.GetString("VyvojProgramovani", resourceCulture);
             }
         }
         

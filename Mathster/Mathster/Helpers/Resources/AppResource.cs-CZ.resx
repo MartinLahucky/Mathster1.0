@@ -156,6 +156,9 @@
   <data name="OAplikaci" xml:space="preserve">
     <value>O Aplikaci</value>
   </data>
+  <data name="OAplikaciText" xml:space="preserve">
+    <value>Účelem aplikace je procvičovat se, aby i složitější počty, člověk zvládal automaticky a nemusel se neustále sahat po kalkulačce.</value>
+  </data>
   <data name="Odecitani" xml:space="preserve">
     <value>Odečítání</value>
   </data>
@@ -164,6 +167,12 @@
   </data>
   <data name="Ok" xml:space="preserve">
     <value>Ok</value>
+  </data>
+  <data name="ONas" xml:space="preserve">
+    <value>O Nás</value>
+  </data>
+  <data name="ONasText" xml:space="preserve">
+    <value>Skupina bláznivých jedinců, co se dívají na věci z jiného úhlu a snaží se posouvat technologie dál.</value>
   </data>
   <data name="Peticiferne" xml:space="preserve">
     <value>Pěticiferné</value>
@@ -230,6 +239,12 @@
   </data>
   <data name="Vysledky" xml:space="preserve">
     <value>Výsledky</value>
+  </data>
+  <data name="VyvojGrafika" xml:space="preserve">
+    <value>Grafika: Martin Borka</value>
+  </data>
+  <data name="VyvojProgramovani" xml:space="preserve">
+    <value>Programování: Martin Lahučký</value>
   </data>
   <data name="ZiskaneBody" xml:space="preserve">
     <value>Získané body</value>

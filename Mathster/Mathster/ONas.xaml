@@ -8,27 +8,36 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout x:Name="MainLayout">
-                <ScrollView x:Name="View">
-                    <StackLayout x:Name="SecondLayer"  VerticalOptions="Center" BackgroundColor="White" >
-                        <StackLayout Margin="10">
-                            <Frame>
-                                <Frame CornerRadius="15" BackgroundColor="#ffce85" Margin="0,0,0,10">
-                                    <Label x:Name="ONasLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+        <StackLayout x:Name="MainLayout">
+            <ScrollView x:Name="View">
+                <StackLayout x:Name="SecondLayer"  VerticalOptions="Center" BackgroundColor="White" >
+                    <StackLayout >
+                        <Frame Margin="10" HasShadow="False">
+                            <StackLayout>
+                                <Frame CornerRadius="15" BackgroundColor="#ffce85" Margin="0,0,0,-27">
+                                    <Label x:Name="ONasStaticLabel" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                                 </Frame>
-                            </Frame>
-                            
-                            <Frame>
-                                <Frame CornerRadius="15" BackgroundColor="#ffce85" Margin="0,0,0,10">
+                                
+                                <Frame CornerRadius="15" BackgroundColor="#ffce85" >
+                                    <Label x:Name="ONasLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                </Frame>                                    
+                            </StackLayout>
+                        </Frame>
+                        
+                        <Frame Margin="10" HasShadow="False">
+                            <StackLayout>
+                                <Frame CornerRadius="15" BackgroundColor="#ffce85" Margin="0,0,0,-27">
+                                    <Label x:Name="OAplikaciStaticLabel" TextColor="Black" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                </Frame>
+                                
+                                <Frame CornerRadius="15" BackgroundColor="#ffce85" >
                                     <Label x:Name="OAplikaciLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                                 </Frame>
-                            </Frame>
-                        </StackLayout>
-                        
+                            </StackLayout>
+                        </Frame>
                     </StackLayout>
-                </ScrollView>
-            </StackLayout>
+                </StackLayout>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
