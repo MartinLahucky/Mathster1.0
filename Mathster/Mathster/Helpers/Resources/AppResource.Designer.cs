@@ -223,7 +223,7 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A group of crazy individuals looking at things from a different angle and trying to move technology forward..
+        ///   Looks up a localized string similar to We are a group of crazy individuals looking at things from a different angle and trying to move technology forward..
         /// </summary>
         internal static string ONasText {
             get {
