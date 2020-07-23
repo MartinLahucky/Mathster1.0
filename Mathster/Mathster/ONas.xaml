@@ -11,18 +11,21 @@
         <StackLayout>
             <StackLayout x:Name="MainLayout">
                 <ScrollView x:Name="View">
-                    <StackLayout x:Name="SecondLayer"  VerticalOptions="Center" Margin="0" BackgroundColor="White" >
-                        <Frame >
-                            <StackLayout>
-                                <Frame CornerRadius="15" BackgroundColor="#ffce85" Margin="10,0,10,0">
-                                    <Label x:Name="ONasLabel" Text="(1) Základní práva a svobody se zaručují všem bez rozdílu pohlaví, rasy, barvy pleti, jazyka, víry a náboženství, politického či jiného smýšlení, národního nebo sociálního původu, příslušnosti k národnostní nebo etnické menšině, majetku, rodu nebo jiného postavení." VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                    <StackLayout x:Name="SecondLayer"  VerticalOptions="Center" BackgroundColor="White" >
+                        <StackLayout Margin="10">
+                            <Frame>
+                                <Frame CornerRadius="15" BackgroundColor="#ffce85" Margin="0,0,0,10">
+                                    <Label x:Name="ONasLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                                 </Frame>
-                                                        
-                                <Frame CornerRadius="15" BackgroundColor="#ffce85" Margin="10,0,10,0">
-                                    <Label x:Name="OAplikaciLabel" Text="(2) Každý má právo svobodně rozhodovat o své národnosti. Zakazuje se jakékoli ovlivňování tohoto rozhodování a všechny způsoby nátlaku směřující k odnárodňování. (3) Nikomu nesmí být způsobena újma na právech pro uplatňování jeho základních práv a svobod." VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </Frame>
+                            
+                            <Frame>
+                                <Frame CornerRadius="15" BackgroundColor="#ffce85" Margin="0,0,0,10">
+                                    <Label x:Name="OAplikaciLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                                 </Frame>
-                            </StackLayout>
-                        </Frame>
+                            </Frame>
+                        </StackLayout>
+                        
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
