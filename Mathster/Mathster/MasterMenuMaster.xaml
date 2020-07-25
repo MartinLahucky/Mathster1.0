@@ -76,7 +76,7 @@
         <DataTemplate>
           <ViewCell>
             
-            <Frame BackgroundColor="#33A715" CornerRadius="20" Padding="0" Margin="-15,10,60,5" HasShadow="False" >
+            <Frame BackgroundColor="#33A715" CornerRadius="20" Padding="15,0,0,0" Margin="-18,10,60,5" HasShadow="False" >
               <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
               <Label VerticalOptions="FillAndExpand"
                      StyleClass="MiniMenu"
