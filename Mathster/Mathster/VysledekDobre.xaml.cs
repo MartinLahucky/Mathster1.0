@@ -11,7 +11,8 @@ namespace Mathster
     {
         private byte ID;
         private List<Priklad> fronta;
-        public VysledekDobre(byte id, List<Priklad> fronta)
+        private List<Priklad> frontaVse;
+        public VysledekDobre(byte id, List<Priklad> fronta, List<Priklad> frontaVse)
         {
             InitializeComponent();
 
@@ -42,8 +43,9 @@ namespace Mathster
                     ReseniLabel.Text = $"{fronta[id].PrvniCislo} ÷ {fronta[id].DruheCislo} = {(fronta[id].PrvniCislo / fronta[id].DruheCislo)}";
                     break;
             }
-
+            
             this.fronta = fronta;
+            this.frontaVse = frontaVse;
             ID = id;
             if (id == (fronta.Count - 1))
             {
@@ -63,41 +65,41 @@ namespace Mathster
                 case 1:
                     if (fronta[ID].PrvniCislo + fronta[ID].DruheCislo == fronta[ID].UzivateluvVstup)
                     {
-                        await Navigation.PushAsync(new VysledekDobre(ID, fronta));
+                        await Navigation.PushAsync(new VysledekDobre(ID, fronta, frontaVse));
                     }
                     else
                     {
-                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
+                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta, frontaVse));
                     }
                     break;
                 case 2:
                     if (fronta[ID].PrvniCislo - fronta[ID].DruheCislo == fronta[ID].UzivateluvVstup)
                     {
-                        await Navigation.PushAsync(new VysledekDobre(ID, fronta));
+                        await Navigation.PushAsync(new VysledekDobre(ID, fronta, frontaVse));
                     }
                     else
                     {
-                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
+                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta, frontaVse));
                     }
                     break;
                 case 3:
                     if (fronta[ID].PrvniCislo * fronta[ID].DruheCislo == fronta[ID].UzivateluvVstup)
                     {
-                        await Navigation.PushAsync(new VysledekDobre(ID, fronta));
+                        await Navigation.PushAsync(new VysledekDobre(ID, fronta, frontaVse));
                     }
                     else
                     {
-                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
+                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta, frontaVse));
                     }
                     break;
                 case 4:
                     if (fronta[ID].PrvniCislo / fronta[ID].DruheCislo == fronta[ID].UzivateluvVstup)
                     {
-                        await Navigation.PushAsync(new VysledekDobre(ID, fronta));
+                        await Navigation.PushAsync(new VysledekDobre(ID, fronta, frontaVse));
                     }
                     else
                     {
-                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
+                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta, frontaVse));
                     }
                     break;
             }
@@ -106,7 +108,7 @@ namespace Mathster
 
         private async void PrehledButton_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Souhrn(fronta));
+            await Navigation.PushAsync(new Souhrn(frontaVse));
         }
 
         private async void PredchoziPrikladButton_OnClicked(object sender, EventArgs e)
@@ -117,41 +119,41 @@ namespace Mathster
                 case 1:
                     if (fronta[ID].PrvniCislo + fronta[ID].DruheCislo == fronta[ID].UzivateluvVstup)
                     {
-                        await Navigation.PushAsync(new VysledekDobre(ID, fronta));
+                        await Navigation.PushAsync(new VysledekDobre(ID, fronta, frontaVse));
                     }
                     else
                     {
-                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
+                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta, frontaVse));
                     }
                     break;
                 case 2:
                     if (fronta[ID].PrvniCislo - fronta[ID].DruheCislo == fronta[ID].UzivateluvVstup)
                     {
-                        await Navigation.PushAsync(new VysledekDobre(ID, fronta));
+                        await Navigation.PushAsync(new VysledekDobre(ID, fronta, frontaVse));
                     }
                     else
                     {
-                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
+                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta, frontaVse));
                     }
                     break;
                 case 3:
                     if (fronta[ID].PrvniCislo * fronta[ID].DruheCislo == fronta[ID].UzivateluvVstup)
                     {
-                        await Navigation.PushAsync(new VysledekDobre(ID, fronta));
+                        await Navigation.PushAsync(new VysledekDobre(ID, fronta, frontaVse));
                     }
                     else
                     {
-                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
+                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta, frontaVse));
                     }
                     break;
                 case 4:
                     if (fronta[ID].PrvniCislo / fronta[ID].DruheCislo == fronta[ID].UzivateluvVstup)
                     {
-                        await Navigation.PushAsync(new VysledekDobre(ID, fronta));
+                        await Navigation.PushAsync(new VysledekDobre(ID, fronta, frontaVse));
                     }
                     else
                     {
-                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta));
+                        await Navigation.PushAsync(new VysledekSpatne(ID, fronta, frontaVse));
                     }
                     break;
             }

@@ -99,41 +99,41 @@ namespace Mathster
                 case 1:
                     if (fronta[selectedItem].PrvniCislo + fronta[selectedItem].DruheCislo == fronta[selectedItem].UzivateluvVstup)
                     {
-                        await Navigation.PushAsync(new VysledekDobre(selectedItem, fronta));
+                        await Navigation.PushAsync(new VysledekDobre(selectedItem, fronta, fronta));
                     }
                     else
                     {
-                        await Navigation.PushAsync(new VysledekSpatne(selectedItem, fronta));
+                        await Navigation.PushAsync(new VysledekSpatne(selectedItem, fronta, fronta));
                     }
                     break;
                 case 2:
                     if (fronta[selectedItem].PrvniCislo - fronta[selectedItem].DruheCislo == fronta[selectedItem].UzivateluvVstup)
                     {
-                        await Navigation.PushAsync(new VysledekDobre(selectedItem, fronta));
+                        await Navigation.PushAsync(new VysledekDobre(selectedItem, fronta, fronta));
                     }
                     else
                     {
-                        await Navigation.PushAsync(new VysledekSpatne(selectedItem, fronta));
+                        await Navigation.PushAsync(new VysledekSpatne(selectedItem, fronta, fronta));
                     }
                     break;
                 case 3:
                     if (fronta[selectedItem].PrvniCislo * fronta[selectedItem].DruheCislo == fronta[selectedItem].UzivateluvVstup)
                     {
-                        await Navigation.PushAsync(new VysledekDobre(selectedItem, fronta));
+                        await Navigation.PushAsync(new VysledekDobre(selectedItem, fronta, fronta));
                     }
                     else
                     {
-                        await Navigation.PushAsync(new VysledekSpatne(selectedItem, fronta));
+                        await Navigation.PushAsync(new VysledekSpatne(selectedItem, fronta, fronta));
                     }
                     break;
                 case 4:
                     if (fronta[selectedItem].PrvniCislo / fronta[selectedItem].DruheCislo == fronta[selectedItem].UzivateluvVstup)
                     {
-                        await Navigation.PushAsync(new VysledekDobre(selectedItem, fronta));
+                        await Navigation.PushAsync(new VysledekDobre(selectedItem, fronta, fronta));
                     }
                     else
                     {
-                        await Navigation.PushAsync(new VysledekSpatne(selectedItem, fronta));
+                        await Navigation.PushAsync(new VysledekSpatne(selectedItem, fronta, fronta));
                     }
                     break;
             }
@@ -182,7 +182,7 @@ namespace Mathster
                             break;
                     }
                 }
-                await Navigation.PushAsync(new VysledekDobre(0, prikladyDobre));
+                await Navigation.PushAsync(new VysledekDobre(0, prikladyDobre, fronta));
             }
             catch
             {
@@ -232,7 +232,7 @@ namespace Mathster
                             break;
                     }
                 }
-                await Navigation.PushAsync(new VysledekSpatne(0, prikladySpatne));
+                await Navigation.PushAsync(new VysledekSpatne(0, prikladySpatne, fronta));
             }
             catch
             {
