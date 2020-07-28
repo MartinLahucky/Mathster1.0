@@ -148,6 +148,7 @@ namespace Mathster
                     podsebe = true;
                     break;
             }
+            VysledekInput.Focus();
         }
     }
 }
