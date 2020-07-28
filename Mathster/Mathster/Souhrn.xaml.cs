@@ -137,7 +137,6 @@ namespace Mathster
                     }
                     break;
             }
-            Task.Delay(500);
             if (sender is ListView lv) lv.SelectedItem = null;
         }
 
