@@ -13,7 +13,7 @@ namespace Mathster
         private Priklad priklad;
         private byte ID;
         private List<Priklad> fronta;
-        private bool podsebe = true;
+        private bool podsebe = false;
         public Priklady(byte id, List<Priklad> fronta)
         {
             InitializeComponent();
@@ -103,7 +103,7 @@ namespace Mathster
         {
             switch (podsebe)
             {
-                case true:
+                case false:
                     switch (priklad.DruhPrikladu)
                     {
                         case 1:
@@ -123,9 +123,10 @@ namespace Mathster
                             PrikladLabel.Text = $"{priklad.PrvniCislo}\n—\n{priklad.DruheCislo}";
                             break;
                     }
-                    podsebe = false;
+                    VysledekInput.FlowDirection = FlowDirection.RightToLeft;
+                    podsebe = true;
                     break;
-                case false:
+                case true:
                     switch (priklad.DruhPrikladu)
                     {
                         case 1:
@@ -145,10 +146,19 @@ namespace Mathster
                             PrikladLabel.Text = $"{priklad.PrvniCislo} ÷ {priklad.DruheCislo} = ";
                             break;
                     }
-                    podsebe = true;
+                    VysledekInput.FlowDirection = FlowDirection.LeftToRight;
+                    podsebe = false;
                     break;
             }
             VysledekInput.Focus();
+        }
+
+        private void VysledekInput_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (podsebe)
+            {
+                Console.WriteLine();
+            }
         }
     }
 }

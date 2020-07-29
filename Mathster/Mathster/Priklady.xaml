@@ -14,18 +14,18 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout x:Name="MainLayout">
+        <StackLayout x:Name="MainLayout" >
             <ScrollView x:Name="View">
                 <StackLayout x:Name="SecondLayer"  VerticalOptions="Center"  Margin="60,30,60,0" >
                     <Frame CornerRadius="15" Padding="0" Margin="0,60,0,30" HasShadow="False" >
-                        <StackLayout>
-                            <Label x:Name="PrikladLabel"  VerticalTextAlignment="Center" StyleClass="PrikladLabel"  />
+                        <StackLayout x:Name="PrikladLayout">
+                            <Label x:Name="PrikladLabel" VerticalTextAlignment="Center" StyleClass="PrikladLabel" />
                         </StackLayout>
                     </Frame>
                         
                     <Frame CornerRadius="15" Padding="0" Margin="0,0,0,60" HasShadow="False" >
-                        <StackLayout>
-                            <Entry x:Name="VysledekInput" Keyboard="Numeric"  StyleClass="VysledekInput" />
+                        <StackLayout x:Name="VysledekInputLayout">
+                            <Entry x:Name="VysledekInput" Keyboard="Numeric" StyleClass="VysledekInput" TextChanged="VysledekInput_OnTextChanged" />
                         </StackLayout>
                     </Frame>
                     
