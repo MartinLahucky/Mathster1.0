@@ -16,7 +16,6 @@ namespace Mathster
         private byte maxDeleniANasobeni;
         private byte druhPrikladu;
         private int pocetPrikladu = 1;
-        private byte velikostCisel;
         private List<Priklad> fronta;
         
         public PocetPrikladu(byte velikostCisel, byte druhPrikladu, byte VelikostDeleniANasobeni)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -155,10 +156,53 @@ namespace Mathster
 
         private void VysledekInput_OnTextChanged(object sender, TextChangedEventArgs e)
         {
+            //TODO Entry způsobuje zacyklení, ptořeba udělat Label, který bude pod entry a bude se měnit podle režimu
             if (podsebe)
             {
-                Console.WriteLine();
+                try
+                {
+                    List<string> cislo = new List<string>();
+                    List<string> noveCislo = new List<string>();
+            
+                    string cisloText = VysledekInput.Text;
+            
+            
+                    for (int i = 0; i < cisloText.Length; i++)
+                    {
+                        cislo.Add(cisloText[i].ToString());
+                    }
+            
+                    noveCislo.Add(cislo[cislo.Count - 1]);
+
+                    if (cislo.Count != 1)
+                    {
+                        for (int i = cislo.Count - 2; i >= 0; i--)
+                        {
+                            noveCislo.Add((cislo[i]));
+                        }
+                    }
+
+                    VysledekInput.Text = String.Empty;
+                    
+                    for (int i = 0; i < noveCislo.Count; i++)
+                    {
+                        VysledekInput.Text += noveCislo[i];
+                    }
+                    
+                    podsebe = false;
+                }
+                catch
+                {
+                    VysledekInput.Text = String.Empty;
+
+                    podsebe = false;
+                }
+                podsebe = true;
             }
+            else
+            {
+                podsebe = false;
+            } 
         }
     }
 }
