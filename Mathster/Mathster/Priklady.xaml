@@ -25,7 +25,8 @@
                         
                     <Frame CornerRadius="15" Padding="0" Margin="0,0,0,60" HasShadow="False" >
                         <StackLayout x:Name="VysledekInputLayout">
-                            <Entry x:Name="VysledekInput" Keyboard="Numeric" StyleClass="VysledekInput" TextChanged="VysledekInput_OnTextChanged" />
+                            <Label HeightRequest="60" Padding="0" Margin="0,0,0,-66" StyleClass="VysledekInput"/>
+                            <Entry x:Name="VysledekInput" Keyboard="Numeric" HeightRequest="60" BackgroundColor="Transparent" StyleClass=".TextBezPozadi" TextChanged="VysledekInput_OnTextChanged"/>
                         </StackLayout>
                     </Frame>
                     
