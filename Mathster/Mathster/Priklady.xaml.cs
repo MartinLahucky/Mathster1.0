@@ -61,7 +61,7 @@ namespace Mathster
         {
             try
             {
-                fronta[ID].UzivateluvVstup = int.Parse(VysledekInput.Text);
+                fronta[ID].UzivateluvVstup = int.Parse(VysledekPropisInput.Text);
                 await Navigation.PushAsync(new Souhrn(fronta));
                 var existingPages = Navigation.NavigationStack.ToList();
                 foreach(var page in existingPages)
@@ -79,7 +79,7 @@ namespace Mathster
         {
             try
             {
-                fronta[ID].UzivateluvVstup = int.Parse(VysledekInput.Text);
+                fronta[ID].UzivateluvVstup = int.Parse(VysledekPropisInput.Text);
                 ID++;
                 await Navigation.PushAsync(new Priklady(ID, fronta));
                 var existingPages = Navigation.NavigationStack.ToList();
@@ -156,53 +156,47 @@ namespace Mathster
 
         private void VysledekInput_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            //TODO Entry způsobuje zacyklení, ptořeba udělat Label, který bude pod entry a bude se měnit podle režimu
-            if (podsebe)
+            List<string> cislo = new List<string>();
+
+            string cisloText = VysledekInput.Text;
+            
+            for (int i = 0; i < cisloText.Length; i++)
             {
-                try
+                cislo.Add(cisloText[i].ToString());
+            }
+            
+            try
+            {
+                if (podsebe)
                 {
-                    List<string> cislo = new List<string>();
-                    List<string> noveCislo = new List<string>();
-            
-                    string cisloText = VysledekInput.Text;
-            
-            
-                    for (int i = 0; i < cisloText.Length; i++)
-                    {
-                        cislo.Add(cisloText[i].ToString());
-                    }
-            
-                    noveCislo.Add(cislo[cislo.Count - 1]);
+                    VysledekPropisInput.Text = cislo[cislo.Count - 1];
 
                     if (cislo.Count != 1)
                     {
                         for (int i = cislo.Count - 2; i >= 0; i--)
                         {
-                            noveCislo.Add((cislo[i]));
+                            VysledekPropisInput.Text += cislo[i];
                         }
                     }
-
-                    VysledekInput.Text = String.Empty;
-                    
-                    for (int i = 0; i < noveCislo.Count; i++)
-                    {
-                        VysledekInput.Text += noveCislo[i];
-                    }
-                    
-                    podsebe = false;
                 }
-                catch
+                else
                 {
-                    VysledekInput.Text = String.Empty;
+                    VysledekPropisInput.Text = cislo[0];
 
-                    podsebe = false;
+                    if (cislo.Count != 1)
+                    {
+                        for (int i = 1; i < cisloText.Length; i++)
+                        {
+                            VysledekPropisInput.Text += cislo[i];
+                        }
+                    }
                 }
-                podsebe = true;
             }
-            else
+            catch
             {
-                podsebe = false;
-            } 
+                VysledekPropisInput.Text = String.Empty;
+                VysledekInput.Text = String.Empty;
+            }
         }
     }
 }
