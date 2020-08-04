@@ -22,6 +22,7 @@
                             <StackLayout>
                                 <Label x:Name="OAplikaciStaticLabel" TextColor="Black" Margin="0,0,0,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                                 <Label x:Name="OAplikaciLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                                <Label x:Name="OAplikaciVerze" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                             </StackLayout>
                         </Frame>
                     </StackLayout>

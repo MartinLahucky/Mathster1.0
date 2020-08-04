@@ -187,6 +187,15 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Application version: .
+        /// </summary>
+        internal static string OAplikaciVerze {
+            get {
+                return ResourceManager.GetString("OAplikaciVerze", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subtraction.
         /// </summary>
         internal static string Odecitani {

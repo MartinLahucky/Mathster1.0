@@ -20,6 +20,7 @@ namespace Mathster
             ONasLabel.Text = $"{AppResource.ONasText}\n \n{AppResource.VyvojGrafika}\n{AppResource.VyvojProgramovani}";
             OAplikaciStaticLabel.Text = AppResource.OAplikaci;
             OAplikaciLabel.Text = AppResource.OAplikaciText;
+            OAplikaciVerze.Text = AppResource.OAplikaciVerze + "1.0"; 
         }
     }
 }

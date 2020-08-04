@@ -159,6 +159,9 @@
   <data name="OAplikaciText" xml:space="preserve">
     <value>Účelem aplikace je procvičovat se, aby i složitější počty, člověk zvládal automaticky a nemusel stále sahat po kalkulačce.</value>
   </data>
+  <data name="OAplikaciVerze" xml:space="preserve">
+    <value>Verze aplikace: </value>
+  </data>
   <data name="Odecitani" xml:space="preserve">
     <value>Odečítání</value>
   </data>
