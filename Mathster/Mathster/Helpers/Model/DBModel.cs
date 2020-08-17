@@ -6,6 +6,8 @@ namespace Mathster.Helpers.Model
     {
         [PrimaryKey, AutoIncrement]
         private int ID { get; set; }
+
+        private byte IDmotivu { get; set; }
         
         [MaxLength(30), NotNull]
         private string Jmeno { get; set; }
@@ -25,5 +27,7 @@ namespace Mathster.Helpers.Model
         private int NejlepsiSerieBezChyby { get; set; }
 
         private string DruhNejcastejiPocitanychPrikladu { get; set; }
+        
+        
     }
 }
