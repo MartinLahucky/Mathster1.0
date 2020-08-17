@@ -7,7 +7,7 @@ namespace Mathster.Helpers.Model
         [PrimaryKey, AutoIncrement]
         private int ID { get; set; }
 
-        private byte IDmotivu { get; set; }
+        private byte IDMotivu { get; set; }
         
         [MaxLength(30), NotNull]
         private string Jmeno { get; set; }
