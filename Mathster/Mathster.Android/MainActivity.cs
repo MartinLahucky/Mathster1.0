@@ -1,8 +1,10 @@
-﻿using Android.App;
+﻿using System.IO;
+using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using Environment = System.Environment;
 
 namespace Mathster.Android
 {
@@ -18,7 +20,14 @@ namespace Mathster.Android
 
             base.OnCreate(savedInstanceState);
             Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+
+            // Database Declaration
+            string dbName = "mathster_db.sqlite";
+            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            string fullPath = Path.Combine(folderPath, dbName);
+            
+            
+            LoadApplication(new App(fullPath));
         }
     }
 }
