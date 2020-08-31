@@ -30,7 +30,7 @@ namespace Mathster
                 {
                     new MasterMenuMasterMenuItem { Id = 0, Title = AppResource.Menu, TargetType = typeof(Menu)},
                     new MasterMenuMasterMenuItem { Id = 1, Title = AppResource.Statistiky, TargetType = typeof(Statistiky)},
-                    // new MasterMenuMasterMenuItem { Id = 2, Title = AppResource.Nastaveni, TargetType = typeof(Menu)},
+                    new MasterMenuMasterMenuItem { Id = 2, Title = AppResource.Nastaveni, TargetType = typeof(Nastaveni)},
                     new MasterMenuMasterMenuItem { Id = 3, Title = AppResource.OAplikaci, TargetType = typeof(ONas)},
                 });
             }

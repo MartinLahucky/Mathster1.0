@@ -34,8 +34,6 @@ namespace Mathster
             InitializeComponent();
             MainPage = new MasterMenu();
             DatabaseLocation = databaseLocation;
-            
-            // database = new DatabaseController();
         }
         protected override void OnStart()
         {

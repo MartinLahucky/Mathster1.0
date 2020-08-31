@@ -21,6 +21,5 @@ namespace Mathster.Helpers.Model
         public int CelkemPrikladuDobre { get; set; }
         public float Nachozeno { get; set; }
         public string DruhNejcastejiPocitanychPrikladu { get; set; }
-        public bool PrvniSpusteni { get; set; }
     }
 }

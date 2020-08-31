@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
-using SQLite;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,14 +13,8 @@ namespace Mathster
         public Menu()
         {
             InitializeComponent();
-            Device.StartTimer(new TimeSpan(0, 0, 0, 0, 50), () =>
-            {
-                Device.BeginInvokeOnMainThread (() =>
-                {
-                    Title = AppResource.Menu;
-                });
-                return false;
-            });
+            
+            Title = AppResource.Menu;
             ScitaniButton.Text = AppResource.Scitani;
             OdcitaniButton.Text = AppResource.Odecitani;
             NasobeniButton.Text = AppResource.Nasobeni;

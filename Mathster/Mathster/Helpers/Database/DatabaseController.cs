@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using SQLite;
-using Xamarin.Forms;
 
 namespace Mathster.Helpers.Model
 {
@@ -34,7 +33,6 @@ namespace Mathster.Helpers.Model
                         CelkemPrikladuDobre = 0,
                         Nachozeno = 0,
                         DruhNejcastejiPocitanychPrikladu = String.Empty,
-                        PrvniSpusteni = true
                     };
                     await database.InsertAsync(tabulka);
                 }

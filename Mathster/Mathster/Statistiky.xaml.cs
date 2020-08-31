@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
 using Xamarin.Forms;
@@ -84,8 +83,6 @@ namespace Mathster
                 Label11.Text = $"{AppResource.DruhNejcastejiPocitanychPrikladu} {tabulkaReset.DruhNejcastejiPocitanychPrikladu}";
                 await App.Database.UpdateTable(tabulkaReset);
             }
-            
-
         }
     }
 }
