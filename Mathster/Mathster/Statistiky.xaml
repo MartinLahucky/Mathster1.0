@@ -26,7 +26,7 @@
                     </StackLayout>
                 </Frame>
                 <StackLayout Margin="30,20,30,0">
-                    <Button x:Name="ResetStatsButton" StyleClass="ZelenaTlacitka" CornerRadius="13" TextColor="Black" FontSize="20" Margin="0,0,0,20" Clicked="ResetStatsButton_OnClicked"/>
+                    <Button x:Name="ResetStatsButton" StyleClass="ZelenaTlacitka" CornerRadius="13" FontSize="20" Margin="0,0,0,20" Clicked="ResetStatsButton_OnClicked"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>
