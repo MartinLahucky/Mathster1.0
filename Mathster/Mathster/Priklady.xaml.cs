@@ -70,6 +70,7 @@ namespace Mathster
             }
             catch (Exception exception)
             {
+                await DisplayAlert(AppResource.Upozorneni, exception.Message, AppResource.Ok);
                 await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniZadejteCislo, AppResource.Ok);
             }
         }
@@ -89,6 +90,7 @@ namespace Mathster
             }
             catch (Exception exception)
             {
+                await DisplayAlert(AppResource.Upozorneni, exception.Message, AppResource.Ok);
                 await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniZadejteCislo, AppResource.Ok);
             }
         }
@@ -163,11 +165,20 @@ namespace Mathster
             {
                 cislo.Add(cisloText[i].ToString());
             }
-            
+
             try
             {
                 if (podsebe)
                 {
+                    if (VysledekInput.Text == "")
+                    {
+                        VysledekPropisInput.Text = String.Empty;
+                    }
+                    else if (cislo[0] == "-")
+                    {
+                        cislo.Remove("-");
+                        cislo.Add("-");
+                    }
                     VysledekPropisInput.Text = cislo[cislo.Count - 1];
 
                     if (cislo.Count != 1)

@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Mathster.Helpers.Model;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -7,7 +8,21 @@ namespace Mathster
 {
     public partial class App : Application
     {
+        private static DatabaseController database;
         public static string DatabaseLocation = string.Empty;
+
+        public static DatabaseController Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new DatabaseController();
+                }
+                return database;
+            }
+        }
+
         public App()
         {
             InitializeComponent();
@@ -18,8 +33,9 @@ namespace Mathster
         {
             InitializeComponent();
             MainPage = new MasterMenu();
-
             DatabaseLocation = databaseLocation;
+            
+            // database = new DatabaseController();
         }
         protected override void OnStart()
         {

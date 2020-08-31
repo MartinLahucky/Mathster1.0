@@ -1,5 +1,7 @@
 ﻿using System;
+using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
+using SQLite;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

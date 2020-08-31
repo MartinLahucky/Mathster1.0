@@ -117,6 +117,39 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Ano" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="CelkemDeleni" xml:space="preserve">
+    <value>Total number of calculated division exercises:</value>
+  </data>
+  <data name="CelkemDeleniSpravne" xml:space="preserve">
+    <value>Total number of correctly calculated division exercises:</value>
+  </data>
+  <data name="CelkemNasobeni" xml:space="preserve">
+    <value>Total number of calculated multiplication exercises:</value>
+  </data>
+  <data name="CelkemNasobeniSpravne" xml:space="preserve">
+    <value>Total number of correctly calculated multiplication exercises:</value>
+  </data>
+  <data name="CelkemOdcitani" xml:space="preserve">
+    <value>Total number of calculated subtraction exercises:</value>
+  </data>
+  <data name="CelkemOdcitaniSpravne" xml:space="preserve">
+    <value>Total number of correctly calculated subtraction exercises:</value>
+  </data>
+  <data name="CelkemPrikladu" xml:space="preserve">
+    <value>Total number of calculated exercises:</value>
+  </data>
+  <data name="CelkemPrikladuDobre" xml:space="preserve">
+    <value>Total number of correctly calculated exercises:</value>
+  </data>
+  <data name="CelkemScitani" xml:space="preserve">
+    <value>Total number of calculated addition exercises:</value>
+  </data>
+  <data name="CelkemScitaniSpravne" xml:space="preserve">
+    <value>Total number of correctly calculated addition exercises:</value>
+  </data>
   <data name="Ctyrciferne" xml:space="preserve">
     <value>Four digit</value>
   </data>
@@ -135,14 +168,23 @@
   <data name="DoPeti" xml:space="preserve">
     <value>Up to 5</value>
   </data>
+  <data name="DruhNejcastejiPocitanychPrikladu" xml:space="preserve">
+    <value>The most frequently calculated type of exercise:</value>
+  </data>
   <data name="Dvouciferne" xml:space="preserve">
     <value>Double digit</value>
   </data>
   <data name="Jednociferne" xml:space="preserve">
     <value>Single digit</value>
   </data>
+  <data name="Jmeno" xml:space="preserve">
+    <value>Name:</value>
+  </data>
   <data name="Menu" xml:space="preserve">
     <value>Menu</value>
+  </data>
+  <data name="Nachozeno" xml:space="preserve">
+    <value>Total distance traveled:</value>
   </data>
   <data name="Nahodne" xml:space="preserve">
     <value>Random</value>
@@ -152,6 +194,9 @@
   </data>
   <data name="Nastaveni" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="Ne" xml:space="preserve">
+    <value>No</value>
   </data>
   <data name="OAplikaci" xml:space="preserve">
     <value>About Application</value>
@@ -189,6 +234,9 @@
   <data name="Reseni" xml:space="preserve">
     <value>Answer</value>
   </data>
+  <data name="ResetMessage" xml:space="preserve">
+    <value>Are you sure you want to reset statistics? (They will be gone forever)</value>
+  </data>
   <data name="Scitani" xml:space="preserve">
     <value>Addition</value>
   </data>
@@ -212,6 +260,9 @@
   </data>
   <data name="Statistiky" xml:space="preserve">
     <value>Statistics</value>
+  </data>
+  <data name="StatReset" xml:space="preserve">
+    <value>Reset statistics</value>
   </data>
   <data name="Trojciferne" xml:space="preserve">
     <value>Three digit</value>
@@ -248,6 +299,9 @@
   </data>
   <data name="VyvojProgramovani" xml:space="preserve">
     <value>Programming: Martin Lahučký</value>
+  </data>
+  <data name="ZadejteJmeno" xml:space="preserve">
+    <value>Enter your name</value>
   </data>
   <data name="ZiskaneBody" xml:space="preserve">
     <value>Points gained</value>

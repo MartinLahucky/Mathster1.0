@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,21 +12,27 @@ namespace Mathster
     public partial class Souhrn : ContentPage
     {
         private List<Priklad> fronta;
+        private DBModel zapis;
         public Souhrn(List<Priklad> fronta)
         {
             InitializeComponent();
             this.fronta = fronta;
-            
             Title = AppResource.Souhrn;
             NadDobreLabel.Text = AppResource.Spravne;
             NadSpatneLabel.Text = AppResource.Spatne;
             MenuButton.Text = AppResource.Menu;
             NadVysledkyLabel.Text = AppResource.Vysledky;
             
+            Task task = Task.Run(async () =>
+            {
+                zapis = await App.Database.GetTable();
+            });
+            Task.WaitAll(task);
+            
             List<Vysledek> priklady = new List<Vysledek>();
-
             byte pocitadloSpravne = 0;
             byte pocitadloSpatne = 0;
+            
             foreach (var priklad in fronta)
             {
                 priklady.Add(new Vysledek(priklad.VratPriklad()));
@@ -38,44 +46,64 @@ namespace Mathster
                         if (priklad.PrvniCislo + priklad.DruheCislo == priklad.UzivateluvVstup)
                         {
                             pocitadloSpravne++;
+                            zapis.CelkemScitani++;
+                            zapis.CelkemPrikladu++;
+                            zapis.CelkemPrikladuDobre++;
                         }
                         else
                         {
                             priklady[priklad.Id].BarvaCellu = Color.FromHex("#FFEDBD");
                             pocitadloSpatne++;
+                            zapis.CelkemScitani++;
+                            zapis.CelkemPrikladu++;
                         }
                         break;
                     case 2:
                         if (priklad.PrvniCislo - priklad.DruheCislo == priklad.UzivateluvVstup)
                         {
                             pocitadloSpravne++;
+                            zapis.CelkemOdcitani++;
+                            zapis.CelkemPrikladu++;
+                            zapis.CelkemPrikladuDobre++;
                         }
                         else
                         {
                             priklady[priklad.Id].BarvaCellu = Color.FromHex("#FFEDBD");
                             pocitadloSpatne++;
+                            zapis.CelkemOdcitani++;
+                            zapis.CelkemPrikladu++;
                         }
                         break;
                     case 3:
                         if (priklad.PrvniCislo * priklad.DruheCislo == priklad.UzivateluvVstup)
                         {
                             pocitadloSpravne++;
+                            zapis.CelkemNasobeni++;
+                            zapis.CelkemPrikladu++;
+                            zapis.CelkemPrikladuDobre++;
                         }
                         else
                         {
                             priklady[priklad.Id].BarvaCellu = Color.FromHex("#FFEDBD");
                             pocitadloSpatne++;
+                            zapis.CelkemNasobeni++;
+                            zapis.CelkemPrikladu++;
                         }
                         break;
                     case 4:
                         if (priklad.PrvniCislo / priklad.DruheCislo == priklad.UzivateluvVstup)
                         {
                             pocitadloSpravne++;
+                            zapis.CelkemDeleni++;
+                            zapis.CelkemPrikladu++;
+                            zapis.CelkemPrikladuDobre++;
                         }
                         else
                         {
                             priklady[priklad.Id].BarvaCellu = Color.FromHex("#FFEDBD");
                             pocitadloSpatne++;
+                            zapis.CelkemDeleni++;
+                            zapis.CelkemPrikladu++;
                         }
                         break;
                 }
@@ -87,6 +115,7 @@ namespace Mathster
 
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
+            await App.Database.UpdateTable(zapis);
             await Navigation.PushAsync(new Menu());
         }
 
@@ -188,7 +217,7 @@ namespace Mathster
             }
 
         }
-
+       
         private async void SpatneButton_OnClicked(object sender, EventArgs e)
         {
             try

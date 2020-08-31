@@ -117,6 +117,39 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Ano" xml:space="preserve">
+    <value>Ano</value>
+  </data>
+  <data name="CelkemDeleni" xml:space="preserve">
+    <value>Celkem spočítaných příkladů na dělení:</value>
+  </data>
+  <data name="CelkemDeleniSpravne" xml:space="preserve">
+    <value>Celkem správně vypočítaných příkladů na dělení</value>
+  </data>
+  <data name="CelkemNasobeni" xml:space="preserve">
+    <value>Celkem spočítaných příkladů na násobení:</value>
+  </data>
+  <data name="CelkemNasobeniSpravne" xml:space="preserve">
+    <value>Celkem správně vypočítaných příkladů na násobení:</value>
+  </data>
+  <data name="CelkemOdcitani" xml:space="preserve">
+    <value>Celkem spočítaných příkladů na odečítání:</value>
+  </data>
+  <data name="CelkemOdcitaniSpravne" xml:space="preserve">
+    <value>Celkem správně vypočítaných příkladů na odečítání:</value>
+  </data>
+  <data name="CelkemPrikladu" xml:space="preserve">
+    <value>Celkem spočítaných příkladů:</value>
+  </data>
+  <data name="CelkemPrikladuDobre" xml:space="preserve">
+    <value>Celkem správně vypočítaných příkladů:</value>
+  </data>
+  <data name="CelkemScitani" xml:space="preserve">
+    <value>Celkem spočítaných příkladů na sčítání:</value>
+  </data>
+  <data name="CelkemScitaniSpravne" xml:space="preserve">
+    <value>Celkem správně vypočítaných příkladů na sčítání:</value>
+  </data>
   <data name="Ctyrciferne" xml:space="preserve">
     <value>Čtyřciferné</value>
   </data>
@@ -135,14 +168,23 @@
   <data name="DoPeti" xml:space="preserve">
     <value>Do pěti</value>
   </data>
+  <data name="DruhNejcastejiPocitanychPrikladu" xml:space="preserve">
+    <value>Nejčastěji počítaný druh příkladů:</value>
+  </data>
   <data name="Dvouciferne" xml:space="preserve">
     <value>Dvouciferné</value>
   </data>
   <data name="Jednociferne" xml:space="preserve">
     <value>Jednociferné</value>
   </data>
+  <data name="Jmeno" xml:space="preserve">
+    <value>Jméno:</value>
+  </data>
   <data name="Menu" xml:space="preserve">
     <value>Menu</value>
+  </data>
+  <data name="Nachozeno" xml:space="preserve">
+    <value>Celkem nachozeno:</value>
   </data>
   <data name="Nahodne" xml:space="preserve">
     <value>Náhodně</value>
@@ -152,6 +194,9 @@
   </data>
   <data name="Nastaveni" xml:space="preserve">
     <value>Nastavení</value>
+  </data>
+  <data name="Ne" xml:space="preserve">
+    <value>Ne</value>
   </data>
   <data name="OAplikaci" xml:space="preserve">
     <value>O Aplikaci</value>
@@ -189,6 +234,9 @@
   <data name="Reseni" xml:space="preserve">
     <value>Řešení</value>
   </data>
+  <data name="ResetMessage" xml:space="preserve">
+    <value>Jste si jistí, že chcete resetovat statistiky? (Budou navždy pryč)</value>
+  </data>
   <data name="Scitani" xml:space="preserve">
     <value>Sčítání</value>
   </data>
@@ -212,6 +260,9 @@
   </data>
   <data name="Statistiky" xml:space="preserve">
     <value>Statistiky</value>
+  </data>
+  <data name="StatReset" xml:space="preserve">
+    <value>Resetovat statistiky</value>
   </data>
   <data name="Trojciferne" xml:space="preserve">
     <value>Trojciferné</value>
@@ -248,6 +299,9 @@
   </data>
   <data name="VyvojProgramovani" xml:space="preserve">
     <value>Programování: Martin Lahučký</value>
+  </data>
+  <data name="ZadejteJmeno" xml:space="preserve">
+    <value>Zadejte své jméno</value>
   </data>
   <data name="ZiskaneBody" xml:space="preserve">
     <value>Získané body</value>

@@ -22,11 +22,7 @@ namespace Mathster.Android
             Forms.Init(this, savedInstanceState);
 
             // Database Declaration
-            string dbName = "mathster_db.sqlite";
-            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string fullPath = Path.Combine(folderPath, dbName);
-            
-            
+            string fullPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "mathster_db.sqlite");
             LoadApplication(new App(fullPath));
         }
     }
