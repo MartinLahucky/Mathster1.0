@@ -3,22 +3,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mathster.Statistiky">
+    <ContentPage.Resources>
+        <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label x:Name="Label1"/>
-            <Label x:Name="Label2"/>
-            <Label x:Name="Label3"/>
-            <Label x:Name="Label4"/>
-            <Label x:Name="Label5"/>
-            <Label x:Name="Label6"/>
-            <Label x:Name="Label7"/>
-            <Label x:Name="Label8"/>
-            <Label x:Name="Label9"/>
-            <Label x:Name="Label10"/>
-            <Label x:Name="Label11"/>
-            <Label x:Name="Label12"/>
-            
-            <Button x:Name="ResetStatsButton" Clicked="ResetStatsButton_OnClicked"/>
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Frame Margin="30,20,30,20" HasShadow="False" CornerRadius="15" BackgroundColor="#ffce85" >
+                    <StackLayout>
+                        <Label x:Name="Label1" TextColor="Black" FontSize="14"/>
+                        <Label x:Name="Label2" TextColor="Black" FontSize="14"/>
+                        <Label x:Name="Label3" TextColor="Black" FontSize="14"/>
+                        <Label x:Name="Label4" TextColor="Black" FontSize="14"/>
+                        <Label x:Name="Label5" TextColor="Black" FontSize="14"/>
+                        <Label x:Name="Label6" TextColor="Black" FontSize="14"/>
+                        <Label x:Name="Label7" TextColor="Black" FontSize="14"/>
+                        <Label x:Name="Label8" TextColor="Black" FontSize="14"/>
+                        <Label x:Name="Label9" TextColor="Black" FontSize="14"/>
+                        <Label x:Name="Label10" TextColor="Black" FontSize="14"/>
+                        <Label x:Name="Label11" TextColor="Black" FontSize="14"/>
+                    </StackLayout>
+                </Frame>
+                <StackLayout Margin="30,20,30,0">
+                    <Button x:Name="ResetStatsButton" StyleClass="ZelenaTlacitka" CornerRadius="13" TextColor="Black" FontSize="20" Margin="0,0,0,20" Clicked="ResetStatsButton_OnClicked"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -30,7 +30,7 @@ namespace Mathster
                 }
             });
             Task.WaitAll(task);
-            
+            OAplikaciVerze.Text = AppResource.OAplikaciVerze + "1.3";
             
         }
 

@@ -6,6 +6,8 @@
     <ContentPage.Content>
         <StackLayout>
             <Entry x:Name="JmenoEntry" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            
+            <Label x:Name="OAplikaciVerze" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
