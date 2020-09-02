@@ -79,6 +79,12 @@
     background-color: #33a716;
     color: white;
 }
+.RestartButton
+{
+    font-size: 30;
+    background-color: white;
+    color: firebrick;
+}
 
 .MiniMenu
 {
