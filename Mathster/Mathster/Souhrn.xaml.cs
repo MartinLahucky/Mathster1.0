@@ -36,74 +36,67 @@ namespace Mathster
             foreach (var priklad in fronta)
             {
                 priklady.Add(new Vysledek(priklad.VratPriklad()));
-                if (priklad.PrvniCislo >= 10000 || priklad.UzivateluvVstup >= 10000)
+                if (priklad.PrvniCislo >= 1000 || priklad.UzivateluvVstup >= 1000)
                 {
                     VysledkyList.RowHeight = 80;
                 }
+                zapis.CelkemPrikladu++;
                 switch (priklad.DruhPrikladu)
                 {
                     case 1:
+                        zapis.CelkemScitani++;
                         if (priklad.PrvniCislo + priklad.DruheCislo == priklad.UzivateluvVstup)
                         {
                             pocitadloSpravne++;
-                            zapis.CelkemScitani++;
-                            zapis.CelkemPrikladu++;
                             zapis.CelkemPrikladuDobre++;
+                            zapis.CelkemScitaniSpravne++;
                         }
                         else
                         {
                             priklady[priklad.Id].BarvaCellu = Color.FromHex("#FFEDBD");
                             pocitadloSpatne++;
-                            zapis.CelkemScitani++;
-                            zapis.CelkemPrikladu++;
                         }
                         break;
                     case 2:
+                        zapis.CelkemOdcitani++;
                         if (priklad.PrvniCislo - priklad.DruheCislo == priklad.UzivateluvVstup)
                         {
                             pocitadloSpravne++;
-                            zapis.CelkemOdcitani++;
-                            zapis.CelkemPrikladu++;
                             zapis.CelkemPrikladuDobre++;
+                            zapis.CelkemOdcitaniSpravne++;
                         }
                         else
                         {
                             priklady[priklad.Id].BarvaCellu = Color.FromHex("#FFEDBD");
                             pocitadloSpatne++;
-                            zapis.CelkemOdcitani++;
-                            zapis.CelkemPrikladu++;
                         }
                         break;
                     case 3:
+                        zapis.CelkemNasobeni++;
                         if (priklad.PrvniCislo * priklad.DruheCislo == priklad.UzivateluvVstup)
                         {
                             pocitadloSpravne++;
-                            zapis.CelkemNasobeni++;
-                            zapis.CelkemPrikladu++;
                             zapis.CelkemPrikladuDobre++;
+                            zapis.CelkemNasobeniSpravne++;
                         }
                         else
                         {
                             priklady[priklad.Id].BarvaCellu = Color.FromHex("#FFEDBD");
                             pocitadloSpatne++;
-                            zapis.CelkemNasobeni++;
-                            zapis.CelkemPrikladu++;
                         }
                         break;
                     case 4:
+                        zapis.CelkemDeleni++;
                         if (priklad.PrvniCislo / priklad.DruheCislo == priklad.UzivateluvVstup)
                         {
                             pocitadloSpravne++;
-                            zapis.CelkemDeleni++;
-                            zapis.CelkemPrikladu++;
                             zapis.CelkemPrikladuDobre++;
+                            zapis.CelkemDeleniSpravne++;
                         }
                         else
                         {
                             priklady[priklad.Id].BarvaCellu = Color.FromHex("#FFEDBD");
                             pocitadloSpatne++;
-                            zapis.CelkemDeleni++;
-                            zapis.CelkemPrikladu++;
                         }
                         break;
                 }
