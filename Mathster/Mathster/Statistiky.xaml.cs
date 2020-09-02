@@ -48,6 +48,23 @@ namespace Mathster
             Label10.Text = $"{AppResource.CelkemDeleniSpravne} {tabulka.CelkemDeleniSpravne.ToString()}";
             Label11.Text = $"{AppResource.DruhNejcastejiPocitanychPrikladu} {tabulka.DruhNejcastejiPocitanychPrikladu}";
             ResetStatsButton.Text = AppResource.StatReset;
+
+            if ((tabulka.CelkemScitani - tabulka.CelkemScitaniSpravne) > tabulka.CelkemScitani / 2)
+            {
+                Frame4.BackgroundColor = Color.FromHex("#ffce85");
+            }
+            if ((tabulka.CelkemOdcitani - tabulka.CelkemOdcitaniSpravne) > tabulka.CelkemOdcitani / 2)
+            {
+                Frame6.BackgroundColor = Color.FromHex("#ffce85");
+            }
+            if ((tabulka.CelkemNasobeni - tabulka.CelkemNasobeniSpravne) > tabulka.CelkemNasobeni / 2)
+            {
+                Frame8.BackgroundColor = Color.FromHex("#ffce85");
+            }
+            if ((tabulka.CelkemDeleni - tabulka.CelkemDeleniSpravne) > tabulka.CelkemDeleni / 2)
+            {
+                Frame10.BackgroundColor = Color.FromHex("#ffce85");
+            }
         }
 
         private async void ResetStatsButton_OnClicked(object sender, EventArgs e)
