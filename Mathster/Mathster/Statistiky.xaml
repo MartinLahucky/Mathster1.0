@@ -12,37 +12,37 @@
             <StackLayout>
                 		<Frame x:Name="Frame1" Margin="30,20,30,0" HasShadow="False" CornerRadius="0" Padding="20,20,10,6" BackgroundColor="#ffce85" BorderColor="#f36f16">
                     <StackLayout>
-                        <Label x:Name="Label1" TextColor="Black" FontSize="19"/>
+                        <Label x:Name="Label1" TextColor="Black" FontSize="19" TextDecorations="Underline"/>
                     </StackLayout>    
                 </Frame>
-                <Frame x:Name="Frame2" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,0,6" BackgroundColor="#89e771" BorderColor="#f36f16">
+                <Frame x:Name="Frame2" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,10,6" BackgroundColor="#89e771" BorderColor="#f36f16">
                         <Label x:Name="Label2" TextColor="Black" FontSize="16"/>
                 </Frame>
-                <Frame x:Name="Frame3" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,0,6" BackgroundColor="#ffce85" BorderColor="#f36f16">      
+                <Frame x:Name="Frame3" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,10,6" BackgroundColor="#ffce85" BorderColor="#f36f16">      
                         <Label x:Name="Label3" TextColor="Black" FontSize="16"/>
                 </Frame>
-                <Frame x:Name="Frame4" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,0,6" BackgroundColor="#89e771" BorderColor="#f36f16">
+                <Frame x:Name="Frame4" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,10,6" BackgroundColor="#89e771" BorderColor="#f36f16">
                 <Label x:Name="Label4" TextColor="Black" FontSize="16"/>
                 </Frame>
-                <Frame x:Name="Frame5" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,0,6" BackgroundColor="#ffce85" BorderColor="#f36f16">        
+                <Frame x:Name="Frame5" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,10,6" BackgroundColor="#ffce85" BorderColor="#f36f16">        
                         <Label x:Name="Label5" TextColor="Black" FontSize="16"/>
                 </Frame>
-                <Frame x:Name="Frame6" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,0,6" BackgroundColor="#89e771" BorderColor="#f36f16"> 
+                <Frame x:Name="Frame6" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,10,6" BackgroundColor="#89e771" BorderColor="#f36f16"> 
                 <Label x:Name="Label6" TextColor="Black" FontSize="16"/>
                 </Frame>
-                <Frame x:Name="Frame7" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,0,6" BackgroundColor="#ffce85" BorderColor="#f36f16">         
+                <Frame x:Name="Frame7" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,10,6" BackgroundColor="#ffce85" BorderColor="#f36f16">         
                         <Label x:Name="Label7" TextColor="Black" FontSize="16"/>
                 </Frame>
-                <Frame x:Name="Frame8" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,0,6" BackgroundColor="#89e771" BorderColor="#f36f16">         
+                <Frame x:Name="Frame8" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,10,6" BackgroundColor="#89e771" BorderColor="#f36f16">         
                         <Label x:Name="Label8" TextColor="Black" FontSize="16"/>
                 </Frame>
-                <Frame x:Name="Frame9" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,0,6" BackgroundColor="#ffce85" BorderColor="#f36f16">         
+                <Frame x:Name="Frame9" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,10,6" BackgroundColor="#ffce85" BorderColor="#f36f16">         
                         <Label x:Name="Label9" TextColor="Black" FontSize="16"/>
                 </Frame>
-                <Frame x:Name="Frame10" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,0,6" BackgroundColor="#89e771" BorderColor="#f36f16">         
+                <Frame x:Name="Frame10" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,10,6" BackgroundColor="#89e771" BorderColor="#f36f16">         
                         <Label x:Name="Label10" TextColor="Black" FontSize="16"/>
                 </Frame>
-                <Frame x:Name="Frame11" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,0,6" BackgroundColor="#ffce85" BorderColor="#f36f16"> 
+                <Frame x:Name="Frame11" Margin="30,-10,30,0" HasShadow="False" CornerRadius="0" Padding="20,8,10,6" BackgroundColor="#ffce85" BorderColor="#f36f16"> 
                         <Label x:Name="Label11" TextColor="Black" FontSize="18"/>
                 </Frame>
                 <StackLayout Margin="30,20,30,0">
