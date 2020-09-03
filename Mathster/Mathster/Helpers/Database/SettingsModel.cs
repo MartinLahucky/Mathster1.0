@@ -16,7 +16,7 @@ namespace Mathster.Helpers.Model
         public Color BarvaPozadiDarkMode { get; set; }
         public Color BarvaSpravne { get; set; }
         public Color BarvaSpatne { get; set; }
-        
+        public Color BarvaInfo { get; set; }
         public Color BarvaPrimarniSvetla { get; set; }
         public Color BarvaSekundarniSvetla { get; set; }
         

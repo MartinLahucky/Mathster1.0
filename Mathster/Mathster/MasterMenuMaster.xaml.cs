@@ -15,8 +15,14 @@ namespace Mathster
         public MasterMenuMaster()
         {
             InitializeComponent();
+            
+            // MenuGrid.BackgroundColor =BarvaPrimarni
+                // barvaprimarni
+                
+            // FrameStyl.BackgroundColor = BarvaSekundarni    
+            // BarvaSekundarni
 
-            BindingContext = new MasterMenuMasterViewModel();
+                BindingContext = new MasterMenuMasterViewModel();
             ListView = MenuItemsListView;
         }
 

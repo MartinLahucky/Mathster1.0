@@ -83,9 +83,20 @@
 {
     font-size: 30;
     background-color: white;
+    border-color: firebrick;
     color: firebrick;
 }
-
+.FrameInformaceOranzova
+{
+    border-color: #f36f16;
+    background-color: #ffce85;
+}
+/*#ead78e*/
+.FrameInformaceZelena
+{
+    border-color: #f36f16;
+    background-color: #89e771;
+}
 .MiniMenu
 {
     font-size: 30;

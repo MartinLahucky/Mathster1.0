@@ -12,13 +12,13 @@
             <ScrollView x:Name="View">
                 <StackLayout x:Name="SecondLayer"  VerticalOptions="Center"  >
                     <StackLayout >
-                        <Frame Margin="30,20,30,20" HasShadow="False" CornerRadius="15" BackgroundColor="#ffce85" >
+                        <Frame x:Name="InfoFrame1" Margin="30,20,30,20" HasShadow="False" CornerRadius="15" StyleClass="FrameInformaceOranzova" >
                             <StackLayout>
                                 <Label x:Name="ONasStaticLabel" TextColor="Black" Margin="0,0,0,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                                 <Label x:Name="ONasLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                             </StackLayout>
                         </Frame>
-                        <Frame Margin="30,20,30,0" HasShadow="False" CornerRadius="15" BackgroundColor="#ffce85" >
+                        <Frame x:Name="InfoFrame2" Margin="30,20,30,0" HasShadow="False" CornerRadius="15" StyleClass="FrameInformaceOranzova"   >
                             <StackLayout>
                                 <Label x:Name="OAplikaciStaticLabel" TextColor="Black" Margin="0,0,0,10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                                 <Label x:Name="OAplikaciLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />

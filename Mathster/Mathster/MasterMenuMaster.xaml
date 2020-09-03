@@ -23,7 +23,7 @@
       <ListView.Header>
         
         
-        <Grid BackgroundColor="#FFA927" Margin="0,0,0,10">
+        <Grid x:Name="MenuGrid" BackgroundColor="#FFA927" Margin="0,0,0,10">
           
           <!-- šířka -->
           <Grid.ColumnDefinitions>
@@ -76,7 +76,7 @@
         <DataTemplate>
           <ViewCell>
             
-            <Frame BackgroundColor="#33A715" CornerRadius="20" Padding="15,0,0,0" Margin="-18,10,60,5" HasShadow="False" >
+            <Frame x:Name="FrameStyl" BackgroundColor="#33A716" CornerRadius="20" Padding="15,0,0,0" Margin="-18,10,60,5" HasShadow="False" >
               <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
               <Label VerticalOptions="FillAndExpand"
                      StyleClass="MiniMenu"

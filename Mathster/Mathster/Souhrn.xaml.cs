@@ -16,13 +16,22 @@ namespace Mathster
         public Souhrn(List<Priklad> fronta)
         {
             InitializeComponent();
+            
             this.fronta = fronta;
+            // NadDobreLabel.BackgroundColor = BarvaSpravne;
+            // FrameDobre.BackgroundColor = BarvaSpravne
+            // FrameSpatne.BackgroundColor = BarvaSpatne   
+            // NadSpatneLabel.BackgrounColor = BarvaSpatne
+            // VysledekyList.BackgrounColor = BarvaSekundarniSvetla
+            
             Title = AppResource.Souhrn;
             NadDobreLabel.Text = AppResource.Spravne;
             NadSpatneLabel.Text = AppResource.Spatne;
             MenuButton.Text = AppResource.Menu;
             NadVysledkyLabel.Text = AppResource.Vysledky;
             
+
+
             Task task = Task.Run(async () =>
             {
                 zapis = await App.Database.GetTable();
