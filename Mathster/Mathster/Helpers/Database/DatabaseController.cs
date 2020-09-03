@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using SQLite;
+using Xamarin.Forms;
 
 namespace Mathster.Helpers.Model
 {
@@ -16,7 +17,7 @@ namespace Mathster.Helpers.Model
             {
                 if (await database.Table<DBModel>().CountAsync() == 0)
                 {
-                    DBModel tabulka = new DBModel
+                    DBModel tabulkaModel = new DBModel
                     {
                         ID = 0,
                         Jmeno = String.Empty,
@@ -34,7 +35,25 @@ namespace Mathster.Helpers.Model
                         Nachozeno = 0,
                         DruhNejcastejiPocitanychPrikladu = String.Empty,
                     };
-                    await database.InsertAsync(tabulka);
+
+                    SettingsModel tabulkaNastaveni = new SettingsModel
+                    {
+                        ID = 1,
+                        DarkMode = false,
+                        BarvaPrimarni = Color.FromHex("#"),
+                        BarvaPrimarniSvetla = Color.FromHex("#"),
+                        BarvaSekundarni = Color.FromHex("#"), 
+                        BarvaSekundarniSvetla = Color.FromHex("#"),
+                        BarvaSpravne = Color.FromHex("#"),
+                        BarvaSpatne = Color.FromHex("#"),
+                        BarvaTextu = Color.FromHex("#"),
+                        BarvaTlacitek = Color.FromHex("#"),
+                        BarvaPozadi = Color.FromHex("#"),
+                        BarvaPozadiDarkMode = Color.FromHex("#"),
+                        
+                        
+                    };
+                    await database.InsertAsync(tabulkaModel);
                 }
             });
             Task.WaitAll(task);
