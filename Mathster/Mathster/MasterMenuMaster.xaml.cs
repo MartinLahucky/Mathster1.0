@@ -40,7 +40,7 @@ namespace Mathster
                     new MasterMenuMasterMenuItem { Id = 3, Title = AppResource.OAplikaci, TargetType = typeof(ONas)},
                 });
             }
-
+            
             #region INotifyPropertyChanged Implementation
             public event PropertyChangedEventHandler PropertyChanged;
             void OnPropertyChanged([CallerMemberName] string propertyName = "")

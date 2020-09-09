@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              x:Class="Mathster.MasterMenuMaster"
              Title="Master">
+ 
   <StackLayout>
     <ListView x:Name="MenuItemsListView"
               SeparatorVisibility="None"
@@ -49,9 +50,9 @@
           <Label 
             Grid.Column="1"
             Grid.Row="1"
-            x:Name="LabelJemnoUzivatele"
+            x:Name="LabelJmenoUzivatele"
+            Text="{Binding Jmeno}"
             HorizontalTextAlignment="Center"
-            Text="Oskar Stěranka a další25"
             FontSize="20" TextColor="Black"
             /><!-- Text="{Binding JmenoUzivatele}" -->
           

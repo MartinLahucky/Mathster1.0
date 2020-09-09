@@ -6,7 +6,7 @@ namespace Mathster.Helpers.Model
     {
         [PrimaryKey]
         public int ID { get; set; }
-        [MaxLength(30)]
+        [MaxLength(25)]
         public string Jmeno { get; set; }
         public int Experience { get; set; }
         public int CelkemPrikladu { get; set; }
