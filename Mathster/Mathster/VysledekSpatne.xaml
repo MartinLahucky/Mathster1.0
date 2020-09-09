@@ -20,17 +20,21 @@
                     </Frame>      
                     
                     <Frame CornerRadius="15" Padding="0" Margin="0,0,0,10" HasShadow="False" >
+                        <ScrollView>
                         <StackLayout>
                             <Label x:Name="NadSpatnaOdpovedLabel" StyleClass="SpatneNadLabel" Margin="0,0,0,-7" />
                             <Label x:Name="SpatnaOdpovedLabel" StyleClass="SpatneLabel"  HeightRequest="50" VerticalOptions="Center"  />
                         </StackLayout>
+                        </ScrollView>
                     </Frame> 
                     
                     <Frame CornerRadius="15" Padding="0" Margin="0,0,0,10" HasShadow="False" >
+                        <ScrollView>
                         <StackLayout>
                             <Label x:Name="ReseniNadLabel" StyleClass="Zelena" Margin="0,0,0,-7" />
                             <Label x:Name="ReseniLabel" StyleClass="PrikladLabel"  HeightRequest="50" VerticalOptions="Center"  />
                         </StackLayout>
+                        </ScrollView>
                     </Frame> 
                     
                     <Button x:Name="PredchoziPrikladButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,0,0,20" Clicked="PredchoziPrikladButton_OnClicked" />
