@@ -36,6 +36,10 @@ namespace Mathster
             {
                 tabulka.DruhNejcastejiPocitanychPrikladu = AppResource.Deleni;
             }
+            else
+            {
+                tabulka.DruhNejcastejiPocitanychPrikladu = AppResource.NelzeUrcit;
+            }
             Label1.Text = $"{AppResource.CelkemPrikladu} {tabulka.CelkemPrikladu.ToString()}";
             Label2.Text = $"{AppResource.CelkemPrikladuDobre} {tabulka.CelkemPrikladuDobre.ToString()}";
             Label3.Text = $"{AppResource.CelkemScitani} {tabulka.CelkemScitani.ToString()}";
@@ -97,7 +101,7 @@ namespace Mathster
                 Label8.Text = $"{AppResource.CelkemNasobeniSpravne} {tabulkaReset.CelkemNasobeniSpravne.ToString()}";
                 Label9.Text = $"{AppResource.CelkemDeleni} {tabulkaReset.CelkemDeleni.ToString()}";
                 Label10.Text = $"{AppResource.CelkemDeleniSpravne} {tabulkaReset.CelkemDeleniSpravne.ToString()}";
-                Label11.Text = $"{AppResource.DruhNejcastejiPocitanychPrikladu} {tabulkaReset.DruhNejcastejiPocitanychPrikladu}";
+                Label11.Text = $"{AppResource.DruhNejcastejiPocitanychPrikladu} {AppResource.NelzeUrcit}";
                 await App.Database.UpdateTable(tabulkaReset);
             }
         }

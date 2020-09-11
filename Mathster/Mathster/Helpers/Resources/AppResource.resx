@@ -318,4 +318,7 @@
   <data name="ZvolteNasobitele" xml:space="preserve">
     <value>Select a Multiplicator</value>
   </data>
+  <data name="NelzeUrcit" xml:space="preserve">
+    <value>Unable to determine</value>
+  </data>
 </root>

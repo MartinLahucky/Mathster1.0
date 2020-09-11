@@ -304,6 +304,15 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nelze určit.
+        /// </summary>
+        internal static string NelzeUrcit {
+            get {
+                return ResourceManager.GetString("NelzeUrcit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O Aplikaci.
         /// </summary>
         internal static string OAplikaci {

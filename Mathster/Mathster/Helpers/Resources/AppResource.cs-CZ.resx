@@ -318,4 +318,7 @@
   <data name="ZvolteNasobitele" xml:space="preserve">
     <value>Zvolte násobitele</value>
   </data>
+  <data name="NelzeUrcit" xml:space="preserve">
+    <value>Nelze určit</value>
+  </data>
 </root>

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
-using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
