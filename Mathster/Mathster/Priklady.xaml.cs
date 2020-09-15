@@ -19,6 +19,8 @@ namespace Mathster
             InitializeComponent();
             DalsiButton.Text = AppResource.Dalsi;
             OdvezdatButton.Text = AppResource.Odevzdat;
+            VysledekPropisInput.Text = String.Empty;
+            VysledekInput.Text = String.Empty;
             
             priklad = fronta[id];
 
@@ -158,7 +160,7 @@ namespace Mathster
         private void VysledekInput_OnTextChanged(object sender, TextChangedEventArgs e)
         {
             List<string> cislo = new List<string>();
-
+            
             string cisloText = VysledekInput.Text;
             
             for (int i = 0; i < cisloText.Length; i++)

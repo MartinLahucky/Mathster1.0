@@ -9,9 +9,8 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout x:Name="MainLayout">
-            <ScrollView x:Name="View">
-                <StackLayout x:Name="SecondLayer"  VerticalOptions="Center" Margin="50,30,50,50">
+        <ScrollView x:Name="View">
+                <StackLayout x:Name="MainLayout"  VerticalOptions="Center" Margin="50,30,50,50">
                     <Button x:Name="ScitaniButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,0,0,20" Clicked="ScitaniButton_OnClicked"/>
                     <Button x:Name="OdcitaniButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="OdcitaniButton_OnClicked"  />
                     <Button x:Name="NasobeniButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="NasobeniButton_OnClicked" />
@@ -19,6 +18,5 @@
                     <Button x:Name="NahodneButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="NahodneButton_OnClicked" />
                 </StackLayout>
             </ScrollView>
-        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
