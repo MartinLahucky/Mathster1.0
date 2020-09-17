@@ -30,7 +30,7 @@ namespace Mathster
                 }
             });
             Task.WaitAll(task);
-            OAplikaciVerze.Text = AppResource.OAplikaciVerze + "Beta Release 1.3";
+            OAplikaciVerze.Text = AppResource.OAplikaciVerze + "Beta Release 1.3\nUI: Beta 1.0";
             
         }
 
