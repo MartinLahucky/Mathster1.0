@@ -2,11 +2,11 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customUi="clr-namespace:Mathster.Helpers.Custom_UI;assembly=Mathster"
              x:Class="Mathster.Nastaveni">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="JmenoEntry" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-            
+            <customUi:CS_Entry x:Name="JmenoEntry" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             <Label x:Name="OAplikaciVerze" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
         </StackLayout>
     </ContentPage.Content>

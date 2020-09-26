@@ -2,6 +2,7 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customUi="clr-namespace:Mathster.Helpers.Custom_UI;assembly=Mathster"
              x:Class="Mathster.Priklady"
              NavigationPage.HasBackButton="False">
     
@@ -26,7 +27,7 @@
                     <Frame CornerRadius="15" Padding="0" Margin="0,0,0,60" HasShadow="False" >
                         <StackLayout x:Name="VysledekInputLayout">
                             <Label x:Name="VysledekPropisInput" HeightRequest="60" Margin="0,0,0,-66" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" StyleClass="VysledekInput"/>
-                            <Entry x:Name="VysledekInput" Keyboard="Numeric" FontSize="30" HeightRequest="60" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="Transparent" TextColor="Transparent" StyleClass=".TextBezPozadi" TextChanged="VysledekInput_OnTextChanged"/>
+                            <customUi:CS_Entry x:Name="VysledekInput" Keyboard="Numeric" FontSize="30" HeightRequest="60" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="Transparent" TextColor="Transparent" StyleClass=".TextBezPozadi" TextChanged="VysledekInput_OnTextChanged"/>
                         </StackLayout>
                     </Frame>
                     
