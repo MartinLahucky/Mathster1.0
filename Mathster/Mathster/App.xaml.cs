@@ -26,13 +26,16 @@ namespace Mathster
         public App()
         {
             InitializeComponent();
-            MainPage = new MasterMenu();
+            MainPage = new Menu();
         }
 
         public App(string databaseLocation)
         {
             InitializeComponent();
-            MainPage = new MasterMenu();
+            MainPage = new NavigationPage(new Menu())
+            {
+                BarTextColor = Color.DarkGreen,
+            };
             DatabaseLocation = databaseLocation;
         }
         protected override void OnStart()
