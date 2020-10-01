@@ -23,18 +23,21 @@ namespace Mathster
             }
         }
 
-        public App()
-        {
-            InitializeComponent();
-            MainPage = new Menu();
-        }
+        //public App()
+        //{
+        //    InitializeComponent();
+        //    MainPage = new NavigationPage(new Menu())
+        //    {
+        //        BarTextColor = Color.FromHex("#7F7FFD"),
+        //    };
+        //}
 
         public App(string databaseLocation)
         {
             InitializeComponent();
             MainPage = new NavigationPage(new Menu())
             {
-                BarTextColor = Color.DarkGreen,
+                BarTextColor = Color.FromHex("#7F7FFD"),
             };
             DatabaseLocation = databaseLocation;
         }

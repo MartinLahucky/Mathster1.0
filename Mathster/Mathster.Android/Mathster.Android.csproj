@@ -77,7 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ikonaKruh.png" />
-    <AndroidResource Include="Resources\drawable\ikonastart.png" />
     <AndroidResource Include="Resources\drawable\matap.png" />
     <AndroidResource Include="Resources\drawable\podsebe.png" />
     <AndroidResource Include="Resources\drawable\sipkad.png" />
@@ -95,6 +94,9 @@
       <Project>{B2E83137-B60D-4A85-9B18-79358BAA99F2}</Project>
       <Name>Mathster</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ikonaStart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

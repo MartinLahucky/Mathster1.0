@@ -13,11 +13,11 @@ namespace Mathster
             InitializeComponent();
             
             Title = AppResource.Menu;
-            ScitaniButton.Text = AppResource.Scitani;
-            OdcitaniButton.Text = AppResource.Odecitani;
-            NasobeniButton.Text = AppResource.Nasobeni;
-            DeleniButton.Text = AppResource.Deleni;
-            NahodneButton.Text = AppResource.Nahodne;
+            //ScitaniButton.Text = AppResource.Scitani;
+            //OdcitaniButton.Text = AppResource.Odecitani;
+            //NasobeniButton.Text = AppResource.Nasobeni;
+            //DeleniButton.Text = AppResource.Deleni;
+            //NahodneButton.Text = AppResource.Nahodne;
         }
 
         private async void ScitaniButton_OnClicked(object sender, EventArgs e)

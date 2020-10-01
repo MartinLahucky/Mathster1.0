@@ -8749,7 +8749,7 @@ namespace Mathster
 			public const int ikonaKruh = 2131165462;
 			
 			// aapt resource value: 0x7F070117
-			public const int ikonastart = 2131165463;
+			public const int ikonaStart = 2131165463;
 			
 			// aapt resource value: 0x7F070118
 			public const int matap = 2131165464;
