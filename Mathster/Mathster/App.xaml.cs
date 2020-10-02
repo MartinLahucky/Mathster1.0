@@ -37,7 +37,7 @@ namespace Mathster
             InitializeComponent();
             MainPage = new NavigationPage(new Menu())
             {
-                BarTextColor = Color.FromHex("#7F7FFD"),
+                BarTextColor = Color.White,
             };
             DatabaseLocation = databaseLocation;
         }
