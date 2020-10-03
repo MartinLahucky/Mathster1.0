@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
@@ -13,7 +14,8 @@ namespace Mathster
         public Nastaveni()
         {
             InitializeComponent();
-
+            MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
+            Title = AppResource.Nastaveni;
             JmenoEntry.Placeholder = AppResource.ZadejteJmeno;
             
             Task task = Task.Run(async () =>
@@ -34,13 +36,20 @@ namespace Mathster
             
         }
 
-        protected async override void OnDisappearing()
+        // protected async override void OnDisappearing()
+        // {
+        //     base.OnDisappearing();
+        //
+        //     DBModel tabulka = await App.Database.GetTable();
+        //     tabulka.Jmeno = JmenoEntry.Text;
+        //     await App.Database.UpdateTable(tabulka);
+        // }
+        private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
-            base.OnDisappearing();
-
             DBModel tabulka = await App.Database.GetTable();
             tabulka.Jmeno = JmenoEntry.Text;
             await App.Database.UpdateTable(tabulka);
+            await Navigation.PushAsync(new Menu());
         }
     }
 }

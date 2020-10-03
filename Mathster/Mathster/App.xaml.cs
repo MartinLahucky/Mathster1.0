@@ -22,16 +22,7 @@ namespace Mathster
                 return database;
             }
         }
-
-        //public App()
-        //{
-        //    InitializeComponent();
-        //    MainPage = new NavigationPage(new Menu())
-        //    {
-        //        BarTextColor = Color.FromHex("#7F7FFD"),
-        //    };
-        //}
-
+        
         public App(string databaseLocation)
         {
             InitializeComponent();
@@ -45,12 +36,10 @@ namespace Mathster
         {
             // Handle when your app starts
         }
-
         protected override void OnSleep()
         {
             // Handle when your app sleeps
         }
-
         protected override void OnResume() 
         {
             // Handle when your app resumes

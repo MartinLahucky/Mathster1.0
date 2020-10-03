@@ -6,8 +6,12 @@
     <ContentPage.Resources>
         <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
     </ContentPage.Resources>
-    
-    <ContentPage.Content>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="MenuToolbarButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
+    </ContentPage.ToolbarItems>
+        
+        <ContentPage.Content>
         <ScrollView>
             <StackLayout>
                 <Frame x:Name="Frame1" Margin="30,20,30,0" HasShadow="False" CornerRadius="0" Padding="20,20,10,6" StyleClass="FrameInformaceOranzova" >

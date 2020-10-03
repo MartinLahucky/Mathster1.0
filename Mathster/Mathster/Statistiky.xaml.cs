@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
 using Xamarin.Forms;
@@ -12,6 +13,8 @@ namespace Mathster
         public Statistiky()
         {
             InitializeComponent();
+            Title = AppResource.Statistiky;
+            MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
         }
 
         protected async override void OnAppearing()
@@ -75,6 +78,7 @@ namespace Mathster
         {
             if (await DisplayAlert(AppResource.Upozorneni, AppResource.ResetMessage, AppResource.Ano, AppResource.Ne))
             {
+                DBModel tabulka = await App.Database.GetTable();
                 DBModel tabulkaReset = new DBModel
                 {
                     Experience = 0,
@@ -89,6 +93,7 @@ namespace Mathster
                     CelkemDeleniSpravne = 0,
                     CelkemPrikladuDobre = 0,
                     Nachozeno = 0,
+                    Jmeno = tabulka.Jmeno,
                     DruhNejcastejiPocitanychPrikladu = String.Empty,
                 };
                 Label1.Text = $"{AppResource.CelkemPrikladu} {tabulkaReset.CelkemPrikladu.ToString()}";
@@ -104,6 +109,10 @@ namespace Mathster
                 Label11.Text = $"{AppResource.DruhNejcastejiPocitanychPrikladu} {AppResource.NelzeUrcit}";
                 await App.Database.UpdateTable(tabulkaReset);
             }
+        }
+        private async void MenuButton_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Menu());
         }
     }
 }

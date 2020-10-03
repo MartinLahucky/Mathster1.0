@@ -7,20 +7,27 @@
     <ContentPage.Resources>
         <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
     </ContentPage.Resources>
-
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="MenuToolbarButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
+        <ToolbarItem x:Name="SettingsToolbarButton" Order="Primary" Priority="0" Clicked="NastaveniButton_OnClicked" />
+        <ToolbarItem x:Name="StatsToolbarButton" Order="Primary" Priority="0" Clicked="StatsButton_OnClicked" />
+        <ToolbarItem x:Name="AboutToolbarButton" Order="Primary" Priority="0" Clicked="AboutButton_OnClicked" />
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout>
-
             <StackLayout BackgroundColor="#4D4DFC">
                 <Frame BackgroundColor="#7F7FFD" Margin="30,20,30,0" CornerRadius="100" Padding="45,20" HorizontalOptions="Center">
-                    <Label x:Name="levelLabel" Text="6" TextColor="White" FontSize="68"/>
+                    <Label x:Name="LevelButton" Text="6" TextColor="White" FontSize="68" />
+                    <!-- <Button x:Name="LevelButton" Text="6" TextColor="White" FontSize="68" Clicked="LevelButton_OnClicked"/> -->
                 </Frame>
 
                 <ProgressBar IsVisible="True" ProgressColor="#C9FF50" Progress="0.2" Margin="120,0,120,0" />
-                <Label Text="Mathster Lite" TextColor="White" HorizontalOptions="Center" FontSize="30" Margin="0" Padding="0"/>
+                <Label x:Name="UzivatelLabel" HorizontalOptions="Center" FontSize="30" Margin="0" Padding="0"/>
             </StackLayout>
 
-            <Button x:Name="NahodneButton" Margin="100,20,100,0" BackgroundColor="#4D4DFC" Text="?" TextColor="White" FontSize="30"
+            <Button x:Name="NahodneButton" Margin="100,20,100,0" BackgroundColor="#4D4DFC" Text="?" FontSize="30"
                     VerticalOptions="EndAndExpand" CornerRadius="50" Clicked="NahodneButton_OnClicked" />
             <Grid Margin="40,10" VerticalOptions="End" HorizontalOptions="Center">
                 <Grid.RowDefinitions>
@@ -31,16 +38,16 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="ScitaniButton" CornerRadius="57" FontSize="40" Text="+" TextColor="White" Margin="33,18"
+                <Button x:Name="ScitaniButton" CornerRadius="57" FontSize="40" Text="+" Margin="33,18"
                         BackgroundColor="#4D4DFC" Grid.Column="0" Grid.Row="0" Clicked="ScitaniButton_OnClicked" />
 
-                <Button x:Name="OdcitaniButton" CornerRadius="57" FontSize="40" Text="-" TextColor="White" Margin="33,18"
+                <Button x:Name="OdcitaniButton" CornerRadius="57" FontSize="40" Text="-" Margin="33,18"
                         BackgroundColor="#4D4DFC" Grid.Column="1" Grid.Row="0" Clicked="OdcitaniButton_OnClicked"  />
 
-                <Button x:Name="NasobeniButton" CornerRadius="57" FontSize="40" Text="×" TextColor="White" Margin="33,18"
+                <Button x:Name="NasobeniButton" CornerRadius="57" FontSize="40" Text="×" Margin="33,18"
                         BackgroundColor="#4D4DFC" Grid.Column="0" Grid.Row="1" Clicked="NasobeniButton_OnClicked" />
 
-                <Button x:Name="DeleniButton" CornerRadius="57" FontSize="40" Text="÷" TextColor="White" Margin="33,18"
+                <Button x:Name="DeleniButton" CornerRadius="57" FontSize="40" Text="÷" Margin="33,18"
                         BackgroundColor="#4D4DFC" Grid.Column="1" Grid.Row="1" Clicked="DeleniButton_OnClicked" />
             </Grid>
         </StackLayout>

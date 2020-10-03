@@ -16,7 +16,7 @@ namespace Mathster
         public Souhrn(List<Priklad> fronta)
         {
             InitializeComponent();
-            
+            MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
             this.fronta = fronta;
             // NadDobreLabel.BackgroundColor = BarvaSpravne;
             // FrameDobre.BackgroundColor = BarvaSpravne

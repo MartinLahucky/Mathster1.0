@@ -4,6 +4,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:customUi="clr-namespace:Mathster.Helpers.Custom_UI;assembly=Mathster"
              x:Class="Mathster.Nastaveni">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="MenuToolbarButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout>
             <customUi:CS_Entry x:Name="JmenoEntry" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>

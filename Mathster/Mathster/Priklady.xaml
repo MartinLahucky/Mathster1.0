@@ -8,6 +8,7 @@
     
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="PodSebeButton" Order="Primary" Priority="1" IconImageSource="podsebe.png" Clicked="PodSebeButton_OnClicked"/>
+        <ToolbarItem x:Name="MenuToolbarButton" Order="Primary" Priority="0" Clicked="MenuButton_OnClicked" />
     </ContentPage.ToolbarItems>
     
     <ContentPage.Resources>

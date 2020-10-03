@@ -17,6 +17,7 @@ namespace Mathster
         public Priklady(byte id, List<Priklad> fronta)
         {
             InitializeComponent();
+            MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
             DalsiButton.Text = AppResource.Dalsi;
             OdvezdatButton.Text = AppResource.Odevzdat;
             VysledekPropisInput.Text = String.Empty;
@@ -157,6 +158,11 @@ namespace Mathster
             VysledekInput.Focus();
         }
 
+        private async void MenuButton_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Menu());
+        }
+        
         private void VysledekInput_OnTextChanged(object sender, TextChangedEventArgs e)
         {
             List<string> cislo = new List<string>();

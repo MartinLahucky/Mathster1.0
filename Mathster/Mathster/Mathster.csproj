@@ -19,19 +19,7 @@
       <EmbeddedResource Update="NastaveniPrikladu.xaml">
         <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       </EmbeddedResource>
-      <EmbeddedResource Update="VelikostCisel.xaml">
-        <SubType>Designer</SubType>
-        <Generator></Generator>
-      </EmbeddedResource>
       <EmbeddedResource Update="Menu.xaml">
-        <SubType>Designer</SubType>
-        <Generator></Generator>
-      </EmbeddedResource>
-      <EmbeddedResource Update="DeleniANasobeni.xaml">
-        <SubType>Designer</SubType>
-        <Generator></Generator>
-      </EmbeddedResource>
-      <EmbeddedResource Update="PocetPrikladu.xaml">
         <SubType>Designer</SubType>
         <Generator></Generator>
       </EmbeddedResource>
@@ -70,17 +58,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="VelikostCisel.xaml.cs">
-        <DependentUpon>VelikostCisel.xaml</DependentUpon>
-      </Compile>
       <Compile Update="Menu.xaml.cs">
         <DependentUpon>Menu.xaml</DependentUpon>
-      </Compile>
-      <Compile Update="DeleniANasobeni.xaml.cs">
-        <DependentUpon>DeleniANasobeni.xaml</DependentUpon>
-      </Compile>
-      <Compile Update="PocetPrikladu.xaml.cs">
-        <DependentUpon>PocetPrikladu.xaml</DependentUpon>
       </Compile>
       <Compile Update="Priklady.xaml.cs">
         <DependentUpon>Priklady.xaml</DependentUpon>

@@ -9,6 +9,10 @@
         <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
     </ContentPage.Resources>
     
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="MenuToolbarButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout x:Name="MainLayout">
             <ScrollView x:Name="View">

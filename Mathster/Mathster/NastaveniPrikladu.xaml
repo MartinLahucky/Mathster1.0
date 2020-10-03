@@ -9,6 +9,10 @@
         <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
     </ContentPage.Resources>
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="MenuToolbarButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout>
 
@@ -52,7 +56,7 @@
 
             
             <!--velikost dělitele:-->
-            <Frame Margin="30,2,30,2" BackgroundColor="#4D4DFC" CornerRadius="40">
+            <Frame x:Name="DeleniANasbeniFrame" Margin="30,2,30,2" BackgroundColor="#4D4DFC" CornerRadius="40">
                 <StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Label x:Name= "nazev3Label" StyleClass="NastaveniPrikladuNazevLabel" Text="Velikost Dělitele" VerticalOptions="CenterAndExpand"/>
@@ -72,12 +76,12 @@
             
             <!--dolní button:-->   
             <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#DDDDDD">
-                <Button x:Name="nextButton"
+                <Button x:Name="DalsiButton"
                         Text="dalšý"
                         TextColor="white"
                         StyleClass="DalsiTlacitko"
                         AbsoluteLayout.LayoutFlags="All"
-                        AbsoluteLayout.LayoutBounds="0.4,0.5,0.6,0.2"/>
+                        AbsoluteLayout.LayoutBounds="0.4,0.5,0.6,0.2" Clicked="DalsiButton_OnClicked"/>
             </AbsoluteLayout>
 
 
