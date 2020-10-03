@@ -16,6 +16,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <EmbeddedResource Update="NastaveniPrikladu.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
       <EmbeddedResource Update="VelikostCisel.xaml">
         <SubType>Designer</SubType>
         <Generator></Generator>

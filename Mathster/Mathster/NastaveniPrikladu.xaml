@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mathster.NastaveniPrikladu"
+             x:Name="NastaveniPrikladuContentPage"
+             Title="Nastavení Příkladů">
+             
+    <ContentPage.Resources>
+        <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            
+            <!--počet příkladů:-->
+            <Frame Margin="30,30,30,2" BackgroundColor="#4D4DFC" CornerRadius="40">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name= "nazev1Label" StyleClass="NastaveniPrikladuNazevLabel" Text="Počet Příkladů" VerticalOptions="CenterAndExpand"/>
+                        <Frame StyleClass="NastaveniPrikladuFrame" HorizontalOptions="EndAndExpand">
+                            <Label x:Name="pocetPrikladuLabel" StyleClass="NastaveniPrikladuLabel" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <Slider x:Name="pocetPrikladuSlider" 
+                            MaximumTrackColor="#484848" 
+                            MinimumTrackColor="#FCA54D" 
+                            ThumbColor="White"
+                            ValueChanged="pocetPrikladu_ValueChanged" />
+                </StackLayout>
+            </Frame>
+
+            
+            <!--počet cifer:-->
+            <Frame Margin="30,2,30,2" BackgroundColor="#4D4DFC" CornerRadius="40">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name= "nazev2Label" StyleClass="NastaveniPrikladuNazevLabel" Text="Počet Cifer" VerticalOptions="CenterAndExpand"/>
+                        <Frame StyleClass="NastaveniPrikladuFrame" HorizontalOptions="EndAndExpand">
+                            <Label x:Name="pocetCiferLabel" StyleClass="NastaveniPrikladuLabel" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <Slider x:Name="pocetCiferSlider" 
+                            MaximumTrackColor="#484848" 
+                            MinimumTrackColor="#FCA54D" 
+                            ThumbColor="White"
+                            ValueChanged="pocetCiferSlider_ValueChanged" />
+                </StackLayout>
+            </Frame>
+
+            
+            <!--velikost dělitele:-->
+            <Frame Margin="30,2,30,2" BackgroundColor="#4D4DFC" CornerRadius="40">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name= "nazev3Label" StyleClass="NastaveniPrikladuNazevLabel" Text="Velikost Dělitele" VerticalOptions="CenterAndExpand"/>
+                        <Frame StyleClass="NastaveniPrikladuFrame" HorizontalOptions="EndAndExpand">
+                            <Label x:Name="velikostDeliteleLabel" StyleClass="NastaveniPrikladuLabel" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <Slider x:Name="velikostDeliteleSlider" 
+                            MaximumTrackColor="#484848" 
+                            MinimumTrackColor="#FCA54D" 
+                            ThumbColor="White"
+                            ValueChanged="velikostDeliteleSlider_ValueChanged" />
+                </StackLayout>
+            </Frame>
+            
+            
+            <!--dolní button:-->   
+            <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#DDDDDD">
+                <Button x:Name="nextButton"
+                        Text="dalšý"
+                        TextColor="white"
+                        StyleClass="DalsiTlacitko"
+                        AbsoluteLayout.LayoutFlags="All"
+                        AbsoluteLayout.LayoutBounds="0.4,0.5,0.6,0.2"/>
+            </AbsoluteLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

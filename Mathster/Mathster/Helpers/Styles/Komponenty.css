@@ -103,3 +103,29 @@
     -moz-outline-radius-bottomright: 30;
     -moz-outline-radius-topright: 30;
 }
+.NastaveniPrikladuLabel
+{
+    font-size: 30;
+    color: #4D4DFC;
+}
+.NastaveniPrikladuFrame
+{
+    border-radius: 30;
+    color: white;
+    margin: 5;
+    width: 50;
+}
+.NastaveniPrikladuNazevLabel
+{
+    font-size: 25;
+    color: #ffffff;
+    margin: 10;
+}
+.DalsiTlacitko
+{
+    background-color: #4D4DFC;
+    font-size: 20;
+    border-radius: 50;
+    margin-left: 80;
+    margin-right: 80;
+}
