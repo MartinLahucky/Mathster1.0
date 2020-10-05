@@ -321,4 +321,7 @@
   <data name="NelzeUrcit" xml:space="preserve">
     <value>Unable to determine</value>
   </data>
+  <data name="DarkMode" xml:space="preserve">
+    <value>Dark mode</value>
+  </data>
 </root>

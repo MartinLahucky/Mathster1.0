@@ -321,4 +321,7 @@
   <data name="NelzeUrcit" xml:space="preserve">
     <value>Nelze určit</value>
   </data>
+  <data name="DarkMode" xml:space="preserve">
+    <value>Tmavý režim</value>
+  </data>
 </root>
