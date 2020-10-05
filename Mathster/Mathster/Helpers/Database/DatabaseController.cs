@@ -35,26 +35,15 @@ namespace Mathster.Helpers.Model
                         Nachozeno = 0,
                         DruhNejcastejiPocitanychPrikladu = String.Empty,
                     };
-
+                    await database.InsertAsync(tabulkaModel);
+                    
                     SettingsModel tabulkaNastaveni = new SettingsModel
                     {
                         ID = 1,
                         DarkMode = false,
-                        BarvaPrimarni = Color.FromHex("#ffa927"),
-                        BarvaPrimarniSvetla = Color.FromHex("#"),
-                        BarvaSekundarni = Color.FromHex("#33a716"), 
-                        BarvaSekundarniSvetla = Color.FromHex("#89e771"),
-                        BarvaSpravne = Color.FromHex("#6ece25"),
-                        BarvaSpatne = Color.FromHex("#ffb54c"),
-                        BarvaTextu = Color.FromHex("#"),
-                        BarvaTlacitek = Color.FromHex("#"),
-                        BarvaInfo = Color.FromHex("#ead78e"),
-                        BarvaPozadi = Color.FromHex("#"),
-                        BarvaPozadiDarkMode = Color.FromHex("#"),
-                        
-                        
+                        Background = Color.White
                     };
-                    await database.InsertAsync(tabulkaModel);
+                    await database.InsertAsync(tabulkaNastaveni);
                 }
             });
             Task.WaitAll(task);
