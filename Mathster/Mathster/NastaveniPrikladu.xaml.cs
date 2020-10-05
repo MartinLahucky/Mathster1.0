@@ -5,6 +5,9 @@ using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using SkiaSharp;
+// using SkiaSharp.Views.Forms;
+
 namespace Mathster
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]

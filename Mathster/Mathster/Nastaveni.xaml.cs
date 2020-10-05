@@ -17,6 +17,8 @@ namespace Mathster
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
             Title = AppResource.Nastaveni;
             JmenoEntry.Placeholder = AppResource.ZadejteJmeno;
+            JmenoLabel.Text = AppResource.Jmeno;
+            DarkModeLabel.Text = AppResource.DarkMode;
             
             Task task = Task.Run(async () =>
             {
@@ -36,6 +38,29 @@ namespace Mathster
             
         }
 
+        // potřeba dodělat převod na darkmode:
+        private void DarkModeSwitch_Toggled(object sender, ToggledEventArgs e)
+        {
+            // příklad funkčnosti (možno smazat xd):
+
+            // if(DarkModeSwitch.IsToggled)
+            // {
+            //     JmenoLabel.Text = "xddd";
+            // }
+            // else
+            // {
+            //     JmenoLabel.Text = "lol";
+            // }      
+        }
+
+        private async void MenuButton_OnClicked(object sender, EventArgs e)
+        {
+            DBModel tabulka = await App.Database.GetTable();
+            tabulka.Jmeno = JmenoEntry.Text;
+            await App.Database.UpdateTable(tabulka);
+            await Navigation.PushAsync(new Menu());
+        }
+
         // protected async override void OnDisappearing()
         // {
         //     base.OnDisappearing();
@@ -44,12 +69,5 @@ namespace Mathster
         //     tabulka.Jmeno = JmenoEntry.Text;
         //     await App.Database.UpdateTable(tabulka);
         // }
-        private async void MenuButton_OnClicked(object sender, EventArgs e)
-        {
-            DBModel tabulka = await App.Database.GetTable();
-            tabulka.Jmeno = JmenoEntry.Text;
-            await App.Database.UpdateTable(tabulka);
-            await Navigation.PushAsync(new Menu());
-        }
     }
 }

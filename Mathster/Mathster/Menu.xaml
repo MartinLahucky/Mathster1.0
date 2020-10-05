@@ -53,6 +53,18 @@
                 <Button x:Name="DeleniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka" 
                         Grid.Column="1" Grid.Row="1" Clicked="DeleniButton_OnClicked" />
             </Grid>
+
+
+
+
+
+            <!--<skia:SKCanvasView PaintSurface="OnCanvasViewPaintSurface">
+                <skia:SKCanvasView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCanvasViewTapped" />
+                </skia:SKCanvasView.GestureRecognizers>
+            </skia:SKCanvasView>-->
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
