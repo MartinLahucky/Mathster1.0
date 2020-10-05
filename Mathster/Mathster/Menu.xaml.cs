@@ -23,6 +23,12 @@ namespace Mathster
             SettingsToolbarButton.IconImageSource = "round_settings_white_18dp.png";
             StatsToolbarButton.IconImageSource = "round_person_white_18dp.png";
             AboutToolbarButton.IconImageSource = "outline_info_white_18dp.png";
+            
+            ScitaniButton.Text = "+";
+            OdcitaniButton.Text = "-";
+            NasobeniButton.Text = "×";
+            DeleniButton.Text = "÷";
+            NahodneButton.Text = "?";
         }
         
         protected async override void OnAppearing()

@@ -18,7 +18,7 @@ namespace Mathster
         {
             InitializeComponent();
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
-            DalsiButton.Text = AppResource.Dalsi;
+            DalsiButton.Text = ">";
             OdvezdatButton.Text = AppResource.Odevzdat;
             VysledekPropisInput.Text = String.Empty;
             VysledekInput.Text = String.Empty;
@@ -91,9 +91,9 @@ namespace Mathster
                     Navigation.RemovePage(page);
                 }
             }
-            catch (Exception exception)
+            catch // (Exception exception)
             {
-                await DisplayAlert(AppResource.Upozorneni, exception.Message, AppResource.Ok);
+                // await DisplayAlert(AppResource.Upozorneni, exception.Message, AppResource.Ok);
                 await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniZadejteCislo, AppResource.Ok);
             }
         }

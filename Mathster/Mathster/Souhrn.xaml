@@ -64,7 +64,7 @@
                            </ListView>
                        </StackLayout>
                    </Frame>
-                    <Button x:Name="MenuButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="MenuButton_OnClicked"/>
+                    <Button x:Name="MenuButton" StyleClass="Tlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="MenuButton_OnClicked"/>
                 </StackLayout>
             </ScrollView>
         </StackLayout>

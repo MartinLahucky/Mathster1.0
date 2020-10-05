@@ -32,8 +32,8 @@
                         </StackLayout>
                     </Frame>
                     
-                    <Button x:Name="DalsiButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,0,0,20" Clicked="DalsiButton_OnClicked" />
-                    <Button x:Name="OdvezdatButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,0,0,20" Clicked="OdvezdatButton_OnClicked" />
+                    <Button x:Name="DalsiButton" StyleClass="Tlacitka" CornerRadius="30" Margin="0,0,0,20" Clicked="DalsiButton_OnClicked" />
+                    <Button x:Name="OdvezdatButton" StyleClass="Tlacitka" CornerRadius="30" Margin="0,0,0,20" Clicked="OdvezdatButton_OnClicked" />
                 </StackLayout>
             </ScrollView>
         </StackLayout>

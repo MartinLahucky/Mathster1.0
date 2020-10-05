@@ -4,7 +4,7 @@
     font-size: 30;
     text-align: center;
     width: 130;
-    background-color: #89e771;
+    background-color: #7F7FFD;
     color: black;
 }
 .InfoLabel
@@ -36,7 +36,7 @@
     font-size: 30;
     text-align: center;
     width: 130;
-    background-color: #ffce85;
+    background-color: #FCA54D;
     color: black;
 }
 
@@ -73,10 +73,22 @@
     color: white;
 }
 
-.ZelenaTlacitka
+.Tlacitka
 {
     font-size: 30;
-    background-color: #33a716;
+    background-color: #4D4DFC;
+    color: white;
+}
+.LevelButtonMenu
+{
+    font-size: 45;
+    background-color: #7F7FFD;
+    color: white;
+}
+.MenuTlacitka
+{
+    font-size: 40;
+    background-color: #4D4DFC;
     color: white;
 }
 .RestartButton
