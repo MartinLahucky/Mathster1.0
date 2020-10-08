@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
-using SkiaSharp;
-// using SkiaSharp.Views.Forms;
 
 namespace Mathster
 {
