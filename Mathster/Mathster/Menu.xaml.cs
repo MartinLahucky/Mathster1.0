@@ -1,16 +1,17 @@
 ﻿using System;
+using Mathster.Helpers.Custom_UI;
 using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
+using SkiaSharp;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using SkiaSharp;
-using SkiaSharp.Views.Forms;
 
 namespace Mathster
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Menu : ContentPage
     {
+        private Circles levelBar;
         public Menu()
         {
             InitializeComponent();
@@ -31,6 +32,10 @@ namespace Mathster
             NasobeniButton.Text = "×";
             DeleniButton.Text = "÷";
             NahodneButton.Text = "?";
+            
+            //SkiaSharp
+            levelBar = new Circles(180,(info)=> new SKPoint((float)info.Width / 2,(float)info.Height / 2));
+            levelBar.DrawFullProgressBar(SkCanvasView,"#7F7FFD","#FCA54D",30, 70, "#C9FF50");
         }
         
         protected async override void OnAppearing()
