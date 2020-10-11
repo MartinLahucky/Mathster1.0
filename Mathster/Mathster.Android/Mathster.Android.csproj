@@ -80,6 +80,7 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\dobre_ikona.png" />
     <AndroidResource Include="Resources\drawable\ikona.png" />
     <AndroidResource Include="Resources\drawable\outline_info_white_18dp.png" />
     <AndroidResource Include="Resources\drawable\podsebe.png" />
@@ -90,6 +91,7 @@
     <AndroidResource Include="Resources\drawable\sipkad2.png" />
     <AndroidResource Include="Resources\drawable\sipkah.png" />
     <AndroidResource Include="Resources\drawable\sipkah2.png" />
+    <AndroidResource Include="Resources\drawable\spatne_ikona.png" />
     <AndroidResource Include="Resources\drawable\splash_screen.xml" />
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />

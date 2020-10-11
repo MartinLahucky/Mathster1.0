@@ -136,8 +136,15 @@
     margin-left: 80;
     margin-right: 80;
 }
+
 .ZelenyNadpidLabel
 {
     color: #C9FF50;
     font-size: 25;
+}
+
+.FialovaNadpidLabel
+{
+    color: #4D4DFC;
+    font-size: 30;
 }
