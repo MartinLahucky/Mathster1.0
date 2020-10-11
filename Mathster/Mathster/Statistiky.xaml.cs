@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using Mathster.Helpers.Custom_UI;
 using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
-using Microcharts;
 using SkiaSharp;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
