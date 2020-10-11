@@ -25,10 +25,9 @@ namespace Mathster
             // VysledekyList.BackgrounColor = BarvaSekundarniSvetla
             
             Title = AppResource.Souhrn;
-            NadDobreLabel.Text = AppResource.Spravne;
-            NadSpatneLabel.Text = AppResource.Spatne;
             MenuButton.Text = AppResource.Menu;
-            NadVysledkyLabel.Text = AppResource.Vysledky;
+            NadpisSouhrnLabel.Text = AppResource.Vysledky;
+            //NadVysledkyLabel.Text = AppResource.Vysledky;
             
 
 
@@ -111,14 +110,17 @@ namespace Mathster
                 }
             }
             VysledkyList.ItemsSource = priklady;
-            DobreButton.Text = pocitadloSpravne.ToString();
-            SpatneButton.Text = pocitadloSpatne.ToString();
+            DobrePocetLabel.Text = pocitadloSpravne.ToString();
+            // DobreButton.Text = pocitadloSpravne.ToString();
+            SpatnePocetLabel.Text = pocitadloSpatne.ToString();
+            // SpatneButton.Text = pocitadloSpatne.ToString();
         }
         protected async override void OnAppearing()
         {
             base.OnAppearing();
             SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+            
         }
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
