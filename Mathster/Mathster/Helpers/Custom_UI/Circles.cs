@@ -30,6 +30,26 @@ namespace Mathster.Helpers.Custom_UI
                 DrawProgress(progress, ProgressBarThickness, colorHex);
             };
         }
+        public void DrawChart(SKCanvasView View, string backgroundColorHex, string progressBarColorHex, float ProgressBarThickness, float entry1, float entry2, float entry3, float entryMax, string colorHex)
+        {
+            View.PaintSurface += (sender, args) =>
+            {
+                canvas = args.Surface.Canvas;
+                CalculateCenter(args.Info);
+                canvas.Clear();
+                DrawFullCircle(backgroundColorHex);
+                DrawCircleBorder(ProgressBarThickness, progressBarColorHex);
+                DrawProgress(VypocetVelikostCastiGrafu(entry1, entryMax), ProgressBarThickness, colorHex);
+                DrawProgress(VypocetVelikostCastiGrafu(entry2, entryMax), ProgressBarThickness, colorHex);
+                DrawProgress(VypocetVelikostCastiGrafu(entry3, entryMax), ProgressBarThickness, colorHex);
+            };
+        }
+
+        private float VypocetVelikostCastiGrafu(float entry, float max)
+        {
+            return (entry / max) * 100;
+        }
+        
         public SKRect Rect => new SKRect(Center.X-Redius,Center.Y-Redius,Center.X+Redius,Center.Y+Redius);
         public void CalculateCenter(SKImageInfo argsInfo)
         {
