@@ -39,9 +39,11 @@ namespace Mathster.Helpers.Custom_UI
                 canvas.Clear();
                 DrawFullCircle(backgroundColorHex);
                 DrawCircleBorder(ProgressBarThickness, progressBarColorHex);
-                DrawProgress(VypocetVelikostCastiGrafu(entry1, entryMax), ProgressBarThickness, entry1ColorHex);
-                DrawProgress(VypocetVelikostCastiGrafu(entry2, entryMax), ProgressBarThickness, entry2ColorHex);
-                DrawProgress(VypocetVelikostCastiGrafu(entry3, entryMax), ProgressBarThickness, entry3ColorHex);
+
+                //                             možná:  entry1 + VypocetVelikostCastiGrafu(entry2) + VypocetVelikostCastiGrafu(entry3)
+                DrawProgress(VypocetVelikostCastiGrafu(entry1 + entry2 + entry3, entryMax), ProgressBarThickness, entry1ColorHex);
+                DrawProgress(VypocetVelikostCastiGrafu(entry1 + entry2, entryMax), ProgressBarThickness, entry2ColorHex);
+                DrawProgress(VypocetVelikostCastiGrafu(entry1, entryMax), ProgressBarThickness, entry3ColorHex);
             };
         }
 

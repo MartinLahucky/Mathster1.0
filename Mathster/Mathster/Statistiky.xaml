@@ -2,7 +2,7 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              x:Class="Mathster.Statistiky">
     <ContentPage.Resources>
         <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
@@ -15,7 +15,45 @@
         <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <forms:ChartView x:Name="ChartView" HeightRequest="100" WidthRequest="100" />
+                <Frame StyleClass="FrameTmaveFialova" Margin="30" CornerRadius="30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <StackLayout>
+                        <Label x:Name="NadpisLabel" StyleClass="ZelenyNadpidLabel" Text="CELKEM" HorizontalOptions="CenterAndExpand"/>
+
+                        <forms:SKCanvasView x:Name="SkCanvasView" HeightRequest="160" WidthRequest="10" Grid.Column="0" />
+                        <Grid x:Name="PopisGrid">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                                <Image x:Name="PopisImage1"/>
+                                <Label x:Name="PopisLabel1" Text="+"/>
+                                <Label x:Name="HodnotaLabel1" Text="69"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
+                                <Image x:Name="PopisImage2"/>
+                                <Label x:Name="PopisLabel2" Text="-"/>
+                                <Label x:Name="HodnotaLabel2" Text="420"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+                                <Image x:Name="PopisImage3"/>
+                                <Label x:Name="PopisLabel3" Text="×"/>
+                                <Label x:Name="HodnotaLabel3" Text="123"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+                                <Image x:Name="PopisImage4"/>
+                                <Label x:Name="PopisLabel4" Text="÷"/>
+                                <Label x:Name="HodnotaLabel4" Text="321"/>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+               
+                
+                
                 <StackLayout Margin="30,20,30,0">
                     <Button x:Name="ResetStatsButton" BorderWidth="2" StyleClass="RestartButton" CornerRadius="5" FontSize="20" Margin="0,0,0,20" Clicked="ResetStatsButton_OnClicked"/>
                 </StackLayout>
