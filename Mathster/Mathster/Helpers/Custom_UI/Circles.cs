@@ -17,7 +17,7 @@ namespace Mathster.Helpers.Custom_UI
             Redius = redius;
         }
 
-        public void DrawFullProgressBar(SKCanvasView View, string backgroundColorHex, string progressBarColorHex, float ProgressBarThickness, float progress,  string colorHex)
+        public void DrawFullProgressBar(SKCanvasView View, string backgroundColorHex, string progressBarColorHex, float ProgressBarThickness, float progress,  string progressColorHex)
         {
             // Bez tohohle se to nepostaví, buď redundantní kód nebo tahle ošklivost 
             View.PaintSurface += (sender, args) =>
@@ -27,7 +27,7 @@ namespace Mathster.Helpers.Custom_UI
                 canvas.Clear();
                 DrawFullCircle(backgroundColorHex);
                 DrawCircleBorder(ProgressBarThickness, progressBarColorHex);
-                DrawProgress(progress, ProgressBarThickness, colorHex);
+                DrawProgress(progress, ProgressBarThickness, progressColorHex);
             };
         }
         public void DrawChart(SKCanvasView View, string backgroundColorHex, string progressBarColorHex, float ProgressBarThickness, float entry1, float entry2, float entry3, float entryMax, string entry1ColorHex, string entry2ColorHex, string entry3ColorHex)

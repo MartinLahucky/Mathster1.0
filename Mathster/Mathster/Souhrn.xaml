@@ -39,8 +39,7 @@
                                <Image Source="dobre_ikona.png" Grid.Column="0" Grid.Row="0" />
                                <Frame x:Name="FrameDobre" CornerRadius="25" Padding="0"  HasShadow="False" Grid.Column="0" Grid.Row="1" >
                                     <StackLayout>
-                                        <Label x:Name="DobrePocetLabel" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="30"/> 
-                                      
+                                        <Button x:Name="DobrePocetButton" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="30" Clicked="DobreButton_OnClicked"/> 
                                     </StackLayout>
                                 </Frame>
                                 
@@ -49,9 +48,7 @@
                                <Image Source="spatne_ikona.png" Grid.Column="2" Grid.Row="0"/>
                                <Frame x:Name="FrameSpatne" CornerRadius="25" Padding="0"  HasShadow="False" Grid.Column="2" Grid.Row="1" >
                                    <StackLayout>
-                                       
-                                       <Label x:Name="SpatnePocetLabel" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="30"/>
-                                      
+                                       <Button x:Name="SpatnePocetButton" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="30" Clicked="SpatneButton_OnClicked"/>
                                    </StackLayout>
                                </Frame>
                            </Grid>

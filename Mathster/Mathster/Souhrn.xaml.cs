@@ -13,27 +13,21 @@ namespace Mathster
     {
         private List<Priklad> fronta;
         private DBModel zapis;
+        private SettingsModel tabulkaNastaveni;
         public Souhrn(List<Priklad> fronta)
         {
             InitializeComponent();
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
             this.fronta = fronta;
-            // NadDobreLabel.BackgroundColor = BarvaSpravne;
-            // FrameDobre.BackgroundColor = BarvaSpravne
-            // FrameSpatne.BackgroundColor = BarvaSpatne   
-            // NadSpatneLabel.BackgrounColor = BarvaSpatne
-            // VysledekyList.BackgrounColor = BarvaSekundarniSvetla
-            
+
             Title = AppResource.Souhrn;
             MenuButton.Text = AppResource.Menu;
             NadpisSouhrnLabel.Text = AppResource.Vysledky;
-            //NadVysledkyLabel.Text = AppResource.Vysledky;
-            
-
 
             Task task = Task.Run(async () =>
             {
                 zapis = await App.Database.GetTable();
+                tabulkaNastaveni = await App.Database.GetSettings();
             });
             Task.WaitAll(task);
             
@@ -58,11 +52,13 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemScitaniSpravne++;
+                            priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+                            
                         }
                         else
                         {
-                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FFEDBD");
                             pocitadloSpatne++;
+                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
                         }
                         break;
                     case 2:
@@ -72,11 +68,12 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemOdcitaniSpravne++;
+                            priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
                         }
                         else
                         {
-                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FFEDBD");
                             pocitadloSpatne++;
+                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
                         }
                         break;
                     case 3:
@@ -86,11 +83,12 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemNasobeniSpravne++;
+                            priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
                         }
                         else
                         {
-                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FFEDBD");
                             pocitadloSpatne++;
+                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
                         }
                         break;
                     case 4:
@@ -100,19 +98,20 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemDeleniSpravne++;
+                            priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
                         }
                         else
                         {
-                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FFEDBD");
                             pocitadloSpatne++;
+                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
                         }
                         break;
                 }
             }
             VysledkyList.ItemsSource = priklady;
-            DobrePocetLabel.Text = pocitadloSpravne.ToString();
+            DobrePocetButton.Text = pocitadloSpravne.ToString();
             // DobreButton.Text = pocitadloSpravne.ToString();
-            SpatnePocetLabel.Text = pocitadloSpatne.ToString();
+            SpatnePocetButton.Text = pocitadloSpatne.ToString();
             // SpatneButton.Text = pocitadloSpatne.ToString();
         }
         protected async override void OnAppearing()
