@@ -13,28 +13,21 @@ namespace Mathster
     {
         private List<Priklad> fronta;
         private DBModel zapis;
+        private SettingsModel tabulkaNastaveni;
         public Souhrn(List<Priklad> fronta)
         {
             InitializeComponent();
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
             this.fronta = fronta;
-            // NadDobreLabel.BackgroundColor = BarvaSpravne;
-            // FrameDobre.BackgroundColor = BarvaSpravne
-            // FrameSpatne.BackgroundColor = BarvaSpatne   
-            // NadSpatneLabel.BackgrounColor = BarvaSpatne
-            // VysledekyList.BackgrounColor = BarvaSekundarniSvetla
-            
-            Title = AppResource.Souhrn;
-            NadDobreLabel.Text = AppResource.Spravne;
-            NadSpatneLabel.Text = AppResource.Spatne;
-            MenuButton.Text = AppResource.Menu;
-            NadVysledkyLabel.Text = AppResource.Vysledky;
-            
 
+            Title = AppResource.Souhrn;
+            MenuButton.Text = AppResource.Menu;
+            NadpisSouhrnLabel.Text = AppResource.Vysledky;
 
             Task task = Task.Run(async () =>
             {
                 zapis = await App.Database.GetTable();
+                tabulkaNastaveni = await App.Database.GetSettings();
             });
             Task.WaitAll(task);
             
@@ -59,11 +52,13 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemScitaniSpravne++;
+                            priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+                            
                         }
                         else
                         {
-                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FFEDBD");
                             pocitadloSpatne++;
+                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
                         }
                         break;
                     case 2:
@@ -73,11 +68,12 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemOdcitaniSpravne++;
+                            priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
                         }
                         else
                         {
-                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FFEDBD");
                             pocitadloSpatne++;
+                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
                         }
                         break;
                     case 3:
@@ -87,11 +83,12 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemNasobeniSpravne++;
+                            priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
                         }
                         else
                         {
-                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FFEDBD");
                             pocitadloSpatne++;
+                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
                         }
                         break;
                     case 4:
@@ -101,24 +98,28 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemDeleniSpravne++;
+                            priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
                         }
                         else
                         {
-                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FFEDBD");
                             pocitadloSpatne++;
+                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
                         }
                         break;
                 }
             }
             VysledkyList.ItemsSource = priklady;
-            DobreButton.Text = pocitadloSpravne.ToString();
-            SpatneButton.Text = pocitadloSpatne.ToString();
+            DobrePocetButton.Text = pocitadloSpravne.ToString();
+            // DobreButton.Text = pocitadloSpravne.ToString();
+            SpatnePocetButton.Text = pocitadloSpatne.ToString();
+            // SpatneButton.Text = pocitadloSpatne.ToString();
         }
         protected async override void OnAppearing()
         {
             base.OnAppearing();
             SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+            
         }
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
