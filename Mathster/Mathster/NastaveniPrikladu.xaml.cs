@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -26,6 +27,9 @@ namespace Mathster
             InitializeComponent();
             this.druhPrikladu = druhPrikladu;
             DalsiButton.Text = AppResource.Dalsi;
+            nazev1Label.Text = AppResource.ZvolitPocetPrikladu;
+            nazev2Label.Text = AppResource.VelikostCisel;
+            nazev3Label.Text = AppResource.ZvolitNasobitelADelitel;
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
             
             pocetPrikladuSlider.Value = pocetPrikladu;
@@ -64,7 +68,15 @@ namespace Mathster
                     break;
             }
         }
-
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
+            BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+            Frame1.BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+            Frame2.BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+            Frame3.BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+        }
         private void pocetPrikladu_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             pocetPrikladu = (int)pocetPrikladuSlider.Value;
@@ -144,8 +156,6 @@ namespace Mathster
                         break;
                 }
             }
-            
-            
             
             List<Priklad> fronta = new List<Priklad>();
 

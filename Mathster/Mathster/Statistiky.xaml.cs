@@ -22,6 +22,8 @@ namespace Mathster
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+            SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
+            BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
             
             DBModel tabulka = await App.Database.GetTable();
 

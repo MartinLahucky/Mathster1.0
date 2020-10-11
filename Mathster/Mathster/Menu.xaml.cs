@@ -16,12 +16,6 @@ namespace Mathster
         {
             InitializeComponent();
             Title = AppResource.Menu;
-            ScitaniButton.TextColor = Color.White;
-            OdcitaniButton.TextColor = Color.White;
-            NasobeniButton.TextColor = Color.White;
-            DeleniButton.TextColor = Color.White;
-            NahodneButton.TextColor = Color.White;
-            UzivatelLabel.TextColor = Color.White;
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
             SettingsToolbarButton.IconImageSource = "round_settings_white_18dp.png";
             StatsToolbarButton.IconImageSource = "round_person_white_18dp.png";
@@ -40,6 +34,10 @@ namespace Mathster
         
         protected async override void OnAppearing()
         {
+            base.OnAppearing();
+            SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
+            BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+            UzivatelLabel.TextColor = Color.FromHex("#FAFAFA");
             DBModel tabulka = await App.Database.GetTable();
             if (tabulka.Jmeno == null || tabulka.Jmeno == "" || tabulka.Jmeno == String.Empty)
             {

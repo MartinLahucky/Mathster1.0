@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -97,10 +98,11 @@ namespace Mathster
                 await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniZadejteCislo, AppResource.Ok);
             }
         }
-        protected override void OnAppearing ()
+        protected async override void OnAppearing ()
         {
             base.OnAppearing ();
-
+            SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
+            BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
             VysledekInput.Focus();
         }
 

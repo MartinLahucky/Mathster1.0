@@ -307,7 +307,7 @@
     <value>Points gained</value>
   </data>
   <data name="ZvolitNasobitelADelitel" xml:space="preserve">
-    <value>Select a Multiplicator and Divisor</value>
+    <value>Select a Multiplicator/Divisor</value>
   </data>
   <data name="ZvolitPocetPrikladu" xml:space="preserve">
     <value>Amount of exercises</value>

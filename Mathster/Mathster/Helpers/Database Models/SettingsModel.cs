@@ -7,11 +7,6 @@ namespace Mathster.Helpers.Model
     {
         [PrimaryKey]
         public int ID { get; set; }
-        public bool DarkMode { get; set; }
-        public Color Background { get; set; }
-
-
-
-
+        public string BackgroundHex { get; set; }
     }
 }

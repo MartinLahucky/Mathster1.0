@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Linq;
+using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -18,6 +18,12 @@ namespace Mathster
             ONasLabel.Text = $"{AppResource.ONasText}\n \n{AppResource.VyvojGrafika}\n{AppResource.VyvojProgramovani}";
             OAplikaciStaticLabel.Text = AppResource.OAplikaci;
             OAplikaciLabel.Text = AppResource.OAplikaciText;
+        }
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
+            BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
         }
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {

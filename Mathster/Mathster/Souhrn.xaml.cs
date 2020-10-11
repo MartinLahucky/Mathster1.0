@@ -114,7 +114,12 @@ namespace Mathster
             DobreButton.Text = pocitadloSpravne.ToString();
             SpatneButton.Text = pocitadloSpatne.ToString();
         }
-
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
+            BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+        }
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
             await App.Database.UpdateTable(zapis);
