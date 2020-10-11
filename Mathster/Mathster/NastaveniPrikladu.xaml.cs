@@ -25,18 +25,22 @@ namespace Mathster
         {
             InitializeComponent();
             this.druhPrikladu = druhPrikladu;
+            DalsiButton.Text = AppResource.Dalsi;
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
             
             pocetPrikladuSlider.Value = pocetPrikladu;
             pocetPrikladuSlider.Maximum = maxPocetPrikladu;
+            pocetPrikladuSlider.Minimum = 1;
             pocetPrikladuLabel.Text = pocetPrikladu.ToString();
-            //
+            
             pocetCiferSlider.Value = pocetCifer;
             pocetCiferSlider.Maximum = maxPocetCifer;
+            pocetCiferSlider.Minimum = 1;
             pocetCiferLabel.Text = pocetCifer.ToString();
-            //
+            
             velikostDeliteleSlider.Value = velikostDelitele;
             velikostDeliteleSlider.Maximum = maxVelikostDelitele;
+            velikostDeliteleSlider.Minimum = 1;
             velikostDeliteleLabel.Text = velikostDelitele.ToString();
             
             switch (druhPrikladu)
