@@ -30,7 +30,7 @@ namespace Mathster.Helpers.Custom_UI
                 DrawProgress(progress, ProgressBarThickness, colorHex);
             };
         }
-        public void DrawChart(SKCanvasView View, string backgroundColorHex, string progressBarColorHex, float ProgressBarThickness, float entry1, float entry2, float entry3, float entryMax, string colorHex)
+        public void DrawChart(SKCanvasView View, string backgroundColorHex, string progressBarColorHex, float ProgressBarThickness, float entry1, float entry2, float entry3, float entryMax, string entry1ColorHex, string entry2ColorHex, string entry3ColorHex)
         {
             View.PaintSurface += (sender, args) =>
             {
@@ -39,9 +39,9 @@ namespace Mathster.Helpers.Custom_UI
                 canvas.Clear();
                 DrawFullCircle(backgroundColorHex);
                 DrawCircleBorder(ProgressBarThickness, progressBarColorHex);
-                DrawProgress(VypocetVelikostCastiGrafu(entry1, entryMax), ProgressBarThickness, colorHex);
-                DrawProgress(VypocetVelikostCastiGrafu(entry2, entryMax), ProgressBarThickness, colorHex);
-                DrawProgress(VypocetVelikostCastiGrafu(entry3, entryMax), ProgressBarThickness, colorHex);
+                DrawProgress(VypocetVelikostCastiGrafu(entry1, entryMax), ProgressBarThickness, entry1ColorHex);
+                DrawProgress(VypocetVelikostCastiGrafu(entry2, entryMax), ProgressBarThickness, entry2ColorHex);
+                DrawProgress(VypocetVelikostCastiGrafu(entry3, entryMax), ProgressBarThickness, entry3ColorHex);
             };
         }
 
