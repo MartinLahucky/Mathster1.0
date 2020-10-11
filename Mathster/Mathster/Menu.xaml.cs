@@ -37,7 +37,7 @@ namespace Mathster
             base.OnAppearing();
             SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
-            UzivatelLabel.TextColor = Color.FromHex("#FAFAFA");
+            UzivatelLabel.TextColor = Color.White;
             DBModel tabulka = await App.Database.GetTable();
             if (tabulka.Jmeno == null || tabulka.Jmeno == "" || tabulka.Jmeno == String.Empty)
             {
