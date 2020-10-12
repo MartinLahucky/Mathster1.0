@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using SQLite;
-using Xamarin.Forms;
 
 namespace Mathster.Helpers.Model
 {
@@ -35,36 +34,36 @@ namespace Mathster.Helpers.Model
                         Nachozeno = 0,
                         DruhNejcastejiPocitanychPrikladu = String.Empty,
                     };
-
-                    SettingsModel tabulkaNastaveni = new SettingsModel
-                    {
-                        ID = 1,
-                        DarkMode = false,
-                        BarvaPrimarni = Color.FromHex("#ffa927"),
-                        BarvaPrimarniSvetla = Color.FromHex("#"),
-                        BarvaSekundarni = Color.FromHex("#33a716"), 
-                        BarvaSekundarniSvetla = Color.FromHex("#89e771"),
-                        BarvaSpravne = Color.FromHex("#6ece25"),
-                        BarvaSpatne = Color.FromHex("#ffb54c"),
-                        BarvaTextu = Color.FromHex("#"),
-                        BarvaTlacitek = Color.FromHex("#"),
-                        BarvaInfo = Color.FromHex("#ead78e"),
-                        BarvaPozadi = Color.FromHex("#"),
-                        BarvaPozadiDarkMode = Color.FromHex("#"),
-                        
-                        
-                    };
                     await database.InsertAsync(tabulkaModel);
                 }
             });
             Task.WaitAll(task);
+            
+            database.CreateTableAsync<SettingsModel>().Wait();
+            Task task1 = Task.Run(async () =>
+            {
+                if (await database.Table<SettingsModel>().CountAsync() == 0)
+                {
+                    SettingsModel tabulkaNastaveni = new SettingsModel
+                    {
+                        ID = 0,
+                        BackgroundHex = "#FAFAFA"
+                    };
+                    await database.InsertAsync(tabulkaNastaveni);
+                }
+            });
+            Task.WaitAll(task1);
+            
         }
 
         public async Task<DBModel> GetTable(int id = 0)
         {
             return await database.Table<DBModel>().Where(i => i.ID == id).FirstOrDefaultAsync();
         }
-
+        public async Task<SettingsModel> GetSettings(int id = 0)
+        {
+            return await database.Table<SettingsModel>().Where(i => i.ID == id).FirstOrDefaultAsync();
+        }
         public Task<int> UpdateTable(DBModel zapis)
         {
             if (zapis.ID == 0)
@@ -75,6 +74,10 @@ namespace Mathster.Helpers.Model
             {
                 return database.InsertAsync(zapis);
             }
+        }
+        public Task<int> UpdateSettings(SettingsModel zapis)
+        {
+            return database.UpdateAsync(zapis);
         }
     }
 }

@@ -8,58 +8,73 @@
         <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
     </ContentPage.Resources>
     
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="MenuToolbarButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
+    </ContentPage.ToolbarItems>
+
+    
     <ContentPage.Content>
         <StackLayout>
             <ScrollView x:Name="View">
-                <StackLayout x:Name="SecondLayer"  VerticalOptions="Center" Margin="50">
-                    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
-                   <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="2*" />
-                        </Grid.RowDefinitions>
-                        
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition />
-                            <ColumnDefinition Width="3*"/>
-                        </Grid.ColumnDefinitions>
-                       
-                       <!-- zelený okýnko -->
-                       <Frame x:Name="FrameDobre" CornerRadius="15" Padding="0"  HasShadow="False" Grid.Column="0" Grid.Row="1" BackgroundColor="#6ece25" >
-                            <StackLayout>
-                              <Label x:Name="NadDobreLabel" BackgroundColor="#6ece25"  HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="18"/>
-                              <Button x:Name="DobreButton" StyleClass="PrikladLabel" HorizontalOptions="Center" VerticalOptions="Center" Clicked="DobreButton_OnClicked" />
-                            </StackLayout>
-                        </Frame>
-                        
-                       <!-- oranžový okýnko -->
-                       <Frame x:Name="FrameSpatne" CornerRadius="15" Padding="0"  HasShadow="False" Grid.Column="2" Grid.Row="1" BackgroundColor="#ffb54c">
-                           <StackLayout>
-                              <Label x:Name="NadSpatneLabel" BackgroundColor="#ffb54c" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="18"/>
-                              <Button x:Name="SpatneButton" StyleClass="VysledekInput" HorizontalOptions="Center" VerticalOptions="Center" Clicked="SpatneButton_OnClicked" />
-                           </StackLayout>
-                       </Frame>
-                   </Grid>
+                <StackLayout x:Name="SecondLayer"  VerticalOptions="Center" Margin="20">
                     
-                    <!-- listview -->
-                   <Frame StyleClass="Zelena" Padding="0" Margin="0,30,0,25" HasShadow="False" CornerRadius="15" >
-                       <StackLayout>
-                           <Label x:Name="NadVysledkyLabel" StyleClass="Zelena" HeightRequest="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black" />
-                           <ListView x:Name="VysledkyList" Margin="10, -7, 10, 5" BackgroundColor="#89e771" HeightRequest="250" ItemTapped="VysledkyList_OnItemTapped">
-                               <ListView.ItemTemplate>
-                                   <DataTemplate>
-                                       <ViewCell>
-                                           <StackLayout x:Name="BarvaCellu" BackgroundColor="{Binding BarvaCellu}" >
-                                                <Label x:Name="VysledekLabel" Text="{Binding TextovaPodobaPrikladu}" FontSize="30" TextColor="Black" Margin="10,0,0,0"/>
-                                            </StackLayout>
-                                       </ViewCell>
-                                   </DataTemplate>
-                               </ListView.ItemTemplate>
-                           </ListView>
-                       </StackLayout>
-                   </Frame>
-                    <Button x:Name="MenuButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="MenuButton_OnClicked"/>
+                    <Label x:Name="NadpisSouhrnLabel"  HorizontalOptions="Center" StyleClass="FialovaNadpidLabel"/>
+                    
+                    <Frame StyleClass="FrameTmaveFialova" CornerRadius="25" Padding="10,10,10,10" >
+                        <StackLayout>
+                        <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+                           <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                </Grid.RowDefinitions>
+                                
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="70*"/>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+                               
+                               <!-- dobře počet okýnko -->
+                               <Image Source="dobre_ikona.png" Grid.Column="0" Grid.Row="0" />
+                               <Frame x:Name="FrameDobre" CornerRadius="25" Padding="0"  HasShadow="False" Grid.Column="0" Grid.Row="1" >
+                                    <StackLayout>
+                                        <Button x:Name="DobrePocetButton" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="30" Clicked="DobreButton_OnClicked"/> 
+                                    </StackLayout>
+                                </Frame>
+                                
+                               
+                               <!-- špatně počet okýnko -->
+                               <Image Source="spatne_ikona.png" Grid.Column="2" Grid.Row="0"/>
+                               <Frame x:Name="FrameSpatne" CornerRadius="25" Padding="0"  HasShadow="False" Grid.Column="2" Grid.Row="1" >
+                                   <StackLayout>
+                                       <Button x:Name="SpatnePocetButton" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="30" Clicked="SpatneButton_OnClicked"/>
+                                   </StackLayout>
+                               </Frame>
+                           </Grid>
+                            
+                            <!-- listview -->
+                           <Frame Padding="0" Margin="0,30,0,0" HasShadow="False" CornerRadius="25" >
+                               <!-- StyleClass="FrameTmaveFialova" -->
+                               <StackLayout>
+                                   <ListView x:Name="VysledkyList"   HeightRequest="250" ItemTapped="VysledkyList_OnItemTapped">
+                                       <ListView.ItemTemplate>
+                                           <DataTemplate>
+                                               <ViewCell>
+                                                   <StackLayout x:Name="BarvaCellu" BackgroundColor="{Binding BarvaCellu}" >
+                                                        <Label x:Name="VysledekLabel" Text="{Binding TextovaPodobaPrikladu}" FontSize="30" Padding="15,0, 0, 20" TextColor="Black"/>
+                                                    </StackLayout>
+                                               </ViewCell>
+                                           </DataTemplate>
+                                       </ListView.ItemTemplate>
+                                   </ListView>
+                               </StackLayout>
+                           </Frame>
+                        
+                        </StackLayout>
+                    </Frame>
+                    
+                    <Button x:Name="MenuButton" StyleClass="Tlacitka" CornerRadius="30" Margin="40,10,40,20" Clicked="MenuButton_OnClicked"/>
                 </StackLayout>
             </ScrollView>
         </StackLayout>

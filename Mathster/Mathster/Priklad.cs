@@ -46,7 +46,7 @@ namespace Mathster
             get => druhPrikladu;
             private set => druhPrikladu = value;
         }
-        public Priklad VygenerujPriklad(byte id, int minCisel, int maxCisel, int minDeleniANasobeni, int maxDeleniANasobeni, byte druhPrikladu)
+        public Priklad VygenerujPriklad(byte id, int minCisel, int maxCisel, byte druhPrikladu, int minDeleniANasobeni = 2, int maxDeleniANasobeni = 6 )
         {
             Random random = new Random();
             Priklad priklad = null;
@@ -74,11 +74,11 @@ namespace Mathster
             priklad.Id = id;
             return priklad;
         }
-        public Priklad VygenerujNahodnyPriklad(byte id, int minCisel, int maxCisel, int minDeleniANasobeni, int maxDeleniANasobeni)
+        public Priklad VygenerujNahodnyPriklad(byte id, int minCisel, int maxCisel, int minDeleniANasobeni = 2, int maxDeleniANasobeni = 6)
         {
             Random random = new Random();
             druhPrikladu = Byte.Parse(random.Next(1, 5).ToString());
-            return VygenerujPriklad(id, minCisel, maxCisel, minDeleniANasobeni, maxDeleniANasobeni, druhPrikladu);
+            return VygenerujPriklad(id, minCisel, maxCisel,  druhPrikladu, minDeleniANasobeni, maxDeleniANasobeni);
         }
         public string VratPriklad()
         {

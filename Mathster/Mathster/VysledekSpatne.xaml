@@ -9,6 +9,10 @@
         <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
     </ContentPage.Resources>
     
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="MenuToolbarButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout x:Name="MainLayout">
             <ScrollView x:Name="View">
@@ -37,9 +41,9 @@
                         </ScrollView>
                     </Frame> 
                     
-                    <Button x:Name="PredchoziPrikladButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,0,0,20" Clicked="PredchoziPrikladButton_OnClicked" />
-                    <Button x:Name="DalsiPrikladButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,0,0,20" Clicked="DalsiPrikladButton_OnClicked" />
-                    <Button x:Name="PrehledButton" StyleClass="ZelenaTlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="PrehledButton_OnClicked" />
+                    <Button x:Name="PredchoziPrikladButton" StyleClass="Tlacitka" CornerRadius="13" Margin="0,0,0,20" Clicked="PredchoziPrikladButton_OnClicked" />
+                    <Button x:Name="DalsiPrikladButton" StyleClass="Tlacitka" CornerRadius="13" Margin="0,0,0,20" Clicked="DalsiPrikladButton_OnClicked" />
+                    <Button x:Name="PrehledButton" StyleClass="Tlacitka" CornerRadius="13" Margin="0,10,0,20" Clicked="PrehledButton_OnClicked" />
                 </StackLayout>
             </ScrollView>
         </StackLayout>

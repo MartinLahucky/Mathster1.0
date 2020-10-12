@@ -2,12 +2,30 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customUi="clr-namespace:Mathster.Helpers.Custom_UI;assembly=Mathster"
              x:Class="Mathster.Nastaveni">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="MenuToolbarButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="JmenoEntry" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-            
-            <Label x:Name="OAplikaciVerze" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+            <Frame StyleClass="FrameTmaveFialova" Margin="30,0" CornerRadius="30" VerticalOptions="CenterAndExpand">
+                <StackLayout>
+                    <Label x:Name="JmenoLabel" StyleClass="ZelenyNadpidLabel" HorizontalOptions="Center"/>
+                    <customUi:CS_Entry x:Name="JmenoEntry" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </StackLayout>
+            </Frame>
+            <Frame StyleClass="FrameTmaveFialova" Margin="30,0" CornerRadius="30" VerticalOptions="StartAndExpand">
+                <StackLayout>
+                    <Label x:Name="DarkModeLabel" StyleClass="ZelenyNadpidLabel" HorizontalOptions="Center"/>
+                    <Switch x:Name="DarkModeSwitch" ThumbColor="white" OnColor="#7F7FFD" HorizontalOptions="CenterAndExpand" Margin="2,4,2,2" Toggled="DarkModeSwitch_Toggled"/>
+                </StackLayout>
+            </Frame>
+            <Label x:Name="OAplikaciVerze" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

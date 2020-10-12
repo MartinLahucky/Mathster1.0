@@ -178,6 +178,15 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dark mode.
+        /// </summary>
+        internal static string DarkMode {
+            get {
+                return ResourceManager.GetString("DarkMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Division.
         /// </summary>
         internal static string Deleni {
@@ -601,7 +610,7 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Interface and Graphics: Martin Borka.
+        ///   Looks up a localized string similar to Interface and Graphics: Martin Borka, Jan Řehoř.
         /// </summary>
         internal static string VyvojGrafika {
             get {
@@ -637,7 +646,7 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select a Multiplicator and Divisor.
+        ///   Looks up a localized string similar to Select a Multiplicator/Divisor.
         /// </summary>
         internal static string ZvolitNasobitelADelitel {
             get {

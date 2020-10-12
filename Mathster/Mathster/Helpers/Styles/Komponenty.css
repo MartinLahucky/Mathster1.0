@@ -4,7 +4,7 @@
     font-size: 30;
     text-align: center;
     width: 130;
-    background-color: #89e771;
+    background-color: #7F7FFD;
     color: black;
 }
 .InfoLabel
@@ -36,7 +36,7 @@
     font-size: 30;
     text-align: center;
     width: 130;
-    background-color: #ffce85;
+    background-color: #FCA54D;
     color: black;
 }
 
@@ -73,10 +73,22 @@
     color: white;
 }
 
-.ZelenaTlacitka
+.Tlacitka
 {
     font-size: 30;
-    background-color: #33a716;
+    background-color: #4D4DFC;
+    color: white;
+}
+.LevelButtonMenu
+{
+    font-size: 45;
+    background-color: #7F7FFD;
+    color: white;
+}
+.MenuTlacitka
+{
+    font-size: 40;
+    background-color: #4D4DFC;
     color: white;
 }
 .RestartButton
@@ -86,20 +98,53 @@
     border-color: firebrick;
     color: firebrick;
 }
-.FrameInformaceOranzova
+.FrameTmaveFialova
 {
-    border-color: #f36f16;
-    background-color: #ffce85;
-}
-/*#ead78e*/
-.FrameInformaceZelena
-{
-    border-color: #f36f16;
-    background-color: #89e771;
+    border-color: #4D4DFC;
+    background-color: #4D4DFC;
+    color: white;
 }
 .MiniMenu
 {
     font-size: 30;
     -moz-outline-radius-bottomright: 30;
     -moz-outline-radius-topright: 30;
+}
+.NastaveniPrikladuLabel
+{
+    font-size: 30;
+    color: #4D4DFC;
+}
+.NastaveniPrikladuFrame
+{
+    border-radius: 30;
+    color: white;
+    margin: 5;
+    width: 50;
+}
+.NastaveniPrikladuNazevLabel
+{
+    font-size: 25;
+    color: #ffffff;
+    margin: 10;
+}
+.DalsiTlacitko
+{
+    background-color: #4D4DFC;
+    font-size: 20;
+    border-radius: 50;
+    margin-left: 80;
+    margin-right: 80;
+}
+
+.ZelenyNadpidLabel
+{
+    color: #C9FF50;
+    font-size: 25;
+}
+
+.FialovaNadpidLabel
+{
+    color: #4D4DFC;
+    font-size: 30;
 }

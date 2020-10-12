@@ -1,5 +1,6 @@
 ﻿﻿using System;
  using System.Collections.Generic;
+ using System.Linq;
  using Mathster.Helpers.Resources;
  using Xamarin.Forms;
  using Xamarin.Forms.Xaml;
@@ -15,7 +16,7 @@
         public VysledekSpatne(byte id, List<Priklad> fronta, List<Priklad> frontaVse)
         {
             InitializeComponent();
-
+            MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
             ReseniNadLabel.Text = AppResource.SpravneReseni;
             NadSpatnaOdpovedLabel.Text = AppResource.VaseReseni;
             SpatneLabel.Text = AppResource.Spatne;
@@ -170,6 +171,10 @@
 
                     break;
             }
+        }
+        private async void MenuButton_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Menu());
         }
     }
 }

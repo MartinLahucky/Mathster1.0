@@ -295,7 +295,7 @@
     <value>Výsledky</value>
   </data>
   <data name="VyvojGrafika" xml:space="preserve">
-    <value>Grafika: Martin Borka</value>
+    <value>Grafika: Martin Borka, Jan Řehoř</value>
   </data>
   <data name="VyvojProgramovani" xml:space="preserve">
     <value>Programování: Martin Lahučký</value>
@@ -307,7 +307,7 @@
     <value>Získané body</value>
   </data>
   <data name="ZvolitNasobitelADelitel" xml:space="preserve">
-    <value>Zvolte násobitel a dělitel</value>
+    <value>Zvolte násobitel/dělitel</value>
   </data>
   <data name="ZvolitPocetPrikladu" xml:space="preserve">
     <value>Zvolte počet příkladů</value>
@@ -320,5 +320,8 @@
   </data>
   <data name="NelzeUrcit" xml:space="preserve">
     <value>Nelze určit</value>
+  </data>
+  <data name="DarkMode" xml:space="preserve">
+    <value>Tmavý režim</value>
   </data>
 </root>

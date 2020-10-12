@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,7 +18,8 @@ namespace Mathster
         public Priklady(byte id, List<Priklad> fronta)
         {
             InitializeComponent();
-            DalsiButton.Text = AppResource.Dalsi;
+            MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
+            DalsiButton.Text = ">";
             OdvezdatButton.Text = AppResource.Odevzdat;
             VysledekPropisInput.Text = String.Empty;
             VysledekInput.Text = String.Empty;
@@ -90,16 +92,17 @@ namespace Mathster
                     Navigation.RemovePage(page);
                 }
             }
-            catch (Exception exception)
+            catch // (Exception exception)
             {
-                await DisplayAlert(AppResource.Upozorneni, exception.Message, AppResource.Ok);
+                // await DisplayAlert(AppResource.Upozorneni, exception.Message, AppResource.Ok);
                 await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniZadejteCislo, AppResource.Ok);
             }
         }
-        protected override void OnAppearing ()
+        protected async override void OnAppearing ()
         {
             base.OnAppearing ();
-
+            SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
+            BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
             VysledekInput.Focus();
         }
 
@@ -157,6 +160,11 @@ namespace Mathster
             VysledekInput.Focus();
         }
 
+        private async void MenuButton_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Menu());
+        }
+        
         private void VysledekInput_OnTextChanged(object sender, TextChangedEventArgs e)
         {
             List<string> cislo = new List<string>();

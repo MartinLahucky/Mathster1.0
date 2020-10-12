@@ -295,7 +295,7 @@
     <value>Results</value>
   </data>
   <data name="VyvojGrafika" xml:space="preserve">
-    <value>Interface and Graphics: Martin Borka</value>
+    <value>Interface and Graphics: Martin Borka, Jan Řehoř</value>
   </data>
   <data name="VyvojProgramovani" xml:space="preserve">
     <value>Programming: Martin Lahučký</value>
@@ -307,7 +307,7 @@
     <value>Points gained</value>
   </data>
   <data name="ZvolitNasobitelADelitel" xml:space="preserve">
-    <value>Select a Multiplicator and Divisor</value>
+    <value>Select a Multiplicator/Divisor</value>
   </data>
   <data name="ZvolitPocetPrikladu" xml:space="preserve">
     <value>Amount of exercises</value>
@@ -320,5 +320,8 @@
   </data>
   <data name="NelzeUrcit" xml:space="preserve">
     <value>Unable to determine</value>
+  </data>
+  <data name="DarkMode" xml:space="preserve">
+    <value>Dark mode</value>
   </data>
 </root>
