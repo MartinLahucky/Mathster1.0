@@ -52,13 +52,16 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemScitaniSpravne++;
-                            priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
-                            
+                            VysledekImage.Source = "dobre_ikona.png";
+
+                            //priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+
                         }
                         else
                         {
                             pocitadloSpatne++;
-                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
+                            VysledekImage.Source = "spatne_ikona.png";
+                            //priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
                         }
                         break;
                     case 2:
@@ -68,12 +71,14 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemOdcitaniSpravne++;
-                            priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+                            VysledekImage.Source = "dobre_ikona.png";
+                            //priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
                         }
                         else
                         {
                             pocitadloSpatne++;
-                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
+                            VysledekImage.Source = "spatne_ikona.png";
+                            //priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
                         }
                         break;
                     case 3:
@@ -83,12 +88,14 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemNasobeniSpravne++;
-                            priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+                            VysledekImage.Source = "dobre_ikona.png";
+                            //priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
                         }
                         else
                         {
                             pocitadloSpatne++;
-                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
+                            VysledekImage.Source = "spatne_ikona.png";
+                            //priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
                         }
                         break;
                     case 4:
@@ -98,12 +105,14 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemDeleniSpravne++;
-                            priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+                            VysledekImage.Source = "dobre_ikona.png";
+                            //priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
                         }
                         else
                         {
                             pocitadloSpatne++;
-                            priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
+                            VysledekImage.Source = "spatne_ikona.png";
+                            //priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
                         }
                         break;
                 }
