@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Mathster.Helpers.Custom_UI;
 using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
@@ -12,24 +13,51 @@ namespace Mathster
     public partial class Statistiky : ContentPage
     {
 
-        private Circles graf;
+        private Circles graf1;
+        private Circles graf2;
+        private Circles graf3;
+        private int scitani, odcitani, nasobeni, deleni, celkemDobre, celkemSpatne; // tady jsou statistiky, které jsou potom nutné 
         public Statistiky()
         {
+            scitani = 20;
+            odcitani = 30;
+            nasobeni = 25;
+            deleni = 25;
+            celkemDobre = 45;
+            celkemSpatne = 55;
+
             InitializeComponent();
             Title = AppResource.Statistiky;
             ResetStatsButton.Text = AppResource.StatReset;
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
 
+            // to-do pro řehoře:
+            // upravit design tak aby nevypadal shit
+            // zkontrolovat jestli fungujou hodnoty (a i ten ostatní shit)
+
+
             //SkiaSharp
-            graf = new Circles(180, (info) => new SKPoint((float)info.Width / 2, (float)info.Height / 2));
-            graf.DrawChart(SkCanvasView, "#7F7FFD", "#ffffff", 20f, 400f, 100f, 250f, 1000f, "#C9FF50", "#FCA54D", "#262626");
+            graf1 = new Circles(180, (info) => new SKPoint((float)info.Width / 2, (float)info.Height / 2));
+            graf1.DrawFullProgressBar(SkCanvasView1, "#ffffff", "#000000", 30f, (float)celkemDobre / (float)(celkemSpatne + celkemDobre) * 100f, "#bbbbbb");
+        }
 
-            /* TO DO:
-             * - oveřit funkčnost grafu
-             * - dodělat přepnutí mezi celkem a typem příkladů (obrázky/text +-×÷)
-             * - opravit barvy na grafu
-             */
+        private void TemporarySwitch_Toggled(object sender, ToggledEventArgs e)
+        {
 
+            // TODO
+            // zprovoznit xd:
+            if (TemporarySwitch.IsToggled)
+            {
+                NadpisLabel.Text = "xd";
+                graf2 = new Circles(180, (info) => new SKPoint((float)info.Width / 2, (float)info.Height / 2));
+                graf2.DrawChart(SkCanvasView2, "#7F7FFD", "#ffffff", 30f, scitani, odcitani, nasobeni, scitani + odcitani + nasobeni, "#FCA54D", "#C9FF50", "#262626");
+            }
+            else
+            {
+                NadpisLabel.Text = "lol";
+                graf3 = new Circles(180, (info) => new SKPoint((float)info.Width / 2, (float)info.Height / 2));
+                graf3.DrawFullProgressBar(SkCanvasView3, "#7F7FFD", "#FCA54D", 30f, celkemDobre / (celkemSpatne + celkemDobre) * 100f, "#C9FF50");
+            }
         }
 
         protected async override void OnAppearing()
@@ -144,5 +172,7 @@ namespace Mathster
         {
             await Navigation.PushAsync(new Menu());
         }
+
+
     }
 }

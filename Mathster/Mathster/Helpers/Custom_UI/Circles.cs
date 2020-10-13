@@ -39,19 +39,31 @@ namespace Mathster.Helpers.Custom_UI
                 canvas.Clear();
                 DrawFullCircle(backgroundColorHex);
                 DrawCircleBorder(ProgressBarThickness, progressBarColorHex);
-
-                //                             možná:  entry1 + VypocetVelikostCastiGrafu(entry2) + VypocetVelikostCastiGrafu(entry3)
                 DrawProgress(VypocetVelikostCastiGrafu(entry1 + entry2 + entry3, entryMax), ProgressBarThickness, entry1ColorHex);
                 DrawProgress(VypocetVelikostCastiGrafu(entry1 + entry2, entryMax), ProgressBarThickness, entry2ColorHex);
                 DrawProgress(VypocetVelikostCastiGrafu(entry1, entryMax), ProgressBarThickness, entry3ColorHex);
             };
         }
 
+        private float VypocetVelikostCastiGrafu(float entry1, float entry2, float entry3, float max)
+        {
+            // TODO
+            // tohle potom předělat, aby se to nemuselo nahoře callovat 3x
+            return ((entry1 + entry2 + entry3) / max) * 100;
+            return ((entry1 + entry2) / max) * 100;
+            return (entry3 / max) * 100;
+        }
+        // TODO
+        // přidat do app.resources text "celkem"
+
+
+        // TODO
+        // tuhle metodu potom smazat
         private float VypocetVelikostCastiGrafu(float entry, float max)
         {
-            return (entry / max) * 100;
+             return (entry / max) * 100;
         }
-        
+
         public SKRect Rect => new SKRect(Center.X-Redius,Center.Y-Redius,Center.X+Redius,Center.Y+Redius);
         public void CalculateCenter(SKImageInfo argsInfo)
         {
