@@ -52,14 +52,15 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemScitaniSpravne++;
-                            
+                            VysledekImage.Source = "dobre_ikona.png";
 
                             //priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
-                            
+
                         }
                         else
                         {
                             pocitadloSpatne++;
+                            VysledekImage.Source = "spatne_ikona.png";
                             //priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
                         }
                         break;
@@ -70,11 +71,13 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemOdcitaniSpravne++;
+                            VysledekImage.Source = "dobre_ikona.png";
                             //priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
                         }
                         else
                         {
                             pocitadloSpatne++;
+                            VysledekImage.Source = "spatne_ikona.png";
                             //priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
                         }
                         break;
@@ -85,11 +88,13 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemNasobeniSpravne++;
+                            VysledekImage.Source = "dobre_ikona.png";
                             //priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
                         }
                         else
                         {
                             pocitadloSpatne++;
+                            VysledekImage.Source = "spatne_ikona.png";
                             //priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
                         }
                         break;
@@ -100,11 +105,13 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemDeleniSpravne++;
+                            VysledekImage.Source = "dobre_ikona.png";
                             //priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
                         }
                         else
                         {
                             pocitadloSpatne++;
+                            VysledekImage.Source = "spatne_ikona.png";
                             //priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
                         }
                         break;
