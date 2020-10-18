@@ -52,16 +52,13 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemScitaniSpravne++;
-                            VysledekImage.Source = "dobre_ikona.png";
-
-                            //priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+                            priklady[priklad.Id].StatusPrikladu = "dobre_ikona.png";
 
                         }
                         else
                         {
                             pocitadloSpatne++;
-                            VysledekImage.Source = "spatne_ikona.png";
-                            //priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
+                            priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
                         }
                         break;
                     case 2:
@@ -71,14 +68,12 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemOdcitaniSpravne++;
-                            VysledekImage.Source = "dobre_ikona.png";
-                            //priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+                            priklady[priklad.Id].StatusPrikladu = "dobre_ikona.png";
                         }
                         else
                         {
                             pocitadloSpatne++;
-                            VysledekImage.Source = "spatne_ikona.png";
-                            //priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
+                            priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
                         }
                         break;
                     case 3:
@@ -88,14 +83,12 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemNasobeniSpravne++;
-                            VysledekImage.Source = "dobre_ikona.png";
-                            //priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+                            priklady[priklad.Id].StatusPrikladu = "dobre_ikona.png";
                         }
                         else
                         {
                             pocitadloSpatne++;
-                            VysledekImage.Source = "spatne_ikona.png";
-                            //priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
+                            priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
                         }
                         break;
                     case 4:
@@ -105,23 +98,19 @@ namespace Mathster
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemDeleniSpravne++;
-                            VysledekImage.Source = "dobre_ikona.png";
-                            //priklady[priklad.Id].BarvaCellu = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+                            priklady[priklad.Id].StatusPrikladu = "dobre_ikona.png";
                         }
                         else
                         {
                             pocitadloSpatne++;
-                            VysledekImage.Source = "spatne_ikona.png";
-                            //priklady[priklad.Id].BarvaCellu = Color.FromHex("#FCA54D");
+                            priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
                         }
                         break;
                 }
             }
             VysledkyList.ItemsSource = priklady;
             DobrePocetButton.Text = pocitadloSpravne.ToString();
-            // DobreButton.Text = pocitadloSpravne.ToString();
             SpatnePocetButton.Text = pocitadloSpatne.ToString();
-            // SpatneButton.Text = pocitadloSpatne.ToString();
         }
         protected async override void OnAppearing()
         {
@@ -289,7 +278,7 @@ namespace Mathster
     public class Vysledek
     {
         private string textovaPodobaPrikladu;
-        private Color barvaCellu;
+        private string statusPrikladu;
 
         public Vysledek(string textovaPodobaPrikladu)
         {
@@ -300,10 +289,10 @@ namespace Mathster
             get => textovaPodobaPrikladu;
             set => textovaPodobaPrikladu = value;
         }
-        public Color BarvaCellu
+        public string StatusPrikladu
         {
-            get => barvaCellu;
-            set => barvaCellu = value;
+            get => statusPrikladu;
+            set => statusPrikladu = value;
         }
     }
 }

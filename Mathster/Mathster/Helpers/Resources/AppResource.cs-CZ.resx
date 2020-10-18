@@ -324,4 +324,7 @@
   <data name="DarkMode" xml:space="preserve">
     <value>Tmavý režim</value>
   </data>
+  <data name="Celkem" xml:space="preserve">
+    <value>Celkem:</value>
+  </data>
 </root>

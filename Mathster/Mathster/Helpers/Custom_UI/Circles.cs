@@ -34,36 +34,25 @@ namespace Mathster.Helpers.Custom_UI
         {
             View.PaintSurface += (sender, args) =>
             {
+                float vysledek1, vysledek2, vysledek3;
+                VypocetVelikostCastiGrafu(entry1, entry2, entry3, entryMax, out vysledek1, out vysledek2, out vysledek3);
                 canvas = args.Surface.Canvas;
                 CalculateCenter(args.Info);
                 canvas.Clear();
                 DrawFullCircle(backgroundColorHex);
                 DrawCircleBorder(ProgressBarThickness, progressBarColorHex);
-                DrawProgress(VypocetVelikostCastiGrafu(entry1 + entry2 + entry3, entryMax), ProgressBarThickness, entry1ColorHex);
-                DrawProgress(VypocetVelikostCastiGrafu(entry1 + entry2, entryMax), ProgressBarThickness, entry2ColorHex);
-                DrawProgress(VypocetVelikostCastiGrafu(entry1, entryMax), ProgressBarThickness, entry3ColorHex);
+                DrawProgress(vysledek1, ProgressBarThickness, entry1ColorHex);
+                DrawProgress(vysledek2, ProgressBarThickness, entry2ColorHex);
+                DrawProgress(vysledek3, ProgressBarThickness, entry3ColorHex);
             };
         }
 
-        private float VypocetVelikostCastiGrafu(float entry1, float entry2, float entry3, float max)
+        private void VypocetVelikostCastiGrafu(float entry1, float entry2, float entry3, float max, out float vysledek1, out float vysledek2, out float vysledek3)
         {
-            // TODO
-            // tohle potom předělat, aby se to nemuselo nahoře callovat 3x
-            return ((entry1 + entry2 + entry3) / max) * 100;
-            return ((entry1 + entry2) / max) * 100;
-            return (entry3 / max) * 100;
+            vysledek1 = ((entry1 + entry2 + entry3) / max) * 100;
+            vysledek2 =  ((entry1 + entry2) / max) * 100;
+            vysledek3 = (entry3 / max) * 100;
         }
-        // TODO
-        // přidat do app.resources text "celkem"
-
-
-        // TODO
-        // tuhle metodu potom smazat
-        private float VypocetVelikostCastiGrafu(float entry, float max)
-        {
-             return (entry / max) * 100;
-        }
-
         public SKRect Rect => new SKRect(Center.X-Redius,Center.Y-Redius,Center.X+Redius,Center.Y+Redius);
         public void CalculateCenter(SKImageInfo argsInfo)
         {

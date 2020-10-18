@@ -56,7 +56,7 @@
                                                <ViewCell>
                                                    <StackLayout BackgroundColor="#4d4dfc">
                                                        <StackLayout x:Name="BarvaCellu" BackgroundColor="#7F7FFD" Orientation="Horizontal" >
-                                                           <Image x:Name="VysledekImage"  Margin="15,0"/> 
+                                                           <Image x:Name="VysledekImage" Source="{Binding StatusPrikladu}" Margin="15,0"/> 
                                                            <Label x:Name="VysledekLabel" Text="{Binding TextovaPodobaPrikladu}" FontSize="30"  TextColor="Black" Padding="10,0,0,0"/>
                                                         </StackLayout>
                                                    </StackLayout>
