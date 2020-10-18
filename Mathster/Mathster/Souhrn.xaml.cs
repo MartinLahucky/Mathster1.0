@@ -118,6 +118,11 @@ namespace Mathster
             SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
             
+            //todo  DobrePocetButton při tmavém pozadí #7F7FFD a text #FFFFFF; při světlém pozadí #FFFFFF a text black
+            //todo SpatnePocetButton při tmavém pozadí #7F7FFD a text #FFFFFF; při světlém pozadí #FFFFFF a text black
+            //todo 
+            //todo BarvaCellu při tmavém pozadí #7F7FFD a text #FFFFFF; při světlém pozadí #FFFFFF a text black
+            
         }
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
