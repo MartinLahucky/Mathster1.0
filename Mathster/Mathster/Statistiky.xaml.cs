@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Mathster.Helpers.Custom_UI;
 using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
@@ -45,7 +44,7 @@ namespace Mathster
         {
 
             // TODO
-            // zprovoznit xd:
+            // Musí se měnit hodnoty xd for Honza by ML
             if (TemporarySwitch.IsToggled)
             {
                 NadpisLabel.Text = "xd";
