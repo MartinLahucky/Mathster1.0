@@ -15,11 +15,18 @@
         <ContentPage.Content>
         <ScrollView>
             <StackLayout>
+                
+                <!--tohle pak oddělat, je to tu jen dokud se sem nedá dropdown list-->
+                <Frame StyleClass="FrameTmaveFialova" Margin="100" Padding="2" CornerRadius="30">
+                    <Switch x:Name="TemporarySwitch" ThumbColor="white" OnColor="#7F7FFD"  Margin="0" HorizontalOptions="Center" Toggled="TemporarySwitch_Toggled" IsToggled="False"/>
+                </Frame>
+
                 <Frame StyleClass="FrameTmaveFialova" Margin="30" CornerRadius="30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                     <StackLayout>
                         <Label x:Name="NadpisLabel" StyleClass="ZelenyNadpidLabel" Text="CELKEM" HorizontalOptions="CenterAndExpand"/>
-
-                        <forms:SKCanvasView x:Name="SkCanvasView" HeightRequest="160" WidthRequest="10" Grid.Column="0" />
+                        <forms:SKCanvasView x:Name="SkCanvasView1" HeightRequest="160" WidthRequest="10" Grid.Column="0" />
+                        <forms:SKCanvasView x:Name="SkCanvasView2" HeightRequest="160" WidthRequest="10" Grid.Column="0" />
+                        <forms:SKCanvasView x:Name="SkCanvasView3" HeightRequest="160" WidthRequest="10" Grid.Column="0" />
                         <Grid x:Name="PopisGrid">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="2*"/>

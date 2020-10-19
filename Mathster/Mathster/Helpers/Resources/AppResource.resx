@@ -324,4 +324,7 @@
   <data name="DarkMode" xml:space="preserve">
     <value>Dark mode</value>
   </data>
+  <data name="Celkem" xml:space="preserve">
+    <value>Total:</value>
+  </data>
 </root>

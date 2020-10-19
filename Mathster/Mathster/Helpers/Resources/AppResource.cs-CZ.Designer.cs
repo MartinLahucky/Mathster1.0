@@ -70,6 +70,15 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Celkem:.
+        /// </summary>
+        internal static string Celkem {
+            get {
+                return ResourceManager.GetString("Celkem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Celkem spočítaných příkladů na dělení:.
         /// </summary>
         internal static string CelkemDeleni {

@@ -37,33 +37,31 @@
                                
                                <!-- dobře počet okýnko -->
                                <Image Source="dobre_ikona.png" Grid.Column="0" Grid.Row="0" />
-                               <Frame x:Name="FrameDobre" CornerRadius="25" Padding="0"  HasShadow="False" Grid.Column="0" Grid.Row="1" >
-                                    <StackLayout>
-                                        <Button x:Name="DobrePocetButton" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="30" Clicked="DobreButton_OnClicked"/> 
-                                    </StackLayout>
-                                </Frame>
+                               <Button x:Name="DobrePocetButton" BackgroundColor="#FFFFFF" CornerRadius="25"  Grid.Column="0" Grid.Row="1" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="30" Clicked="DobreButton_OnClicked"/> 
+                               
                                 
                                
                                <!-- špatně počet okýnko -->
                                <Image Source="spatne_ikona.png" Grid.Column="2" Grid.Row="0"/>
-                               <Frame x:Name="FrameSpatne" CornerRadius="25" Padding="0"  HasShadow="False" Grid.Column="2" Grid.Row="1" >
-                                   <StackLayout>
-                                       <Button x:Name="SpatnePocetButton" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="30" Clicked="SpatneButton_OnClicked"/>
-                                   </StackLayout>
-                               </Frame>
+                               <Button x:Name="SpatnePocetButton" BackgroundColor="#FFFFFF" CornerRadius="25" Grid.Column="2" Grid.Row="1" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="30" Clicked="SpatneButton_OnClicked"/>
                            </Grid>
                             
                             <!-- listview -->
                            <Frame Padding="0" Margin="0,30,0,0" HasShadow="False" CornerRadius="25" >
                                <!-- StyleClass="FrameTmaveFialova" -->
                                <StackLayout>
-                                   <ListView x:Name="VysledkyList"   HeightRequest="250" ItemTapped="VysledkyList_OnItemTapped">
+                                   <ListView x:Name="VysledkyList"   HeightRequest="250" ItemTapped="VysledkyList_OnItemTapped" BackgroundColor="#7F7FFD">
                                        <ListView.ItemTemplate>
                                            <DataTemplate>
                                                <ViewCell>
-                                                   <StackLayout x:Name="BarvaCellu" BackgroundColor="{Binding BarvaCellu}" >
-                                                        <Label x:Name="VysledekLabel" Text="{Binding TextovaPodobaPrikladu}" FontSize="30" Padding="15,0, 0, 20" TextColor="Black"/>
-                                                    </StackLayout>
+                                                   <StackLayout BackgroundColor="#4d4dfc">
+                                                       <StackLayout x:Name="BarvaCellu" BackgroundColor="#FFFFFF" Orientation="Horizontal">
+                                                           <StackLayout BackgroundColor="#7F7FFD" Padding="0">
+                                                               <Image x:Name="VysledekImage" Source="{Binding StatusPrikladu}" Margin="15,0"/> 
+                                                           </StackLayout>
+                                                           <Label x:Name="VysledekLabel" Text="{Binding TextovaPodobaPrikladu}" FontSize="30" TextColor="black" Padding="10,0,0,0" />
+                                                        </StackLayout>
+                                                   </StackLayout>
                                                </ViewCell>
                                            </DataTemplate>
                                        </ListView.ItemTemplate>
