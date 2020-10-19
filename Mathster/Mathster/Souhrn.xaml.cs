@@ -116,11 +116,12 @@ namespace Mathster
         {
             base.OnAppearing();
             BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
-
+            DobrePocetButton.BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+            SpatnePocetButton.BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+            
+            
             if (tabulkaNastaveni.DarkMode)
             {
-                DobrePocetButton.BackgroundColor = Color.FromHex("#262630");
-                SpatnePocetButton.BackgroundColor = Color.FromHex("#262630");
                 NadpisSouhrnLabel.TextColor = Color.FromHex("#FFFFFF");
                 DobrePocetButton.TextColor = Color.FromHex("#FFFFFF");
                 SpatnePocetButton.TextColor = Color.FromHex("#FFFFFF");
