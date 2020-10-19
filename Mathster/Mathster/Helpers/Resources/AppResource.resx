@@ -325,6 +325,9 @@
     <value>Dark mode</value>
   </data>
   <data name="Celkem" xml:space="preserve">
-    <value>Total:</value>
+    <value>Total</value>
+  </data>
+  <data name="Pomer" xml:space="preserve">
+    <value>Ratio</value>
   </data>
 </root>

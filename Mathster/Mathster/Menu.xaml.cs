@@ -26,7 +26,6 @@ namespace Mathster
             NasobeniButton.Text = "×";
             DeleniButton.Text = "÷";
             NahodneButton.Text = "?";
-            //TODO BUĎ VYMYSLET CHARTY JINAK NEBO POUŽÍT KNIHOVNU MICROCHARTS -- DEADLINE DO PÁTEK 23.10.2020 23:30 --> MIRCOCHARTS READY
             //SkiaSharp
             levelBar = new Circles(180,(info)=> new SKPoint((float)info.Width / 2,(float)info.Height / 2));
             levelBar.DrawFullProgressBar(SkCanvasView,"#7F7FFD","#FCA54D",30, 70, "#C9FF50");
