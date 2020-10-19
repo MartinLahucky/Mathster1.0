@@ -47,15 +47,28 @@ namespace Mathster
             // Musí se měnit hodnoty xd for Honza by ML
             if (TemporarySwitch.IsToggled)
             {
-                NadpisLabel.Text = "xd";
-                graf2 = new Circles(180, (info) => new SKPoint((float)info.Width / 2, (float)info.Height / 2));
-                graf2.DrawChart(SkCanvasView2, "#7F7FFD", "#ffffff", 30f, scitani, odcitani, nasobeni, scitani + odcitani + nasobeni, "#FCA54D", "#C9FF50", "#262626");
+                NadpisLabel.Text = "dvě hodnoty";
+                PopisImage1.IsVisible = true;
+                PopisImage2.IsVisible = true;
+                PopisLabel1.IsVisible = false;
+                PopisLabel2.IsVisible = false;
+                PopisLabel3.IsVisible = false;
+                PopisLabel4.IsVisible = false;
+                HodnotaLabel3.IsVisible = false;
+                HodnotaLabel4.IsVisible = false;
+                
             }
             else
             {
-                NadpisLabel.Text = "lol";
-                graf3 = new Circles(180, (info) => new SKPoint((float)info.Width / 2, (float)info.Height / 2));
-                graf3.DrawFullProgressBar(SkCanvasView3, "#7F7FFD", "#FCA54D", 30f, celkemDobre / (celkemSpatne + celkemDobre) * 100f, "#C9FF50");
+                NadpisLabel.Text = "čtyři hodnoty";
+                PopisImage1.IsVisible = false;
+                PopisImage2.IsVisible = false;
+                PopisLabel1.IsVisible = true;
+                PopisLabel2.IsVisible = true;
+                PopisLabel3.IsVisible = true;
+                PopisLabel4.IsVisible = true;
+                HodnotaLabel3.IsVisible = true;
+                HodnotaLabel4.IsVisible = true;
             }
         }
 
