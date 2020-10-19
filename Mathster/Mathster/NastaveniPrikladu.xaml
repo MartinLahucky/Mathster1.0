@@ -84,14 +84,7 @@
                     StyleClass="DalsiTlacitko"
                     Clicked="DalsiButton_OnClicked"
                     VerticalOptions="EndAndExpand"/>
-                
-            <!-- <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0" BackgroundColor="Aquamarine" > -->
-            <!--     <Button x:Name="DalsiButton" Margin="0" Padding="0" -->
-            <!--             TextColor="white" -->
-            <!--             StyleClass="DalsiTlacitko" -->
-            <!--             AbsoluteLayout.LayoutFlags="None" -->
-            <!--             AbsoluteLayout.LayoutBounds="10,10,50,50" Clicked="DalsiButton_OnClicked"/> -->
-            <!-- </AbsoluteLayout> -->
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
