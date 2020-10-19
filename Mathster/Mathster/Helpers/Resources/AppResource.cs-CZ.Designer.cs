@@ -655,7 +655,7 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zvolte násobitel/dělitel.
+        ///   Looks up a localized string similar to Zvolte dělitel/násobitel.
         /// </summary>
         internal static string ZvolitNasobitelADelitel {
             get {

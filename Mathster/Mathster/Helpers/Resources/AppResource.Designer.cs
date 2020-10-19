@@ -655,7 +655,7 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select a Multiplicator/Divisor.
+        ///   Looks up a localized string similar to Select a Divisor/Multiplicator.
         /// </summary>
         internal static string ZvolitNasobitelADelitel {
             get {

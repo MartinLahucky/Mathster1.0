@@ -307,7 +307,7 @@
     <value>Získané body</value>
   </data>
   <data name="ZvolitNasobitelADelitel" xml:space="preserve">
-    <value>Zvolte násobitel/dělitel</value>
+    <value>Zvolte dělitel/násobitel</value>
   </data>
   <data name="ZvolitPocetPrikladu" xml:space="preserve">
     <value>Zvolte počet příkladů</value>

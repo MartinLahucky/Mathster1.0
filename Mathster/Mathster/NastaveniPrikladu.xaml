@@ -16,7 +16,10 @@
     <ContentPage.Content>
         <StackLayout>
             <!--počet příkladů:-->
-            <Frame Margin="30,30,30,2" BackgroundColor="#4D4DFC" CornerRadius="40">
+            <ScrollView>
+                <StackLayout>
+            
+                <Frame Margin="30,10,30,2" BackgroundColor="#4D4DFC" CornerRadius="40">
                 <StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Label x:Name= "nazev1Label" StyleClass="NastaveniPrikladuNazevLabel" VerticalOptions="CenterAndExpand"/>
@@ -34,52 +37,61 @@
             </Frame>
 
             
-            <!--počet cifer:-->
-            <Frame Margin="30,2,30,2" BackgroundColor="#4D4DFC" CornerRadius="40">
-                <StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Label x:Name= "nazev2Label" StyleClass="NastaveniPrikladuNazevLabel" VerticalOptions="CenterAndExpand"/>
-                        <Frame x:Name="Frame2" StyleClass="NastaveniPrikladuFrame" HorizontalOptions="EndAndExpand">
-                            <Label x:Name="pocetCiferLabel" StyleClass="NastaveniPrikladuLabel" VerticalOptions="Center" HorizontalOptions="Center"/>
-                        </Frame>
-                    </StackLayout>
+                    <!--počet cifer:-->
+                    <Frame Margin="30,2,30,2" BackgroundColor="#4D4DFC" CornerRadius="40">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label x:Name= "nazev2Label" StyleClass="NastaveniPrikladuNazevLabel" VerticalOptions="CenterAndExpand"/>
+                                <Frame x:Name="Frame2" StyleClass="NastaveniPrikladuFrame" HorizontalOptions="EndAndExpand">
+                                    <Label x:Name="pocetCiferLabel" StyleClass="NastaveniPrikladuLabel" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                </Frame>
+                            </StackLayout>
 
-                    <Slider x:Name="pocetCiferSlider" 
-                            MaximumTrackColor="#484848" 
-                            MinimumTrackColor="#FCA54D" 
-                            ThumbColor="White"
-                            ValueChanged="pocetCiferSlider_ValueChanged" />
+                            <Slider x:Name="pocetCiferSlider" 
+                                    MaximumTrackColor="#484848" 
+                                    MinimumTrackColor="#FCA54D" 
+                                    ThumbColor="White"
+                                    ValueChanged="pocetCiferSlider_ValueChanged" />
+                        </StackLayout>
+                    </Frame>
+
+                    
+                    <!--velikost dělitele:-->
+                    <Frame x:Name="DeleniANasbeniFrame" Margin="30,2,30,2" BackgroundColor="#4D4DFC" CornerRadius="40">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label x:Name= "nazev3Label" StyleClass="NastaveniPrikladuNazevLabel" VerticalOptions="CenterAndExpand"/>
+                                <Frame x:Name="Frame3" StyleClass="NastaveniPrikladuFrame" HorizontalOptions="EndAndExpand">
+                                    <Label x:Name="velikostDeliteleLabel" StyleClass="NastaveniPrikladuLabel" VerticalOptions="Center" HorizontalOptions="Center" />
+                                </Frame>
+                            </StackLayout>
+
+                            <Slider x:Name="velikostDeliteleSlider" 
+                                    MaximumTrackColor="#484848" 
+                                    MinimumTrackColor="#FCA54D" 
+                                    ThumbColor="White"
+                                    ValueChanged="velikostDeliteleSlider_ValueChanged" />
+                        </StackLayout>
+                    </Frame>
+                    
                 </StackLayout>
-            </Frame>
-
+            </ScrollView>
             
-            <!--velikost dělitele:-->
-            <Frame x:Name="DeleniANasbeniFrame" Margin="30,2,30,2" BackgroundColor="#4D4DFC" CornerRadius="40">
-                <StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Label x:Name= "nazev3Label" StyleClass="NastaveniPrikladuNazevLabel" VerticalOptions="CenterAndExpand"/>
-                        <Frame x:Name="Frame3" StyleClass="NastaveniPrikladuFrame" HorizontalOptions="EndAndExpand">
-                            <Label x:Name="velikostDeliteleLabel" StyleClass="NastaveniPrikladuLabel" VerticalOptions="Center" HorizontalOptions="Center"/>
-                        </Frame>
-                    </StackLayout>
-
-                    <Slider x:Name="velikostDeliteleSlider" 
-                            MaximumTrackColor="#484848" 
-                            MinimumTrackColor="#FCA54D" 
-                            ThumbColor="White"
-                            ValueChanged="velikostDeliteleSlider_ValueChanged" />
-                </StackLayout>
-            </Frame>
+            <!--dolní button:-->  
             
-            
-            <!--dolní button:-->   
-            <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#DDDDDD">
-                <Button x:Name="DalsiButton"
-                        TextColor="white"
-                        StyleClass="DalsiTlacitko"
-                        AbsoluteLayout.LayoutFlags="All"
-                        AbsoluteLayout.LayoutBounds="0.4,0.5,0.6,0.2" Clicked="DalsiButton_OnClicked"/>
-            </AbsoluteLayout>
+            <Button x:Name="DalsiButton" Margin="20,5,20,25" Padding="0"
+                    TextColor="white"
+                    StyleClass="DalsiTlacitko"
+                    Clicked="DalsiButton_OnClicked"
+                    VerticalOptions="EndAndExpand"/>
+                
+            <!-- <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0" BackgroundColor="Aquamarine" > -->
+            <!--     <Button x:Name="DalsiButton" Margin="0" Padding="0" -->
+            <!--             TextColor="white" -->
+            <!--             StyleClass="DalsiTlacitko" -->
+            <!--             AbsoluteLayout.LayoutFlags="None" -->
+            <!--             AbsoluteLayout.LayoutBounds="10,10,50,50" Clicked="DalsiButton_OnClicked"/> -->
+            <!-- </AbsoluteLayout> -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
