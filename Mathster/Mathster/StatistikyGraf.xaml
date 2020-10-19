@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Class="Mathster.StatistikyGraf">
+    <ContentPage.Resources>
+        <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="MenuToolbarButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
+    </ContentPage.ToolbarItems>
+        
+        <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                
+                <!--tohle pak oddělat, je to tu jen dokud se sem nedá dropdown list-->
+                <Frame StyleClass="FrameTmaveFialova" Margin="100" Padding="2" CornerRadius="30">
+                    <Switch x:Name="TemporarySwitch" ThumbColor="white" OnColor="#7F7FFD"  Margin="0" HorizontalOptions="Center" Toggled="TemporarySwitch_Toggled" IsToggled="False"/>
+                </Frame>
+
+                <Frame StyleClass="FrameTmaveFialova" Margin="30" CornerRadius="30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <StackLayout>
+                        <Label x:Name="NadpisLabel" StyleClass="ZelenyNadpidLabel" Text="CELKEM" HorizontalOptions="CenterAndExpand"/>
+                        <forms:SKCanvasView x:Name="SkCanvasView1" HeightRequest="160" WidthRequest="10" Grid.Column="0" />
+                        <Grid x:Name="PopisGrid">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                                <Image x:Name="PopisImage1" Source="dobre_ikona.png"/>
+                                <Label x:Name="PopisLabel1" Text="+"/>
+                                <Label x:Name="HodnotaLabel1" Text="69"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
+                                <Image x:Name="PopisImage2" Source="spatne_ikona.png"/>
+                                <Label x:Name="PopisLabel2" Text="-"/>
+                                <Label x:Name="HodnotaLabel2" Text="420"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+                                <Label x:Name="PopisLabel3" Text="×"/>
+                                <Label x:Name="HodnotaLabel3" Text="123"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+                                <Label x:Name="PopisLabel4" Text="÷"/>
+                                <Label x:Name="HodnotaLabel4" Text="321"/>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+               
+                
+                
+                <StackLayout Margin="30,20,30,0">
+                    <Button x:Name="ResetStatsButton" BorderWidth="2" StyleClass="RestartButton" CornerRadius="5" FontSize="20" Margin="0,0,0,20" Clicked="ResetStatsButton_OnClicked"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

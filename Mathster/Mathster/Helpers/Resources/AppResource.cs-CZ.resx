@@ -325,6 +325,9 @@
     <value>Tmavý režim</value>
   </data>
   <data name="Celkem" xml:space="preserve">
-    <value>Celkem:</value>
+    <value>Celkem</value>
+  </data>
+  <data name="Pomer" xml:space="preserve">
+    <value>Poměr</value>
   </data>
 </root>

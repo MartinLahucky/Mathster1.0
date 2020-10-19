@@ -70,7 +70,7 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Celkem:.
+        ///   Looks up a localized string similar to Celkem.
         /// </summary>
         internal static string Celkem {
             get {
@@ -417,6 +417,15 @@ namespace Mathster.Helpers.Resources {
         internal static string PocetPrikladu {
             get {
                 return ResourceManager.GetString("PocetPrikladu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Poměr.
+        /// </summary>
+        internal static string Pomer {
+            get {
+                return ResourceManager.GetString("Pomer", resourceCulture);
             }
         }
         
