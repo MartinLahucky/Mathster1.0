@@ -118,8 +118,6 @@ namespace Mathster
             BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
             DobrePocetButton.BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
             SpatnePocetButton.BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
-            
-            
             if (tabulkaNastaveni.DarkMode)
             {
                 NadpisSouhrnLabel.TextColor = Color.FromHex("#FFFFFF");

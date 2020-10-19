@@ -44,11 +44,13 @@ namespace Mathster
             {
                 tabulkaNastaveni.BackgroundHex = "#262630";
                 tabulkaNastaveni.DarkMode = true;
+                OAplikaciVerze.TextColor = Color.White;
             }
             else
             {
                 tabulkaNastaveni.BackgroundHex = "#FAFAFA";
                 tabulkaNastaveni.DarkMode = false;
+                OAplikaciVerze.TextColor = Color.Default;
             }
             BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
             await App.Database.UpdateSettings(tabulkaNastaveni);
@@ -61,6 +63,7 @@ namespace Mathster
             if (tabulkaNastaveni.DarkMode)
             {
                 DarkModeSwitch.IsToggled = true;
+                OAplikaciVerze.TextColor = Color.White;
             }
         }
         private async void MenuButton_OnClicked(object sender, EventArgs e)
