@@ -111,6 +111,7 @@ namespace Mathster
             switch (podsebe)
             {
                 case false:
+                    SecondLayer.Margin = new Thickness(60, -40, 60, 0);
                     switch (priklad.DruhPrikladu)
                     {
                         case 1:
@@ -134,6 +135,7 @@ namespace Mathster
                     podsebe = true;
                     break;
                 case true:
+                    SecondLayer.Margin = new Thickness(60, 30, 60, 0);
                     switch (priklad.DruhPrikladu)
                     {
                         case 1:

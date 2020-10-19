@@ -79,12 +79,13 @@
             
             <!--dolní button:-->  
             
-            <Button x:Name="DalsiButton" Margin="20,5,20,25" Padding="0"
-                    TextColor="white"
-                    StyleClass="DalsiTlacitko"
+            <Button x:Name="DalsiButton" 
                     Clicked="DalsiButton_OnClicked"
+                    Margin="80,0,80,20" 
+                    StyleClass="Tlacitka"
+                    CornerRadius="30"
                     VerticalOptions="EndAndExpand"/>
-            
+            <!-- StyleClass="DalsiTlacitko" -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
