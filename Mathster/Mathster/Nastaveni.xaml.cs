@@ -17,6 +17,7 @@ namespace Mathster
             Title = AppResource.Nastaveni;
             JmenoEntry.Placeholder = AppResource.ZadejteJmeno;
             JmenoLabel.Text = AppResource.Jmeno;
+            JmenoEntry.PlaceholderColor = Color.White;
             DarkModeLabel.Text = AppResource.DarkMode;
             
             Task task = Task.Run(async () =>
@@ -42,10 +43,12 @@ namespace Mathster
             if(e.Value)
             {
                 tabulkaNastaveni.BackgroundHex = "#262630";
+                tabulkaNastaveni.DarkMode = true;
             }
             else
             {
                 tabulkaNastaveni.BackgroundHex = "#FAFAFA";
+                tabulkaNastaveni.DarkMode = false;
             }
             BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
             await App.Database.UpdateSettings(tabulkaNastaveni);
@@ -55,7 +58,7 @@ namespace Mathster
             base.OnAppearing();
             SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
-            if (tabulkaNastaveni.BackgroundHex == "#262630")
+            if (tabulkaNastaveni.DarkMode)
             {
                 DarkModeSwitch.IsToggled = true;
             }

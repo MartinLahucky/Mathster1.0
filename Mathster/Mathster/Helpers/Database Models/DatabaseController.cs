@@ -47,6 +47,7 @@ namespace Mathster.Helpers.Model
                     SettingsModel tabulkaNastaveni = new SettingsModel
                     {
                         ID = 0,
+                        DarkMode = false,
                         BackgroundHex = "#FAFAFA"
                     };
                     await database.InsertAsync(tabulkaNastaveni);

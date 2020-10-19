@@ -37,7 +37,7 @@ namespace Mathster
             
             foreach (var priklad in fronta)
             {
-                priklady.Add(new Vysledek(priklad.VratPriklad()));
+                priklady.Add(new Vysledek(priklad.VratPriklad(), tabulkaNastaveni));
                 if (priklad.PrvniCislo >= 1000 || priklad.UzivateluvVstup >= 1000)
                 {
                     VysledkyList.RowHeight = 80;
@@ -112,17 +112,19 @@ namespace Mathster
             DobrePocetButton.Text = pocitadloSpravne.ToString();
             SpatnePocetButton.Text = pocitadloSpatne.ToString();
         }
-        protected async override void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
-            SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
-            
-            //todo  DobrePocetButton při tmavém pozadí #7F7FFD a text #FFFFFF; při světlém pozadí #FFFFFF a text black
-            //todo SpatnePocetButton při tmavém pozadí #7F7FFD a text #FFFFFF; při světlém pozadí #FFFFFF a text black
-            //todo 
-            //todo BarvaCellu při tmavém pozadí #7F7FFD a text #FFFFFF; při světlém pozadí #FFFFFF a text black
-            
+
+            if (tabulkaNastaveni.DarkMode)
+            {
+                DobrePocetButton.BackgroundColor = Color.FromHex("#262630");
+                SpatnePocetButton.BackgroundColor = Color.FromHex("#262630");
+                NadpisSouhrnLabel.TextColor = Color.FromHex("#FFFFFF");
+                DobrePocetButton.TextColor = Color.FromHex("#FFFFFF");
+                SpatnePocetButton.TextColor = Color.FromHex("#FFFFFF");
+            }
         }
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
@@ -284,10 +286,21 @@ namespace Mathster
     {
         private string textovaPodobaPrikladu;
         private string statusPrikladu;
+        private Color barvaCellu;
+        private Color barvaTextu;
 
-        public Vysledek(string textovaPodobaPrikladu)
+        public Vysledek(string textovaPodobaPrikladu, SettingsModel tabulkaNataveni)
         {
             this.textovaPodobaPrikladu = textovaPodobaPrikladu;
+            barvaCellu = Color.FromHex(tabulkaNataveni.BackgroundHex);
+            if (tabulkaNataveni.DarkMode)
+            {
+                barvaTextu = Color.FromHex("#FFFFFF");
+            }
+            else
+            {
+                barvaTextu = Color.Black;
+            }
         }
         public string TextovaPodobaPrikladu
         {
@@ -298,6 +311,16 @@ namespace Mathster
         {
             get => statusPrikladu;
             set => statusPrikladu = value;
+        }
+        public Color BarvaCellu
+        {
+            get => barvaCellu;
+            set => barvaCellu = value;
+        }
+        public Color BarvaTextu
+        {
+            get => barvaTextu;
+            set => barvaTextu = value;
         }
     }
 }
