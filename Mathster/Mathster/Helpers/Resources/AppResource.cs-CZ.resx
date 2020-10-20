@@ -120,71 +120,17 @@
   <data name="Ano" xml:space="preserve">
     <value>Ano</value>
   </data>
-  <data name="CelkemDeleni" xml:space="preserve">
-    <value>Celkem spočítaných příkladů na dělení:</value>
-  </data>
-  <data name="CelkemDeleniSpravne" xml:space="preserve">
-    <value>Celkem správně vypočítaných příkladů na dělení:</value>
-  </data>
-  <data name="CelkemNasobeni" xml:space="preserve">
-    <value>Celkem spočítaných příkladů na násobení:</value>
-  </data>
-  <data name="CelkemNasobeniSpravne" xml:space="preserve">
-    <value>Celkem správně vypočítaných příkladů na násobení:</value>
-  </data>
-  <data name="CelkemOdcitani" xml:space="preserve">
-    <value>Celkem spočítaných příkladů na odečítání:</value>
-  </data>
-  <data name="CelkemOdcitaniSpravne" xml:space="preserve">
-    <value>Celkem správně vypočítaných příkladů na odečítání:</value>
-  </data>
-  <data name="CelkemPrikladu" xml:space="preserve">
-    <value>Celkem spočítaných příkladů:</value>
-  </data>
-  <data name="CelkemPrikladuDobre" xml:space="preserve">
-    <value>Celkem správně vypočítaných příkladů:</value>
-  </data>
-  <data name="CelkemScitani" xml:space="preserve">
-    <value>Celkem spočítaných příkladů na sčítání:</value>
-  </data>
-  <data name="CelkemScitaniSpravne" xml:space="preserve">
-    <value>Celkem správně vypočítaných příkladů na sčítání:</value>
-  </data>
-  <data name="Ctyrciferne" xml:space="preserve">
-    <value>Čtyřciferné</value>
-  </data>
   <data name="Dalsi" xml:space="preserve">
     <value>Další</value>
   </data>
   <data name="Deleni" xml:space="preserve">
     <value>Dělení</value>
   </data>
-  <data name="DoDeseti" xml:space="preserve">
-    <value>Do deseti</value>
-  </data>
-  <data name="DoDvaceti" xml:space="preserve">
-    <value>Do dvaceti</value>
-  </data>
-  <data name="DoPeti" xml:space="preserve">
-    <value>Do pěti</value>
-  </data>
-  <data name="DruhNejcastejiPocitanychPrikladu" xml:space="preserve">
-    <value>Nejčastěji počítaný druh příkladů:</value>
-  </data>
-  <data name="Dvouciferne" xml:space="preserve">
-    <value>Dvouciferné</value>
-  </data>
-  <data name="Jednociferne" xml:space="preserve">
-    <value>Jednociferné</value>
-  </data>
   <data name="Jmeno" xml:space="preserve">
     <value>Jméno:</value>
   </data>
   <data name="Menu" xml:space="preserve">
     <value>Menu</value>
-  </data>
-  <data name="Nachozeno" xml:space="preserve">
-    <value>Celkem nachozeno:</value>
   </data>
   <data name="Nahodne" xml:space="preserve">
     <value>Náhodně</value>
@@ -213,20 +159,11 @@
   <data name="Odevzdat" xml:space="preserve">
     <value>Odevzdat</value>
   </data>
-  <data name="Ok" xml:space="preserve">
-    <value>Ok</value>
-  </data>
   <data name="ONas" xml:space="preserve">
     <value>O Nás</value>
   </data>
   <data name="ONasText" xml:space="preserve">
     <value>Jsme skupina bláznivých jedinců, co se dívají na věci z jiného úhlu a snaží se posouvat technologie dál.</value>
-  </data>
-  <data name="Peticiferne" xml:space="preserve">
-    <value>Pěticiferné</value>
-  </data>
-  <data name="PocetPrikladu" xml:space="preserve">
-    <value>Počet příkladů</value>
   </data>
   <data name="Predchozi" xml:space="preserve">
     <value>Předchozí</value>
@@ -240,9 +177,6 @@
   <data name="Scitani" xml:space="preserve">
     <value>Sčítání</value>
   </data>
-  <data name="Seticiferne" xml:space="preserve">
-    <value>Šesticiferné</value>
-  </data>
   <data name="Souhrn" xml:space="preserve">
     <value>Přehled</value>
   </data>
@@ -255,17 +189,11 @@
   <data name="SpravneReseni" xml:space="preserve">
     <value>Správné řešení</value>
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Začít</value>
-  </data>
   <data name="Statistiky" xml:space="preserve">
     <value>Statistiky</value>
   </data>
   <data name="StatReset" xml:space="preserve">
     <value>Resetovat statistiky</value>
-  </data>
-  <data name="Trojciferne" xml:space="preserve">
-    <value>Trojciferné</value>
   </data>
   <data name="Upozorneni" xml:space="preserve">
     <value>Upozornění</value>
@@ -279,17 +207,11 @@
   <data name="UpozorneniZadejteCislo" xml:space="preserve">
     <value>Prosím zadejte číslo</value>
   </data>
-  <data name="Uspesnost" xml:space="preserve">
-    <value>Úspěšnost</value>
-  </data>
   <data name="VaseReseni" xml:space="preserve">
     <value>Vaše řešení</value>
   </data>
   <data name="VelikostCisel" xml:space="preserve">
     <value>Zvolte velikost čísel</value>
-  </data>
-  <data name="VelikostVsechPrvnichCisel" xml:space="preserve">
-    <value>Zvolte velikost všech prvních čísel</value>
   </data>
   <data name="Vysledky" xml:space="preserve">
     <value>Výsledky</value>
@@ -303,23 +225,11 @@
   <data name="ZadejteJmeno" xml:space="preserve">
     <value>Zadejte své jméno</value>
   </data>
-  <data name="ZiskaneBody" xml:space="preserve">
-    <value>Získané body</value>
-  </data>
   <data name="ZvolitNasobitelADelitel" xml:space="preserve">
     <value>Zvolte dělitel/násobitel</value>
   </data>
   <data name="ZvolitPocetPrikladu" xml:space="preserve">
     <value>Zvolte počet příkladů</value>
-  </data>
-  <data name="ZvolteDelitele" xml:space="preserve">
-    <value>Zvolte dělitele</value>
-  </data>
-  <data name="ZvolteNasobitele" xml:space="preserve">
-    <value>Zvolte násobitele</value>
-  </data>
-  <data name="NelzeUrcit" xml:space="preserve">
-    <value>Nelze určit</value>
   </data>
   <data name="DarkMode" xml:space="preserve">
     <value>Tmavý režim</value>
@@ -329,5 +239,11 @@
   </data>
   <data name="Pomer" xml:space="preserve">
     <value>Poměr</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Zadani" xml:space="preserve">
+    <value>Zadání</value>
   </data>
 </root>

@@ -120,71 +120,17 @@
   <data name="Ano" xml:space="preserve">
     <value>Yes</value>
   </data>
-  <data name="CelkemDeleni" xml:space="preserve">
-    <value>Total number of calculated division exercises:</value>
-  </data>
-  <data name="CelkemDeleniSpravne" xml:space="preserve">
-    <value>Total number of correctly calculated division exercises:</value>
-  </data>
-  <data name="CelkemNasobeni" xml:space="preserve">
-    <value>Total number of calculated multiplication exercises:</value>
-  </data>
-  <data name="CelkemNasobeniSpravne" xml:space="preserve">
-    <value>Total number of correctly calculated multiplication exercises:</value>
-  </data>
-  <data name="CelkemOdcitani" xml:space="preserve">
-    <value>Total number of calculated subtraction exercises:</value>
-  </data>
-  <data name="CelkemOdcitaniSpravne" xml:space="preserve">
-    <value>Total number of correctly calculated subtraction exercises:</value>
-  </data>
-  <data name="CelkemPrikladu" xml:space="preserve">
-    <value>Total number of calculated exercises:</value>
-  </data>
-  <data name="CelkemPrikladuDobre" xml:space="preserve">
-    <value>Total number of correctly calculated exercises:</value>
-  </data>
-  <data name="CelkemScitani" xml:space="preserve">
-    <value>Total number of calculated addition exercises:</value>
-  </data>
-  <data name="CelkemScitaniSpravne" xml:space="preserve">
-    <value>Total number of correctly calculated addition exercises:</value>
-  </data>
-  <data name="Ctyrciferne" xml:space="preserve">
-    <value>Four digit</value>
-  </data>
   <data name="Dalsi" xml:space="preserve">
     <value>Next</value>
   </data>
   <data name="Deleni" xml:space="preserve">
     <value>Division</value>
   </data>
-  <data name="DoDeseti" xml:space="preserve">
-    <value>Up to 10</value>
-  </data>
-  <data name="DoDvaceti" xml:space="preserve">
-    <value>Up to 20</value>
-  </data>
-  <data name="DoPeti" xml:space="preserve">
-    <value>Up to 5</value>
-  </data>
-  <data name="DruhNejcastejiPocitanychPrikladu" xml:space="preserve">
-    <value>The most frequently calculated type of exercise:</value>
-  </data>
-  <data name="Dvouciferne" xml:space="preserve">
-    <value>Double digit</value>
-  </data>
-  <data name="Jednociferne" xml:space="preserve">
-    <value>Single digit</value>
-  </data>
   <data name="Jmeno" xml:space="preserve">
     <value>Name:</value>
   </data>
   <data name="Menu" xml:space="preserve">
     <value>Menu</value>
-  </data>
-  <data name="Nachozeno" xml:space="preserve">
-    <value>Total distance traveled:</value>
   </data>
   <data name="Nahodne" xml:space="preserve">
     <value>Random</value>
@@ -222,26 +168,17 @@
   <data name="ONasText" xml:space="preserve">
     <value>We are a group of crazy individuals looking at things from a different angle and trying to move technology forward.</value>
   </data>
-  <data name="Peticiferne" xml:space="preserve">
-    <value>Five digit</value>
-  </data>
-  <data name="PocetPrikladu" xml:space="preserve">
-    <value>Select the number of exercises</value>
-  </data>
   <data name="Predchozi" xml:space="preserve">
     <value>Previous</value>
   </data>
   <data name="Reseni" xml:space="preserve">
-    <value>Answer</value>
+    <value>Solution</value>
   </data>
   <data name="ResetMessage" xml:space="preserve">
     <value>Are you sure you want to reset statistics? (They will be gone forever)</value>
   </data>
   <data name="Scitani" xml:space="preserve">
     <value>Addition</value>
-  </data>
-  <data name="Seticiferne" xml:space="preserve">
-    <value>Six digit</value>
   </data>
   <data name="Souhrn" xml:space="preserve">
     <value>Summary</value>
@@ -253,19 +190,13 @@
     <value>Correct</value>
   </data>
   <data name="SpravneReseni" xml:space="preserve">
-    <value>Correct answer</value>
-  </data>
-  <data name="Start" xml:space="preserve">
-    <value>Start</value>
+    <value>Correct solution</value>
   </data>
   <data name="Statistiky" xml:space="preserve">
     <value>Statistics</value>
   </data>
   <data name="StatReset" xml:space="preserve">
     <value>Reset statistics</value>
-  </data>
-  <data name="Trojciferne" xml:space="preserve">
-    <value>Three digit</value>
   </data>
   <data name="Upozorneni" xml:space="preserve">
     <value>Alert</value>
@@ -279,17 +210,11 @@
   <data name="UpozorneniZadejteCislo" xml:space="preserve">
     <value>Please input a number</value>
   </data>
-  <data name="Uspesnost" xml:space="preserve">
-    <value>Success rate</value>
-  </data>
   <data name="VaseReseni" xml:space="preserve">
     <value>Your answer</value>
   </data>
   <data name="VelikostCisel" xml:space="preserve">
     <value>Select number size</value>
-  </data>
-  <data name="VelikostVsechPrvnichCisel" xml:space="preserve">
-    <value>Size of all the first numbers</value>
   </data>
   <data name="Vysledky" xml:space="preserve">
     <value>Results</value>
@@ -303,23 +228,11 @@
   <data name="ZadejteJmeno" xml:space="preserve">
     <value>Enter your name</value>
   </data>
-  <data name="ZiskaneBody" xml:space="preserve">
-    <value>Points gained</value>
-  </data>
   <data name="ZvolitNasobitelADelitel" xml:space="preserve">
     <value>Select a Divisor/Multiplicator</value>
   </data>
   <data name="ZvolitPocetPrikladu" xml:space="preserve">
     <value>Amount of exercises</value>
-  </data>
-  <data name="ZvolteDelitele" xml:space="preserve">
-    <value>Select a Divisitor</value>
-  </data>
-  <data name="ZvolteNasobitele" xml:space="preserve">
-    <value>Select a Multiplicator</value>
-  </data>
-  <data name="NelzeUrcit" xml:space="preserve">
-    <value>Unable to determine</value>
   </data>
   <data name="DarkMode" xml:space="preserve">
     <value>Dark mode</value>
@@ -329,5 +242,8 @@
   </data>
   <data name="Pomer" xml:space="preserve">
     <value>Ratio</value>
+  </data>
+  <data name="Zadani" xml:space="preserve">
+    <value>Assignment</value>
   </data>
 </root>

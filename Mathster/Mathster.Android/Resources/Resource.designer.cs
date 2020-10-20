@@ -11631,16 +11631,25 @@ namespace Mathster
 			public const int round_settings_white_18dp = 2131165504;
 			
 			// aapt resource value: 0x7F070141
-			public const int spatne_ikona = 2131165505;
+			public const int seznam_ikona = 2131165505;
 			
 			// aapt resource value: 0x7F070142
-			public const int splash_screen = 2131165506;
+			public const int sipka_vlevo = 2131165506;
 			
 			// aapt resource value: 0x7F070143
-			public const int tooltip_frame_dark = 2131165507;
+			public const int sipka_vpravo = 2131165507;
 			
 			// aapt resource value: 0x7F070144
-			public const int tooltip_frame_light = 2131165508;
+			public const int spatne_ikona = 2131165508;
+			
+			// aapt resource value: 0x7F070145
+			public const int splash_screen = 2131165509;
+			
+			// aapt resource value: 0x7F070146
+			public const int tooltip_frame_dark = 2131165510;
+			
+			// aapt resource value: 0x7F070147
+			public const int tooltip_frame_light = 2131165511;
 			
 			static Drawable()
 			{

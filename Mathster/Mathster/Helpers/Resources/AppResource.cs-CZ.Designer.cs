@@ -79,105 +79,6 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Celkem spočítaných příkladů na dělení:.
-        /// </summary>
-        internal static string CelkemDeleni {
-            get {
-                return ResourceManager.GetString("CelkemDeleni", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Celkem správně vypočítaných příkladů na dělení:.
-        /// </summary>
-        internal static string CelkemDeleniSpravne {
-            get {
-                return ResourceManager.GetString("CelkemDeleniSpravne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Celkem spočítaných příkladů na násobení:.
-        /// </summary>
-        internal static string CelkemNasobeni {
-            get {
-                return ResourceManager.GetString("CelkemNasobeni", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Celkem správně vypočítaných příkladů na násobení:.
-        /// </summary>
-        internal static string CelkemNasobeniSpravne {
-            get {
-                return ResourceManager.GetString("CelkemNasobeniSpravne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Celkem spočítaných příkladů na odečítání:.
-        /// </summary>
-        internal static string CelkemOdcitani {
-            get {
-                return ResourceManager.GetString("CelkemOdcitani", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Celkem správně vypočítaných příkladů na odečítání:.
-        /// </summary>
-        internal static string CelkemOdcitaniSpravne {
-            get {
-                return ResourceManager.GetString("CelkemOdcitaniSpravne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Celkem spočítaných příkladů:.
-        /// </summary>
-        internal static string CelkemPrikladu {
-            get {
-                return ResourceManager.GetString("CelkemPrikladu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Celkem správně vypočítaných příkladů:.
-        /// </summary>
-        internal static string CelkemPrikladuDobre {
-            get {
-                return ResourceManager.GetString("CelkemPrikladuDobre", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Celkem spočítaných příkladů na sčítání:.
-        /// </summary>
-        internal static string CelkemScitani {
-            get {
-                return ResourceManager.GetString("CelkemScitani", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Celkem správně vypočítaných příkladů na sčítání:.
-        /// </summary>
-        internal static string CelkemScitaniSpravne {
-            get {
-                return ResourceManager.GetString("CelkemScitaniSpravne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Čtyřciferné.
-        /// </summary>
-        internal static string Ctyrciferne {
-            get {
-                return ResourceManager.GetString("Ctyrciferne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Další.
         /// </summary>
         internal static string Dalsi {
@@ -205,60 +106,6 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do deseti.
-        /// </summary>
-        internal static string DoDeseti {
-            get {
-                return ResourceManager.GetString("DoDeseti", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Do dvaceti.
-        /// </summary>
-        internal static string DoDvaceti {
-            get {
-                return ResourceManager.GetString("DoDvaceti", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Do pěti.
-        /// </summary>
-        internal static string DoPeti {
-            get {
-                return ResourceManager.GetString("DoPeti", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Nejčastěji počítaný druh příkladů:.
-        /// </summary>
-        internal static string DruhNejcastejiPocitanychPrikladu {
-            get {
-                return ResourceManager.GetString("DruhNejcastejiPocitanychPrikladu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Dvouciferné.
-        /// </summary>
-        internal static string Dvouciferne {
-            get {
-                return ResourceManager.GetString("Dvouciferne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Jednociferné.
-        /// </summary>
-        internal static string Jednociferne {
-            get {
-                return ResourceManager.GetString("Jednociferne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Jméno:.
         /// </summary>
         internal static string Jmeno {
@@ -273,15 +120,6 @@ namespace Mathster.Helpers.Resources {
         internal static string Menu {
             get {
                 return ResourceManager.GetString("Menu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Celkem nachozeno:.
-        /// </summary>
-        internal static string Nachozeno {
-            get {
-                return ResourceManager.GetString("Nachozeno", resourceCulture);
             }
         }
         
@@ -318,15 +156,6 @@ namespace Mathster.Helpers.Resources {
         internal static string Ne {
             get {
                 return ResourceManager.GetString("Ne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Nelze určit.
-        /// </summary>
-        internal static string NelzeUrcit {
-            get {
-                return ResourceManager.GetString("NelzeUrcit", resourceCulture);
             }
         }
         
@@ -403,24 +232,6 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pěticiferné.
-        /// </summary>
-        internal static string Peticiferne {
-            get {
-                return ResourceManager.GetString("Peticiferne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Počet příkladů.
-        /// </summary>
-        internal static string PocetPrikladu {
-            get {
-                return ResourceManager.GetString("PocetPrikladu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Poměr.
         /// </summary>
         internal static string Pomer {
@@ -466,15 +277,6 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Šesticiferné.
-        /// </summary>
-        internal static string Seticiferne {
-            get {
-                return ResourceManager.GetString("Seticiferne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Přehled.
         /// </summary>
         internal static string Souhrn {
@@ -511,15 +313,6 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Začít.
-        /// </summary>
-        internal static string Start {
-            get {
-                return ResourceManager.GetString("Start", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Statistiky.
         /// </summary>
         internal static string Statistiky {
@@ -534,15 +327,6 @@ namespace Mathster.Helpers.Resources {
         internal static string StatReset {
             get {
                 return ResourceManager.GetString("StatReset", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Trojciferné.
-        /// </summary>
-        internal static string Trojciferne {
-            get {
-                return ResourceManager.GetString("Trojciferne", resourceCulture);
             }
         }
         
@@ -583,15 +367,6 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Úspěšnost.
-        /// </summary>
-        internal static string Uspesnost {
-            get {
-                return ResourceManager.GetString("Uspesnost", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Vaše řešení.
         /// </summary>
         internal static string VaseReseni {
@@ -606,15 +381,6 @@ namespace Mathster.Helpers.Resources {
         internal static string VelikostCisel {
             get {
                 return ResourceManager.GetString("VelikostCisel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Zvolte velikost všech prvních čísel.
-        /// </summary>
-        internal static string VelikostVsechPrvnichCisel {
-            get {
-                return ResourceManager.GetString("VelikostVsechPrvnichCisel", resourceCulture);
             }
         }
         
@@ -646,20 +412,20 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zadání.
+        /// </summary>
+        internal static string Zadani {
+            get {
+                return ResourceManager.GetString("Zadani", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zadejte své jméno.
         /// </summary>
         internal static string ZadejteJmeno {
             get {
                 return ResourceManager.GetString("ZadejteJmeno", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Získané body.
-        /// </summary>
-        internal static string ZiskaneBody {
-            get {
-                return ResourceManager.GetString("ZiskaneBody", resourceCulture);
             }
         }
         
@@ -678,24 +444,6 @@ namespace Mathster.Helpers.Resources {
         internal static string ZvolitPocetPrikladu {
             get {
                 return ResourceManager.GetString("ZvolitPocetPrikladu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Zvolte dělitele.
-        /// </summary>
-        internal static string ZvolteDelitele {
-            get {
-                return ResourceManager.GetString("ZvolteDelitele", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Zvolte násobitele.
-        /// </summary>
-        internal static string ZvolteNasobitele {
-            get {
-                return ResourceManager.GetString("ZvolteNasobitele", resourceCulture);
             }
         }
     }

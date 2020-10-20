@@ -3,11 +3,36 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mathster.RozborVysledku">
+    <ContentPage.Resources>
+        <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
+    </ContentPage.Resources>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="MenuToolbarButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Hello, world!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
+            <Frame StyleClass="FrameTmaveFialova" Margin="30,0" CornerRadius="30" VerticalOptions="CenterAndExpand">
+                <StackLayout>
+                    <Label x:Name="JmenoLabel" HorizontalOptions="Center"/>
+                </StackLayout>
+            </Frame>
+            
+            <Frame StyleClass="FrameTmaveFialova" Margin="30,0" CornerRadius="30" VerticalOptions="CenterAndExpand">
+                <StackLayout x:Name="Ohraniceni" BackgroundColor="#4d4dfc">
+                    <Label x:Name="ReseniLabel" />
+                    <Label x:Name="PrikladLabel" />
+                    <StackLayout x:Name="BarvaCellu" BackgroundColor="{Binding BarvaCellu}" Orientation="Horizontal">
+                        <Label x:Name="SpatnaOdpovedLabel" />
+                        <Label x:Name="UzivatelLabel" HeightRequest="50" VerticalOptions="Center"  />
+                        <StackLayout BackgroundColor="#7F7FFD" Padding="0">
+                            <Image x:Name="VysledekImage" VerticalOptions="CenterAndExpand" Source="{Binding StatusPrikladu}" Margin="15,0"/> 
+                        </StackLayout>
+                        <Label x:Name="SpravneReseniLabel" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

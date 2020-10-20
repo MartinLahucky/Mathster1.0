@@ -1,4 +1,6 @@
-﻿using Mathster.Helpers.Model;
+﻿using System;
+using Mathster.Helpers.Model;
+using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,13 +12,15 @@ namespace Mathster
         public RozborVysledku()
         {
             InitializeComponent();
+            MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
+            Title = AppResource.Reseni;
+            SpatnaOdpovedLabel.Text = AppResource.VaseReseni;
+            SpravneReseniLabel.Text = AppResource.SpravneReseni;
         }
-        protected async override void OnAppearing()
+
+        private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
-            base.OnAppearing();
-            SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
-            BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
-                // .TextColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+            await Navigation.PushAsync(new Menu());
         }
     }
     

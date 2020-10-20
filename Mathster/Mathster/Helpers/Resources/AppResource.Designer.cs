@@ -79,105 +79,6 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total number of calculated division exercises:.
-        /// </summary>
-        internal static string CelkemDeleni {
-            get {
-                return ResourceManager.GetString("CelkemDeleni", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total number of correctly calculated division exercises:.
-        /// </summary>
-        internal static string CelkemDeleniSpravne {
-            get {
-                return ResourceManager.GetString("CelkemDeleniSpravne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total number of calculated multiplication exercises:.
-        /// </summary>
-        internal static string CelkemNasobeni {
-            get {
-                return ResourceManager.GetString("CelkemNasobeni", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total number of correctly calculated multiplication exercises:.
-        /// </summary>
-        internal static string CelkemNasobeniSpravne {
-            get {
-                return ResourceManager.GetString("CelkemNasobeniSpravne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total number of calculated subtraction exercises:.
-        /// </summary>
-        internal static string CelkemOdcitani {
-            get {
-                return ResourceManager.GetString("CelkemOdcitani", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total number of correctly calculated subtraction exercises:.
-        /// </summary>
-        internal static string CelkemOdcitaniSpravne {
-            get {
-                return ResourceManager.GetString("CelkemOdcitaniSpravne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total number of calculated exercises:.
-        /// </summary>
-        internal static string CelkemPrikladu {
-            get {
-                return ResourceManager.GetString("CelkemPrikladu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total number of correctly calculated exercises:.
-        /// </summary>
-        internal static string CelkemPrikladuDobre {
-            get {
-                return ResourceManager.GetString("CelkemPrikladuDobre", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total number of calculated addition exercises:.
-        /// </summary>
-        internal static string CelkemScitani {
-            get {
-                return ResourceManager.GetString("CelkemScitani", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total number of correctly calculated addition exercises:.
-        /// </summary>
-        internal static string CelkemScitaniSpravne {
-            get {
-                return ResourceManager.GetString("CelkemScitaniSpravne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Four digit.
-        /// </summary>
-        internal static string Ctyrciferne {
-            get {
-                return ResourceManager.GetString("Ctyrciferne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
         internal static string Dalsi {
@@ -205,60 +106,6 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Up to 10.
-        /// </summary>
-        internal static string DoDeseti {
-            get {
-                return ResourceManager.GetString("DoDeseti", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Up to 20.
-        /// </summary>
-        internal static string DoDvaceti {
-            get {
-                return ResourceManager.GetString("DoDvaceti", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Up to 5.
-        /// </summary>
-        internal static string DoPeti {
-            get {
-                return ResourceManager.GetString("DoPeti", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The most frequently calculated type of exercise:.
-        /// </summary>
-        internal static string DruhNejcastejiPocitanychPrikladu {
-            get {
-                return ResourceManager.GetString("DruhNejcastejiPocitanychPrikladu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Double digit.
-        /// </summary>
-        internal static string Dvouciferne {
-            get {
-                return ResourceManager.GetString("Dvouciferne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Single digit.
-        /// </summary>
-        internal static string Jednociferne {
-            get {
-                return ResourceManager.GetString("Jednociferne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Name:.
         /// </summary>
         internal static string Jmeno {
@@ -273,15 +120,6 @@ namespace Mathster.Helpers.Resources {
         internal static string Menu {
             get {
                 return ResourceManager.GetString("Menu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total distance traveled:.
-        /// </summary>
-        internal static string Nachozeno {
-            get {
-                return ResourceManager.GetString("Nachozeno", resourceCulture);
             }
         }
         
@@ -318,15 +156,6 @@ namespace Mathster.Helpers.Resources {
         internal static string Ne {
             get {
                 return ResourceManager.GetString("Ne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unable to determine.
-        /// </summary>
-        internal static string NelzeUrcit {
-            get {
-                return ResourceManager.GetString("NelzeUrcit", resourceCulture);
             }
         }
         
@@ -403,24 +232,6 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Five digit.
-        /// </summary>
-        internal static string Peticiferne {
-            get {
-                return ResourceManager.GetString("Peticiferne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Select the number of exercises.
-        /// </summary>
-        internal static string PocetPrikladu {
-            get {
-                return ResourceManager.GetString("PocetPrikladu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Ratio.
         /// </summary>
         internal static string Pomer {
@@ -439,7 +250,7 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Answer.
+        ///   Looks up a localized string similar to Solution.
         /// </summary>
         internal static string Reseni {
             get {
@@ -462,15 +273,6 @@ namespace Mathster.Helpers.Resources {
         internal static string Scitani {
             get {
                 return ResourceManager.GetString("Scitani", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Six digit.
-        /// </summary>
-        internal static string Seticiferne {
-            get {
-                return ResourceManager.GetString("Seticiferne", resourceCulture);
             }
         }
         
@@ -502,20 +304,11 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Correct answer.
+        ///   Looks up a localized string similar to Correct solution.
         /// </summary>
         internal static string SpravneReseni {
             get {
                 return ResourceManager.GetString("SpravneReseni", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start.
-        /// </summary>
-        internal static string Start {
-            get {
-                return ResourceManager.GetString("Start", resourceCulture);
             }
         }
         
@@ -534,15 +327,6 @@ namespace Mathster.Helpers.Resources {
         internal static string StatReset {
             get {
                 return ResourceManager.GetString("StatReset", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Three digit.
-        /// </summary>
-        internal static string Trojciferne {
-            get {
-                return ResourceManager.GetString("Trojciferne", resourceCulture);
             }
         }
         
@@ -583,15 +367,6 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Success rate.
-        /// </summary>
-        internal static string Uspesnost {
-            get {
-                return ResourceManager.GetString("Uspesnost", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Your answer.
         /// </summary>
         internal static string VaseReseni {
@@ -606,15 +381,6 @@ namespace Mathster.Helpers.Resources {
         internal static string VelikostCisel {
             get {
                 return ResourceManager.GetString("VelikostCisel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Size of all the first numbers.
-        /// </summary>
-        internal static string VelikostVsechPrvnichCisel {
-            get {
-                return ResourceManager.GetString("VelikostVsechPrvnichCisel", resourceCulture);
             }
         }
         
@@ -646,20 +412,20 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assignment.
+        /// </summary>
+        internal static string Zadani {
+            get {
+                return ResourceManager.GetString("Zadani", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter your name.
         /// </summary>
         internal static string ZadejteJmeno {
             get {
                 return ResourceManager.GetString("ZadejteJmeno", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Points gained.
-        /// </summary>
-        internal static string ZiskaneBody {
-            get {
-                return ResourceManager.GetString("ZiskaneBody", resourceCulture);
             }
         }
         
@@ -678,24 +444,6 @@ namespace Mathster.Helpers.Resources {
         internal static string ZvolitPocetPrikladu {
             get {
                 return ResourceManager.GetString("ZvolitPocetPrikladu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Select a Divisitor.
-        /// </summary>
-        internal static string ZvolteDelitele {
-            get {
-                return ResourceManager.GetString("ZvolteDelitele", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Select a Multiplicator.
-        /// </summary>
-        internal static string ZvolteNasobitele {
-            get {
-                return ResourceManager.GetString("ZvolteNasobitele", resourceCulture);
             }
         }
     }
