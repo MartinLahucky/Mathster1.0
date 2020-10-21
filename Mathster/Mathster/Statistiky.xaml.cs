@@ -1,6 +1,7 @@
 ﻿using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Mathster.Helpers.Model;
 
 namespace Mathster
 {
@@ -11,12 +12,18 @@ namespace Mathster
         {
             InitializeComponent();
             Title = AppResource.Statistiky;
-            Children.Add(new StatistikyGraf() {Title=AppResource.Celkem});
-            Children.Add(new StatistikyGraf() {Title=AppResource.Scitani});
-            Children.Add(new StatistikyGraf() {Title=AppResource.Odecitani});
-            Children.Add(new StatistikyGraf() {Title=AppResource.Nasobeni});
-            Children.Add(new StatistikyGraf() {Title=AppResource.Deleni});
-            Children.Add(new StatistikyGraf() {Title=AppResource.Pomer});
+            VykresleniStranky();
+        }
+
+        async public void VykresleniStranky()
+        {
+            DBModel tabulka = await App.Database.GetTable();
+            Children.Add(new StatistikyGraf(AppResource.Celkem, tabulka.CelkemPrikladuDobre, tabulka.CelkemPrikladu) { Title = AppResource.Celkem });
+            Children.Add(new StatistikyGraf(AppResource.Scitani, tabulka.CelkemScitaniSpravne, tabulka.CelkemScitani) { Title = "+" });
+            Children.Add(new StatistikyGraf(AppResource.Odecitani, tabulka.CelkemOdcitaniSpravne, tabulka.CelkemOdcitani) { Title = "-" });
+            Children.Add(new StatistikyGraf(AppResource.Nasobeni, tabulka.CelkemNasobeniSpravne, tabulka.CelkemNasobeni) { Title = "×" });
+            Children.Add(new StatistikyGraf(AppResource.Deleni, tabulka.CelkemDeleniSpravne, tabulka.CelkemDeleni) { Title = "÷" });
+            Children.Add(new StatistikyGraf(AppResource.Pomer, tabulka.CelkemScitani, tabulka.CelkemOdcitani, tabulka.CelkemNasobeni, tabulka.CelkemDeleni) { Title = AppResource.Pomer });
         }
     }
 }

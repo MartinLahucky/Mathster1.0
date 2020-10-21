@@ -15,41 +15,39 @@
         <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                
-                <!--tohle pak oddělat, je to tu jen dokud se sem nedá dropdown list-->
-                <Frame StyleClass="FrameTmaveFialova" Margin="100" Padding="2" CornerRadius="30">
-                    <Switch x:Name="TemporarySwitch" ThumbColor="white" OnColor="#7F7FFD"  Margin="0" HorizontalOptions="Center" Toggled="TemporarySwitch_Toggled" IsToggled="False"/>
-                </Frame>
+
 
                 <Frame StyleClass="FrameTmaveFialova" Margin="30" CornerRadius="30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                     <StackLayout>
-                        <Label x:Name="NadpisLabel" StyleClass="ZelenyNadpidLabel" Text="CELKEM" HorizontalOptions="CenterAndExpand"/>
-                        <forms:SKCanvasView x:Name="SkCanvasView1" HeightRequest="160" WidthRequest="10" Grid.Column="0" />
+                        <Label x:Name="NadpisLabel" StyleClass="ZelenyNadpidLabel" HorizontalOptions="CenterAndExpand"/>
+                        <forms:SKCanvasView x:Name="SkCanvasView1" HeightRequest="160" WidthRequest="10" Margin="30"/>
                         <Grid x:Name="PopisGrid">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
                             <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
                                 <Image x:Name="PopisImage1" Source="dobre_ikona.png"/>
-                                <Label x:Name="PopisLabel1" Text="+"/>
-                                <Label x:Name="HodnotaLabel1" Text="69"/>
+                                <Label x:Name="PopisLabel1" Text="+" TextColor="#FCA54D" FontSize="50" VerticalOptions="Center"/>
+                                <Label x:Name="HodnotaLabel1" Text="69" FontSize="30" VerticalOptions="Center"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
                                 <Image x:Name="PopisImage2" Source="spatne_ikona.png"/>
-                                <Label x:Name="PopisLabel2" Text="-"/>
-                                <Label x:Name="HodnotaLabel2" Text="420"/>
+                                <Label x:Name="PopisLabel2" Text="-" TextColor="#FFFFFF" FontSize="60" VerticalOptions="Center"/>
+                                <Label x:Name="HodnotaLabel2" Text="420" FontSize="30" VerticalOptions="Center"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
-                                <Label x:Name="PopisLabel3" Text="×"/>
-                                <Label x:Name="HodnotaLabel3" Text="123"/>
+                                <Label x:Name="PopisLabel3" Text="×" TextColor="#C9FF50" FontSize="50" VerticalOptions="Center"/>
+                                <Label x:Name="HodnotaLabel3" Text="123" FontSize="30" VerticalOptions="Center"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
-                                <Label x:Name="PopisLabel4" Text="÷"/>
-                                <Label x:Name="HodnotaLabel4" Text="321"/>
+                                <Label x:Name="PopisLabel4" Text="÷" TextColor="#262630" FontSize="60" VerticalOptions="Center"/>
+                                <Label x:Name="HodnotaLabel4" Text="321" FontSize="30" VerticalOptions="Center"/>
                             </StackLayout>
                         </Grid>
                     </StackLayout>

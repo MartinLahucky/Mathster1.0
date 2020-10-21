@@ -11,63 +11,61 @@ namespace Mathster
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StatistikyGraf : ContentPage
     {
-
-        private Circles graf1;
-        private Circles graf2;
-        private Circles graf3;
-        private int scitani, odcitani, nasobeni, deleni, celkemDobre, celkemSpatne; // tady jsou statistiky, které jsou potom nutné 
-        public StatistikyGraf()
+        private Circles graf;
+        public StatistikyGraf(string Nadpis, int hodnotaSpravne, int hodnotaCelkem)
         {
-            scitani = 20;
-            odcitani = 30;
-            nasobeni = 25;
-            deleni = 25;
-            celkemDobre = 45;
-            celkemSpatne = 55;
-
             InitializeComponent();
             Title = AppResource.Statistiky;
+            NadpisLabel.Text = Nadpis;
             ResetStatsButton.Text = AppResource.StatReset;
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
 
-            // to-do pro řehoře:
-            // upravit design tak aby nevypadal shit
-            // zkontrolovat jestli fungujou hodnoty (a i ten ostatní shit)
-
+            //Zobrazení legendy
+            HodnotaLabel1.Text = hodnotaSpravne.ToString();
+            HodnotaLabel2.Text = (hodnotaCelkem - hodnotaSpravne).ToString();
+            PopisImage1.IsVisible = true;
+            PopisImage2.IsVisible = true;
+            PopisLabel1.IsVisible = false;
+            PopisLabel2.IsVisible = false;
+            PopisLabel3.IsVisible = false;
+            PopisLabel4.IsVisible = false;
+            HodnotaLabel3.IsVisible = false;
+            HodnotaLabel4.IsVisible = false;
 
             //SkiaSharp
-            graf1 = new Circles(180, (info) => new SKPoint((float)info.Width / 2, (float)info.Height / 2));
-            graf1.DrawFullProgressBar(SkCanvasView1, "#ffffff", "#000000", 30f, (float)celkemDobre / (float)(celkemSpatne + celkemDobre) * 100f, "#bbbbbb");
+            if (hodnotaCelkem == 0) hodnotaCelkem = 1;
+            graf = new Circles(180, (info) => new SKPoint((float)info.Width / 2, (float)info.Height / 2));
+            graf.DrawFullProgressBar(SkCanvasView1, "#7F7FFD", "#FCA54D", 40f, (float)hodnotaSpravne / (float)(hodnotaCelkem) * 100f, "#C9FF50");
         }
 
-        private void TemporarySwitch_Toggled(object sender, ToggledEventArgs e)
+        public StatistikyGraf(string Nadpis, int Scitani, int Odecitani, int Nasobeni, int Deleni)
         {
-            if (TemporarySwitch.IsToggled)
-            {
-                NadpisLabel.Text = "dvě hodnoty";
-                PopisImage1.IsVisible = true;
-                PopisImage2.IsVisible = true;
-                PopisLabel1.IsVisible = false;
-                PopisLabel2.IsVisible = false;
-                PopisLabel3.IsVisible = false;
-                PopisLabel4.IsVisible = false;
-                HodnotaLabel3.IsVisible = false;
-                HodnotaLabel4.IsVisible = false;
-                
-            }
-            else
-            {
-                NadpisLabel.Text = "čtyři hodnoty";
-                PopisImage1.IsVisible = false;
-                PopisImage2.IsVisible = false;
-                PopisLabel1.IsVisible = true;
-                PopisLabel2.IsVisible = true;
-                PopisLabel3.IsVisible = true;
-                PopisLabel4.IsVisible = true;
-                HodnotaLabel3.IsVisible = true;
-                HodnotaLabel4.IsVisible = true;
-            }
+            InitializeComponent();
+            Title = AppResource.Statistiky;
+            NadpisLabel.Text = Nadpis;
+            ResetStatsButton.Text = AppResource.StatReset;
+            MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
+
+            //Zobrazení legendy
+            HodnotaLabel1.Text = Scitani.ToString();
+            HodnotaLabel2.Text = Odecitani.ToString();
+            HodnotaLabel3.Text = Nasobeni.ToString();
+            HodnotaLabel4.Text = Deleni.ToString();
+            PopisImage1.IsVisible = false;
+            PopisImage2.IsVisible = false;
+            PopisLabel1.IsVisible = true;
+            PopisLabel2.IsVisible = true;
+            PopisLabel3.IsVisible = true;
+            PopisLabel4.IsVisible = true;
+            HodnotaLabel3.IsVisible = true;
+            HodnotaLabel4.IsVisible = true;
+
+            //SkiaSharp
+            graf = new Circles(180, (info) => new SKPoint((float)info.Width / 2, (float)info.Height / 2));
+            graf.DrawChart(SkCanvasView1, "#7F7FFD", "#FCA54D", 40f, Scitani, Odecitani, Nasobeni, Scitani + Odecitani + Nasobeni + Deleni, "#C9FF50", "#262630", "#FFFFFF");
         }
+
+
 
         protected async override void OnAppearing()
         {
@@ -75,9 +73,10 @@ namespace Mathster
             SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
             DBModel tabulka = await App.Database.GetTable();
-
             
 
+            
+            
 
 
 
