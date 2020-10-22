@@ -19,20 +19,22 @@
     <ContentPage.Content>
         <!-- <ScrollView> -->
             <StackLayout>
-                <StackLayout BackgroundColor="#4D4DFC" Padding="0,0,0,20">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                        </Grid.ColumnDefinitions>
-                        <forms:SKCanvasView x:Name="SkCanvasView" HeightRequest="160" WidthRequest="10" Grid.Column="0" />
-                        <StackLayout Margin="30,10,30,0" Padding="45,20" HorizontalOptions="Center" Grid.Column="0" >
-                            <Button Text="1000" CornerRadius="120" StyleClass="LevelButtonMenu" BackgroundColor="Transparent" Clicked="StatsButton_OnClicked"/>
-                        </StackLayout>
-                    </Grid>                    
-                    <Label x:Name="UzivatelLabel" HorizontalOptions="Center" FontSize="30" Margin="0,10,0,0" />
-                </StackLayout>
-                
-                <Button x:Name="NahodneButton" Margin="100,20,100,0" StyleClass="Tlacitka"
+            <StackLayout BackgroundColor="#4D4DFC" Padding="0,0,0,20">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <forms:SKCanvasView x:Name="SkCanvasView" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
+                    <StackLayout Padding="45,20" HorizontalOptions="Center" Grid.Column="0"  Grid.Row="0" VerticalOptions="CenterAndExpand">
+                        <Button x:Name="levelButton" Text="1000" Margin="0" CornerRadius="120" StyleClass="LevelButtonMenu" BackgroundColor="Transparent" Clicked="StatsButton_OnClicked"/>
+                    </StackLayout>
+                </Grid>
+                <Label x:Name="UzivatelLabel" HorizontalOptions="Center" FontSize="30" Margin="0,10,0,0" />
+            </StackLayout>
+            <Button x:Name="NahodneButton" Margin="100,20,100,0" StyleClass="Tlacitka"
                         VerticalOptions="EndAndExpand" CornerRadius="50" Clicked="NahodneButton_OnClicked" />
                 <Grid Margin="40,10" VerticalOptions="End" HorizontalOptions="Center">
                     <Grid.RowDefinitions>

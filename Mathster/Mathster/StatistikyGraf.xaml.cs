@@ -19,6 +19,7 @@ namespace Mathster
             NadpisLabel.Text = Nadpis;
             ResetStatsButton.Text = AppResource.StatReset;
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
+            celkovyPocetLabel.Text = hodnotaCelkem.ToString();
 
             //Zobrazení legendy
             HodnotaLabel1.Text = hodnotaSpravne.ToString();
@@ -45,6 +46,7 @@ namespace Mathster
             NadpisLabel.Text = Nadpis;
             ResetStatsButton.Text = AppResource.StatReset;
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
+            celkovyPocetLabel.Text = (Scitani + Odecitani + Nasobeni + Deleni).ToString();
 
             //Zobrazení legendy
             HodnotaLabel1.Text = Scitani.ToString();
@@ -65,79 +67,11 @@ namespace Mathster
             graf.DrawChart(SkCanvasView1, "#7F7FFD", "#FCA54D", 40f, Scitani, Odecitani, Nasobeni, Scitani + Odecitani + Nasobeni + Deleni, "#C9FF50", "#262630", "#FFFFFF");
         }
 
-
-
         protected async override void OnAppearing()
         {
             base.OnAppearing();
             SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
-            DBModel tabulka = await App.Database.GetTable();
-            
-
-            
-            
-
-
-
-            //if (tabulka.CelkemScitani > tabulka.CelkemOdcitani && tabulka.CelkemScitani > tabulka.CelkemNasobeni && tabulka.CelkemScitani > tabulka.CelkemDeleni)
-            //{
-            //    tabulka.DruhNejcastejiPocitanychPrikladu = AppResource.Scitani;
-            //}
-            //else if (tabulka.CelkemOdcitani > tabulka.CelkemScitani && tabulka.CelkemOdcitani > tabulka.CelkemNasobeni && tabulka.CelkemOdcitani > tabulka.CelkemDeleni)
-            //{
-            //    tabulka.DruhNejcastejiPocitanychPrikladu = AppResource.Odecitani;
-            //}
-            //else if (tabulka.CelkemNasobeni > tabulka.CelkemScitani && tabulka.CelkemNasobeni > tabulka.CelkemOdcitani && tabulka.CelkemNasobeni > tabulka.CelkemDeleni)
-            //{
-            //    tabulka.DruhNejcastejiPocitanychPrikladu = AppResource.Nasobeni;
-            //}
-            //else if (tabulka.CelkemDeleni > tabulka.CelkemScitani && tabulka.CelkemDeleni > tabulka.CelkemOdcitani && tabulka.CelkemDeleni > tabulka.CelkemNasobeni)
-            //{
-            //    tabulka.DruhNejcastejiPocitanychPrikladu = AppResource.Deleni;
-            //}
-            //else
-            //{
-            //    tabulka.DruhNejcastejiPocitanychPrikladu = AppResource.NelzeUrcit;
-            //}
-            
-            //List<ChartEntry> entries = new List<ChartEntry>
-            //{
-            //    new ChartEntry(tabulka.CelkemPrikladu)
-            //    {
-            //        Label = AppResource.CelkemPrikladu,
-            //        ValueLabel = tabulka.CelkemPrikladu.ToString(),
-            //        Color = SKColor.Parse("#FCA54D")
-            //    },
-            //    new ChartEntry(tabulka.CelkemPrikladuDobre)
-            //    {
-            //        Label = AppResource.CelkemPrikladuDobre,
-            //        ValueLabel = tabulka.CelkemPrikladuDobre.ToString(),
-            //        Color = SKColor.Parse("#C9FF50"),
-            //    },
-                
-            //    // new ChartEntry()
-            //    // {
-            //    //     Label = ,
-            //    //     ValueLabel = ,
-            //    //     Color = SKColor.Parse(),
-            //    // },
-                
-            //};
-            
-            //ChartView.Chart = new DonutChart() { Entries = entries};
-            
-            //// Label3.Text = $"{AppResource.CelkemScitani} {tabulka.CelkemScitani.ToString()}";
-            //// Label4.Text = $"{AppResource.CelkemScitaniSpravne} {tabulka.CelkemScitaniSpravne.ToString()}";
-            //// Label5.Text = $"{AppResource.CelkemOdcitani} {tabulka.CelkemOdcitani.ToString()}";
-            //// Label6.Text = $"{AppResource.CelkemOdcitaniSpravne} {tabulka.CelkemOdcitaniSpravne.ToString()}";
-            //// Label7.Text = $"{AppResource.CelkemNasobeni} {tabulka.CelkemNasobeni.ToString()}";
-            //// Label8.Text = $"{AppResource.CelkemNasobeniSpravne} {tabulka.CelkemNasobeniSpravne.ToString()}";
-            //// Label9.Text = $"{AppResource.CelkemDeleni} {tabulka.CelkemDeleni.ToString()}";
-            //// Label10.Text = $"{AppResource.CelkemDeleniSpravne} {tabulka.CelkemDeleniSpravne.ToString()}";
-            //// Label11.Text = $"{AppResource.DruhNejcastejiPocitanychPrikladu} {tabulka.DruhNejcastejiPocitanychPrikladu}";
-            
-            
         }
 
         private async void ResetStatsButton_OnClicked(object sender, EventArgs e)
@@ -162,17 +96,6 @@ namespace Mathster
                     Jmeno = tabulka.Jmeno,
                     DruhNejcastejiPocitanychPrikladu = String.Empty,
                 };
-                // Label1.Text = $"{AppResource.CelkemPrikladu} {tabulkaReset.CelkemPrikladu.ToString()}";
-                // Label2.Text = $"{AppResource.CelkemPrikladuDobre} {tabulkaReset.CelkemPrikladuDobre.ToString()}";
-                // Label3.Text = $"{AppResource.CelkemScitani} {tabulkaReset.CelkemScitani.ToString()}";
-                // Label4.Text = $"{AppResource.CelkemScitaniSpravne} {tabulkaReset.CelkemScitaniSpravne.ToString()}";
-                // Label5.Text = $"{AppResource.CelkemOdcitani} {tabulkaReset.CelkemOdcitani.ToString()}";
-                // Label6.Text = $"{AppResource.CelkemOdcitaniSpravne} {tabulkaReset.CelkemOdcitaniSpravne.ToString()}";
-                // Label7.Text = $"{AppResource.CelkemNasobeni} {tabulkaReset.CelkemNasobeni.ToString()}";
-                // Label8.Text = $"{AppResource.CelkemNasobeniSpravne} {tabulkaReset.CelkemNasobeniSpravne.ToString()}";
-                // Label9.Text = $"{AppResource.CelkemDeleni} {tabulkaReset.CelkemDeleni.ToString()}";
-                // Label10.Text = $"{AppResource.CelkemDeleniSpravne} {tabulkaReset.CelkemDeleniSpravne.ToString()}";
-                // Label11.Text = $"{AppResource.DruhNejcastejiPocitanychPrikladu} {AppResource.NelzeUrcit}";
                 await App.Database.UpdateTable(tabulkaReset);
             }
         }
