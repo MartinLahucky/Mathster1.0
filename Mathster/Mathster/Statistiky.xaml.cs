@@ -19,10 +19,10 @@ namespace Mathster
         {
             DBModel tabulka = await App.Database.GetTable();
             Children.Add(new StatistikyGraf(AppResource.Celkem, tabulka.CelkemPrikladuDobre, tabulka.CelkemPrikladu) { Title = AppResource.Celkem });
-            Children.Add(new StatistikyGraf(AppResource.Scitani, tabulka.CelkemScitaniSpravne, tabulka.CelkemScitani) { Title = "+" });
-            Children.Add(new StatistikyGraf(AppResource.Odecitani, tabulka.CelkemOdcitaniSpravne, tabulka.CelkemOdcitani) { Title = "-" });
-            Children.Add(new StatistikyGraf(AppResource.Nasobeni, tabulka.CelkemNasobeniSpravne, tabulka.CelkemNasobeni) { Title = "×" });
-            Children.Add(new StatistikyGraf(AppResource.Deleni, tabulka.CelkemDeleniSpravne, tabulka.CelkemDeleni) { Title = "÷" });
+            Children.Add(new StatistikyGraf(AppResource.Scitani, tabulka.CelkemScitaniSpravne, tabulka.CelkemScitani) { IconImageSource = "plus_ikona.png", Title = ""});
+            Children.Add(new StatistikyGraf(AppResource.Odecitani, tabulka.CelkemOdcitaniSpravne, tabulka.CelkemOdcitani) { IconImageSource = "minus_ikona.png", Title = ""});
+            Children.Add(new StatistikyGraf(AppResource.Nasobeni, tabulka.CelkemNasobeniSpravne, tabulka.CelkemNasobeni) { IconImageSource = "krat_ikona.png", Title = "" });
+            Children.Add(new StatistikyGraf(AppResource.Deleni, tabulka.CelkemDeleniSpravne, tabulka.CelkemDeleni) { IconImageSource = "deleno_ikona.png", Title = "" });
             Children.Add(new StatistikyGraf(AppResource.Pomer, tabulka.CelkemScitani, tabulka.CelkemOdcitani, tabulka.CelkemNasobeni, tabulka.CelkemDeleni) { Title = AppResource.Pomer });
         }
     }
