@@ -19,10 +19,10 @@
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
             ReseniNadLabel.Text = AppResource.SpravneReseni;
             NadSpatnaOdpovedLabel.Text = AppResource.VaseReseni;
-            SpatneLabel.Text = AppResource.Spatne;
-            PredchoziPrikladButton.Text = AppResource.Predchozi;
-            DalsiPrikladButton.Text = AppResource.Dalsi;
-            PrehledButton.Text = AppResource.Souhrn;
+            //SpatneLabel.Text = AppResource.Spatne;
+           // PredchoziPrikladButton.Text = AppResource.Predchozi;
+           // DalsiPrikladButton.Text = AppResource.Dalsi;
+           // PrehledButton.Text = AppResource.Souhrn;
             Title = AppResource.Reseni;
             
             if (fronta[id].PrvniCislo >= 10000)

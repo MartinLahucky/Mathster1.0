@@ -17,11 +17,11 @@ namespace Mathster
         {
             InitializeComponent();
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
-            SpravneLabel.Text = AppResource.Spravne;
+            //SpravneLabel.Text = AppResource.Spravne;
             ReseniNadLabel.Text = AppResource.SpravneReseni;
-            PredchoziPrikladButton.Text = AppResource.Predchozi;
-            DalsiPrikladButton.Text = AppResource.Dalsi;
-            PrehledButton.Text = AppResource.Souhrn;
+           // PredchoziPrikladButton.Text = AppResource.Predchozi;
+           // DalsiPrikladButton.Text = AppResource.Dalsi;
+           // PrehledButton.Text = AppResource.Souhrn;
             Title = AppResource.Reseni;
 
             if (fronta[id].PrvniCislo >= 10000)
