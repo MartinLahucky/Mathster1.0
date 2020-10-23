@@ -28,14 +28,6 @@
         <SubType>Designer</SubType>
         <Generator></Generator>
       </EmbeddedResource>
-      <EmbeddedResource Update="VysledekDobre.xaml">
-        <SubType>Designer</SubType>
-        <Generator></Generator>
-      </EmbeddedResource>
-      <EmbeddedResource Update="VysledekSpatne.xaml">
-        <SubType>Designer</SubType>
-        <Generator></Generator>
-      </EmbeddedResource>
       <EmbeddedResource Update="Helpers\Resources\AppResource.resx">
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>AppResource.Designer.cs</LastGenOutput>
@@ -64,12 +56,6 @@
       </Compile>
       <Compile Update="Priklady.xaml.cs">
         <DependentUpon>Priklady.xaml</DependentUpon>
-      </Compile>
-      <Compile Update="VysledekDobre.xaml.cs">
-        <DependentUpon>VysledekDobre.xaml</DependentUpon>
-      </Compile>
-      <Compile Update="VysledekSpatne.xaml.cs">
-        <DependentUpon>VysledekSpatne.xaml</DependentUpon>
       </Compile>
       <Compile Update="Helpers\Resources\AppResource.Designer.cs">
         <DesignTime>True</DesignTime>

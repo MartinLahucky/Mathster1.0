@@ -64,7 +64,7 @@ namespace Mathster
 
             //SkiaSharp
             graf = new Circles(180, (info) => new SKPoint((float)info.Width / 2, (float)info.Height / 2));
-            graf.DrawChart(SkCanvasView1, "#7F7FFD", "#FCA54D", 40f, Scitani, Odecitani, Nasobeni, Scitani + Odecitani + Nasobeni + Deleni, "#C9FF50", "#262630", "#FFFFFF");
+            graf.DrawChart(SkCanvasView1, "#7F7FFD", "#FCA54D", 40f, Deleni, Odecitani, Nasobeni, Scitani + Odecitani + Nasobeni + Deleni, "#C9FF50", "#262630", "#FFFFFF");
         }
 
         protected async override void OnAppearing()

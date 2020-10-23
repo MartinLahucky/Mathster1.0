@@ -20,7 +20,7 @@ namespace Mathster
         private int maxPocetCifer = 6;
         //
         private int velikostDelitele = 2;
-        private int maxVelikostDelitele = 6;
+        private int maxVelikostDelitele = 3;
 
         public NastaveniPrikladu(byte druhPrikladu)
         {
@@ -45,7 +45,8 @@ namespace Mathster
             velikostDeliteleSlider.Value = velikostDelitele;
             velikostDeliteleSlider.Maximum = maxVelikostDelitele;
             velikostDeliteleSlider.Minimum = 1;
-            velikostDeliteleLabel.Text = velikostDelitele.ToString();
+            velikostDeliteleLabel.Text = 5.ToString();
+            velikostDeliteleSlider.IsEnabled = false;
             
             switch (druhPrikladu)
             {
@@ -86,13 +87,34 @@ namespace Mathster
         private void pocetCiferSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             pocetCifer = (int)pocetCiferSlider.Value;
+            if (pocetCifer == 1)
+            {
+                velikostDeliteleSlider.Value = 1;
+                velikostDeliteleSlider.IsEnabled = false;
+            }
+            else
+            {
+                velikostDeliteleSlider.IsEnabled = true;
+            }
             pocetCiferLabel.Text = pocetCifer.ToString();
         }
 
         private void velikostDeliteleSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            velikostDelitele = (int)velikostDeliteleSlider.Value;    
-            velikostDeliteleLabel.Text = velikostDelitele.ToString();
+            velikostDelitele = (int)velikostDeliteleSlider.Value;
+            switch (velikostDelitele)
+            {
+                case 1:
+                    velikostDeliteleLabel.Text = 5.ToString();
+                    break;
+                case 2:
+                    velikostDeliteleLabel.Text = 10.ToString();
+                    break;
+                case 3:
+                    velikostDeliteleLabel.Text = 20.ToString();
+                    break;
+            }
+            
         }
         private async void DalsiButton_OnClicked(object sender, EventArgs e)
         {

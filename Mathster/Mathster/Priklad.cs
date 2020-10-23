@@ -7,7 +7,7 @@ namespace Mathster
         private byte ID;
         private int prvniCislo;
         private int druheCislo;
-        private int uzivateluvVstup;
+        private float uzivateluvVstup;
         private byte druhPrikladu;
         public Priklad(int prvniCislo, int druheCislo, byte druhPrikladu)
         {
@@ -35,7 +35,7 @@ namespace Mathster
             private set => druheCislo = value;
         }
 
-        public int UzivateluvVstup
+        public float UzivateluvVstup
         {
             get => uzivateluvVstup;
             set => uzivateluvVstup = value;

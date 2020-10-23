@@ -64,7 +64,7 @@ namespace Mathster
         {
             try
             {
-                fronta[ID].UzivateluvVstup = int.Parse(VysledekPropisInput.Text);
+                fronta[ID].UzivateluvVstup = float.Parse(VysledekPropisInput.Text);
                 await Navigation.PushAsync(new Souhrn(fronta));
                 var existingPages = Navigation.NavigationStack.ToList();
                 foreach(var page in existingPages)
@@ -72,9 +72,9 @@ namespace Mathster
                     Navigation.RemovePage(page);
                 }
             }
-            catch (Exception exception)
+            catch // (Exception exception)
             {
-                await DisplayAlert(AppResource.Upozorneni, exception.Message, AppResource.Ok);
+                // await DisplayAlert(AppResource.Upozorneni, exception.Message, AppResource.Ok);
                 await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniZadejteCislo, AppResource.Ok);
             }
         }
@@ -83,7 +83,7 @@ namespace Mathster
         {
             try
             {
-                fronta[ID].UzivateluvVstup = int.Parse(VysledekPropisInput.Text);
+                fronta[ID].UzivateluvVstup = float.Parse(VysledekPropisInput.Text);
                 ID++;
                 await Navigation.PushAsync(new Priklady(ID, fronta));
                 var existingPages = Navigation.NavigationStack.ToList();
