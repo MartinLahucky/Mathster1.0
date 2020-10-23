@@ -50,7 +50,7 @@ namespace Mathster.Helpers.Custom_UI
         private void VypocetVelikostCastiGrafu(float entry1, float entry2, float entry3, float max, out float vysledek1, out float vysledek2, out float vysledek3)
         {
             vysledek1 = ((entry1 + entry2 + entry3) / max) * 100;
-            vysledek2 =  ((entry1 + entry2) / max) * 100;
+            vysledek2 = ((entry2 + entry3) / max) * 100;
             vysledek3 = (entry3 / max) * 100;
         }
         public SKRect Rect => new SKRect(Center.X-Redius,Center.Y-Redius,Center.X+Redius,Center.Y+Redius);
