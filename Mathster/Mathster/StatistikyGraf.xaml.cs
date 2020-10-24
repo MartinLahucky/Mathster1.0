@@ -24,6 +24,8 @@ namespace Mathster
             //Zobrazení legendy
             HodnotaLabel1.Text = hodnotaSpravne.ToString();
             HodnotaLabel2.Text = (hodnotaCelkem - hodnotaSpravne).ToString();
+            frame3.IsVisible = false;
+            frame4.IsVisible = false;
             PopisImage1.IsVisible = true;
             PopisImage2.IsVisible = true;
             PopisLabel1.IsVisible = false;
