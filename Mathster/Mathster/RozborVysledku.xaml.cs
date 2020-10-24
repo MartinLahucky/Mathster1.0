@@ -12,7 +12,8 @@ namespace Mathster
         private byte ID;
         private List<Priklad> fronta;
         private List<Priklad> frontaVse;
-        public RozborVysledku(byte id, List<Priklad> fronta, List<Priklad> frontaVse)
+        private bool potvrzeniZapisu;
+        public RozborVysledku(byte id, List<Priklad> fronta, List<Priklad> frontaVse, bool potvrzeniZapisu)
         {
             InitializeComponent();
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
@@ -74,9 +75,9 @@ namespace Mathster
                     }
                     break;
             }
-
             this.fronta = fronta;
             this.frontaVse = frontaVse;
+            this.potvrzeniZapisu = potvrzeniZapisu;
             ID = id;
             if (id == (fronta.Count - 1))
             {
@@ -90,20 +91,21 @@ namespace Mathster
 
         private async void PrehledButton_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Souhrn(frontaVse));
+            Console.WriteLine();
+            await Navigation.PushAsync(new Souhrn(frontaVse, true));
         }
 
         private async void DalsiPrikladButton_OnClicked(object sender, EventArgs e)
         {
             ID++;
-            await Navigation.PushAsync(new RozborVysledku(ID, fronta, fronta));
+            await Navigation.PushAsync(new RozborVysledku(ID, fronta, frontaVse, potvrzeniZapisu));
             
         }
 
         private async void PredchoziPrikladButton_OnClicked(object sender, EventArgs e)
         {
             ID--;
-            await Navigation.PushAsync(new RozborVysledku(ID, fronta, fronta));
+            await Navigation.PushAsync(new RozborVysledku(ID, fronta, frontaVse, potvrzeniZapisu));
         }
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {

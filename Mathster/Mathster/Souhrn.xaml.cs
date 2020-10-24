@@ -14,12 +14,14 @@ namespace Mathster
         private List<Priklad> fronta;
         private DBModel zapis;
         private SettingsModel tabulkaNastaveni;
-        public Souhrn(List<Priklad> fronta)
+        private bool potvrzeniZapisu;
+        public Souhrn(List<Priklad> fronta, bool potvrzeniZapisu)
         {
             InitializeComponent();
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
             this.fronta = fronta;
-
+            this.potvrzeniZapisu = potvrzeniZapisu;
+            
             Title = AppResource.Souhrn;
             MenuButton.Text = AppResource.Menu;
             NadpisSouhrnLabel.Text = AppResource.Vysledky;
@@ -125,16 +127,26 @@ namespace Mathster
                 SpatnePocetButton.TextColor = Color.FromHex("#FFFFFF");
             }
         }
+
+        protected async override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            if (!potvrzeniZapisu)
+            {
+                await App.Database.UpdateTable(zapis);
+                potvrzeniZapisu = true;
+            }
+        }
+
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
-            await App.Database.UpdateTable(zapis);
             await Navigation.PushAsync(new Menu());
         }
 
         private async void VysledkyList_OnItemTapped(object sender, ItemTappedEventArgs e)
         {
             byte selectedItem = byte.Parse(e.ItemIndex.ToString());
-            await Navigation.PushAsync(new RozborVysledku(selectedItem, fronta, fronta));
+            await Navigation.PushAsync(new RozborVysledku(selectedItem, fronta, fronta, potvrzeniZapisu));
             if (sender is ListView lv) lv.SelectedItem = null;
         }
 
@@ -179,7 +191,7 @@ namespace Mathster
                             break;
                     }
                 }
-                await Navigation.PushAsync(new RozborVysledku(0, prikladyDobre, fronta));
+                await Navigation.PushAsync(new RozborVysledku(0, prikladyDobre, fronta, potvrzeniZapisu));
             }
             catch
             {
@@ -229,7 +241,7 @@ namespace Mathster
                             break;
                     }
                 }
-                await Navigation.PushAsync(new RozborVysledku(0, prikladySpatne, fronta));
+                await Navigation.PushAsync(new RozborVysledku(0, prikladySpatne, fronta, potvrzeniZapisu));
             }
             catch
             {

@@ -65,7 +65,7 @@ namespace Mathster
             try
             {
                 fronta[ID].UzivateluvVstup = float.Parse(VysledekPropisInput.Text);
-                await Navigation.PushAsync(new Souhrn(fronta));
+                await Navigation.PushAsync(new Souhrn(fronta, false));
                 var existingPages = Navigation.NavigationStack.ToList();
                 foreach(var page in existingPages)
                 {
