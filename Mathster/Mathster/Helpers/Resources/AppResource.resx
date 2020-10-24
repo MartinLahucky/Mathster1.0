@@ -168,9 +168,6 @@
   <data name="ONasText" xml:space="preserve">
     <value>We are a group of crazy individuals looking at things from a different angle and trying to move technology forward.</value>
   </data>
-  <data name="Predchozi" xml:space="preserve">
-    <value>Previous</value>
-  </data>
   <data name="Reseni" xml:space="preserve">
     <value>Solution</value>
   </data>
@@ -182,12 +179,6 @@
   </data>
   <data name="Souhrn" xml:space="preserve">
     <value>Summary</value>
-  </data>
-  <data name="Spatne" xml:space="preserve">
-    <value>Wrong</value>
-  </data>
-  <data name="Spravne" xml:space="preserve">
-    <value>Correct</value>
   </data>
   <data name="SpravneReseni" xml:space="preserve">
     <value>Correct solution</value>

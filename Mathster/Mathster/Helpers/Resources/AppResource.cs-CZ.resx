@@ -165,9 +165,6 @@
   <data name="ONasText" xml:space="preserve">
     <value>Jsme skupina bláznivých jedinců, co se dívají na věci z jiného úhlu a snaží se posouvat technologie dál.</value>
   </data>
-  <data name="Predchozi" xml:space="preserve">
-    <value>Předchozí</value>
-  </data>
   <data name="Reseni" xml:space="preserve">
     <value>Řešení</value>
   </data>
@@ -179,12 +176,6 @@
   </data>
   <data name="Souhrn" xml:space="preserve">
     <value>Přehled</value>
-  </data>
-  <data name="Spatne" xml:space="preserve">
-    <value>Špatně</value>
-  </data>
-  <data name="Spravne" xml:space="preserve">
-    <value>Správně</value>
   </data>
   <data name="SpravneReseni" xml:space="preserve">
     <value>Správné řešení</value>

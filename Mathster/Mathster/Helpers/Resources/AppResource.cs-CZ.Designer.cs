@@ -241,15 +241,6 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Předchozí.
-        /// </summary>
-        internal static string Predchozi {
-            get {
-                return ResourceManager.GetString("Predchozi", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Řešení.
         /// </summary>
         internal static string Reseni {
@@ -282,24 +273,6 @@ namespace Mathster.Helpers.Resources {
         internal static string Souhrn {
             get {
                 return ResourceManager.GetString("Souhrn", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Špatně.
-        /// </summary>
-        internal static string Spatne {
-            get {
-                return ResourceManager.GetString("Spatne", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Správně.
-        /// </summary>
-        internal static string Spravne {
-            get {
-                return ResourceManager.GetString("Spravne", resourceCulture);
             }
         }
         
