@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -86,6 +87,22 @@ namespace Mathster
             if (id == 0)
             {
                 PredchoziPrikladButton.IsVisible = false;
+            }
+        }
+
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
+            ReseniLabelLayout.BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+            SpatnaOdpovedLayout.BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+            ZadaniLabelFrame.BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+            if (tabulkaNastaveni.DarkMode)
+            {
+                BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+                ZadaniLabel.TextColor = Color.White;
+                SpatnaOdpovedLabel.TextColor = Color.White;
+                ReseniLabel.TextColor = Color.White;
             }
         }
 

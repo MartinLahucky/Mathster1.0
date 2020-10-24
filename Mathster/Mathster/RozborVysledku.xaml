@@ -18,10 +18,9 @@
                     <Frame CornerRadius="30" Padding="0" Margin="0,0,0,10" HasShadow="False" BackgroundColor="#4d4dfc">
                         <StackLayout>
                             <Label x:Name="NadZadaniLabel" BackgroundColor="Transparent" FontSize="25" Margin="10" Padding="20,0" VerticalTextAlignment="Center" TextColor="White"/>
-                            <Frame CornerRadius="30" Margin="20,0,20,20" Padding="0">
-                               <Label x:Name="ZadaniLabel" Text="666" FontSize="30"  VerticalOptions="Center" Padding="20,5" /> 
+                            <Frame x:Name="ZadaniLabelFrame" CornerRadius="30" Margin="20,0,20,20" Padding="0">
+                               <Label x:Name="ZadaniLabel" TextColor="Black" FontSize="30" VerticalOptions="Center" Padding="20,5" /> 
                             </Frame>
-                            
                         </StackLayout> 
                     </Frame>      
                     
@@ -29,21 +28,21 @@
                         <StackLayout>
                             <Label x:Name="NadSpatnaOdpovedLabel" BackgroundColor="Transparent" FontSize="25" Margin="10" Padding="20,0" VerticalTextAlignment="Center" TextColor="White"/>
                             <Frame x:Name="SpatneFrame" CornerRadius="30" Margin="20,0,20,0" Padding="0">
-                                <StackLayout Orientation="Horizontal" Padding="0">
+                                <StackLayout x:Name="SpatnaOdpovedLayout" Orientation="Horizontal" Padding="0">
                                     <StackLayout BackgroundColor="#7F7FFD" Padding="0" Margin="0">
                                         <Image VerticalOptions="CenterAndExpand" Source="spatne_ikona.png" Margin="15,0"/> 
                                     </StackLayout>
-                                    <Label x:Name="SpatnaOdpovedLabel" FontSize="30"  VerticalOptions="Center" Padding="5" />
+                                    <Label x:Name="SpatnaOdpovedLabel" TextColor="Black" FontSize="30" VerticalOptions="Center" Padding="5" />
                                 </StackLayout>
                             </Frame>
                             
                             <Label x:Name="ReseniNadLabel" BackgroundColor="Transparent" FontSize="25" Margin="10" Padding="20,0" VerticalTextAlignment="Center" TextColor="White"/>
                             <Frame CornerRadius="30" Margin="20,0,20,20" Padding="0">
-                                <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+                                <StackLayout x:Name="ReseniLabelLayout" Orientation="Horizontal" Padding="0" Margin="0">
                                     <StackLayout BackgroundColor="#7F7FFD" Padding="0" Margin="0">
                                         <Image VerticalOptions="CenterAndExpand" Source="dobre_ikona.png" Margin="15,0"/> 
                                     </StackLayout>
-                                    <Label x:Name="ReseniLabel" FontSize="30"  VerticalOptions="Center" Padding="5" />
+                                    <Label x:Name="ReseniLabel" TextColor="Black" FontSize="30" VerticalOptions="Center" Padding="5" />
                                 </StackLayout>
                             </Frame>
                         </StackLayout>
