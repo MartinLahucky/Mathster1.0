@@ -46,20 +46,28 @@
                             <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
                                 <Image x:Name="PopisImage1" Source="dobre_ikona.png"/>
                                 <Label x:Name="PopisLabel1" Text="+" TextColor="#FCA54D" FontSize="50" VerticalOptions="Center"/>
-                                <Label x:Name="HodnotaLabel1" Text="69" FontSize="30" VerticalOptions="Center"/>
+                                <Frame Margin="0" HorizontalOptions="FillAndExpand" BackgroundColor="#7F7FFD" CornerRadius="30">
+                                    <Label x:Name="HodnotaLabel1" Text="69" FontSize="30" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Frame>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
                                 <Image x:Name="PopisImage2" Source="spatne_ikona.png"/>
-                                <Label x:Name="PopisLabel2" Text="-" TextColor="#FFFFFF" FontSize="60" VerticalOptions="Center"/>
-                                <Label x:Name="HodnotaLabel2" Text="420" FontSize="30" VerticalOptions="Center"/>
+                                <Label x:Name="PopisLabel2" Text="-" Margin="8,0,8,0" TextColor="#FFFFFF" FontSize="60" VerticalOptions="Center"/>
+                                <Frame Margin="0" HorizontalOptions="FillAndExpand" BackgroundColor="#7F7FFD" CornerRadius="30">
+                                    <Label x:Name="HodnotaLabel2" Text="420" FontSize="30" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Frame>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
                                 <Label x:Name="PopisLabel3" Text="×" TextColor="#C9FF50" FontSize="50" VerticalOptions="Center"/>
-                                <Label x:Name="HodnotaLabel3" Text="123" FontSize="30" VerticalOptions="Center"/>
+                                <Frame x:Name="frame3" Margin="0" HorizontalOptions="FillAndExpand" BackgroundColor="#7F7FFD" CornerRadius="30">
+                                    <Label x:Name="HodnotaLabel3" Text="123" FontSize="30" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Frame>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
                                 <Label x:Name="PopisLabel4" Text="÷" TextColor="#262630" FontSize="60" VerticalOptions="Center"/>
-                                <Label x:Name="HodnotaLabel4" Text="321" FontSize="30" VerticalOptions="Center"/>
+                                <Frame x:Name="frame4" Margin="0" HorizontalOptions="FillAndExpand" BackgroundColor="#7F7FFD" CornerRadius="30">
+                                    <Label x:Name="HodnotaLabel4" Text="321" FontSize="30" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Frame>
                             </StackLayout>
                         </Grid>
                     </StackLayout>

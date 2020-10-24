@@ -57,7 +57,7 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <ImageButton Grid.Column="0" x:Name="PredchoziPrikladButton" Source="sipka_vlevo.png" Margin="30,0" Clicked="PredchoziPrikladButton_OnClicked" BackgroundColor="Transparent" HorizontalOptions="StartAndExpand" />
-                <ImageButton Grid.Column="1" Padding="20,0,20,0" Margin="30,0" StyleClass="Tlacitka" CornerRadius="25"  Source="seznam_ikona.png" Clicked="PrehledButton_OnClicked" HorizontalOptions="CenterAndExpand" />
+                <ImageButton Grid.Column="1" Padding="7" Margin="30,0" Aspect="AspectFit" StyleClass="Tlacitka" CornerRadius="25"  Source="seznam_ikona.png" Clicked="PrehledButton_OnClicked" HorizontalOptions="CenterAndExpand" />
                 <ImageButton Grid.Column="2" x:Name="DalsiPrikladButton" Source="sipka_vpravo.png" Margin="30,0" Clicked="DalsiPrikladButton_OnClicked" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"/>
             </Grid>
         </StackLayout>
