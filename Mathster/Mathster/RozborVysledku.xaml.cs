@@ -91,7 +91,6 @@ namespace Mathster
 
         private async void PrehledButton_OnClicked(object sender, EventArgs e)
         {
-            Console.WriteLine();
             await Navigation.PushAsync(new Souhrn(frontaVse, true));
         }
 
@@ -99,7 +98,6 @@ namespace Mathster
         {
             ID++;
             await Navigation.PushAsync(new RozborVysledku(ID, fronta, frontaVse, potvrzeniZapisu));
-            
         }
 
         private async void PredchoziPrikladButton_OnClicked(object sender, EventArgs e)
