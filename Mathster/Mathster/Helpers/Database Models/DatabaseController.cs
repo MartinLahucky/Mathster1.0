@@ -54,7 +54,6 @@ namespace Mathster.Helpers.Model
                 }
             });
             Task.WaitAll(task1);
-            
         }
 
         public async Task<DBModel> GetTable(int id = 0)

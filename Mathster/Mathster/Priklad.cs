@@ -74,6 +74,17 @@ namespace Mathster
             priklad.Id = id;
             return priklad;
         }
+        public int GetExperience(bool spravne)
+        {
+            if (spravne)
+            {
+                return (druhPrikladu * (druhPrikladu / 4) + 1) * prvniCislo.ToString().Length * 20;
+            }
+            else
+            {
+                return druhPrikladu * (druhPrikladu / 4) + 1;
+            }
+        }
         public Priklad VygenerujNahodnyPriklad(byte id, int minCisel, int maxCisel, int minDeleniANasobeni = 2, int maxDeleniANasobeni = 6)
         {
             Random random = new Random();

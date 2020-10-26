@@ -237,4 +237,7 @@
   <data name="Zadani" xml:space="preserve">
     <value>Zadání</value>
   </data>
+  <data name="Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
 </root>

@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using System;
+using SQLite;
 
 namespace Mathster.Helpers.Model
 {
@@ -21,5 +22,10 @@ namespace Mathster.Helpers.Model
         public int CelkemPrikladuDobre { get; set; }
         public float Nachozeno { get; set; }
         public string DruhNejcastejiPocitanychPrikladu { get; set; }
+        public void GetLevel(out int level, out int progres, DBModel tabulka)
+        {
+            level = (int) Math.Sqrt(tabulka.Experience);
+            progres = (int) (Math.Sqrt(tabulka.Experience) - level) * 100;
+        }
     }
 }

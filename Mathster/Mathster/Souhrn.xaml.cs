@@ -21,6 +21,7 @@ namespace Mathster
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
             this.fronta = fronta;
             this.potvrzeniZapisu = potvrzeniZapisu;
+            int experienceCount = 0;
             
             Title = AppResource.Souhrn;
             MenuButton.Text = AppResource.Menu;
@@ -39,6 +40,7 @@ namespace Mathster
             
             foreach (var priklad in fronta)
             {
+                bool spravne = true;
                 priklady.Add(new Vysledek(priklad.VratPriklad(), tabulkaNastaveni));
                 if (priklad.PrvniCislo >= 1000 || priklad.UzivateluvVstup >= 1000)
                 {
@@ -51,6 +53,7 @@ namespace Mathster
                         zapis.CelkemScitani++;
                         if (priklad.PrvniCislo + priklad.DruheCislo == priklad.UzivateluvVstup)
                         {
+                            spravne = true;
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemScitaniSpravne++;
@@ -59,6 +62,7 @@ namespace Mathster
                         }
                         else
                         {
+                            spravne = false;
                             pocitadloSpatne++;
                             priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
                         }
@@ -67,6 +71,7 @@ namespace Mathster
                         zapis.CelkemOdcitani++;
                         if (priklad.PrvniCislo - priklad.DruheCislo == priklad.UzivateluvVstup)
                         {
+                            spravne = true;
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemOdcitaniSpravne++;
@@ -74,6 +79,7 @@ namespace Mathster
                         }
                         else
                         {
+                            spravne = false;
                             pocitadloSpatne++;
                             priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
                         }
@@ -82,6 +88,7 @@ namespace Mathster
                         zapis.CelkemNasobeni++;
                         if (priklad.PrvniCislo * priklad.DruheCislo == priklad.UzivateluvVstup)
                         {
+                            spravne = true;
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemNasobeniSpravne++;
@@ -89,6 +96,7 @@ namespace Mathster
                         }
                         else
                         {
+                            spravne = false;
                             pocitadloSpatne++;
                             priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
                         }
@@ -97,6 +105,7 @@ namespace Mathster
                         zapis.CelkemDeleni++;
                         if (priklad.PrvniCislo / priklad.DruheCislo == priklad.UzivateluvVstup)
                         {
+                            spravne = true;
                             pocitadloSpravne++;
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemDeleniSpravne++;
@@ -104,12 +113,15 @@ namespace Mathster
                         }
                         else
                         {
+                            spravne = false;
                             pocitadloSpatne++;
                             priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
                         }
                         break;
                 }
+                experienceCount += priklad.GetExperience(spravne);
             }
+            zapis.Experience += experienceCount;
             VysledkyList.ItemsSource = priklady;
             DobrePocetButton.Text = pocitadloSpravne.ToString();
             SpatnePocetButton.Text = pocitadloSpatne.ToString();
@@ -127,7 +139,6 @@ namespace Mathster
                 SpatnePocetButton.TextColor = Color.FromHex("#FFFFFF");
             }
         }
-
         protected async override void OnDisappearing()
         {
             base.OnDisappearing();
@@ -137,7 +148,6 @@ namespace Mathster
                 potvrzeniZapisu = true;
             }
         }
-
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Menu());
@@ -149,7 +159,6 @@ namespace Mathster
             await Navigation.PushAsync(new RozborVysledku(selectedItem, fronta, fronta, potvrzeniZapisu));
             if (sender is ListView lv) lv.SelectedItem = null;
         }
-
         private async void DobreButton_OnClicked(object sender, EventArgs e)
         {
             try
@@ -197,14 +206,12 @@ namespace Mathster
             {
                 await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniVseSpatne, AppResource.Ok);
             }
-
         }
-       
         private async void SpatneButton_OnClicked(object sender, EventArgs e)
         {
             try
             {
-                int vysledek = 0;
+                int vysledek;
                 List<Priklad> prikladySpatne = new List<Priklad>();
 
                 foreach (var priklad in fronta)
@@ -247,7 +254,6 @@ namespace Mathster
             {
                 await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniVseDobre, AppResource.Ok);
             }
-            
         }
     }
 

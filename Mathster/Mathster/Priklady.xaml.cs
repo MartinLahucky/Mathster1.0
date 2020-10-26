@@ -14,7 +14,7 @@ namespace Mathster
         private Priklad priklad;
         private byte ID;
         private List<Priklad> fronta;
-        private bool podsebe = false;
+        private bool podsebe ;
         public Priklady(byte id, List<Priklad> fronta)
         {
             InitializeComponent();

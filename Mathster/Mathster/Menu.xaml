@@ -29,7 +29,7 @@
                     </Grid.RowDefinitions>
                     <forms:SKCanvasView x:Name="SkCanvasView" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
                     <StackLayout Padding="45,20" HorizontalOptions="Center" Grid.Column="0"  Grid.Row="0" VerticalOptions="CenterAndExpand">
-                        <Button x:Name="levelButton" Text="1000" Margin="0" CornerRadius="120" StyleClass="LevelButtonMenu" BackgroundColor="#7F7FFD" Clicked="StatsButton_OnClicked"/>
+                        <Button x:Name="levelButton" Margin="0" CornerRadius="120" StyleClass="LevelButtonMenu" BackgroundColor="#7F7FFD" Clicked="StatsButton_OnClicked"/>
                     </StackLayout>
                 </Grid>
                 <Label x:Name="UzivatelLabel" HorizontalOptions="Center" FontSize="30" Margin="0,10,0,0" />
@@ -49,7 +49,7 @@
                             Grid.Column="0" Grid.Row="0" Clicked="ScitaniButton_OnClicked" />
 
                     <Button x:Name="OdcitaniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka" 
-                            Grid.Column="1" Grid.Row="0" Clicked="OdcitaniButton_OnClicked"  />
+                            Grid.Column="1" Grid.Row="0" Clicked="OdcitaniButton_OnClicked" />
 
                     <Button x:Name="NasobeniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka" 
                             Grid.Column="0" Grid.Row="1" Clicked="NasobeniButton_OnClicked" />
