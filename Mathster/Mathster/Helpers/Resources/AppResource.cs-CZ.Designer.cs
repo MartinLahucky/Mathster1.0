@@ -376,7 +376,7 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Grafika: Martin Borka, Jan Řehoř.
+        ///   Looks up a localized string similar to Grafika: Martin Borka, Jan Řehoř, Majka P..
         /// </summary>
         internal static string VyvojGrafika {
             get {

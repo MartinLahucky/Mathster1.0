@@ -21,12 +21,15 @@ namespace Mathster
             SettingsToolbarButton.IconImageSource = "round_settings_white_18dp.png";
             StatsToolbarButton.IconImageSource = "round_person_white_18dp.png";
             AboutToolbarButton.IconImageSource = "outline_info_white_18dp.png";
-            
+
             ScitaniButton.Text = "+";
             OdcitaniButton.Text = "-";
             NasobeniButton.Text = "×";
             DeleniButton.Text = "÷";
             NahodneButton.Text = "?";
+            // //SkiaSharp
+            levelBar = new Circles(180,info => new SKPoint((float)info.Width / 2,(float) info.Height / 2));
+            levelBar.DrawFullProgressBar(SkCanvasView,"#7F7FFD","#7F7FFD",0, 0, "#7F7FFD");
         }
         protected async override void OnAppearing()
         {
@@ -34,24 +37,18 @@ namespace Mathster
             SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
             UzivatelLabel.TextColor = Color.White;
-            //TODO Přesunout (Honza)
-            // //SkiaSharp
-            // levelBar = new Circles(180,info => new SKPoint((float)info.Width / 2,(float) info.Height / 2));
-            // levelBar.DrawFullProgressBar(SkCanvasView,"#7F7FFD","#FCA54D",30, progres, "#C9FF50");
-            // DBModel tabulka = await App.Database.GetTable();
-            // if (tabulka.Jmeno == null || tabulka.Jmeno == "" || tabulka.Jmeno == String.Empty)
-            // {
-            //     UzivatelLabel.Text = "Mathster Lite";
-            // }
-            // else
-            // {
-            //     UzivatelLabel.Text = tabulka.Jmeno;
-            // }
-            // int level, progres;
-            // tabulka.GetLevel(out level, out progres, tabulka);
-            // levelButton.Text = level.ToString();
-            //TODO Přesunout (Honza)
-            Console.WriteLine(tabulka.Experience);
+            DBModel tabulka = await App.Database.GetTable();
+            if (tabulka.Jmeno == null || tabulka.Jmeno == "" || tabulka.Jmeno == String.Empty)
+            {
+                UzivatelLabel.Text = "Mathster Lite";
+            }
+            else
+            {
+                UzivatelLabel.Text = tabulka.Jmeno;
+            }
+            int level, progres;
+            tabulka.GetLevel(out level, out progres, tabulka);
+            levelButton.Text = level.ToString();
         }
         private async void ScitaniButton_OnClicked(object sender, EventArgs e)
         {
