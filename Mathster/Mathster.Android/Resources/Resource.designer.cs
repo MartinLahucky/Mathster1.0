@@ -11664,10 +11664,13 @@ namespace Mathster
 			public const int splash_screen = 2131165515;
 			
 			// aapt resource value: 0x7F07014C
-			public const int tooltip_frame_dark = 2131165516;
+			public const int stonks = 2131165516;
 			
 			// aapt resource value: 0x7F07014D
-			public const int tooltip_frame_light = 2131165517;
+			public const int tooltip_frame_dark = 2131165517;
+			
+			// aapt resource value: 0x7F07014E
+			public const int tooltip_frame_light = 2131165518;
 			
 			static Drawable()
 			{
