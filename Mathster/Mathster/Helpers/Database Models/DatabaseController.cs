@@ -31,8 +31,6 @@ namespace Mathster.Helpers.Model
                         CelkemDeleni = 0,
                         CelkemDeleniSpravne = 0,
                         CelkemPrikladuDobre = 0,
-                        Nachozeno = 0,
-                        DruhNejcastejiPocitanychPrikladu = String.Empty,
                     };
                     await database.InsertAsync(tabulkaModel);
                 }
@@ -55,7 +53,6 @@ namespace Mathster.Helpers.Model
             });
             Task.WaitAll(task1);
         }
-
         public async Task<DBModel> GetTable(int id = 0)
         {
             return await database.Table<DBModel>().Where(i => i.ID == id).FirstOrDefaultAsync();

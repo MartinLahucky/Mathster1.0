@@ -123,9 +123,7 @@ namespace Mathster
                     CelkemDeleni = 0,
                     CelkemDeleniSpravne = 0,
                     CelkemPrikladuDobre = 0,
-                    Nachozeno = 0,
                     Jmeno = tabulka.Jmeno,
-                    DruhNejcastejiPocitanychPrikladu = String.Empty,
                 };
                 await App.Database.UpdateTable(tabulkaReset);
             }
@@ -134,7 +132,5 @@ namespace Mathster
         {
             await Navigation.PushAsync(new Menu());
         }
-
-
     }
 }
