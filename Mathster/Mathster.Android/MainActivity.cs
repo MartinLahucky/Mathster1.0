@@ -20,7 +20,7 @@ namespace Mathster.Android
 
             base.OnCreate(savedInstanceState);
             Forms.Init(this, savedInstanceState);
-
+            
             // Database Declaration
             string fullPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "mathster_db.sqlite");
             LoadApplication(new App(fullPath));

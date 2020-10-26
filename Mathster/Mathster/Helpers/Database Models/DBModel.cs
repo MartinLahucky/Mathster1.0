@@ -24,8 +24,8 @@ namespace Mathster.Helpers.Model
         public string DruhNejcastejiPocitanychPrikladu { get; set; }
         public void GetLevel(out int level, out int progres, DBModel tabulka)
         {
-            level = (int) Math.Sqrt(tabulka.Experience);
-            progres = (int) (Math.Sqrt(tabulka.Experience) - level) * 100;
+            level = (int) Math.Sqrt(tabulka.Experience) / 20;
+            progres = (int) ((Math.Sqrt(tabulka.Experience) / 20 - level) * 100);
         }
     }
 }

@@ -12,6 +12,35 @@ namespace Mathster
     public partial class StatistikyGraf : ContentPage
     {
         private Circles graf;
+        
+        public StatistikyGraf(int level, int progres)
+        {
+            InitializeComponent();
+            Title = AppResource.Statistiky;
+            NadpisLabel.Text = AppResource.Level;
+            ResetStatsButton.Text = AppResource.StatReset;
+            MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
+            celkovyPocetLabel.Text = level.ToString();
+            
+            //Zobrazení legendy
+            frame1.IsVisible = false;
+            frame2.IsVisible = false;
+            frame3.IsVisible = false;
+            frame4.IsVisible = false;
+            PopisImage1.IsVisible = false;
+            PopisImage2.IsVisible = false;
+            PopisLabel1.IsVisible = false;
+            PopisLabel2.IsVisible = false;
+            PopisLabel3.IsVisible = false;
+            PopisLabel4.IsVisible = false;
+            HodnotaLabel3.IsVisible = false;
+            HodnotaLabel4.IsVisible = false;
+
+            //SkiaSharp
+            graf = new Circles(180, (info) => new SKPoint((float)info.Width / 2, (float)info.Height / 2));
+            graf.DrawFullProgressBar(SkCanvasView1, "#7F7FFD", "#FCA54D", 40f, progres, "#C9FF50");
+        }
+        
         public StatistikyGraf(string Nadpis, int hodnotaSpravne, int hodnotaCelkem)
         {
             InitializeComponent();
