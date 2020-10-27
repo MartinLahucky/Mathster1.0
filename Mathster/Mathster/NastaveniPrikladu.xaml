@@ -62,10 +62,9 @@
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name= "nazev3Label" StyleClass="NastaveniPrikladuNazevLabel" VerticalOptions="CenterAndExpand"/>
                                 <Frame x:Name="Frame3" StyleClass="NastaveniPrikladuFrame" HorizontalOptions="EndAndExpand">
-                                    <Label x:Name="velikostDeliteleLabel" StyleClass="NastaveniPrikladuLabel" VerticalOptions="Center" HorizontalOptions="Center" />
+                                    <Label x:Name="velikostDeliteleLabel" FontSize="29" StyleClass="NastaveniPrikladuLabel" VerticalOptions="Center" HorizontalOptions="Center" />
                                 </Frame>
                             </StackLayout>
-
                             <Slider x:Name="velikostDeliteleSlider" 
                                     MaximumTrackColor="#484848" 
                                     MinimumTrackColor="#FCA54D" 

@@ -45,7 +45,6 @@ namespace Mathster
             velikostDeliteleSlider.Value = velikostDelitele;
             velikostDeliteleSlider.Maximum = maxVelikostDelitele;
             velikostDeliteleSlider.Minimum = 1;
-            velikostDeliteleLabel.Text = 5.ToString();
             velikostDeliteleSlider.IsEnabled = false;
             
             switch (druhPrikladu)
