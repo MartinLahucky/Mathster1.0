@@ -77,6 +77,12 @@ namespace Mathster
             Frame1.BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
             Frame2.BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
             Frame3.BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
+            if (tabulkaNastaveni.DarkMode)
+            {
+                pocetPrikladuLabel.TextColor = Color.White;
+                pocetCiferLabel.TextColor = Color.White;
+                velikostDeliteleLabel.TextColor = Color.White;
+            } 
         }
         private void pocetPrikladu_ValueChanged(object sender, ValueChangedEventArgs e)
         {
@@ -114,7 +120,6 @@ namespace Mathster
                     velikostDeliteleLabel.Text = 20.ToString();
                     break;
             }
-            
         }
         private async void DalsiButton_OnClicked(object sender, EventArgs e)
         {

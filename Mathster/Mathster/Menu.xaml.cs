@@ -28,7 +28,12 @@ namespace Mathster
             NahodneButton.Text = "?";
             // //SkiaSharp
             levelBar = new Circles(180,info => new SKPoint((float)info.Width / 2,(float) info.Height / 2));
-            levelBar.DrawFullProgressBar(SkCanvasView,"#7F7FFD","#7F7FFD",0, 0, "#7F7FFD");
+            levelBar.DrawFullCircle(SkCanvasView,"#7F7FFD");
+            // levelBar.DrawFullCircle(SkCanvasView1,"#7F7FFD");
+            // levelBar.DrawFullCircle(SkCanvasView2,"#7F7FFD");
+            // levelBar.DrawFullCircle(SkCanvasView3,"#7F7FFD");
+            // levelBar.DrawFullCircle(SkCanvasView4,"#7F7FFD");
+            
         }
         protected async override void OnAppearing()
         {
@@ -45,8 +50,10 @@ namespace Mathster
             {
                 UzivatelLabel.Text = tabulka.Jmeno;
             }
-            int level, progres;
+            int level; 
+            double progres;
             tabulka.GetLevel(out level, out progres, tabulka);
+            progressBar.Progress = progres;
             levelButton.Text = level.ToString();
         }
         private async void ScitaniButton_OnClicked(object sender, EventArgs e)

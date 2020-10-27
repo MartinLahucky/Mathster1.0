@@ -17,9 +17,6 @@ namespace Mathster
         async public void VykresleniStranky()
         {
             DBModel tabulka = await App.Database.GetTable();
-            int level, progres;                                   
-            tabulka.GetLevel(out level, out progres, tabulka);
-            Children.Add(new StatistikyGraf(level, progres) {IconImageSource = "stonks.png", Title = ""});
             Children.Add(new StatistikyGraf(AppResource.Celkem, tabulka.CelkemPrikladuDobre, tabulka.CelkemPrikladu) { IconImageSource = "celkem_ikona.png", Title = "" });
             Children.Add(new StatistikyGraf(AppResource.Scitani, tabulka.CelkemScitaniSpravne, tabulka.CelkemScitani) { IconImageSource = "plus_ikona.png", Title = ""});
             Children.Add(new StatistikyGraf(AppResource.Odecitani, tabulka.CelkemOdcitaniSpravne, tabulka.CelkemOdcitani) { IconImageSource = "minus_ikona.png", Title = ""});

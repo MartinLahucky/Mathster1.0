@@ -20,10 +20,10 @@ namespace Mathster.Helpers.Model
         public int CelkemDeleni { get; set; }
         public int CelkemDeleniSpravne { get; set; }
         public int CelkemPrikladuDobre { get; set; }
-        public void GetLevel(out int level, out int progres, DBModel tabulka)
+        public void GetLevel(out int level, out double progres, DBModel tabulka)
         {
             level = (int) Math.Sqrt(tabulka.Experience) / 20;
-            progres = (int) ((Math.Sqrt(tabulka.Experience) / 20 - level) * 100);
+            progres = Math.Sqrt(tabulka.Experience) / 20 - level;
         }
     }
 }

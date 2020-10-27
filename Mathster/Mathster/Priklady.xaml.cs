@@ -104,6 +104,11 @@ namespace Mathster
             SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
             VysledekInput.Focus();
+            if (tabulkaNastaveni.DarkMode)
+            {
+                PrikladLabel.TextColor = Color.White;
+                VysledekPropisInput.TextColor = Color.White;
+            }
         }
 
         private void PodSebeButton_OnClicked(object sender, EventArgs e)

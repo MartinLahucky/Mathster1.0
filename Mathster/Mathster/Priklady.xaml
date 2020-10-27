@@ -19,7 +19,7 @@
         <StackLayout x:Name="MainLayout" >
             <ScrollView x:Name="View">
                 <StackLayout x:Name="SecondLayer"  VerticalOptions="Center"  Margin="60,30,60,0" >
-                    <Frame CornerRadius="15" Padding="0" Margin="0,60,0,30" HasShadow="False" >
+                    <Frame CornerRadius="15" StyleClass="PrikladLabel" Padding="0" Margin="0,60,0,30" HasShadow="False" >
                         <StackLayout x:Name="PrikladLayout">
                             <Label x:Name="PrikladLabel" VerticalTextAlignment="Center" StyleClass="PrikladLabel" />
                         </StackLayout>

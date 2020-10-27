@@ -3,6 +3,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:plugin="clr-namespace:ProgressRingControl.Forms.Plugin;assembly=ProgressRing.Forms.Plugin"
              x:Class="Mathster.Menu"
              NavigationPage.HasBackButton="False">
     <ContentPage.Resources>
@@ -27,6 +28,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
+                    <plugin:ProgressRing x:Name="progressBar" RingBaseColor="#FCA54D" RingProgressColor="#C9FF50" RingThickness="20" />
                     <forms:SKCanvasView x:Name="SkCanvasView" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
                     <StackLayout Padding="45,20" HorizontalOptions="Center" Grid.Column="0"  Grid.Row="0" VerticalOptions="CenterAndExpand">
                         <Button x:Name="levelButton" Margin="0" CornerRadius="120" FontSize="45" StyleClass="LevelButtonMenu" BackgroundColor="#7F7FFD" Clicked="StatsButton_OnClicked"/>
@@ -44,16 +46,16 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-
+                    <forms:SKCanvasView x:Name="SkCanvasView1" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
                     <Button x:Name="ScitaniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka" 
                             Grid.Column="0" Grid.Row="0" Clicked="ScitaniButton_OnClicked" />
-
+                    <forms:SKCanvasView x:Name="SkCanvasView2" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
                     <Button x:Name="OdcitaniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka" 
                             Grid.Column="1" Grid.Row="0" Clicked="OdcitaniButton_OnClicked" />
-
+                    <forms:SKCanvasView x:Name="SkCanvasView3" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
                     <Button x:Name="NasobeniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka" 
                             Grid.Column="0" Grid.Row="1" Clicked="NasobeniButton_OnClicked" />
-
+                    <forms:SKCanvasView x:Name="SkCanvasView4" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
                     <Button x:Name="DeleniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka" 
                             Grid.Column="1" Grid.Row="1" Clicked="DeleniButton_OnClicked" />
                 </Grid>
