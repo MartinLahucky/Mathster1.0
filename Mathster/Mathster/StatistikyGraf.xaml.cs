@@ -126,6 +126,7 @@ namespace Mathster
                     Jmeno = tabulka.Jmeno,
                 };
                 await App.Database.UpdateTable(tabulkaReset);
+                await Navigation.PushAsync(new Menu());
             }
         }
         private async void MenuButton_OnClicked(object sender, EventArgs e)
