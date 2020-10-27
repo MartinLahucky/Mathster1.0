@@ -53,8 +53,8 @@ namespace Mathster
             int level; 
             double progres;
             tabulka.GetLevel(out level, out progres, tabulka);
-            progressBar.Progress = progres;
             levelButton.Text = level.ToString();
+            progressBar.AnimatedProgress = progres;
         }
         private async void ScitaniButton_OnClicked(object sender, EventArgs e)
         {
