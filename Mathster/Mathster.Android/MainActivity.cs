@@ -37,8 +37,7 @@ namespace Mathster.Android
             // source https://stackoverflow.com/a/14006485/3814729
             if (currentTime - lastPress > 5000)
             {
-                //TODO Vymyslet jiný text
-                Toast.MakeText(this, "<-- + 1 = X", ToastLength.Long).Show();
+                Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
                 lastPress = currentTime;
             }
             else
