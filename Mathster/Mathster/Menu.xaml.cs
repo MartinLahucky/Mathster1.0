@@ -35,7 +35,7 @@ namespace Mathster
             DBModel tabulka = await App.Database.GetTable();
             if (tabulka.Jmeno == null || tabulka.Jmeno == "" || tabulka.Jmeno == String.Empty)
             {
-                UzivatelLabel.Text = "Mathster Lite";
+                UzivatelLabel.Text = "Mathster";
             }
             else
             {
