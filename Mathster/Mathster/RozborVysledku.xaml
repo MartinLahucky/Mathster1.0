@@ -2,6 +2,7 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              x:Class="Mathster.RozborVysledku">
     <ContentPage.Resources>
         <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
@@ -49,14 +50,21 @@
                     </Frame> 
                 </StackLayout>
             </ScrollView>  
-            <Grid VerticalOptions="EndAndExpand" HeightRequest="60">
+            <Grid VerticalOptions="EndAndExpand" HeightRequest="80">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <ImageButton Grid.Column="0" x:Name="PredchoziPrikladButton" Source="sipka_vlevo.png" Margin="30,0" Clicked="PredchoziPrikladButton_OnClicked" BackgroundColor="Transparent" HorizontalOptions="StartAndExpand" />
-                <ImageButton Grid.Column="1" Padding="7" Margin="30,0" Aspect="AspectFit" StyleClass="Tlacitka" CornerRadius="25"  Source="seznam_ikona.png" Clicked="PrehledButton_OnClicked" HorizontalOptions="CenterAndExpand" />
+                
+                
+                <Grid Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="0">
+                    <forms:SKCanvasView x:Name="SkCanvasView" Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0"/>
+                    <ImageButton  BackgroundColor="Transparent" Grid.Column="0" Grid.Row="0" Padding="18,18,19,18" StyleClass="MenuTlacitka" Aspect="AspectFit" CornerRadius="25"  Source="seznam_ikona.png" Clicked="PrehledButton_OnClicked" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                </Grid>
+
+                
                 <ImageButton Grid.Column="2" x:Name="DalsiPrikladButton" Source="sipka_vpravo.png" Margin="30,0" Clicked="DalsiPrikladButton_OnClicked" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"/>
             </Grid>
         </StackLayout>

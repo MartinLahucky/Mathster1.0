@@ -29,11 +29,6 @@ namespace Mathster
             // //SkiaSharp
             levelBar = new Circles(180,info => new SKPoint((float)info.Width / 2,(float) info.Height / 2));
             levelBar.DrawFullCircle(SkCanvasView,"#7F7FFD");
-            // levelBar.DrawFullCircle(SkCanvasView1,"#7F7FFD");
-            // levelBar.DrawFullCircle(SkCanvasView2,"#7F7FFD");
-            // levelBar.DrawFullCircle(SkCanvasView3,"#7F7FFD");
-            // levelBar.DrawFullCircle(SkCanvasView4,"#7F7FFD");
-            
         }
         protected async override void OnAppearing()
         {

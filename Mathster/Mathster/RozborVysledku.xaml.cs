@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Mathster.Helpers.Custom_UI;
 using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
+using SkiaSharp;
+using SkiaSharp.Views.Forms;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,6 +13,7 @@ namespace Mathster
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RozborVysledku : ContentPage
     {
+        private Circles kolecko;
         private byte ID;
         private List<Priklad> fronta;
         private List<Priklad> frontaVse;
@@ -22,6 +26,8 @@ namespace Mathster
             ReseniNadLabel.Text = AppResource.SpravneReseni;
             NadSpatnaOdpovedLabel.Text = AppResource.VaseReseni;
             NadZadaniLabel.Text = AppResource.Zadani;
+            kolecko = new Circles(90,info => new SKPoint((float)info.Width / 2,(float) info.Height / 2));
+            kolecko.DrawFullCircle(SkCanvasView,"#4D4DFC");
             
             if (fronta[id].PrvniCislo >= 10000)
             {

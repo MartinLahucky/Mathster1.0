@@ -45,21 +45,53 @@
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <forms:SKCanvasView x:Name="SkCanvasView1" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
-                    <Button x:Name="ScitaniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka" 
+                    <Button x:Name="ScitaniButton" CornerRadius="57" HeightRequest="90" WidthRequest="90" StyleClass="MenuTlacitka" VerticalOptions="Center" HorizontalOptions="Center" Padding="0"
                             Grid.Column="0" Grid.Row="0" Clicked="ScitaniButton_OnClicked" />
-                    <forms:SKCanvasView x:Name="SkCanvasView2" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
-                    <Button x:Name="OdcitaniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka" 
+                    <Button x:Name="OdcitaniButton" CornerRadius="57" HeightRequest="90" WidthRequest="90" StyleClass="MenuTlacitka" VerticalOptions="Center" HorizontalOptions="Center" Padding="0"
                             Grid.Column="1" Grid.Row="0" Clicked="OdcitaniButton_OnClicked" />
-                    <forms:SKCanvasView x:Name="SkCanvasView3" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
-                    <Button x:Name="NasobeniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka" 
+                    <Button x:Name="NasobeniButton" CornerRadius="57" HeightRequest="90" WidthRequest="90" StyleClass="MenuTlacitka" VerticalOptions="Center" HorizontalOptions="Center" Padding="0"
                             Grid.Column="0" Grid.Row="1" Clicked="NasobeniButton_OnClicked" />
-                    <forms:SKCanvasView x:Name="SkCanvasView4" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/>
-                    <Button x:Name="DeleniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka" 
+                    <Button x:Name="DeleniButton" CornerRadius="57" HeightRequest="90" WidthRequest="90" StyleClass="MenuTlacitka" VerticalOptions="Center" HorizontalOptions="Center" Padding="0"
                             Grid.Column="1" Grid.Row="1" Clicked="DeleniButton_OnClicked" />
                 </Grid>
             </StackLayout>
         <!-- </ScrollView> -->
     </ContentPage.Content>
 </ContentPage>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+<!-- <forms:SKCanvasView x:Name="SkCanvasView1" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/> -->
+<!-- <Button x:Name="ScitaniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka"  -->
+<!--         Grid.Column="0" Grid.Row="0" Clicked="ScitaniButton_OnClicked" /> -->
+                    
+                    
+<!-- <forms:SKCanvasView x:Name="SkCanvasView2" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/> -->
+<!-- <Button x:Name="OdcitaniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka"  -->
+<!--         Grid.Column="1" Grid.Row="0" Clicked="OdcitaniButton_OnClicked" /> -->
+                    
+                    
+<!-- <forms:SKCanvasView x:Name="SkCanvasView3" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/> -->
+<!-- <Button x:Name="NasobeniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka"  -->
+<!--         Grid.Column="0" Grid.Row="1" Clicked="NasobeniButton_OnClicked" /> -->
+                    
+                    
+<!-- <forms:SKCanvasView x:Name="SkCanvasView4" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/> -->
+<!-- <Button x:Name="DeleniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka"  -->
+<!--         Grid.Column="1" Grid.Row="1" Clicked="DeleniButton_OnClicked" /> -->
