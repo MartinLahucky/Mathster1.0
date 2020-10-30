@@ -57,14 +57,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <ImageButton Grid.Column="0" x:Name="PredchoziPrikladButton" Source="sipka_vlevo.png" Margin="30,0" Clicked="PredchoziPrikladButton_OnClicked" BackgroundColor="Transparent" HorizontalOptions="StartAndExpand" />
-                
-                
-                <Grid Grid.Column="1" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="0">
-                    <forms:SKCanvasView x:Name="SkCanvasView" Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0"/>
-                    <ImageButton  BackgroundColor="Transparent" Grid.Column="0" Grid.Row="0" Padding="18,18,19,18" StyleClass="MenuTlacitka" Aspect="AspectFit" CornerRadius="25"  Source="seznam_ikona.png" Clicked="PrehledButton_OnClicked" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                </Grid>
-
-                
+                <ImageButton Grid.Column="1" Padding="18,18,19,18" StyleClass="MenuTlacitka" Aspect="AspectFit" CornerRadius="40" HeightRequest="70" WidthRequest="70" Source="seznam_ikona.png" Clicked="PrehledButton_OnClicked" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
                 <ImageButton Grid.Column="2" x:Name="DalsiPrikladButton" Source="sipka_vpravo.png" Margin="30,0" Clicked="DalsiPrikladButton_OnClicked" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"/>
             </Grid>
         </StackLayout>

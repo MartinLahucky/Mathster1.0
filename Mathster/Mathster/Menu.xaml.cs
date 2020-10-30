@@ -2,7 +2,6 @@
 using Mathster.Helpers.Custom_UI;
 using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
-using SkiaSharp;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -26,9 +25,6 @@ namespace Mathster
             NasobeniButton.Text = "×";
             DeleniButton.Text = "÷";
             NahodneButton.Text = "?";
-            // //SkiaSharp
-            levelBar = new Circles(180,info => new SKPoint((float)info.Width / 2,(float) info.Height / 2));
-            levelBar.DrawFullCircle(SkCanvasView,"#7F7FFD");
         }
         protected async override void OnAppearing()
         {
