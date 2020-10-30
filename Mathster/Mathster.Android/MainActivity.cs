@@ -1,9 +1,7 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using Android.Widget;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Environment = System.Environment;
