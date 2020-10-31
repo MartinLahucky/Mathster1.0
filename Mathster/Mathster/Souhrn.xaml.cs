@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
@@ -151,6 +152,11 @@ namespace Mathster
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Menu());
+            var existingPages = Navigation.NavigationStack.ToList();
+            foreach(var page in existingPages)
+            {
+                Navigation.RemovePage(page);
+            }   
         }
 
         private async void VysledkyList_OnItemTapped(object sender, ItemTappedEventArgs e)
