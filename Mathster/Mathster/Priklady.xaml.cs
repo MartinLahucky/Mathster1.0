@@ -29,27 +29,27 @@ namespace Mathster
             switch (priklad.DruhPrikladu)
             {
                 case 1:
-                    Title = AppResource.Scitani;
+                    Title = $"{AppResource.Scitani} | {id + 1}/{fronta.Count}";
                     PrikladLabel.Text = $"{priklad.PrvniCislo} + {priklad.DruheCislo} = ";
                     break;
                 case 2:
-                    Title = AppResource.Odecitani;
+                    Title = $"{AppResource.Odecitani} | {id + 1}/{fronta.Count}";
                     PrikladLabel.Text = $"{priklad.PrvniCislo} - {priklad.DruheCislo} = ";
                     break;
                 case 3:
-                    Title = AppResource.Nasobeni;
+                    Title = $"{AppResource.Nasobeni} | {id + 1}/{fronta.Count}";
                     PrikladLabel.Text = $"{priklad.PrvniCislo} X {priklad.DruheCislo} = ";
                     break;
                 case 4:
-                    Title = AppResource.Deleni;
+                    Title = $"{AppResource.Deleni} | {id + 1}/{fronta.Count}";
                     PrikladLabel.Text = $"{priklad.PrvniCislo} ÷ {priklad.DruheCislo} = ";
                     break;
             }
-
             this.fronta = fronta;
             ID = id;
             
-            if (id < (fronta.Count - 1))
+            
+            if (id < fronta.Count - 1)
             {
                 OdvezdatButton.IsVisible = false;
             }
@@ -120,19 +120,15 @@ namespace Mathster
                     switch (priklad.DruhPrikladu)
                     {
                         case 1:
-                            Title = AppResource.Scitani;
                             PrikladLabel.Text = $" {priklad.PrvniCislo}\n+{priklad.DruheCislo}\n—";
                             break;
                         case 2:
-                            Title = AppResource.Odecitani;
                             PrikladLabel.Text = $" {priklad.PrvniCislo}\n-{priklad.DruheCislo}\n—";
                             break;
                         case 3:
-                            Title = AppResource.Nasobeni;
                             PrikladLabel.Text = $" {priklad.PrvniCislo}\nX{priklad.DruheCislo}\n—";
                             break;
                         case 4:
-                            Title = AppResource.Deleni;
                             PrikladLabel.Text = $"{priklad.PrvniCislo}\n—\n{priklad.DruheCislo}";
                             break;
                     }
@@ -144,19 +140,15 @@ namespace Mathster
                     switch (priklad.DruhPrikladu)
                     {
                         case 1:
-                            Title = AppResource.Scitani;
                             PrikladLabel.Text = $"{priklad.PrvniCislo} + {priklad.DruheCislo} = ";
                             break;
                         case 2:
-                            Title = AppResource.Odecitani;
                             PrikladLabel.Text = $"{priklad.PrvniCislo} - {priklad.DruheCislo} = ";
                             break;
                         case 3:
-                            Title = AppResource.Nasobeni;
                             PrikladLabel.Text = $"{priklad.PrvniCislo} X {priklad.DruheCislo} = ";
                             break;
                         case 4:
-                            Title = AppResource.Deleni;
                             PrikladLabel.Text = $"{priklad.PrvniCislo} ÷ {priklad.DruheCislo} = ";
                             break;
                     }
