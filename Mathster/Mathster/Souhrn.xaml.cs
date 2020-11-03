@@ -16,6 +16,8 @@ namespace Mathster
         private DBModel zapis;
         private SettingsModel tabulkaNastaveni;
         private bool potvrzeniZapisu;
+        private List<Priklad> prikladyDobre;
+        private List<Priklad> prikladySpatne;
         public Souhrn(List<Priklad> fronta, bool potvrzeniZapisu)
         {
             InitializeComponent();
@@ -36,6 +38,8 @@ namespace Mathster
             Task.WaitAll(task);
             
             List<Vysledek> priklady = new List<Vysledek>();
+            List<Priklad> prikladyDobre = new List<Priklad>();
+            List<Priklad> prikladySpatne = new List<Priklad>();
             byte pocitadloSpravne = 0;
             byte pocitadloSpatne = 0;
             
@@ -59,6 +63,7 @@ namespace Mathster
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemScitaniSpravne++;
                             priklady[priklad.Id].StatusPrikladu = "dobre_ikona.png";
+                            prikladyDobre.Add(priklad);
 
                         }
                         else
@@ -66,6 +71,7 @@ namespace Mathster
                             spravne = false;
                             pocitadloSpatne++;
                             priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
+                            prikladySpatne.Add(priklad);
                         }
                         break;
                     case 2:
@@ -77,12 +83,14 @@ namespace Mathster
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemOdcitaniSpravne++;
                             priklady[priklad.Id].StatusPrikladu = "dobre_ikona.png";
+                            prikladyDobre.Add(priklad);
                         }
                         else
                         {
                             spravne = false;
                             pocitadloSpatne++;
                             priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
+                            prikladySpatne.Add(priklad);
                         }
                         break;
                     case 3:
@@ -94,12 +102,14 @@ namespace Mathster
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemNasobeniSpravne++;
                             priklady[priklad.Id].StatusPrikladu = "dobre_ikona.png";
+                            prikladyDobre.Add(priklad);
                         }
                         else
                         {
                             spravne = false;
                             pocitadloSpatne++;
                             priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
+                            prikladySpatne.Add(priklad);
                         }
                         break;
                     case 4:
@@ -111,17 +121,21 @@ namespace Mathster
                             zapis.CelkemPrikladuDobre++;
                             zapis.CelkemDeleniSpravne++;
                             priklady[priklad.Id].StatusPrikladu = "dobre_ikona.png";
+                            prikladyDobre.Add(priklad);
                         }
                         else
                         {
                             spravne = false;
                             pocitadloSpatne++;
                             priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
+                            prikladySpatne.Add(priklad);
                         }
                         break;
                 }
                 experienceCount += priklad.GetExperience(spravne);
             }
+            this.prikladyDobre = prikladyDobre;
+            this.prikladySpatne = prikladySpatne;
             zapis.Experience += experienceCount;
             VysledkyList.ItemsSource = priklady;
             DobrePocetButton.Text = pocitadloSpravne.ToString();
@@ -169,43 +183,6 @@ namespace Mathster
         {
             try
             {
-                int vysledek = 0;
-                List<Priklad> prikladyDobre = new List<Priklad>();
-
-                foreach (var priklad in fronta)
-                {
-                    switch (priklad.DruhPrikladu)
-                    {
-                        case 1:
-                            vysledek = priklad.PrvniCislo + priklad.DruheCislo;
-                            if (priklad.UzivateluvVstup == vysledek)
-                            {
-                                prikladyDobre.Add(priklad);
-                            }
-                            break;
-                        case 2:
-                            vysledek = priklad.PrvniCislo - priklad.DruheCislo;
-                            if (priklad.UzivateluvVstup == vysledek)
-                            {
-                                prikladyDobre.Add(priklad);
-                            }
-                            break;
-                        case 3:
-                            vysledek = priklad.PrvniCislo * priklad.DruheCislo;
-                            if (priklad.UzivateluvVstup == vysledek)
-                            {
-                                prikladyDobre.Add(priklad);
-                            }
-                            break;
-                        case 4:
-                            vysledek = priklad.PrvniCislo / priklad.DruheCislo;
-                            if (priklad.UzivateluvVstup == vysledek)
-                            {
-                                prikladyDobre.Add(priklad);
-                            }
-                            break;
-                    }
-                }
                 await Navigation.PushAsync(new RozborVysledku(0, prikladyDobre, fronta, potvrzeniZapisu));
             }
             catch
@@ -217,43 +194,6 @@ namespace Mathster
         {
             try
             {
-                int vysledek;
-                List<Priklad> prikladySpatne = new List<Priklad>();
-
-                foreach (var priklad in fronta)
-                {
-                    switch (priklad.DruhPrikladu)
-                    {
-                        case 1:
-                            vysledek = priklad.PrvniCislo + priklad.DruheCislo;
-                            if (priklad.UzivateluvVstup != vysledek)
-                            {
-                                prikladySpatne.Add(priklad);
-                            }
-                            break;
-                        case 2:
-                            vysledek = priklad.PrvniCislo - priklad.DruheCislo;
-                            if (priklad.UzivateluvVstup != vysledek)
-                            {
-                                prikladySpatne.Add(priklad);
-                            }
-                            break;
-                        case 3:
-                            vysledek = priklad.PrvniCislo * priklad.DruheCislo;
-                            if (priklad.UzivateluvVstup != vysledek)
-                            {
-                                prikladySpatne.Add(priklad);
-                            }
-                            break;
-                        case 4:
-                            vysledek = priklad.PrvniCislo / priklad.DruheCislo;
-                            if (priklad.UzivateluvVstup != vysledek)
-                            {
-                                prikladySpatne.Add(priklad);
-                            }
-                            break;
-                    }
-                }
                 await Navigation.PushAsync(new RozborVysledku(0, prikladySpatne, fronta, potvrzeniZapisu));
             }
             catch

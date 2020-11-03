@@ -10,7 +10,6 @@ namespace Mathster
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Menu : ContentPage
     {
-        private Circles levelBar;
         public Menu()
         {
             InitializeComponent();
