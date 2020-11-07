@@ -20,17 +20,16 @@
         <!-- <ScrollView> -->
             <StackLayout>
             <StackLayout BackgroundColor="#4D4DFC" Padding="0,0,0,20">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                <Grid HorizontalOptions="Center">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <plugin:ProgressRing x:Name="progressBar" RingBaseColor="#FCA54D" RingProgressColor="#C9FF50" RingThickness="20"/>
-                    <StackLayout Padding="45,20" HorizontalOptions="Center" Grid.Column="0"  Grid.Row="0" VerticalOptions="CenterAndExpand">
-                        <Button x:Name="levelButton" Margin="0" CornerRadius="120" WidthRequest="140" HeightRequest="140" FontSize="45" StyleClass="LevelButtonMenu" BackgroundColor="#7F7FFD" Clicked="StatsButton_OnClicked"/>
-                    </StackLayout>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="levelButton" Margin="0" CornerRadius="120" WidthRequest="140" HeightRequest="140" FontSize="45" HorizontalOptions="Center" VerticalOptions="Center"
+                            StyleClass="LevelButtonMenu" BackgroundColor="#7F7FFD" Clicked="StatsButton_OnClicked" Grid.Row="0" Grid.Column="0"/>
+                    <plugin:ProgressRing x:Name="progressBar" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" RingBaseColor="#FCA54D" RingProgressColor="#C9FF50" RingThickness="20" Grid.Row="0" Grid.Column="0" />
                 </Grid>
                 <Label x:Name="UzivatelLabel" HorizontalOptions="Center" FontSize="30" Margin="0,10,0,0" />
             </StackLayout>
@@ -58,38 +57,3 @@
         <!-- </ScrollView> -->
     </ContentPage.Content>
 </ContentPage>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    
-<!-- <forms:SKCanvasView x:Name="SkCanvasView1" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/> -->
-<!-- <Button x:Name="ScitaniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka"  -->
-<!--         Grid.Column="0" Grid.Row="0" Clicked="ScitaniButton_OnClicked" /> -->
-                    
-                    
-<!-- <forms:SKCanvasView x:Name="SkCanvasView2" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/> -->
-<!-- <Button x:Name="OdcitaniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka"  -->
-<!--         Grid.Column="1" Grid.Row="0" Clicked="OdcitaniButton_OnClicked" /> -->
-                    
-                    
-<!-- <forms:SKCanvasView x:Name="SkCanvasView3" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/> -->
-<!-- <Button x:Name="NasobeniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka"  -->
-<!--         Grid.Column="0" Grid.Row="1" Clicked="NasobeniButton_OnClicked" /> -->
-                    
-                    
-<!-- <forms:SKCanvasView x:Name="SkCanvasView4" HeightRequest="160" WidthRequest="10" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"/> -->
-<!-- <Button x:Name="DeleniButton" CornerRadius="57" Margin="33,18" StyleClass="MenuTlacitka"  -->
-<!--         Grid.Column="1" Grid.Row="1" Clicked="DeleniButton_OnClicked" /> -->
