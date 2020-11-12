@@ -182,7 +182,7 @@ namespace Mathster
                         break;
                 }
             }
-            
+            // TODO Předělat na pole
             List<Priklad> fronta = new List<Priklad>();
 
             if (druhPrikladu == 1 || druhPrikladu == 2)

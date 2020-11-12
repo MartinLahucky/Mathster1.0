@@ -82,6 +82,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\dobre_ikona.png" />
     <AndroidResource Include="Resources\drawable\ikona.png" />
+    <AndroidResource Include="Resources\drawable\ikonaStart.png" />
     <AndroidResource Include="Resources\drawable\outline_info_white_18dp.png" />
     <AndroidResource Include="Resources\drawable\podsebe.png" />
     <AndroidResource Include="Resources\drawable\round_house_white_18dp.png" />
@@ -100,9 +101,6 @@
       <Project>{B2E83137-B60D-4A85-9B18-79358BAA99F2}</Project>
       <Name>Mathster</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ikonaStart.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\sipka_vpravo.png" />
