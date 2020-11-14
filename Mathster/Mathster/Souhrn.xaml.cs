@@ -64,7 +64,6 @@ namespace Mathster
                             zapis.CelkemScitaniSpravne++;
                             priklady[priklad.Id].StatusPrikladu = "dobre_ikona.png";
                             prikladyDobre.Add(priklad);
-
                         }
                         else
                         {

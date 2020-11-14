@@ -18,7 +18,7 @@ namespace Mathster
         {
             InitializeComponent();
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
-            Title = AppResource.Reseni;
+            Title = $"{AppResource.Reseni} | {fronta[id].Id + 1}/{frontaVse.Count}";
             ReseniNadLabel.Text = AppResource.SpravneReseni;
             NadSpatnaOdpovedLabel.Text = AppResource.VaseReseni;
             NadZadaniLabel.Text = AppResource.Zadani;
@@ -80,7 +80,7 @@ namespace Mathster
             this.frontaVse = frontaVse;
             this.potvrzeniZapisu = potvrzeniZapisu;
             ID = id;
-            if (id == (fronta.Count - 1))
+            if (id == fronta.Count - 1)
             {
                 DalsiPrikladButton.IsVisible = false;
             }
