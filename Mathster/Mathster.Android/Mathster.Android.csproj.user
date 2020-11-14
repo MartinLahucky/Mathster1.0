@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
-    <SelectedDevice>Pixel_2_-_Android_10.0_API_29_</SelectedDevice>
+    <SelectedDevice>realme RMX2001</SelectedDevice>
     <DefaultDevice>Pixel_2_-_Android_10.0_API_29_</DefaultDevice>
   </PropertyGroup>
 </Project>
