@@ -178,7 +178,7 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Účelem aplikace je procvičovat se, aby i složitější počty, člověk zvládal automaticky a nemusel stále sahat po kalkulačce..
+        ///   Looks up a localized string similar to Účelem aplikace je procvičovat a zrychlovat se v počtech. Aplikace je vhodná pro malé i velké počtáře..
         /// </summary>
         internal static string OAplikaciText {
             get {

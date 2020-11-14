@@ -178,7 +178,7 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This application was designed to practice so that even more complex numbers can be handled easily and you do not have to constantly reach for a calculator..
+        ///   Looks up a localized string similar to This application was designed to practice.  Appropriate for children..
         /// </summary>
         internal static string OAplikaciText {
             get {
