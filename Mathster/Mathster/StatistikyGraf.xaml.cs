@@ -21,7 +21,6 @@ namespace Mathster
             ResetStatsButton.Text = AppResource.StatReset;
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
             celkovyPocetLabel.Text = level.ToString();
-            
             //Zobrazení legendy
             frame1.IsVisible = false;
             frame2.IsVisible = false;
@@ -35,7 +34,6 @@ namespace Mathster
             PopisLabel4.IsVisible = false;
             HodnotaLabel3.IsVisible = false;
             HodnotaLabel4.IsVisible = false;
-
             //SkiaSharp
             graf = new Circles(180, (info) => new SKPoint((float)info.Width / 2, (float)info.Height / 2));
             graf.DrawFullProgressBar(SkCanvasView1, "#7F7FFD", "#FCA54D", 40f, progres, "#C9FF50");
@@ -49,7 +47,6 @@ namespace Mathster
             ResetStatsButton.Text = AppResource.StatReset;
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
             celkovyPocetLabel.Text = hodnotaCelkem.ToString();
-
             //Zobrazení legendy
             HodnotaLabel1.Text = hodnotaSpravne.ToString();
             HodnotaLabel2.Text = (hodnotaCelkem - hodnotaSpravne).ToString();
@@ -63,7 +60,6 @@ namespace Mathster
             PopisLabel4.IsVisible = false;
             HodnotaLabel3.IsVisible = false;
             HodnotaLabel4.IsVisible = false;
-
             //SkiaSharp
             if (hodnotaCelkem == 0) hodnotaCelkem = 1;
             graf = new Circles(180, (info) => new SKPoint((float)info.Width / 2, (float)info.Height / 2));
@@ -78,7 +74,6 @@ namespace Mathster
             ResetStatsButton.Text = AppResource.StatReset;
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
             celkovyPocetLabel.Text = (Scitani + Odecitani + Nasobeni + Deleni).ToString();
-
             //Zobrazení legendy
             HodnotaLabel1.Text = Scitani.ToString();
             HodnotaLabel2.Text = Odecitani.ToString();
@@ -92,7 +87,6 @@ namespace Mathster
             PopisLabel4.IsVisible = true;
             HodnotaLabel3.IsVisible = true;
             HodnotaLabel4.IsVisible = true;
-
             //SkiaSharp
             graf = new Circles(180, (info) => new SKPoint((float)info.Width / 2, (float)info.Height / 2));
             graf.DrawChart(SkCanvasView1, "#7F7FFD", "#FCA54D", 40f, Nasobeni, Deleni, Odecitani, Scitani + Odecitani + Nasobeni + Deleni, "#C9FF50", "#262630", "#FFFFFF");

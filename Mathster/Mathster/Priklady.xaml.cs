@@ -48,7 +48,6 @@ namespace Mathster
             this.fronta = fronta;
             ID = id;
             
-            
             if (id < fronta.Count - 1)
             {
                 OdvezdatButton.IsVisible = false;
@@ -57,7 +56,6 @@ namespace Mathster
             {
                 DalsiButton.IsVisible = false;
             }
-            
         }
         
         private async void OdvezdatButton_OnClicked(object sender, EventArgs e)
@@ -174,7 +172,6 @@ namespace Mathster
             {
                 cislo.Add(cisloText[i].ToString());
             }
-
             try
             {
                 if (podsebe)

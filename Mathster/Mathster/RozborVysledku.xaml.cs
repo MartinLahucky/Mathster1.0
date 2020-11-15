@@ -27,8 +27,7 @@ namespace Mathster
             {
                 SpatnaOdpovedLabel.HeightRequest = 75;
                 ReseniLabel.HeightRequest = 75;
-            } 
-            
+            }
             switch (fronta[id].DruhPrikladu)
             {
                 case 1:
