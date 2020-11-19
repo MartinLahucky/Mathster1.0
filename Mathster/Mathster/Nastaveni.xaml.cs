@@ -34,7 +34,7 @@ namespace Mathster
                 }
             });
             Task.WaitAll(task);
-            OAplikaciVerze.Text = AppResource.OAplikaciVerze + "Video Preview";
+            OAplikaciVerze.Text = AppResource.OAplikaciVerze + "Public Preview";
         }
         private async void DarkModeSwitch_Toggled(object sender, ToggledEventArgs e)
         {
