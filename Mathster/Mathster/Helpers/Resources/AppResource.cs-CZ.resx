@@ -129,9 +129,6 @@
   <data name="Jmeno" xml:space="preserve">
     <value>Jméno:</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Menu</value>
-  </data>
   <data name="Nahodne" xml:space="preserve">
     <value>Náhodně</value>
   </data>
@@ -231,13 +228,13 @@
   <data name="Pomer" xml:space="preserve">
     <value>Poměr</value>
   </data>
-  <data name="Ok" xml:space="preserve">
-    <value>Ok</value>
-  </data>
   <data name="Zadani" xml:space="preserve">
     <value>Zadání</value>
   </data>
   <data name="Level" xml:space="preserve">
-    <value>Level</value>
+    <value>Úroveň</value>
+  </data>
+  <data name="WarningExit" xml:space="preserve">
+    <value>Stiskněte znovu zpět pro ukončení aplikace</value>
   </data>
 </root>

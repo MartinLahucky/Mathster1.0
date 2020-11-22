@@ -9,6 +9,7 @@ namespace Mathster
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Menu : ContentPage
     {
+        private long lastPress;
         public Menu()
         {
             InitializeComponent();
@@ -80,6 +81,22 @@ namespace Mathster
         private async void AboutButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ONas());
+        }
+        protected override bool OnBackButtonPressed()
+        {
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
+            
+            if (currentTime - lastPress > 5000)
+            {
+                DependencyService.Get<INativeFun>().LongAlert(AppResource.WarningExit);
+                lastPress = currentTime;
+                return true;
+            }
+            else
+            {
+                base.OnBackButtonPressed();
+                return false;
+            }
         }
     }
 }

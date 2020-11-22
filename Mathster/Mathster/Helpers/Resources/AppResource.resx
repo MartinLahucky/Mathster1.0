@@ -240,4 +240,7 @@
   <data name="Level" xml:space="preserve">
     <value>Level</value>
   </data>
+  <data name="WarningExit" xml:space="preserve">
+    <value>Press back again to exit</value>
+  </data>
 </root>

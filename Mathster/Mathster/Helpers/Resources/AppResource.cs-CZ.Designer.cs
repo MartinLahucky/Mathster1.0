@@ -115,20 +115,11 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Level.
+        ///   Looks up a localized string similar to Úroveň.
         /// </summary>
         internal static string Level {
             get {
                 return ResourceManager.GetString("Level", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Menu.
-        /// </summary>
-        internal static string Menu {
-            get {
-                return ResourceManager.GetString("Menu", resourceCulture);
             }
         }
         
@@ -210,15 +201,6 @@ namespace Mathster.Helpers.Resources {
         internal static string Odevzdat {
             get {
                 return ResourceManager.GetString("Odevzdat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ok.
-        /// </summary>
-        internal static string Ok {
-            get {
-                return ResourceManager.GetString("Ok", resourceCulture);
             }
         }
         
@@ -390,6 +372,15 @@ namespace Mathster.Helpers.Resources {
         internal static string VyvojProgramovani {
             get {
                 return ResourceManager.GetString("VyvojProgramovani", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stiskněte znovu zpět pro ukončení aplikace.
+        /// </summary>
+        internal static string WarningExit {
+            get {
+                return ResourceManager.GetString("WarningExit", resourceCulture);
             }
         }
         
