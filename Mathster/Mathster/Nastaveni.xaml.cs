@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
@@ -72,6 +73,11 @@ namespace Mathster
             tabulka.Jmeno = JmenoEntry.Text;
             await App.Database.UpdateTable(tabulka);
             await Navigation.PushAsync(new Menu());
+            var existingPages = Navigation.NavigationStack.ToList();
+            foreach(var page in existingPages)
+            {
+                Navigation.RemovePage(page);
+            } 
         }
 
         protected async override void OnDisappearing()

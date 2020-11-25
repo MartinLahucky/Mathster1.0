@@ -160,6 +160,11 @@ namespace Mathster
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Menu());
+            var existingPages = Navigation.NavigationStack.ToList();
+            foreach(var page in existingPages)
+            {
+                Navigation.RemovePage(page);
+            } 
         }
         
         private void VysledekInput_OnTextChanged(object sender, TextChangedEventArgs e)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
 using Xamarin.Forms;
@@ -124,6 +125,11 @@ namespace Mathster
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Menu());
+            var existingPages = Navigation.NavigationStack.ToList();
+            foreach(var page in existingPages)
+            {
+                Navigation.RemovePage(page);
+            } 
         }
     }  
 }
