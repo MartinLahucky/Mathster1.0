@@ -98,11 +98,8 @@ namespace Mathster
                 lastPress = currentTime;
                 return true;
             }
-            else
-            {
-                base.OnBackButtonPressed();
-                return false;
-            }
+            base.OnBackButtonPressed();
+            return false;
         }
     }
 }
