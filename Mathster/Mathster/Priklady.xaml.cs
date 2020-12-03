@@ -14,7 +14,8 @@ namespace Mathster
         private Priklad priklad;
         private byte ID;
         private List<Priklad> fronta;
-        private bool podsebe ;
+        private bool podsebe;
+        private long casZahajeni;
         public Priklady(byte id, List<Priklad> fronta)
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace Mathster
             OdvezdatButton.Text = AppResource.Odevzdat;
             VysledekPropisInput.Text = String.Empty;
             VysledekInput.Text = String.Empty;
+            casZahajeni = DateTime.UtcNow.Ticks;
             
             priklad = fronta[id];
 
@@ -63,6 +65,7 @@ namespace Mathster
             try
             {
                 fronta[ID].UzivateluvVstup = float.Parse(VysledekPropisInput.Text);
+                fronta[ID].DelkaPocitani = DateTime.UtcNow.Ticks - casZahajeni;
                 await Navigation.PushAsync(new Souhrn(fronta, false));
                 var existingPages = Navigation.NavigationStack.ToList();
                 foreach(var page in existingPages)
@@ -82,6 +85,7 @@ namespace Mathster
             try
             {
                 fronta[ID].UzivateluvVstup = float.Parse(VysledekPropisInput.Text);
+                fronta[ID].DelkaPocitani = DateTime.UtcNow.Ticks - casZahajeni;
                 ID++;
                 await Navigation.PushAsync(new Priklady(ID, fronta));
                 var existingPages = Navigation.NavigationStack.ToList();
@@ -96,7 +100,7 @@ namespace Mathster
                 await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniZadejteCislo, AppResource.Ok);
             }
         }
-        protected async override void OnAppearing ()
+        protected async override void OnAppearing()
         {
             base.OnAppearing ();
             SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
@@ -179,38 +183,40 @@ namespace Mathster
             }
             try
             {
-                if (podsebe)
+                switch (podsebe)
                 {
-                    if (VysledekInput.Text == "")
-                    {
-                        VysledekPropisInput.Text = String.Empty;
-                    }
-                    else if (cislo[0] == "-")
-                    {
-                        cislo.Remove("-");
-                        cislo.Add("-");
-                    }
-                    VysledekPropisInput.Text = cislo[cislo.Count - 1];
-
-                    if (cislo.Count != 1)
-                    {
-                        for (int i = cislo.Count - 2; i >= 0; i--)
+                    case true:
+                        if (VysledekInput.Text == "")
                         {
-                            VysledekPropisInput.Text += cislo[i];
+                            VysledekPropisInput.Text = String.Empty;
                         }
-                    }
-                }
-                else
-                {
-                    VysledekPropisInput.Text = cislo[0];
-
-                    if (cislo.Count != 1)
-                    {
-                        for (int i = 1; i < cisloText.Length; i++)
+                        else if (cislo[0] == "-")
                         {
-                            VysledekPropisInput.Text += cislo[i];
+                            cislo.Remove("-");
+                            cislo.Add("-");
                         }
-                    }
+                        
+                        VysledekPropisInput.Text = cislo[cislo.Count - 1];
+
+                        if (cislo.Count != 1)
+                        {
+                            for (int i = cislo.Count - 2; i >= 0; i--)
+                            {
+                                VysledekPropisInput.Text += cislo[i];
+                            }
+                        }
+                        break;
+                    
+                    case false:
+                        VysledekPropisInput.Text = cislo[0];
+                        if (cislo.Count != 1)
+                        {
+                            for (int i = 1; i < cisloText.Length; i++)
+                            {
+                                VysledekPropisInput.Text += cislo[i];
+                            }
+                        }
+                        break;
                 }
             }
             catch

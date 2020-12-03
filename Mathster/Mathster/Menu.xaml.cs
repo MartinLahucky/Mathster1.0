@@ -92,7 +92,7 @@ namespace Mathster
         {
             long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
             
-            if (currentTime - lastPress > 5000)
+            if (currentTime - lastPress > 3000)
             {
                 DependencyService.Get<INativeFun>().LongAlert(AppResource.WarningExit);
                 lastPress = currentTime;

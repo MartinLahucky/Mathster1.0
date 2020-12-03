@@ -9,6 +9,8 @@ namespace Mathster
         private int druheCislo;
         private float uzivateluvVstup;
         private byte druhPrikladu;
+        private long delkaPocitani;
+        
         public Priklad(int prvniCislo, int druheCislo, byte druhPrikladu)
         {
             this.prvniCislo = prvniCislo;
@@ -45,8 +47,14 @@ namespace Mathster
         {
             get => druhPrikladu;
             private set => druhPrikladu = value;
-        }
-        public Priklad VygenerujPriklad(byte id, int minCisel, int maxCisel, byte druhPrikladu, int minDeleniANasobeni = 2, int maxDeleniANasobeni = 6 )
+        }  
+        
+        public long DelkaPocitani
+         {
+             get => delkaPocitani;
+             set => delkaPocitani = value;
+         }
+        public Priklad VygenerujPriklad(byte id, int minCisel, int maxCisel, byte druhPrikladu, int minDeleniANasobeni = 2, int maxDeleniANasobeni = 6)
         {
             Random random = new Random();
             Priklad priklad = null;
@@ -80,10 +88,7 @@ namespace Mathster
             {
                 return (druhPrikladu * (druhPrikladu / 4) + 1) * prvniCislo.ToString().Length * 20;
             }
-            else
-            {
-                return druhPrikladu * (druhPrikladu / 4) + 1;
-            }
+            return druhPrikladu * (druhPrikladu / 4) + 1;
         }
         public Priklad VygenerujNahodnyPriklad(byte id, int minCisel, int maxCisel, int minDeleniANasobeni = 2, int maxDeleniANasobeni = 6)
         {
@@ -109,21 +114,18 @@ namespace Mathster
                         return "";
                 }
             }
-            else
+            switch (DruhPrikladu)
             {
-                switch (DruhPrikladu)
-                {
-                    case 1:
-                        return $"{PrvniCislo} + {DruheCislo} = {UzivateluvVstup}";
-                    case 2:
-                        return $"{PrvniCislo} - {DruheCislo} = {UzivateluvVstup}";
-                    case 3:
-                        return $"{PrvniCislo} X {DruheCislo} = {UzivateluvVstup}";
-                    case 4:
-                        return $"{PrvniCislo} ÷ {DruheCislo} = {UzivateluvVstup}";
-                    default:
-                        return "";
-                }
+                case 1:
+                    return $"{PrvniCislo} + {DruheCislo} = {UzivateluvVstup}";
+                case 2:
+                    return $"{PrvniCislo} - {DruheCislo} = {UzivateluvVstup}";
+                case 3:
+                    return $"{PrvniCislo} X {DruheCislo} = {UzivateluvVstup}";
+                case 4:
+                    return $"{PrvniCislo} ÷ {DruheCislo} = {UzivateluvVstup}";
+                default:
+                    return "";
             }
         } 
     }
