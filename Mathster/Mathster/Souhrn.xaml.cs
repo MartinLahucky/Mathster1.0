@@ -52,84 +52,20 @@ namespace Mathster
                     VysledkyList.RowHeight = 80;
                 }
                 zapis.CelkemPrikladu++;
-                switch (priklad.DruhPrikladu)
+                if (priklad.VratVysledek() == priklad.UzivateluvVstup)
                 {
-                    case 1:
-                        zapis.CelkemScitani++;
-                        if (priklad.PrvniCislo + priklad.DruheCislo == priklad.UzivateluvVstup)
-                        {
-                            spravne = true;
-                            pocitadloSpravne++;
-                            zapis.CelkemPrikladuDobre++;
-                            zapis.CelkemScitaniSpravne++;
-                            priklady[priklad.Id].StatusPrikladu = "dobre_ikona.png";
-                            prikladyDobre.Add(priklad);
-                        }
-                        else
-                        {
-                            spravne = false;
-                            pocitadloSpatne++;
-                            priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
-                            prikladySpatne.Add(priklad);
-                        }
-                        break;
-                    case 2:
-                        zapis.CelkemOdcitani++;
-                        if (priklad.PrvniCislo - priklad.DruheCislo == priklad.UzivateluvVstup)
-                        {
-                            spravne = true;
-                            pocitadloSpravne++;
-                            zapis.CelkemPrikladuDobre++;
-                            zapis.CelkemOdcitaniSpravne++;
-                            priklady[priklad.Id].StatusPrikladu = "dobre_ikona.png";
-                            prikladyDobre.Add(priklad);
-                        }
-                        else
-                        {
-                            spravne = false;
-                            pocitadloSpatne++;
-                            priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
-                            prikladySpatne.Add(priklad);
-                        }
-                        break;
-                    case 3:
-                        zapis.CelkemNasobeni++;
-                        if (priklad.PrvniCislo * priklad.DruheCislo == priklad.UzivateluvVstup)
-                        {
-                            spravne = true;
-                            pocitadloSpravne++;
-                            zapis.CelkemPrikladuDobre++;
-                            zapis.CelkemNasobeniSpravne++;
-                            priklady[priklad.Id].StatusPrikladu = "dobre_ikona.png";
-                            prikladyDobre.Add(priklad);
-                        }
-                        else
-                        {
-                            spravne = false;
-                            pocitadloSpatne++;
-                            priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
-                            prikladySpatne.Add(priklad);
-                        }
-                        break;
-                    case 4:
-                        zapis.CelkemDeleni++;
-                        if (priklad.PrvniCislo / priklad.DruheCislo == priklad.UzivateluvVstup)
-                        {
-                            spravne = true;
-                            pocitadloSpravne++;
-                            zapis.CelkemPrikladuDobre++;
-                            zapis.CelkemDeleniSpravne++;
-                            priklady[priklad.Id].StatusPrikladu = "dobre_ikona.png";
-                            prikladyDobre.Add(priklad);
-                        }
-                        else
-                        {
-                            spravne = false;
-                            pocitadloSpatne++;
-                            priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
-                            prikladySpatne.Add(priklad);
-                        }
-                        break;
+                    pocitadloSpravne++;
+                    zapis.CelkemPrikladuDobre++;
+                    zapis.CelkemScitaniSpravne++;
+                    priklady[priklad.Id].StatusPrikladu = "dobre_ikona.png";
+                    prikladyDobre.Add(priklad);
+                }
+                else
+                {
+                    spravne = false;
+                    pocitadloSpatne++;
+                    priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
+                    prikladySpatne.Add(priklad);
                 }
                 experienceCount += priklad.GetExperience(spravne);
             }

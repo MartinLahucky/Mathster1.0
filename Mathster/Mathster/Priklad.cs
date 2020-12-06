@@ -96,6 +96,22 @@ namespace Mathster
             druhPrikladu = Byte.Parse(random.Next(1, 5).ToString());
             return VygenerujPriklad(id, minCisel, maxCisel,  druhPrikladu, minDeleniANasobeni, maxDeleniANasobeni);
         }
+        public int VratVysledek()
+        {
+            switch (druhPrikladu)
+            {
+                case 1:
+                    return prvniCislo + druheCislo;
+                case 2:
+                    return prvniCislo - druheCislo;
+                case 3:
+                    return prvniCislo * druheCislo;
+                case 4:
+                    return prvniCislo / druheCislo;
+                default:
+                    return 0;
+            }
+        }
         public string VratPriklad()
         {
             if (PrvniCislo >= 10000 || DruheCislo >= 10000 || UzivateluvVstup >= 10000)
