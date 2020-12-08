@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using Mathster.Helpers.Custom_UI;
 using Mathster.Helpers.Model;
 using Mathster.Helpers.Resources;
