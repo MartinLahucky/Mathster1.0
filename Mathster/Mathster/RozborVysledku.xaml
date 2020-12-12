@@ -32,7 +32,7 @@
                                     <StackLayout BackgroundColor="#7F7FFD" Padding="0" Margin="0">
                                         <Image VerticalOptions="CenterAndExpand" Source="spatne_ikona.png" Margin="15,0"/> 
                                     </StackLayout>
-                                    <Label x:Name="SpatnaOdpovedLabel" TextColor="Black" FontSize="30" VerticalOptions="Center" Padding="5" />
+                                    <Label x:Name="SpatnaOdpovedLabel" TextColor="Black" FontSize="30" VerticalOptions="Center" VerticalTextAlignment="Center" Padding="5" />
                                 </StackLayout>
                             </Frame>
                             
@@ -42,7 +42,7 @@
                                     <StackLayout BackgroundColor="#7F7FFD" Padding="0" Margin="0">
                                         <Image VerticalOptions="CenterAndExpand" Source="dobre_ikona.png" Margin="15,0"/> 
                                     </StackLayout>
-                                    <Label x:Name="ReseniLabel" TextColor="Black" FontSize="30" VerticalOptions="Center" Padding="5" />
+                                    <Label x:Name="ReseniLabel" TextColor="Black" FontSize="30" VerticalOptions="Center" VerticalTextAlignment="Center" Padding="5" />
                                 </StackLayout>
                             </Frame>
                         </StackLayout>
