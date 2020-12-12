@@ -51,12 +51,10 @@ namespace Mathster
                 {
                     VysledkyList.RowHeight = 80;
                 }
-                zapis.CelkemPrikladu++;
                 if (priklad.VratVysledek() == priklad.UzivateluvVstup)
                 {
                     pocitadloSpravne++;
-                    zapis.CelkemPrikladuDobre++;
-                    zapis.CelkemScitaniSpravne++;
+                    zapis.AddGoodStats(priklad.DruhPrikladu, zapis);
                     priklady[priklad.Id].StatusPrikladu = "dobre_ikona.png";
                     prikladyDobre.Add(priklad);
                 }
@@ -64,6 +62,7 @@ namespace Mathster
                 {
                     spravne = false;
                     pocitadloSpatne++;
+                    zapis.AddStats(priklad.DruhPrikladu, zapis);
                     priklady[priklad.Id].StatusPrikladu = "spatne_ikona.png";
                     prikladySpatne.Add(priklad);
                 }

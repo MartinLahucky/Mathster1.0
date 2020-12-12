@@ -30,7 +30,7 @@ namespace Mathster.Helpers.Model
                         CelkemNasobeniSpravne = 0,
                         CelkemDeleni = 0,
                         CelkemDeleniSpravne = 0,
-                        CelkemPrikladuDobre = 0,
+                        CelkemPrikladuSpravne = 0,
                     };
                     await database.InsertAsync(tabulkaModel);
                 }

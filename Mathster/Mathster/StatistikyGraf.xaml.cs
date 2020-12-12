@@ -87,7 +87,7 @@ namespace Mathster
                     CelkemNasobeniSpravne = 0,
                     CelkemDeleni = 0,
                     CelkemDeleniSpravne = 0,
-                    CelkemPrikladuDobre = 0,
+                    CelkemPrikladuSpravne = 0,
                     Jmeno = tabulka.Jmeno,
                 };
                 await App.Database.UpdateTable(tabulkaReset);
