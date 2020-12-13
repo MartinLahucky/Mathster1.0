@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mathster
+namespace Mathster.Resources.Helpers
 {
     public class Priklad
     {

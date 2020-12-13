@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
-using Mathster.Helpers.Model;
-using Mathster.Helpers.Resources;
+using Mathster.Resources.Localization;
+using Mathster.Resources.Database_Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

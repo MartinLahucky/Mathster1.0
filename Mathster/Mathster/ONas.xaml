@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mathster.ONas">
     <ContentPage.Resources>
-        <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
+        <StyleSheet Source="Resources/Styles/Komponenty.css"/>
     </ContentPage.Resources>
     
     <ContentPage.ToolbarItems>

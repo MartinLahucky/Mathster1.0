@@ -6,7 +6,7 @@
              x:Class="Mathster.StatistikyGraf">
 
     <ContentPage.Resources>
-        <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
+        <StyleSheet Source="Resources/Styles/Komponenty.css"/>
     </ContentPage.Resources>
     
         <ContentPage.Content>

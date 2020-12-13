@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using Mathster.iOS;
+using Mathster.Resources.Helpers;
 using UIKit;
 using Xamarin.Forms;
 

@@ -1,4 +1,4 @@
-﻿namespace Mathster
+﻿namespace Mathster.Resources.Helpers
 {
     public interface INativeFun
     {

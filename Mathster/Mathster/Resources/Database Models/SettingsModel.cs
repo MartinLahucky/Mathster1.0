@@ -1,7 +1,6 @@
 ﻿using SQLite;
-using Xamarin.Forms;
 
-namespace Mathster.Helpers.Model
+namespace Mathster.Resources.Database_Models
 {
     public class SettingsModel
     {

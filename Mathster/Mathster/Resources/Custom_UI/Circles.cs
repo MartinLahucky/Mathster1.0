@@ -2,7 +2,7 @@
 using SkiaSharp;
 using SkiaSharp.Views.Forms;
 
-namespace Mathster.Helpers.Custom_UI
+namespace Mathster.Resources.Custom_UI
 {
     public class Circles
     {

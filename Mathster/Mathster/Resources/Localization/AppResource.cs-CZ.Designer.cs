@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Mathster.Helpers.Resources {
+namespace Mathster.Resources.Localization {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Mathster.Helpers.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Mathster.Helpers.Resources.AppResource.cs-CZ", typeof(AppResource_cs_CZ).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Mathster.Resources.Localization.AppResource.cs-CZ", typeof(AppResource_cs_CZ).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

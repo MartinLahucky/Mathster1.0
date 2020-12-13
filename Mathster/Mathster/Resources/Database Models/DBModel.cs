@@ -1,7 +1,7 @@
 ﻿using System;
 using SQLite;
 
-namespace Mathster.Helpers.Model
+namespace Mathster.Resources.Database_Models
 {
     public class DBModel
     {

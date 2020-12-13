@@ -1,7 +1,7 @@
 ﻿using System;
-using Mathster.Helpers.Custom_UI;
-using Mathster.Helpers.Model;
-using Mathster.Helpers.Resources;
+using Mathster.Resources.Localization;
+using Mathster.Resources.Custom_UI;
+using Mathster.Resources.Database_Models;
 using SkiaSharp;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

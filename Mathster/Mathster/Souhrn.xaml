@@ -5,7 +5,7 @@
              x:Class="Mathster.Souhrn"
              NavigationPage.HasBackButton="False">
     <ContentPage.Resources>
-        <StyleSheet Source="Helpers/Styles/Komponenty.css"/>
+        <StyleSheet Source="Resources/Styles/Komponenty.css"/>
     </ContentPage.Resources>
     
     <ContentPage.ToolbarItems>

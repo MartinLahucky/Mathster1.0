@@ -1,5 +1,6 @@
 ﻿using Android.Widget;
 using Mathster;
+using Mathster.Resources.Helpers;
 using Xamarin.Forms;
 using AndroidApp = Android.App.Application;
 

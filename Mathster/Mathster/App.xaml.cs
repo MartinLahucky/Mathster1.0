@@ -1,4 +1,4 @@
-﻿using Mathster.Helpers.Model;
+﻿using Mathster.Resources.Database_Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
