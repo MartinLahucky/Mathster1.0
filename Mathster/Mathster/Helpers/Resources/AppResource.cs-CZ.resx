@@ -237,4 +237,7 @@
   <data name="WarningExit" xml:space="preserve">
     <value>Stiskněte znovu zpět pro ukončení aplikace</value>
   </data>
+  <data name="CasPocitani" xml:space="preserve">
+    <value>Délka počítání:</value>
+  </data>
 </root>

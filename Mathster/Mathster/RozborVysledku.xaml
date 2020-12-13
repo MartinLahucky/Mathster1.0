@@ -12,11 +12,18 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout x:Name="MainLayout" Margin="20,30,20,20">
+        <StackLayout x:Name="MainLayout" Margin="20,20,20,10">
             <ScrollView x:Name="View">
                 <StackLayout>
                     <Frame CornerRadius="30" Padding="0" Margin="0,0,0,10" HasShadow="False" BackgroundColor="#4d4dfc">
                         <StackLayout>
+                            <Frame CornerRadius="30" Padding="0" Margin="0,0,0,-10" HasShadow="False" BackgroundColor="#4d4dfc">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label x:Name="CasStaticLabel" BackgroundColor="Transparent" FontSize="25" Margin="10" Padding="20,0" VerticalTextAlignment="Center" TextColor="White"/>
+                                    <Label x:Name="CasLabel" TextColor="#C9FF50" FontSize="20" VerticalOptions="Center"  Padding="10,5" /> 
+                                </StackLayout> 
+                            </Frame>
+                            
                             <Label x:Name="NadZadaniLabel" BackgroundColor="Transparent" FontSize="25" Margin="10" Padding="20,0" VerticalTextAlignment="Center" TextColor="White"/>
                             <Frame x:Name="ZadaniLabelFrame" CornerRadius="30" Margin="20,0,20,20" Padding="0">
                                <Label x:Name="ZadaniLabel" TextColor="Black" FontSize="30" VerticalOptions="Center" Padding="20,5" /> 

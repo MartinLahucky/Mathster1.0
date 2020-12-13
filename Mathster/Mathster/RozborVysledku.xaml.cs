@@ -23,6 +23,11 @@ namespace Mathster
             ReseniNadLabel.Text = AppResource.SpravneReseni;
             NadSpatnaOdpovedLabel.Text = AppResource.VaseReseni;
             NadZadaniLabel.Text = AppResource.Zadani;
+            CasStaticLabel.Text = AppResource.CasPocitani;
+            
+            long sec = fronta[id].DelkaPocitani / TimeSpan.TicksPerSecond, min = sec / 60;
+            sec = sec - min * 60;
+            CasLabel.Text = $"{min}min {sec}s";
 
             if (fronta[id].PrvniCislo >= 10000)
             {

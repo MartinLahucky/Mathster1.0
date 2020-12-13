@@ -70,6 +70,15 @@ namespace Mathster.Helpers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Counting time:.
+        /// </summary>
+        internal static string CasPocitani {
+            get {
+                return ResourceManager.GetString("CasPocitani", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Total.
         /// </summary>
         internal static string Celkem {
