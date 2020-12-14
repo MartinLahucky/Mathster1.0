@@ -7,7 +7,7 @@ namespace Mathster.Resources.Database_Models
     {
         [PrimaryKey]
         public int ID { get; set; }
-        [MaxLength(25)]
+        [MaxLength(12)]
         public string Jmeno { get; set; }
         public int Experience { get; set; }
         public int CelkemPrikladu { get; set; }

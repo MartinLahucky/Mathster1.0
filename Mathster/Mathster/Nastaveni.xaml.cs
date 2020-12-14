@@ -88,5 +88,13 @@ namespace Mathster
             tabulka.Jmeno = JmenoEntry.Text;
             await App.Database.UpdateTable(tabulka);
         }
+
+        private void JmenoEntry_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (JmenoEntry.Text.Length == 12)
+            {
+                JmenoEntry.Text = e.OldTextValue;
+            }
+        }
     }
 }
