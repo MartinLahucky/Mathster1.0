@@ -61,7 +61,8 @@
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name= "nazev3Label" StyleClass="NastaveniPrikladuNazevLabel" VerticalOptions="CenterAndExpand"/>
                                 <Frame x:Name="Frame3" StyleClass="NastaveniPrikladuFrame" HorizontalOptions="EndAndExpand">
-                                    <Label x:Name="velikostDeliteleLabel" FontSize="29" StyleClass="NastaveniPrikladuLabel" VerticalOptions="Center" HorizontalOptions="Center" />
+                                    <!-- TODO Velikost čísla je na řádky na vštších displayích -->
+                                    <Label x:Name="velikostDeliteleLabel" StyleClass="NastaveniPrikladuLabel" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
                                 </Frame>
                             </StackLayout>
                             <Slider x:Name="velikostDeliteleSlider" 
