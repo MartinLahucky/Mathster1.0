@@ -48,7 +48,7 @@ namespace Mathster
             {
                 bool spravne = true;
                 priklady.Add(new Vysledek(priklad.VratPriklad(), tabulkaNastaveni));
-                if (priklad.PrvniCislo >= 1000 || priklad.UzivateluvVstup >= 1000)
+                if (priklad.PrvniCislo >= 100 && priklad.UzivateluvVstup >= 1000 || priklad.PrvniCislo >= 10000 || priklad.UzivateluvVstup >= 10000)
                 {
                     VysledkyList.RowHeight = 80;
                 }
