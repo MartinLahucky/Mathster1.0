@@ -175,6 +175,7 @@ namespace Mathster
         
         private void VysledekInput_OnTextChanged(object sender, TextChangedEventArgs e)
         {
+            // I have no idea what I'm doing 
             // Vytvoření listu s číslem a navigace v daném čísle 
             List<string> cislo = new List<string>();
             string cisloText = VysledekInput.Text;
