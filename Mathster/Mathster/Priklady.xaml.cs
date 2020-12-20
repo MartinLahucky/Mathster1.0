@@ -16,6 +16,7 @@ namespace Mathster
         private byte ID;
         private List<Priklad> fronta;
         private bool podsebe;
+        private bool podsebeUpraveno;
         private long casZahajeni;
         public Priklady(byte id, List<Priklad> fronta)
         {
@@ -174,56 +175,77 @@ namespace Mathster
         
         private void VysledekInput_OnTextChanged(object sender, TextChangedEventArgs e)
         {
+            // Vytvoření listu s číslem a navigace v daném čísle 
             List<string> cislo = new List<string>();
-            
             string cisloText = VysledekInput.Text;
-            
-            for (int i = 0; i < cisloText.Length; i++)
+            // Kontrola, zda není číslo náhodou prázdné
+            if (VysledekInput.Text == "")
             {
-                cislo.Add(cisloText[i].ToString());
-            }
-            try
-            {
-                switch (podsebe)
-                {
-                    case true:
-                        if (VysledekInput.Text == "")
-                        {
-                            VysledekPropisInput.Text = String.Empty;
-                        }
-                        else if (cislo[0] == "-")
-                        {
-                            cislo.Remove("-");
-                            cislo.Add("-");
-                        }
-                        
-                        VysledekPropisInput.Text = cislo[cislo.Count - 1];
-
-                        if (cislo.Count != 1)
-                        {
-                            for (int i = cislo.Count - 2; i >= 0; i--)
-                            {
-                                VysledekPropisInput.Text += cislo[i];
-                            }
-                        }
-                        break;
-                    
-                    case false:
-                        VysledekPropisInput.Text = cislo[0];
-                        if (cislo.Count != 1)
-                        {
-                            for (int i = 1; i < cisloText.Length; i++)
-                            {
-                                VysledekPropisInput.Text += cislo[i];
-                            }
-                        }
-                        break;
-                }
-            }
-            catch
-            {
+                podsebeUpraveno = false;
                 VysledekPropisInput.Text = String.Empty;
-                VysledekInput.Text = String.Empty;
+            }
+            else
+            {
+                try
+                {
+                    switch (podsebe)
+                    {
+                        case true:
+                            // Načtení zprávného čísla
+                            for (int i = 0; i < cisloText.Length; i++)
+                            {
+                                cislo.Add(cisloText[i].ToString());
+                            }
+                            // Pokud je číslo záporné, uprav mínus
+                            if (cislo[0] == "-")
+                            {
+                                cislo.Remove("-");
+                                cislo.Add("-");
+                            }
+                            // Výpis první číslice 
+                            VysledekPropisInput.Text = cislo[cislo.Count - 1];
+                            // Výpis zbytku čísla, pokud je delší než jeden znak 
+                            if (cislo.Count != 1)
+                            {
+                                for (int i = cislo.Count - 2; i >= 0; i--)
+                                {
+                                    VysledekPropisInput.Text += cislo[i];
+                                }
+                            }
+                            podsebeUpraveno = true;
+                            break;
+                    
+                        case false:
+                            // Zamezení převracení čísla při změně režimů
+                            if (podsebeUpraveno)
+                            {
+                                // Přidání posledního nevého znaku e.NewTextValue[e.NewTextValue.Length -1]
+                                cisloText = VysledekPropisInput.Text + e.NewTextValue[e.NewTextValue.Length -1];
+                                VysledekInput.Text = cisloText;
+                                podsebeUpraveno = false;
+                            }
+                            // Načtení správného tvaru čísla 
+                            for (int i = 0; i < cisloText.Length; i++)
+                            {
+                                cislo.Add(cisloText[i].ToString());
+                            }
+                            // Opět výpis, který nechápu jak funguje 
+                            VysledekPropisInput.Text = cislo[0];
+                            if (cislo.Count != 1)
+                            {
+                                for (int i = 1; i < cisloText.Length; i++)
+                                {
+                                    VysledekPropisInput.Text += cislo[i];
+                                }
+                            }
+                            break;
+                    }
+                }
+                catch
+                {
+                    VysledekPropisInput.Text = String.Empty;
+                    VysledekInput.Text = String.Empty;
+                }
             }
         }
     }
