@@ -35,7 +35,7 @@ namespace Mathster
                 }
             });
             Task.WaitAll(task);
-            OAplikaciVerze.Text = AppResource.OAplikaciVerze + "Public Preview";
+            OAplikaciVerze.Text = AppResource.OAplikaciVerze + "Public Preview 1.2";
         }
         private async void DarkModeSwitch_Toggled(object sender, ToggledEventArgs e)
         {
@@ -85,7 +85,17 @@ namespace Mathster
             base.OnDisappearing();
         
             DBModel tabulka = await App.Database.GetTable();
-            tabulka.Jmeno = JmenoEntry.Text;
+            string newName = String.Empty;
+            int delkaSlova = 12;
+            if (JmenoEntry.Text.Length <= 12)
+            {
+                delkaSlova = JmenoEntry.Text.Length;
+            }
+            for (int i = 0; i < delkaSlova; i++)
+            {
+                newName += JmenoEntry.Text[i];
+            }
+            tabulka.Jmeno = newName;
             await App.Database.UpdateTable(tabulka);
         }
 
