@@ -87,7 +87,7 @@ namespace Mathster
             DBModel tabulka = await App.Database.GetTable();
             string newName = String.Empty;
             int delkaSlova = 12;
-            if (JmenoEntry.Text.Length <= 12)
+            if (JmenoEntry.Text.Length <= delkaSlova)
             {
                 delkaSlova = JmenoEntry.Text.Length;
             }
