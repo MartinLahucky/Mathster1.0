@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Mathster.Resources.Localization;
 using Mathster.Resources.Database_Models;
 using Mathster.Resources.Helpers;
+using Mathster.Resources.Localization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,6 +16,7 @@ namespace Mathster
         private List<Priklad> fronta;
         private List<Priklad> frontaVse;
         private bool potvrzeniZapisu;
+
         public RozborVysledku(byte id, List<Priklad> fronta, List<Priklad> frontaVse, bool potvrzeniZapisu)
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace Mathster
             NadSpatnaOdpovedLabel.Text = AppResource.VaseReseni;
             NadZadaniLabel.Text = AppResource.Zadani;
             CasStaticLabel.Text = AppResource.CasPocitani;
-            
+
             long sec = fronta[id].DelkaPocitani / TimeSpan.TicksPerSecond, min = sec / 60;
             sec = sec - min * 60;
             CasLabel.Text = $"{min}min {sec}s";
@@ -35,6 +36,7 @@ namespace Mathster
                 SpatnaOdpovedLabel.HeightRequest = 75;
                 ReseniLabel.HeightRequest = 75;
             }
+
             switch (fronta[id].DruhPrikladu)
             {
                 case 1:
@@ -47,6 +49,7 @@ namespace Mathster
                         NadSpatnaOdpovedLabel.IsVisible = false;
                         SpatneFrame.IsVisible = false;
                     }
+
                     break;
                 case 2:
                     ZadaniLabel.Text =
@@ -58,6 +61,7 @@ namespace Mathster
                         NadSpatnaOdpovedLabel.IsVisible = false;
                         SpatneFrame.IsVisible = false;
                     }
+
                     break;
                 case 3:
                     ZadaniLabel.Text =
@@ -69,6 +73,7 @@ namespace Mathster
                         NadSpatnaOdpovedLabel.IsVisible = false;
                         SpatneFrame.IsVisible = false;
                     }
+
                     break;
                 case 4:
                     ZadaniLabel.Text =
@@ -80,8 +85,10 @@ namespace Mathster
                         NadSpatnaOdpovedLabel.IsVisible = false;
                         SpatneFrame.IsVisible = false;
                     }
+
                     break;
             }
+
             this.fronta = fronta;
             this.frontaVse = frontaVse;
             this.potvrzeniZapisu = potvrzeniZapisu;
@@ -90,6 +97,7 @@ namespace Mathster
             {
                 DalsiPrikladButton.IsVisible = false;
             }
+
             if (id == 0)
             {
                 PredchoziPrikladButton.IsVisible = false;
@@ -128,14 +136,15 @@ namespace Mathster
             ID--;
             await Navigation.PushAsync(new RozborVysledku(ID, fronta, frontaVse, potvrzeniZapisu));
         }
+
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Menu());
             var existingPages = Navigation.NavigationStack.ToList();
-            foreach(var page in existingPages)
+            foreach (var page in existingPages)
             {
                 Navigation.RemovePage(page);
-            } 
+            }
         }
-    }  
+    }
 }

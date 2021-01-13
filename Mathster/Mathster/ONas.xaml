@@ -4,27 +4,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mathster.ONas">
     <ContentPage.Resources>
-        <StyleSheet Source="Resources/Styles/Komponenty.css"/>
+        <StyleSheet Source="Resources/Styles/Komponenty.css" />
     </ContentPage.Resources>
-    
+
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="MenuToolbarButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
         <ScrollView x:Name="View">
-            <StackLayout x:Name="SecondLayer" VerticalOptions="Center" >
-                <StackLayout >
-                    <Frame x:Name="InfoFrame1" Margin="30,20,30,20" HasShadow="False" CornerRadius="15" StyleClass="FrameTmaveFialova" >
+            <StackLayout x:Name="SecondLayer" VerticalOptions="Center">
+                <StackLayout>
+                    <Frame x:Name="InfoFrame1" Margin="30,20,30,20" HasShadow="False" CornerRadius="15"
+                           StyleClass="FrameTmaveFialova">
                         <StackLayout>
-                            <Label x:Name="ONasStaticLabel" Margin="0,0,0,10" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
-                            <Label x:Name="ONasLabel" VerticalTextAlignment="Center" FontSize="15" HorizontalTextAlignment="Center" />
+                            <Label x:Name="ONasStaticLabel" Margin="0,0,0,10" FontSize="20"
+                                   VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            <Label x:Name="ONasLabel" VerticalTextAlignment="Center" FontSize="15"
+                                   HorizontalTextAlignment="Center" />
                         </StackLayout>
                     </Frame>
-                    <Frame x:Name="InfoFrame2" Margin="30,20,30,0" HasShadow="False" CornerRadius="15" StyleClass="FrameTmaveFialova"   >
+                    <Frame x:Name="InfoFrame2" Margin="30,20,30,0" HasShadow="False" CornerRadius="15"
+                           StyleClass="FrameTmaveFialova">
                         <StackLayout>
-                            <Label x:Name="OAplikaciStaticLabel" Margin="0,0,0,10" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
-                            <Label x:Name="OAplikaciLabel" VerticalTextAlignment="Center" FontSize="15" HorizontalTextAlignment="Center" />
+                            <Label x:Name="OAplikaciStaticLabel" Margin="0,0,0,10" FontSize="20"
+                                   VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            <Label x:Name="OAplikaciLabel" VerticalTextAlignment="Center" FontSize="15"
+                                   HorizontalTextAlignment="Center" />
                         </StackLayout>
                     </Frame>
                 </StackLayout>

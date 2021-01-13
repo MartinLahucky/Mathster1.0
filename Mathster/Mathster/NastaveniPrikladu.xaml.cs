@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Mathster.Resources.Localization;
 using Mathster.Resources.Database_Models;
 using Mathster.Resources.Helpers;
+using Mathster.Resources.Localization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,13 +13,18 @@ namespace Mathster
     public partial class NastaveniPrikladu : ContentPage
     {
         private byte druhPrikladu;
+
         //  proměnné určující nastavení:
         //  (jsou nastavené na default hodnoty - ty které se zobrazí při zapnutí aplikace)
         private int pocetPrikladu = 5;
+
         private int maxPocetPrikladu = 20;
+
         //
         private int pocetCifer = 2;
+
         private int maxPocetCifer = 6;
+
         //
         private int velikostDelitele = 2;
         private int maxVelikostDelitele = 3;
@@ -33,22 +38,22 @@ namespace Mathster
             nazev2Label.Text = AppResource.VelikostCisel;
             nazev3Label.Text = AppResource.ZvolitNasobitelADelitel;
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
-            
+
             pocetPrikladuSlider.Value = pocetPrikladu;
             pocetPrikladuSlider.Maximum = maxPocetPrikladu;
             pocetPrikladuSlider.Minimum = 1;
             pocetPrikladuLabel.Text = pocetPrikladu.ToString();
-            
+
             pocetCiferSlider.Value = pocetCifer;
             pocetCiferSlider.Maximum = maxPocetCifer;
             pocetCiferSlider.Minimum = 1;
             pocetCiferLabel.Text = pocetCifer.ToString();
-            
+
             velikostDeliteleSlider.Value = velikostDelitele;
             velikostDeliteleSlider.Maximum = maxVelikostDelitele;
             velikostDeliteleSlider.Minimum = 1;
             velikostDeliteleSlider.IsEnabled = false;
-            
+
             switch (druhPrikladu)
             {
                 case 1:
@@ -70,6 +75,7 @@ namespace Mathster
                     break;
             }
         }
+
         protected async override void OnAppearing()
         {
             base.OnAppearing();
@@ -83,17 +89,18 @@ namespace Mathster
                 pocetPrikladuLabel.TextColor = Color.White;
                 pocetCiferLabel.TextColor = Color.White;
                 velikostDeliteleLabel.TextColor = Color.White;
-            } 
+            }
         }
+
         private void pocetPrikladu_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            pocetPrikladu = (int)pocetPrikladuSlider.Value;
+            pocetPrikladu = (int) pocetPrikladuSlider.Value;
             pocetPrikladuLabel.Text = pocetPrikladu.ToString();
         }
 
         private void pocetCiferSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            pocetCifer = (int)pocetCiferSlider.Value;
+            pocetCifer = (int) pocetCiferSlider.Value;
             if (pocetCifer == 1)
             {
                 velikostDeliteleSlider.Value = 1;
@@ -103,12 +110,13 @@ namespace Mathster
             {
                 velikostDeliteleSlider.IsEnabled = true;
             }
+
             pocetCiferLabel.Text = pocetCifer.ToString();
         }
 
         private void velikostDeliteleSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            velikostDelitele = (int)velikostDeliteleSlider.Value;
+            velikostDelitele = (int) velikostDeliteleSlider.Value;
             switch (velikostDelitele)
             {
                 case 1:
@@ -122,15 +130,16 @@ namespace Mathster
                     break;
             }
         }
+
         private async void DalsiButton_OnClicked(object sender, EventArgs e)
         {
             int minCisel;
             int maxCisel;
             byte minDeleniANasobeni = 2;
             byte maxDeleniANasobeni = 6;
-            byte pocetPrikladu = (byte)pocetPrikladuSlider.Value;
-            
-            switch ((int)pocetCiferSlider.Value)
+            byte pocetPrikladu = (byte) pocetPrikladuSlider.Value;
+
+            switch ((int) pocetCiferSlider.Value)
             {
                 case 1:
                     minCisel = 1;
@@ -161,10 +170,10 @@ namespace Mathster
                     maxCisel = 10;
                     break;
             }
-            
+
             if (druhPrikladu == 3 || druhPrikladu == 4 || druhPrikladu == 5)
             {
-                switch ((int)velikostDeliteleSlider.Value)
+                switch ((int) velikostDeliteleSlider.Value)
                 {
                     case 1:
                         minDeleniANasobeni = 2;
@@ -184,39 +193,45 @@ namespace Mathster
                         break;
                 }
             }
+
             List<Priklad> fronta = new List<Priklad>();
 
             if (druhPrikladu == 1 || druhPrikladu == 2)
             {
                 for (byte i = 0; i < pocetPrikladu; i++)
                 {
-                    fronta.Add(new Priklad().VygenerujPriklad(i, minCisel, maxCisel, druhPrikladu, minDeleniANasobeni, maxDeleniANasobeni));
+                    fronta.Add(new Priklad().VygenerujPriklad(i, minCisel, maxCisel, druhPrikladu, minDeleniANasobeni,
+                        maxDeleniANasobeni));
                 }
             }
             else if (druhPrikladu == 3 || druhPrikladu == 4)
             {
                 for (byte i = 0; i < pocetPrikladu; i++)
                 {
-                    fronta.Add(new Priklad().VygenerujPriklad(i, minCisel, maxCisel, druhPrikladu, minDeleniANasobeni, maxDeleniANasobeni));
+                    fronta.Add(new Priklad().VygenerujPriklad(i, minCisel, maxCisel, druhPrikladu, minDeleniANasobeni,
+                        maxDeleniANasobeni));
                 }
             }
             else
             {
                 for (byte i = 0; i < pocetPrikladu; i++)
                 {
-                    fronta.Add(new Priklad().VygenerujNahodnyPriklad(i, minCisel, maxCisel, minDeleniANasobeni, maxDeleniANasobeni));
+                    fronta.Add(new Priklad().VygenerujNahodnyPriklad(i, minCisel, maxCisel, minDeleniANasobeni,
+                        maxDeleniANasobeni));
                 }
             }
+
             await Navigation.PushAsync(new Priklady(0, fronta));
         }
+
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Menu());
             var existingPages = Navigation.NavigationStack.ToList();
-            foreach(var page in existingPages)
+            foreach (var page in existingPages)
             {
                 Navigation.RemovePage(page);
-            } 
+            }
         }
     }
-}     
+}

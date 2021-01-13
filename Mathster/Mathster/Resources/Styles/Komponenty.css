@@ -1,14 +1,13 @@
 ﻿/* color = TextColor */
-.PrikladLabel
-{
+.PrikladLabel {
     font-size: 30;
     text-align: center;
     width: 130;
     background-color: #7F7FFD;
     color: black;
 }
-.InfoLabel
-{
+
+.InfoLabel {
     font-size: 20;
     text-align: center;
     width: 130;
@@ -16,23 +15,20 @@
     color: black;
 }
 
-.SpatneNadLabel
-{
+.SpatneNadLabel {
     font-size: 15;
     text-align: center;
     background-color: #f36f16;
     color: black;
 }
 
-.SpatneLabel
-{
+.SpatneLabel {
     font-size: 30;
     text-align: center;
     background-color: #ffb54c;
 }
 
-.VysledekInput
-{
+.VysledekInput {
     font-size: 30;
     text-align: center;
     width: 130;
@@ -40,23 +36,21 @@
     color: black;
 }
 
-.TextBezPozadi
-{
+.TextBezPozadi {
     font-size: 30;
     width: 130;
-    color: black;  
+    color: black;
 }
 
-.Zelena
-{
+.Zelena {
     font-size: 15;
     text-align: center;
     background-color: #33a716;
     color: black;
 }
- /* dole plochá ↑ */
-.ZelenaNadpis
-{
+
+/* dole plochá ↑ */
+.ZelenaNadpis {
     font-size: 30;
     text-align: center;
     width: 130;
@@ -64,8 +58,7 @@
     color: black;
 }
 
-.CervenaNadpis
-{
+.CervenaNadpis {
     font-size: 30;
     text-align: center;
     width: 130;
@@ -73,63 +66,62 @@
     color: white;
 }
 
-.Tlacitka
-{
+.Tlacitka {
     font-size: 30;
     background-color: #4D4DFC;
     color: white;
 }
-.LevelButtonMenu
-{
+
+.LevelButtonMenu {
     font-size: 45;
     background-color: #7F7FFD;
     color: white;
 }
-.MenuTlacitka
-{
+
+.MenuTlacitka {
     font-size: 40;
     background-color: #4D4DFC;
     color: white;
 }
-.RestartButton
-{
+
+.RestartButton {
     font-size: 30;
     background-color: white;
     border-color: firebrick;
     color: firebrick;
 }
-.FrameTmaveFialova
-{
+
+.FrameTmaveFialova {
     border-color: #4D4DFC;
     background-color: #4D4DFC;
     color: white;
 }
-.MiniMenu
-{
+
+.MiniMenu {
     font-size: 30;
     -moz-outline-radius-bottomright: 30;
     -moz-outline-radius-topright: 30;
 }
-.NastaveniPrikladuLabel
-{
+
+.NastaveniPrikladuLabel {
     font-size: 30;
     color: #4D4DFC;
 }
-.NastaveniPrikladuFrame
-{
+
+.NastaveniPrikladuFrame {
     border-radius: 30;
     color: white;
     margin: 5;
     width: 50;
 }
-.NastaveniPrikladuNazevLabel
-{
+
+.NastaveniPrikladuNazevLabel {
     font-size: 25;
     color: #ffffff;
     margin: 10;
 }
-.DalsiTlacitko
-{
+
+.DalsiTlacitko {
     background-color: #4D4DFC;
     font-size: 20;
     border-radius: 50;
@@ -137,14 +129,12 @@
     margin-right: 80;
 }
 
-.ZelenyNadpidLabel
-{
+.ZelenyNadpidLabel {
     color: #C9FF50;
     font-size: 25;
 }
 
-.FialovaNadpidLabel
-{
+.FialovaNadpidLabel {
     color: #4D4DFC;
     font-size: 30;
 }

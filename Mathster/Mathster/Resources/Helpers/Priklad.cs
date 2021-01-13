@@ -10,21 +10,24 @@ namespace Mathster.Resources.Helpers
         private float uzivateluvVstup;
         private byte druhPrikladu;
         private long delkaPocitani;
-        
+
         public Priklad(int prvniCislo, int druheCislo, byte druhPrikladu)
         {
             this.prvniCislo = prvniCislo;
             this.druheCislo = druheCislo;
             this.druhPrikladu = druhPrikladu;
         }
-        public Priklad() { }
+
+        public Priklad()
+        {
+        }
 
         public byte Id
         {
             get => ID;
             private set => ID = value;
         }
-        
+
         public int PrvniCislo
         {
             get => prvniCislo;
@@ -47,14 +50,16 @@ namespace Mathster.Resources.Helpers
         {
             get => druhPrikladu;
             private set => druhPrikladu = value;
-        }  
-        
+        }
+
         public long DelkaPocitani
-         {
-             get => delkaPocitani;
-             set => delkaPocitani = value;
-         }
-        public Priklad VygenerujPriklad(byte id, int minCisel, int maxCisel, byte druhPrikladu, int minDeleniANasobeni = 2, int maxDeleniANasobeni = 6)
+        {
+            get => delkaPocitani;
+            set => delkaPocitani = value;
+        }
+
+        public Priklad VygenerujPriklad(byte id, int minCisel, int maxCisel, byte druhPrikladu,
+            int minDeleniANasobeni = 2, int maxDeleniANasobeni = 6)
         {
             Random random = new Random();
             Priklad priklad = null;
@@ -75,27 +80,34 @@ namespace Mathster.Resources.Helpers
                 druheCislo = random.Next(minDeleniANasobeni, maxDeleniANasobeni);
                 while (prvniCislo % druheCislo != 0)
                 {
-                    prvniCislo = random.Next(minCisel, maxCisel);    
+                    prvniCislo = random.Next(minCisel, maxCisel);
                 }
+
                 priklad = new Priklad(prvniCislo, druheCislo, druhPrikladu);
             }
+
             priklad.Id = id;
             return priklad;
         }
+
         public int GetExperience(bool spravne)
         {
             if (spravne)
             {
                 return (druhPrikladu * (druhPrikladu / 4) + 1) * prvniCislo.ToString().Length * 20;
             }
+
             return druhPrikladu * (druhPrikladu / 4) + 1;
         }
-        public Priklad VygenerujNahodnyPriklad(byte id, int minCisel, int maxCisel, int minDeleniANasobeni = 2, int maxDeleniANasobeni = 6)
+
+        public Priklad VygenerujNahodnyPriklad(byte id, int minCisel, int maxCisel, int minDeleniANasobeni = 2,
+            int maxDeleniANasobeni = 6)
         {
             Random random = new Random();
             druhPrikladu = Byte.Parse(random.Next(1, 5).ToString());
-            return VygenerujPriklad(id, minCisel, maxCisel,  druhPrikladu, minDeleniANasobeni, maxDeleniANasobeni);
+            return VygenerujPriklad(id, minCisel, maxCisel, druhPrikladu, minDeleniANasobeni, maxDeleniANasobeni);
         }
+
         public int VratVysledek()
         {
             switch (druhPrikladu)
@@ -112,6 +124,7 @@ namespace Mathster.Resources.Helpers
                     return 0;
             }
         }
+
         public string VratPriklad()
         {
             if (PrvniCislo >= 10000 || DruheCislo >= 10000 || UzivateluvVstup >= 10000)
@@ -130,6 +143,7 @@ namespace Mathster.Resources.Helpers
                         return "";
                 }
             }
+
             switch (DruhPrikladu)
             {
                 case 1:
@@ -143,6 +157,6 @@ namespace Mathster.Resources.Helpers
                 default:
                     return "";
             }
-        } 
+        }
     }
 }

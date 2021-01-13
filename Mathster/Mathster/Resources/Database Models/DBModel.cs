@@ -5,10 +5,8 @@ namespace Mathster.Resources.Database_Models
 {
     public class DBModel
     {
-        [PrimaryKey]
-        public int ID { get; set; }
-        [MaxLength(12)]
-        public string Jmeno { get; set; }
+        [PrimaryKey] public int ID { get; set; }
+        [MaxLength(12)] public string Jmeno { get; set; }
         public int Experience { get; set; }
         public int CelkemPrikladu { get; set; }
         public int CelkemScitani { get; set; }
@@ -20,6 +18,7 @@ namespace Mathster.Resources.Database_Models
         public int CelkemDeleni { get; set; }
         public int CelkemDeleniSpravne { get; set; }
         public int CelkemPrikladuSpravne { get; set; }
+
         public void GetLevel(out int level, out double progres, DBModel tabulka)
         {
             level = (int) Math.Sqrt(tabulka.Experience) / 20;
@@ -43,9 +42,11 @@ namespace Mathster.Resources.Database_Models
                     tabulka.CelkemDeleniSpravne++;
                     break;
             }
+
             tabulka.CelkemPrikladuSpravne++;
             AddStats(druhPrikladu, tabulka);
         }
+
         public void AddStats(byte druhPrikladu, DBModel tabulka)
         {
             switch (druhPrikladu)
@@ -63,6 +64,7 @@ namespace Mathster.Resources.Database_Models
                     tabulka.CelkemDeleni++;
                     break;
             }
+
             tabulka.CelkemPrikladu++;
         }
     }

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Mathster.Resources.Localization;
 using Mathster.Resources.Database_Models;
+using Mathster.Resources.Localization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,7 +20,7 @@ namespace Mathster
             JmenoLabel.Text = AppResource.Jmeno;
             JmenoEntry.PlaceholderColor = Color.White;
             DarkModeLabel.Text = AppResource.DarkMode;
-            
+
             Task task = Task.Run(async () =>
             {
                 DBModel cteni = await App.Database.GetTable();
@@ -37,11 +37,12 @@ namespace Mathster
             Task.WaitAll(task);
             OAplikaciVerze.Text = AppResource.OAplikaciVerze + "Public Preview 1.2";
         }
+
         private async void DarkModeSwitch_Toggled(object sender, ToggledEventArgs e)
         {
             SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
-            
-            if(e.Value)
+
+            if (e.Value)
             {
                 tabulkaNastaveni.BackgroundHex = "#262630";
                 tabulkaNastaveni.DarkMode = true;
@@ -53,9 +54,11 @@ namespace Mathster
                 tabulkaNastaveni.DarkMode = false;
                 OAplikaciVerze.TextColor = Color.Default;
             }
+
             BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
             await App.Database.UpdateSettings(tabulkaNastaveni);
         }
+
         protected async override void OnAppearing()
         {
             base.OnAppearing();
@@ -67,6 +70,7 @@ namespace Mathster
                 OAplikaciVerze.TextColor = Color.White;
             }
         }
+
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
             DBModel tabulka = await App.Database.GetTable();
@@ -74,16 +78,16 @@ namespace Mathster
             await App.Database.UpdateTable(tabulka);
             await Navigation.PushAsync(new Menu());
             var existingPages = Navigation.NavigationStack.ToList();
-            foreach(var page in existingPages)
+            foreach (var page in existingPages)
             {
                 Navigation.RemovePage(page);
-            } 
+            }
         }
 
         protected async override void OnDisappearing()
         {
             base.OnDisappearing();
-        
+
             DBModel tabulka = await App.Database.GetTable();
             string newName = String.Empty;
             int delkaSlova = 12;
@@ -91,10 +95,12 @@ namespace Mathster
             {
                 delkaSlova = JmenoEntry.Text.Length;
             }
+
             for (int i = 0; i < delkaSlova; i++)
             {
                 newName += JmenoEntry.Text[i];
             }
+
             tabulka.Jmeno = newName;
             await App.Database.UpdateTable(tabulka);
         }

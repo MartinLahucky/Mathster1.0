@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Mathster.Resources.Localization;
 using Mathster.Resources.Database_Models;
 using Mathster.Resources.Helpers;
+using Mathster.Resources.Localization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,6 +18,7 @@ namespace Mathster
         private bool podsebe;
         private bool podsebeUpraveno;
         private long casZahajeni;
+
         public Priklady(byte id, List<Priklad> fronta)
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace Mathster
             VysledekPropisInput.Text = String.Empty;
             VysledekInput.Text = String.Empty;
             casZahajeni = DateTime.UtcNow.Ticks;
-            
+
             priklad = fronta[id];
 
             switch (priklad.DruhPrikladu)
@@ -49,9 +50,10 @@ namespace Mathster
                     PrikladLabel.Text = $"{priklad.PrvniCislo} ÷ {priklad.DruheCislo} = ";
                     break;
             }
+
             this.fronta = fronta;
             ID = id;
-            
+
             if (id < fronta.Count - 1)
             {
                 OdvezdatButton.IsVisible = false;
@@ -61,7 +63,7 @@ namespace Mathster
                 DalsiButton.IsVisible = false;
             }
         }
-        
+
         private async void OdvezdatButton_OnClicked(object sender, EventArgs e)
         {
             try
@@ -70,7 +72,7 @@ namespace Mathster
                 fronta[ID].DelkaPocitani = DateTime.UtcNow.Ticks - casZahajeni;
                 await Navigation.PushAsync(new Souhrn(fronta, false));
                 var existingPages = Navigation.NavigationStack.ToList();
-                foreach(var page in existingPages)
+                foreach (var page in existingPages)
                 {
                     Navigation.RemovePage(page);
                 }
@@ -91,7 +93,7 @@ namespace Mathster
                 ID++;
                 await Navigation.PushAsync(new Priklady(ID, fronta));
                 var existingPages = Navigation.NavigationStack.ToList();
-                foreach(var page in existingPages)
+                foreach (var page in existingPages)
                 {
                     Navigation.RemovePage(page);
                 }
@@ -102,9 +104,10 @@ namespace Mathster
                 await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniZadejteCislo, AppResource.Ok);
             }
         }
+
         protected async override void OnAppearing()
         {
-            base.OnAppearing ();
+            base.OnAppearing();
             SettingsModel tabulkaNastaveni = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(tabulkaNastaveni.BackgroundHex);
             VysledekInput.Focus();
@@ -136,6 +139,7 @@ namespace Mathster
                             PrikladLabel.Text = $"{priklad.PrvniCislo}\n—\n{priklad.DruheCislo}";
                             break;
                     }
+
                     VysledekInput.FlowDirection = FlowDirection.RightToLeft;
                     podsebe = true;
                     break;
@@ -156,10 +160,12 @@ namespace Mathster
                             PrikladLabel.Text = $"{priklad.PrvniCislo} ÷ {priklad.DruheCislo} = ";
                             break;
                     }
+
                     VysledekInput.FlowDirection = FlowDirection.LeftToRight;
                     podsebe = false;
                     break;
             }
+
             VysledekInput.Focus();
         }
 
@@ -167,12 +173,12 @@ namespace Mathster
         {
             await Navigation.PushAsync(new Menu());
             var existingPages = Navigation.NavigationStack.ToList();
-            foreach(var page in existingPages)
+            foreach (var page in existingPages)
             {
                 Navigation.RemovePage(page);
-            } 
+            }
         }
-        
+
         private void VysledekInput_OnTextChanged(object sender, TextChangedEventArgs e)
         {
             // I have no idea what I'm doing 
@@ -197,12 +203,14 @@ namespace Mathster
                             {
                                 cislo.Add(cisloText[i].ToString());
                             }
+
                             // Pokud je číslo záporné, uprav mínus
                             if (cislo[0] == "-")
                             {
                                 cislo.Remove("-");
                                 cislo.Add("-");
                             }
+
                             // Výpis první číslice 
                             VysledekPropisInput.Text = cislo[cislo.Count - 1];
                             // Výpis zbytku čísla, pokud je delší než jeden znak 
@@ -213,23 +221,26 @@ namespace Mathster
                                     VysledekPropisInput.Text += cislo[i];
                                 }
                             }
+
                             podsebeUpraveno = true;
                             break;
-                    
+
                         case false:
                             // Zamezení převracení čísla při změně režimů
                             if (podsebeUpraveno)
                             {
                                 // Přidání posledního nevého znaku e.NewTextValue[e.NewTextValue.Length -1]
-                                cisloText = VysledekPropisInput.Text + e.NewTextValue[e.NewTextValue.Length -1];
+                                cisloText = VysledekPropisInput.Text + e.NewTextValue[e.NewTextValue.Length - 1];
                                 VysledekInput.Text = cisloText;
                                 podsebeUpraveno = false;
                             }
+
                             // Načtení správného tvaru čísla 
                             for (int i = 0; i < cisloText.Length; i++)
                             {
                                 cislo.Add(cisloText[i].ToString());
                             }
+
                             // Opět výpis, který nechápu jak funguje 
                             VysledekPropisInput.Text = cislo[0];
                             if (cislo.Count != 1)
@@ -239,6 +250,7 @@ namespace Mathster
                                     VysledekPropisInput.Text += cislo[i];
                                 }
                             }
+
                             break;
                     }
                 }

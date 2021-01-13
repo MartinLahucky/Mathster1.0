@@ -4,67 +4,85 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mathster.RozborVysledku">
     <ContentPage.Resources>
-        <StyleSheet Source="Resources/Styles/Komponenty.css"/>
+        <StyleSheet Source="Resources/Styles/Komponenty.css" />
     </ContentPage.Resources>
-    
+
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="MenuToolbarButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
         <StackLayout x:Name="MainLayout" Margin="20,20,20,10">
             <ScrollView x:Name="View">
                 <StackLayout>
                     <Frame CornerRadius="30" Padding="0" Margin="0,0,0,10" HasShadow="False" BackgroundColor="#4d4dfc">
                         <StackLayout>
-                            <Frame CornerRadius="30" Padding="0" Margin="0,0,0,-10" HasShadow="False" BackgroundColor="#4d4dfc">
+                            <Frame CornerRadius="30" Padding="0" Margin="0,0,0,-10" HasShadow="False"
+                                   BackgroundColor="#4d4dfc">
                                 <StackLayout Orientation="Horizontal">
-                                    <Label x:Name="CasStaticLabel" BackgroundColor="Transparent" FontSize="22" Margin="10" Padding="20,0,0,0" VerticalTextAlignment="Center" TextColor="White"/>
-                                    <Label x:Name="CasLabel" TextColor="#C9FF50" FontSize="22" VerticalOptions="Center"  Padding="5,5" /> 
-                                </StackLayout> 
+                                    <Label x:Name="CasStaticLabel" BackgroundColor="Transparent" FontSize="22"
+                                           Margin="10" Padding="20,0,0,0" VerticalTextAlignment="Center"
+                                           TextColor="White" />
+                                    <Label x:Name="CasLabel" TextColor="#C9FF50" FontSize="22" VerticalOptions="Center"
+                                           Padding="5,5" />
+                                </StackLayout>
                             </Frame>
-                            
-                            <Label x:Name="NadZadaniLabel" BackgroundColor="Transparent" FontSize="25" Margin="10" Padding="20,0" VerticalTextAlignment="Center" TextColor="White"/>
+
+                            <Label x:Name="NadZadaniLabel" BackgroundColor="Transparent" FontSize="25" Margin="10"
+                                   Padding="20,0" VerticalTextAlignment="Center" TextColor="White" />
                             <Frame x:Name="ZadaniLabelFrame" CornerRadius="30" Margin="20,0,20,20" Padding="0">
-                               <Label x:Name="ZadaniLabel" TextColor="Black" FontSize="30" VerticalOptions="Center" Padding="20,5" /> 
+                                <Label x:Name="ZadaniLabel" TextColor="Black" FontSize="30" VerticalOptions="Center"
+                                       Padding="20,5" />
                             </Frame>
-                        </StackLayout> 
-                    </Frame>      
-                    
+                        </StackLayout>
+                    </Frame>
+
                     <Frame CornerRadius="30" Padding="0" Margin="0,30,0,10" HasShadow="False" BackgroundColor="#4d4dfc">
                         <StackLayout>
-                            <Label x:Name="NadSpatnaOdpovedLabel" BackgroundColor="Transparent" FontSize="25" Margin="10" Padding="20,0" VerticalTextAlignment="Center" TextColor="White"/>
+                            <Label x:Name="NadSpatnaOdpovedLabel" BackgroundColor="Transparent" FontSize="25"
+                                   Margin="10" Padding="20,0" VerticalTextAlignment="Center" TextColor="White" />
                             <Frame x:Name="SpatneFrame" CornerRadius="30" Margin="20,0,20,0" Padding="0">
                                 <StackLayout x:Name="SpatnaOdpovedLayout" Orientation="Horizontal" Padding="0">
                                     <StackLayout BackgroundColor="#7F7FFD" Padding="0" Margin="0">
-                                        <Image VerticalOptions="CenterAndExpand" Source="spatne_ikona.png" Margin="15,0"/> 
+                                        <Image VerticalOptions="CenterAndExpand" Source="spatne_ikona.png"
+                                               Margin="15,0" />
                                     </StackLayout>
-                                    <Label x:Name="SpatnaOdpovedLabel" TextColor="Black" FontSize="30" VerticalOptions="Center" VerticalTextAlignment="Center" Padding="5" />
+                                    <Label x:Name="SpatnaOdpovedLabel" TextColor="Black" FontSize="30"
+                                           VerticalOptions="Center" VerticalTextAlignment="Center" Padding="5" />
                                 </StackLayout>
                             </Frame>
-                            
-                            <Label x:Name="ReseniNadLabel" BackgroundColor="Transparent" FontSize="25" Margin="10" Padding="20,0" VerticalTextAlignment="Center" TextColor="White"/>
+
+                            <Label x:Name="ReseniNadLabel" BackgroundColor="Transparent" FontSize="25" Margin="10"
+                                   Padding="20,0" VerticalTextAlignment="Center" TextColor="White" />
                             <Frame CornerRadius="30" Margin="20,0,20,20" Padding="0">
                                 <StackLayout x:Name="ReseniLabelLayout" Orientation="Horizontal" Padding="0" Margin="0">
                                     <StackLayout BackgroundColor="#7F7FFD" Padding="0" Margin="0">
-                                        <Image VerticalOptions="CenterAndExpand" Source="dobre_ikona.png" Margin="15,0"/> 
+                                        <Image VerticalOptions="CenterAndExpand" Source="dobre_ikona.png" Margin="15,0" />
                                     </StackLayout>
-                                    <Label x:Name="ReseniLabel" TextColor="Black" FontSize="30" VerticalOptions="Center" VerticalTextAlignment="Center" Padding="5" />
+                                    <Label x:Name="ReseniLabel" TextColor="Black" FontSize="30"
+                                           VerticalOptions="Center" VerticalTextAlignment="Center" Padding="5" />
                                 </StackLayout>
                             </Frame>
                         </StackLayout>
-                    </Frame> 
+                    </Frame>
                 </StackLayout>
-            </ScrollView>  
+            </ScrollView>
             <Grid VerticalOptions="EndAndExpand" HeightRequest="80">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <ImageButton Grid.Column="0" x:Name="PredchoziPrikladButton" Source="sipka_vlevo.png" Margin="30,0" Clicked="PredchoziPrikladButton_OnClicked" BackgroundColor="Transparent" HorizontalOptions="StartAndExpand" />
-                <ImageButton Grid.Column="1" Padding="18,18,19,18" StyleClass="MenuTlacitka" Aspect="AspectFit" CornerRadius="40" HeightRequest="70" WidthRequest="70" Source="seznam_ikona.png" Clicked="PrehledButton_OnClicked" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                <ImageButton Grid.Column="2" x:Name="DalsiPrikladButton" Source="sipka_vpravo.png" Margin="30,0" Clicked="DalsiPrikladButton_OnClicked" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"/>
+                <ImageButton Grid.Column="0" x:Name="PredchoziPrikladButton" Source="sipka_vlevo.png" Margin="30,0"
+                             Clicked="PredchoziPrikladButton_OnClicked" BackgroundColor="Transparent"
+                             HorizontalOptions="StartAndExpand" />
+                <ImageButton Grid.Column="1" Padding="18,18,19,18" StyleClass="MenuTlacitka" Aspect="AspectFit"
+                             CornerRadius="40" HeightRequest="70" WidthRequest="70" Source="seznam_ikona.png"
+                             Clicked="PrehledButton_OnClicked" HorizontalOptions="CenterAndExpand"
+                             VerticalOptions="CenterAndExpand" />
+                <ImageButton Grid.Column="2" x:Name="DalsiPrikladButton" Source="sipka_vpravo.png" Margin="30,0"
+                             Clicked="DalsiPrikladButton_OnClicked" BackgroundColor="Transparent"
+                             HorizontalOptions="EndAndExpand" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>

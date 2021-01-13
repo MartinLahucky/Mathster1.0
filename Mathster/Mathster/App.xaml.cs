@@ -19,10 +19,11 @@ namespace Mathster
                 {
                     database = new DatabaseController();
                 }
+
                 return database;
             }
         }
-        
+
         public App(string databaseLocation)
         {
             InitializeComponent();
@@ -32,15 +33,18 @@ namespace Mathster
             };
             DatabaseLocation = databaseLocation;
         }
+
         protected override void OnStart()
         {
             // Handle when your app starts
         }
+
         protected override void OnSleep()
         {
             // Handle when your app sleeps
         }
-        protected override void OnResume() 
+
+        protected override void OnResume()
         {
             // Handle when your app resumes
         }

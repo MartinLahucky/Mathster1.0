@@ -1,7 +1,7 @@
 ﻿using System;
-using Mathster.Resources.Localization;
 using Mathster.Resources.Custom_UI;
 using Mathster.Resources.Database_Models;
+using Mathster.Resources.Localization;
 using SkiaSharp;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,6 +12,7 @@ namespace Mathster
     public partial class StatistikyGraf : ContentPage
     {
         private Circles graf;
+
         public StatistikyGraf(string Nadpis, int hodnotaSpravne, int hodnotaCelkem)
         {
             InitializeComponent();
@@ -34,8 +35,9 @@ namespace Mathster
             HodnotaLabel4.IsVisible = false;
             //SkiaSharp
             if (hodnotaCelkem == 0) hodnotaCelkem = 1;
-            graf = new Circles(180, (info) => new SKPoint((float)info.Width / 2, (float)info.Height / 2));
-            graf.DrawFullProgressBar(SkCanvasView1, "#7F7FFD", "#FCA54D", 40f, (float)hodnotaSpravne / (float)(hodnotaCelkem) * 100f, "#C9FF50");
+            graf = new Circles(180, (info) => new SKPoint((float) info.Width / 2, (float) info.Height / 2));
+            graf.DrawFullProgressBar(SkCanvasView1, "#7F7FFD", "#FCA54D", 40f,
+                (float) hodnotaSpravne / (float) (hodnotaCelkem) * 100f, "#C9FF50");
         }
 
         public StatistikyGraf(string Nadpis, int Scitani, int Odecitani, int Nasobeni, int Deleni)
@@ -59,8 +61,9 @@ namespace Mathster
             HodnotaLabel3.IsVisible = true;
             HodnotaLabel4.IsVisible = true;
             //SkiaSharp
-            graf = new Circles(180, (info) => new SKPoint((float)info.Width / 2, (float)info.Height / 2));
-            graf.DrawChart(SkCanvasView1, "#7F7FFD", "#FCA54D", 40f, Nasobeni, Deleni, Odecitani, Scitani + Odecitani + Nasobeni + Deleni, "#C9FF50", "#262630", "#FFFFFF");
+            graf = new Circles(180, (info) => new SKPoint((float) info.Width / 2, (float) info.Height / 2));
+            graf.DrawChart(SkCanvasView1, "#7F7FFD", "#FCA54D", 40f, Nasobeni, Deleni, Odecitani,
+                Scitani + Odecitani + Nasobeni + Deleni, "#C9FF50", "#262630", "#FFFFFF");
         }
 
         protected async override void OnAppearing()

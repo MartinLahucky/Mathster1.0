@@ -20,6 +20,7 @@ namespace Mathster.iOS
         {
             ShowAlert(message, LONG_DELAY);
         }
+
         public void ShortAlert(string message)
         {
             ShowAlert(message, SHORT_DELAY);
@@ -27,10 +28,7 @@ namespace Mathster.iOS
 
         void ShowAlert(string message, double seconds)
         {
-            alertDelay = NSTimer.CreateScheduledTimer(seconds, (obj) =>
-            {
-                dismissMessage();
-            });
+            alertDelay = NSTimer.CreateScheduledTimer(seconds, (obj) => { dismissMessage(); });
             alert = UIAlertController.Create(null, message, UIAlertControllerStyle.Alert);
             UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(alert, true, null);
         }
@@ -41,6 +39,7 @@ namespace Mathster.iOS
             {
                 alert.DismissViewController(true, null);
             }
+
             if (alertDelay != null)
             {
                 alertDelay.Dispose();

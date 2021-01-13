@@ -5,47 +5,54 @@
              xmlns:customUi="clr-namespace:Mathster.Resources.Custom_UI;assembly=Mathster"
              x:Class="Mathster.Priklady"
              NavigationPage.HasBackButton="False">
-    
+
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="PodSebeButton" Order="Primary" Priority="1" IconImageSource="podsebe.png" Clicked="PodSebeButton_OnClicked"/>
+        <ToolbarItem x:Name="PodSebeButton" Order="Primary" Priority="1" IconImageSource="podsebe.png"
+                     Clicked="PodSebeButton_OnClicked" />
         <ToolbarItem x:Name="MenuToolbarButton" Order="Primary" Priority="0" Clicked="MenuButton_OnClicked" />
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Resources>
-        <StyleSheet Source="Resources/Styles/Komponenty.css"/>
+        <StyleSheet Source="Resources/Styles/Komponenty.css" />
     </ContentPage.Resources>
-    
+
     <ContentPage.Content>
-        <StackLayout x:Name="MainLayout" >
+        <StackLayout x:Name="MainLayout">
             <ScrollView x:Name="View">
-                <StackLayout x:Name="SecondLayer"  VerticalOptions="Center"  Margin="60,30,60,0" >
-                    <Frame CornerRadius="15" StyleClass="PrikladLabel" Padding="0" Margin="0,60,0,30" HasShadow="False" >
+                <StackLayout x:Name="SecondLayer" VerticalOptions="Center" Margin="60,30,60,0">
+                    <Frame CornerRadius="15" StyleClass="PrikladLabel" Padding="0" Margin="0,60,0,30" HasShadow="False">
                         <StackLayout x:Name="PrikladLayout">
                             <Label x:Name="PrikladLabel" VerticalTextAlignment="Center" StyleClass="PrikladLabel" />
                         </StackLayout>
                     </Frame>
-                        
-                    <Frame CornerRadius="15" Padding="0" Margin="0,0,0,60" HasShadow="False" >
+
+                    <Frame CornerRadius="15" Padding="0" Margin="0,0,0,60" HasShadow="False">
                         <StackLayout x:Name="VysledekInputLayout">
-                            <Label x:Name="VysledekPropisInput" HeightRequest="60" Margin="0,0,0,-66" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" StyleClass="VysledekInput"/>
-                            <customUi:CS_Entry x:Name="VysledekInput" Keyboard="Numeric" FontSize="30" HeightRequest="60" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="Transparent" TextColor="Transparent" StyleClass=".TextBezPozadi" TextChanged="VysledekInput_OnTextChanged"/>
+                            <Label x:Name="VysledekPropisInput" HeightRequest="60" Margin="0,0,0,-66"
+                                   VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                                   StyleClass="VysledekInput" />
+                            <customUi:CS_Entry x:Name="VysledekInput" Keyboard="Numeric" FontSize="30"
+                                               HeightRequest="60" VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Center" BackgroundColor="Transparent"
+                                               TextColor="Transparent" StyleClass=".TextBezPozadi"
+                                               TextChanged="VysledekInput_OnTextChanged" />
                         </StackLayout>
                     </Frame>
-                    
-                     <Button x:Name="DalsiButton" 
-                                        Clicked="DalsiButton_OnClicked"
-                                        Margin="20,0,20,20" 
-                                        StyleClass="Tlacitka"
-                                        CornerRadius="30"
-                                        VerticalOptions="EndAndExpand"/>
-                                                    
-                                <Button x:Name="OdvezdatButton" 
-                                        Clicked="OdvezdatButton_OnClicked"
-                                        Margin="20,0,20,20" 
-                                        StyleClass="Tlacitka"
-                                        CornerRadius="30"
-                                        VerticalOptions="EndAndExpand"/>
-                    
+
+                    <Button x:Name="DalsiButton"
+                            Clicked="DalsiButton_OnClicked"
+                            Margin="20,0,20,20"
+                            StyleClass="Tlacitka"
+                            CornerRadius="30"
+                            VerticalOptions="EndAndExpand" />
+
+                    <Button x:Name="OdvezdatButton"
+                            Clicked="OdvezdatButton_OnClicked"
+                            Margin="20,0,20,20"
+                            StyleClass="Tlacitka"
+                            CornerRadius="30"
+                            VerticalOptions="EndAndExpand" />
+
                     <!-- <Button x:Name="DalsiButton" StyleClass="Tlacitka" CornerRadius="30" Margin="0,0,0,20" Clicked="DalsiButton_OnClicked" /> -->
                     <!-- <Button x:Name="OdvezdatButton" StyleClass="Tlacitka" CornerRadius="30" Margin="0,0,0,20" Clicked="OdvezdatButton_OnClicked" /> -->
                 </StackLayout>

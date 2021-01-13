@@ -8,7 +8,7 @@ using Environment = System.Environment;
 
 namespace Mathster.Android
 {
-    [Activity(Label = "Mathster", Icon = "@drawable/ikona",Theme = "@style/MainTheme.Splash", MainLauncher = true,
+    [Activity(Label = "Mathster", Icon = "@drawable/ikona", Theme = "@style/MainTheme.Splash", MainLauncher = true,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : FormsAppCompatActivity
     {
@@ -20,11 +20,13 @@ namespace Mathster.Android
 
             base.OnCreate(savedInstanceState);
             Forms.Init(this, savedInstanceState);
-            
+
             // Database Declaration
-            string fullPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "mathster_db.sqlite");
+            string fullPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal),
+                "mathster_db.sqlite");
             LoadApplication(new App(fullPath));
         }
+
         // //Double press pro exit 
         // private long lastPress;
         // public override void OnBackPressed()

@@ -6,66 +6,84 @@
              x:Class="Mathster.StatistikyGraf">
 
     <ContentPage.Resources>
-        <StyleSheet Source="Resources/Styles/Komponenty.css"/>
+        <StyleSheet Source="Resources/Styles/Komponenty.css" />
     </ContentPage.Resources>
-    
-        <ContentPage.Content>
+
+    <ContentPage.Content>
         <ScrollView>
             <StackLayout>
 
-                <Frame StyleClass="FrameTmaveFialova" Margin="30" CornerRadius="30" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Frame StyleClass="FrameTmaveFialova" Margin="30" CornerRadius="30" VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand">
                     <StackLayout>
-                        <Label x:Name="NadpisLabel" StyleClass="ZelenyNadpidLabel" HorizontalOptions="CenterAndExpand"/>
+                        <Label x:Name="NadpisLabel" StyleClass="ZelenyNadpidLabel" HorizontalOptions="CenterAndExpand" />
 
                         <Grid>
-                            <forms:SKCanvasView x:Name="SkCanvasView1" HeightRequest="160" WidthRequest="10" Margin="30" Grid.Column="0" Grid.Row="0" VerticalOptions="CenterAndExpand"/>
-                            <StackLayout Padding="45,20" HorizontalOptions="Center" Grid.Column="0"  Grid.Row="0" VerticalOptions="Center">
-                                <Label x:Name="celkovyPocetLabel" Text="1000" Margin="0" StyleClass="LevelButtonMenu" BackgroundColor="Transparent"/>
+                            <forms:SKCanvasView x:Name="SkCanvasView1" HeightRequest="160" WidthRequest="10"
+                                                Margin="30" Grid.Column="0" Grid.Row="0"
+                                                VerticalOptions="CenterAndExpand" />
+                            <StackLayout Padding="45,20" HorizontalOptions="Center" Grid.Column="0" Grid.Row="0"
+                                         VerticalOptions="Center">
+                                <Label x:Name="celkovyPocetLabel" Text="1000" Margin="0" StyleClass="LevelButtonMenu"
+                                       BackgroundColor="Transparent" />
                             </StackLayout>
                         </Grid>
-   
+
                         <Grid x:Name="PopisGrid">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
                             <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
-                                <Image x:Name="PopisImage1" Source="dobre_ikona.png"/>
-                                <Label x:Name="PopisLabel1" Text="+" TextColor="#FCA54D" FontSize="50" VerticalOptions="Center"/>
-                                <Frame x:Name="frame1" Margin="0" HorizontalOptions="FillAndExpand" BackgroundColor="#7F7FFD" CornerRadius="30">
-                                    <Label x:Name="HodnotaLabel1" Text="69" FontSize="30" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                                <Image x:Name="PopisImage1" Source="dobre_ikona.png" />
+                                <Label x:Name="PopisLabel1" Text="+" TextColor="#FCA54D" FontSize="50"
+                                       VerticalOptions="Center" />
+                                <Frame x:Name="frame1" Margin="0" HorizontalOptions="FillAndExpand"
+                                       BackgroundColor="#7F7FFD" CornerRadius="30">
+                                    <Label x:Name="HodnotaLabel1" Text="69" FontSize="30" VerticalOptions="Center"
+                                           HorizontalTextAlignment="Center" />
                                 </Frame>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
-                                <Image x:Name="PopisImage2" Source="spatne_ikona.png"/>
-                                <Label x:Name="PopisLabel2" Text="-" Margin="8,0,8,0" TextColor="#FFFFFF" FontSize="60" VerticalOptions="Center"/>
-                                <Frame x:Name="frame2" Margin="0" HorizontalOptions="FillAndExpand" BackgroundColor="#7F7FFD" CornerRadius="30">
-                                    <Label x:Name="HodnotaLabel2" Text="420" FontSize="30" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                                <Image x:Name="PopisImage2" Source="spatne_ikona.png" />
+                                <Label x:Name="PopisLabel2" Text="-" Margin="8,0,8,0" TextColor="#FFFFFF" FontSize="60"
+                                       VerticalOptions="Center" />
+                                <Frame x:Name="frame2" Margin="0" HorizontalOptions="FillAndExpand"
+                                       BackgroundColor="#7F7FFD" CornerRadius="30">
+                                    <Label x:Name="HodnotaLabel2" Text="420" FontSize="30" VerticalOptions="Center"
+                                           HorizontalTextAlignment="Center" />
                                 </Frame>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
-                                <Label x:Name="PopisLabel3" Text="×" TextColor="#C9FF50" FontSize="50" VerticalOptions="Center"/>
-                                <Frame x:Name="frame3" Margin="0" HorizontalOptions="FillAndExpand" BackgroundColor="#7F7FFD" CornerRadius="30">
-                                    <Label x:Name="HodnotaLabel3" Text="123" FontSize="30" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                                <Label x:Name="PopisLabel3" Text="×" TextColor="#C9FF50" FontSize="50"
+                                       VerticalOptions="Center" />
+                                <Frame x:Name="frame3" Margin="0" HorizontalOptions="FillAndExpand"
+                                       BackgroundColor="#7F7FFD" CornerRadius="30">
+                                    <Label x:Name="HodnotaLabel3" Text="123" FontSize="30" VerticalOptions="Center"
+                                           HorizontalTextAlignment="Center" />
                                 </Frame>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
-                                <Label x:Name="PopisLabel4" Text="÷" TextColor="#262630" FontSize="60" VerticalOptions="Center"/>
-                                <Frame x:Name="frame4" Margin="0" HorizontalOptions="FillAndExpand" BackgroundColor="#7F7FFD" CornerRadius="30">
-                                    <Label x:Name="HodnotaLabel4" Text="321" FontSize="30" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                                <Label x:Name="PopisLabel4" Text="÷" TextColor="#262630" FontSize="60"
+                                       VerticalOptions="Center" />
+                                <Frame x:Name="frame4" Margin="0" HorizontalOptions="FillAndExpand"
+                                       BackgroundColor="#7F7FFD" CornerRadius="30">
+                                    <Label x:Name="HodnotaLabel4" Text="321" FontSize="30" VerticalOptions="Center"
+                                           HorizontalTextAlignment="Center" />
                                 </Frame>
                             </StackLayout>
                         </Grid>
                     </StackLayout>
                 </Frame>
-                
+
                 <StackLayout Margin="30,20,30,0">
-                    <Button x:Name="ResetStatsButton" BorderWidth="2" StyleClass="RestartButton" CornerRadius="5" FontSize="20" Margin="0,0,0,20" Clicked="ResetStatsButton_OnClicked"/>
+                    <Button x:Name="ResetStatsButton" BorderWidth="2" StyleClass="RestartButton" CornerRadius="5"
+                            FontSize="20" Margin="0,0,0,20" Clicked="ResetStatsButton_OnClicked" />
                 </StackLayout>
             </StackLayout>
         </ScrollView>

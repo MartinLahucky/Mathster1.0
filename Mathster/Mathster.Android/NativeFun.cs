@@ -19,6 +19,5 @@ namespace Mathster
         {
             Toast.MakeText(AndroidApp.Context, message, ToastLength.Short).Show();
         }
-
     }
 }

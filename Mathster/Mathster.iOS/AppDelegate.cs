@@ -27,9 +27,10 @@ namespace Mathster.iOS
             ProgressRingRenderer.Init();
             // Database Declaration
             string dbName = "mathster_db.sqlite";
-            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "..", "Library");
+            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "..",
+                "Library");
             string fullPath = Path.Combine(folderPath, dbName);
-            
+
             LoadApplication(new App(fullPath));
 
             return base.FinishedLaunching(app, options);

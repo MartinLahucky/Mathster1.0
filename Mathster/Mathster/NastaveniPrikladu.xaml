@@ -1,89 +1,100 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mathster.NastaveniPrikladu"
              x:Name="NastaveniPrikladuContentPage">
-             
+
     <ContentPage.Resources>
-        <StyleSheet Source="Resources/Styles/Komponenty.css"/>
+        <StyleSheet Source="Resources/Styles/Komponenty.css" />
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="MenuToolbarButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
         <StackLayout>
             <!--počet příkladů:-->
             <ScrollView>
                 <StackLayout>
-            
-                <Frame Margin="15,10,15,2" BackgroundColor="#4D4DFC" CornerRadius="40">
-                <StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Label x:Name= "nazev1Label" StyleClass="NastaveniPrikladuNazevLabel" VerticalOptions="CenterAndExpand"/>
-                        <Frame x:Name="Frame1" StyleClass="NastaveniPrikladuFrame" HorizontalOptions="EndAndExpand">
-                            <Label x:Name="pocetPrikladuLabel" StyleClass="NastaveniPrikladuLabel" VerticalOptions="Center" HorizontalOptions="Center"/>
-                        </Frame>
-                    </StackLayout>
 
-                    <Slider x:Name="pocetPrikladuSlider" 
-                            MaximumTrackColor="#484848" 
-                            MinimumTrackColor="#FCA54D" 
-                            ThumbColor="White"
-                            ValueChanged="pocetPrikladu_ValueChanged"/>
-                </StackLayout>
-            </Frame>
+                    <Frame Margin="15,10,15,2" BackgroundColor="#4D4DFC" CornerRadius="40">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label x:Name="nazev1Label" StyleClass="NastaveniPrikladuNazevLabel"
+                                       VerticalOptions="CenterAndExpand" />
+                                <Frame x:Name="Frame1" StyleClass="NastaveniPrikladuFrame"
+                                       HorizontalOptions="EndAndExpand">
+                                    <Label x:Name="pocetPrikladuLabel" StyleClass="NastaveniPrikladuLabel"
+                                           VerticalOptions="Center" HorizontalOptions="Center" />
+                                </Frame>
+                            </StackLayout>
 
-            
+                            <Slider x:Name="pocetPrikladuSlider"
+                                    MaximumTrackColor="#484848"
+                                    MinimumTrackColor="#FCA54D"
+                                    ThumbColor="White"
+                                    ValueChanged="pocetPrikladu_ValueChanged" />
+                        </StackLayout>
+                    </Frame>
+
+
                     <!--počet cifer:-->
                     <Frame Margin="15,2,15,2" BackgroundColor="#4D4DFC" CornerRadius="40">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label x:Name= "nazev2Label" StyleClass="NastaveniPrikladuNazevLabel" VerticalOptions="CenterAndExpand"/>
-                                <Frame x:Name="Frame2" StyleClass="NastaveniPrikladuFrame" HorizontalOptions="EndAndExpand">
-                                    <Label x:Name="pocetCiferLabel" StyleClass="NastaveniPrikladuLabel" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                <Label x:Name="nazev2Label" StyleClass="NastaveniPrikladuNazevLabel"
+                                       VerticalOptions="CenterAndExpand" />
+                                <Frame x:Name="Frame2" StyleClass="NastaveniPrikladuFrame"
+                                       HorizontalOptions="EndAndExpand">
+                                    <Label x:Name="pocetCiferLabel" StyleClass="NastaveniPrikladuLabel"
+                                           VerticalOptions="Center" HorizontalOptions="Center" />
                                 </Frame>
                             </StackLayout>
 
-                            <Slider x:Name="pocetCiferSlider" 
-                                    MaximumTrackColor="#484848" 
-                                    MinimumTrackColor="#FCA54D" 
+                            <Slider x:Name="pocetCiferSlider"
+                                    MaximumTrackColor="#484848"
+                                    MinimumTrackColor="#FCA54D"
                                     ThumbColor="White"
-                                    ValueChanged="pocetCiferSlider_ValueChanged"/>
+                                    ValueChanged="pocetCiferSlider_ValueChanged" />
                         </StackLayout>
                     </Frame>
 
-                    
+
                     <!--velikost dělitele:-->
                     <Frame x:Name="DeleniANasbeniFrame" Margin="15,2,15,2" BackgroundColor="#4D4DFC" CornerRadius="40">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label x:Name= "nazev3Label" StyleClass="NastaveniPrikladuNazevLabel" VerticalOptions="CenterAndExpand"/>
-                                <Frame x:Name="Frame3" StyleClass="NastaveniPrikladuFrame" HorizontalOptions="EndAndExpand">
+                                <Label x:Name="nazev3Label" StyleClass="NastaveniPrikladuNazevLabel"
+                                       VerticalOptions="CenterAndExpand" />
+                                <Frame x:Name="Frame3" StyleClass="NastaveniPrikladuFrame"
+                                       HorizontalOptions="EndAndExpand">
                                     <!-- TODO Velikost čísla je na řádky na vštších displayích -->
-                                    <Label x:Name="velikostDeliteleLabel" StyleClass="NastaveniPrikladuLabel" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                                    <Label x:Name="velikostDeliteleLabel" StyleClass="NastaveniPrikladuLabel"
+                                           VerticalOptions="Center" HorizontalOptions="Center"
+                                           HorizontalTextAlignment="Center" />
                                 </Frame>
                             </StackLayout>
-                            <Slider x:Name="velikostDeliteleSlider" 
-                                    MaximumTrackColor="#484848" 
-                                    MinimumTrackColor="#FCA54D" 
+                            <Slider x:Name="velikostDeliteleSlider"
+                                    MaximumTrackColor="#484848"
+                                    MinimumTrackColor="#FCA54D"
                                     ThumbColor="White"
-                                    ValueChanged="velikostDeliteleSlider_ValueChanged"/>
+                                    ValueChanged="velikostDeliteleSlider_ValueChanged" />
                         </StackLayout>
                     </Frame>
-                    
+
                 </StackLayout>
             </ScrollView>
-            
-            <!--dolní button:-->  
-            
-            <Button x:Name="DalsiButton" 
+
+            <!--dolní button:-->
+
+            <Button x:Name="DalsiButton"
                     Clicked="DalsiButton_OnClicked"
-                    Margin="80,0,80,20" 
+                    Margin="80,0,80,20"
                     StyleClass="Tlacitka"
                     CornerRadius="30"
-                    VerticalOptions="EndAndExpand"/>
+                    VerticalOptions="EndAndExpand" />
             <!-- StyleClass="DalsiTlacitko" -->
         </StackLayout>
     </ContentPage.Content>

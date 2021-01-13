@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Mathster.Resources.Localization;
 using Mathster.Resources.Database_Models;
 using Mathster.Resources.Helpers;
+using Mathster.Resources.Localization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,6 +19,7 @@ namespace Mathster
         private bool potvrzeniZapisu;
         private List<Priklad> prikladyDobre;
         private List<Priklad> prikladySpatne;
+
         public Souhrn(List<Priklad> fronta, bool potvrzeniZapisu)
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace Mathster
             this.fronta = fronta;
             this.potvrzeniZapisu = potvrzeniZapisu;
             int experienceCount = 0;
-            
+
             Title = AppResource.Souhrn;
             MenuButton.Text = AppResource.Menu;
             NadpisSouhrnLabel.Text = AppResource.Vysledky;
@@ -37,21 +38,23 @@ namespace Mathster
                 tabulkaNastaveni = await App.Database.GetSettings();
             });
             Task.WaitAll(task);
-            
+
             List<Vysledek> priklady = new List<Vysledek>();
             List<Priklad> prikladyDobre = new List<Priklad>();
             List<Priklad> prikladySpatne = new List<Priklad>();
             byte pocitadloSpravne = 0;
             byte pocitadloSpatne = 0;
-            
+
             foreach (var priklad in fronta)
             {
                 bool spravne = true;
                 priklady.Add(new Vysledek(priklad.VratPriklad(), tabulkaNastaveni));
-                if (priklad.PrvniCislo >= 100 && priklad.UzivateluvVstup >= 1000 || priklad.PrvniCislo >= 10000 || priklad.UzivateluvVstup >= 10000)
+                if (priklad.PrvniCislo >= 100 && priklad.UzivateluvVstup >= 1000 || priklad.PrvniCislo >= 10000 ||
+                    priklad.UzivateluvVstup >= 10000)
                 {
                     VysledkyList.RowHeight = 80;
                 }
+
                 if (priklad.VratVysledek() == priklad.UzivateluvVstup)
                 {
                     pocitadloSpravne++;
@@ -69,6 +72,7 @@ namespace Mathster
                 }
                 experienceCount += priklad.GetExperience(spravne);
             }
+            
             this.prikladyDobre = prikladyDobre;
             this.prikladySpatne = prikladySpatne;
             zapis.Experience += experienceCount;
@@ -76,6 +80,7 @@ namespace Mathster
             DobrePocetButton.Text = pocitadloSpravne.ToString();
             SpatnePocetButton.Text = pocitadloSpatne.ToString();
         }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -89,6 +94,7 @@ namespace Mathster
                 SpatnePocetButton.TextColor = Color.FromHex("#FFFFFF");
             }
         }
+
         protected async override void OnDisappearing()
         {
             base.OnDisappearing();
@@ -98,14 +104,15 @@ namespace Mathster
                 potvrzeniZapisu = true;
             }
         }
+
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Menu());
             var existingPages = Navigation.NavigationStack.ToList();
-            foreach(var page in existingPages)
+            foreach (var page in existingPages)
             {
                 Navigation.RemovePage(page);
-            }   
+            }
         }
 
         private async void VysledkyList_OnItemTapped(object sender, ItemTappedEventArgs e)
@@ -114,6 +121,7 @@ namespace Mathster
             await Navigation.PushAsync(new RozborVysledku(selectedItem, fronta, fronta, potvrzeniZapisu));
             if (sender is ListView lv) lv.SelectedItem = null;
         }
+
         private async void DobreButton_OnClicked(object sender, EventArgs e)
         {
             try
@@ -125,6 +133,7 @@ namespace Mathster
                 await DisplayAlert(AppResource.Upozorneni, AppResource.UpozorneniVseSpatne, AppResource.Ok);
             }
         }
+
         private async void SpatneButton_OnClicked(object sender, EventArgs e)
         {
             try
@@ -158,21 +167,25 @@ namespace Mathster
                 barvaTextu = Color.Black;
             }
         }
+
         public string TextovaPodobaPrikladu
         {
             get => textovaPodobaPrikladu;
             set => textovaPodobaPrikladu = value;
         }
+
         public string StatusPrikladu
         {
             get => statusPrikladu;
             set => statusPrikladu = value;
         }
+
         public Color BarvaCellu
         {
             get => barvaCellu;
             set => barvaCellu = value;
         }
+
         public Color BarvaTextu
         {
             get => barvaTextu;
