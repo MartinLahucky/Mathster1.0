@@ -1,12 +1,10 @@
 ﻿using System.IO;
 using Android.App;
 using Android.Content.PM;
-using Android.Media;
 using Android.OS;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Environment = System.Environment;
-using Orientation = Android.Widget.Orientation;
 
 namespace Mathster.Android
 {
