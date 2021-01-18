@@ -1,14 +1,17 @@
 ﻿using System.IO;
 using Android.App;
 using Android.Content.PM;
+using Android.Media;
 using Android.OS;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Environment = System.Environment;
+using Orientation = Android.Widget.Orientation;
 
 namespace Mathster.Android
 {
     [Activity(Label = "Mathster", Icon = "@drawable/ikona", Theme = "@style/MainTheme.Splash", MainLauncher = true,
+        ScreenOrientation = ScreenOrientation.Portrait,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : FormsAppCompatActivity
     {
