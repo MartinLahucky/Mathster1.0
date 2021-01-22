@@ -31,13 +31,12 @@ namespace Mathster
             long sec = fronta[id].DelkaPocitani / TimeSpan.TicksPerSecond, min = sec / 60;
             sec = sec - min * 60;
             CasLabel.Text = $"{min}min {sec}s";
-
-            //TODO dořešit pro větší čísla 
-            // if (fronta[id].PrvniCislo >= 10000)
-            // {
-            //     SpatnaOdpovedLabel.HeightRequest = 75;
-            //     ReseniLabel.HeightRequest = 75;
-            // }
+            
+            if (fronta[id].Zadani.Length >= 13)
+            {
+                SpatnaOdpovedLabel.HeightRequest = 75;
+                ReseniLabel.HeightRequest = 75;
+            }
 
             ZadaniLabel.Text =
                 $"{fronta[id].Zadani}";

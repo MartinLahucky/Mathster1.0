@@ -49,12 +49,12 @@ namespace Mathster
             {
                 bool spravne = true;
                 priklady.Add(new Vysledek(priklad.VratPriklad(), tabulkaNastaveni));
-                // TODO Dořešit velikost 
-                // if (priklad.PrvniCislo >= 100 && priklad.UzivateluvVstup >= 1000 || priklad.PrvniCislo >= 10000 ||
-                //     priklad.UzivateluvVstup >= 10000)
-                // {
-                //     VysledkyList.RowHeight = 80;
-                // }
+                
+                //TODO udělat loooping systém pro zjisštění daných rozměrů a následně vše přizpůsobit 
+                if (priklad.Zadani.Length >= 13)
+                {
+                    VysledkyList.RowHeight = 80;
+                }
 
                 if (priklad.Vysledek == priklad.UzivateluvVstup)
                 {

@@ -124,11 +124,10 @@ namespace Mathster.Resources.Exercises
         public string VratPriklad()
         {
             
-            //TODO dořešit velikosti všeho
-            // if (PrvniCislo >= 10000 || DruheCislo >= 10000 || UzivateluvVstup >= 10000)
-            // {
-            //     return $"{zadani}\n= {UzivateluvVstup}";
-            // }
+            if (zadani.Length >= 13)
+            {
+                return $"{zadani}\n= {UzivateluvVstup}";
+            }
 
             return $"{zadani}{uzivateluvVstup}";
         }
