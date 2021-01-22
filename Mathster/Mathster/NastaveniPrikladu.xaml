@@ -95,7 +95,6 @@
                     StyleClass="Tlacitka"
                     CornerRadius="30"
                     VerticalOptions="EndAndExpand" />
-            <!-- StyleClass="DalsiTlacitko" -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

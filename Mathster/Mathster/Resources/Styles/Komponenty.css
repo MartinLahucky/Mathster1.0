@@ -7,27 +7,6 @@
     color: black;
 }
 
-.InfoLabel {
-    font-size: 20;
-    text-align: center;
-    width: 130;
-    background-color: #6ece25;
-    color: black;
-}
-
-.SpatneNadLabel {
-    font-size: 15;
-    text-align: center;
-    background-color: #f36f16;
-    color: black;
-}
-
-.SpatneLabel {
-    font-size: 30;
-    text-align: center;
-    background-color: #ffb54c;
-}
-
 .VysledekInput {
     font-size: 30;
     text-align: center;
@@ -40,30 +19,6 @@
     font-size: 30;
     width: 130;
     color: black;
-}
-
-.Zelena {
-    font-size: 15;
-    text-align: center;
-    background-color: #33a716;
-    color: black;
-}
-
-/* dole plochá ↑ */
-.ZelenaNadpis {
-    font-size: 30;
-    text-align: center;
-    width: 130;
-    background-color: #33a716;
-    color: black;
-}
-
-.CervenaNadpis {
-    font-size: 30;
-    text-align: center;
-    width: 130;
-    background-color: #bf3600;
-    color: white;
 }
 
 .Tlacitka {
@@ -97,12 +52,6 @@
     color: white;
 }
 
-.MiniMenu {
-    font-size: 30;
-    -moz-outline-radius-bottomright: 30;
-    -moz-outline-radius-topright: 30;
-}
-
 .NastaveniPrikladuLabel {
     font-size: 30;
     color: #4D4DFC;
@@ -119,14 +68,6 @@
     font-size: 25;
     color: #ffffff;
     margin: 10;
-}
-
-.DalsiTlacitko {
-    background-color: #4D4DFC;
-    font-size: 20;
-    border-radius: 50;
-    margin-left: 80;
-    margin-right: 80;
 }
 
 .ZelenyNadpidLabel {
