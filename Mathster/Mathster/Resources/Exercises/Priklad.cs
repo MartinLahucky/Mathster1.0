@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Mathster.Resources.Helpers
+namespace Mathster.Resources.Exercises
 {
     public class Priklad
     {
-        private byte ID;
+        private byte id;
         private int prvniCislo;
         private int druheCislo;
         private float uzivateluvVstup;
@@ -24,8 +24,8 @@ namespace Mathster.Resources.Helpers
 
         public byte Id
         {
-            get => ID;
-            private set => ID = value;
+            get => id;
+            private set => id = value;
         }
 
         public int PrvniCislo

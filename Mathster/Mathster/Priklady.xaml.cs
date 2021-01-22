@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Mathster.Resources.Database_Models;
-using Mathster.Resources.Helpers;
+using Mathster.Resources.Exercises;
 using Mathster.Resources.Localization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
