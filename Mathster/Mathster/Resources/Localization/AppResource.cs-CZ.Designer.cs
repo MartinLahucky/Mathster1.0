@@ -428,5 +428,14 @@ namespace Mathster.Resources.Localization {
                 return ResourceManager.GetString("ZvolitPocetPrikladu", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rovnice.
+        /// </summary>
+        internal static string Rovnice {
+            get {
+                return ResourceManager.GetString("Rovnice", resourceCulture);
+            }
+        }
     }
 }

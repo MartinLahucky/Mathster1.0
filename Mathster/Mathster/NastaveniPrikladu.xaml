@@ -19,7 +19,7 @@
             <ScrollView>
                 <StackLayout>
 
-                    <Frame Margin="15,10,15,2" BackgroundColor="#4D4DFC" CornerRadius="40">
+                    <Frame x:Name="PocetPrikladuFrame" Margin="15,10,15,2" BackgroundColor="#4D4DFC" CornerRadius="40">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name="nazev1Label" StyleClass="NastaveniPrikladuNazevLabel"
@@ -41,7 +41,7 @@
 
 
                     <!--počet cifer:-->
-                    <Frame Margin="15,2,15,2" BackgroundColor="#4D4DFC" CornerRadius="40">
+                    <Frame x:Name="PocetCiferFrame" Margin="15,2,15,2" BackgroundColor="#4D4DFC" CornerRadius="40">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name="nazev2Label" StyleClass="NastaveniPrikladuNazevLabel"
@@ -70,7 +70,6 @@
                                        VerticalOptions="CenterAndExpand" />
                                 <Frame x:Name="Frame3" StyleClass="NastaveniPrikladuFrame"
                                        HorizontalOptions="EndAndExpand">
-                                    <!-- TODO Velikost čísla je na řádky na vštších displayích -->
                                     <Label x:Name="velikostDeliteleLabel" StyleClass="NastaveniPrikladuLabel"
                                            VerticalOptions="Center" HorizontalOptions="Center"
                                            HorizontalTextAlignment="Center" />

@@ -76,7 +76,7 @@ namespace Mathster
 
         private async void NahodneButton_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NastaveniPrikladu(5));
+            await Navigation.PushAsync(new NastaveniPrikladu(6));
         }
 
         private async void MenuButton_OnClicked(object sender, EventArgs e)
@@ -89,6 +89,11 @@ namespace Mathster
             }
         }
 
+        private async void RovniceButton_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NastaveniPrikladu(5));
+        }
+        
         private async void StatsButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Statistiky());

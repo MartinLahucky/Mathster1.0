@@ -45,6 +45,9 @@ namespace Mathster
                 case 4:
                     Title = $"{AppResource.Deleni} | {id + 1}/{fronta.Count}";
                     break;
+                case 5:
+                    Title = $"{AppResource.Rovnice} | {id + 1}/{fronta.Count}";
+                    break;
             }
             PrikladLabel.Text = $"{priklad.Zadani}";
             this.fronta = fronta;

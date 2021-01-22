@@ -237,13 +237,13 @@
   <data name="Zadani" xml:space="preserve">
     <value>Assignment</value>
   </data>
-  <data name="Level" xml:space="preserve">
-    <value>Level</value>
-  </data>
   <data name="WarningExit" xml:space="preserve">
     <value>Press back again to exit</value>
   </data>
   <data name="CasPocitani" xml:space="preserve">
     <value>Counting time:</value>
+  </data>
+  <data name="Rovnice" xml:space="preserve">
+    <value>Equation</value>
   </data>
 </root>

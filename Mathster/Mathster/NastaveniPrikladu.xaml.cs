@@ -71,6 +71,11 @@ namespace Mathster
                     Title = AppResource.Deleni;
                     break;
                 case 5:
+                    Title = AppResource.Rovnice;
+                    PocetCiferFrame.IsVisible = false;
+                    DeleniANasbeniFrame.IsVisible = false;
+                    break;
+                case 6:
                     Title = AppResource.Nahodne;
                     break;
             }
@@ -171,7 +176,7 @@ namespace Mathster
                     break;
             }
 
-            if (druhPrikladu == 3 || druhPrikladu == 4 || druhPrikladu == 5)
+            if (druhPrikladu == 3 || druhPrikladu == 4 || druhPrikladu == 6)
             {
                 switch ((int) velikostDeliteleSlider.Value)
                 {
@@ -205,6 +210,14 @@ namespace Mathster
                 }
             }
             else if (druhPrikladu == 3 || druhPrikladu == 4)
+            {
+                for (byte i = 0; i < pocetPrikladu; i++)
+                {
+                    fronta.Add(new Priklad().VygenerujPriklad(i, minCisel, maxCisel, druhPrikladu, minDeleniANasobeni,
+                        maxDeleniANasobeni));
+                }
+            }
+            else if (druhPrikladu == 5)
             {
                 for (byte i = 0; i < pocetPrikladu; i++)
                 {

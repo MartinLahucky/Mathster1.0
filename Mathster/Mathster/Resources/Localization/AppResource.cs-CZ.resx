@@ -231,13 +231,13 @@
   <data name="Zadani" xml:space="preserve">
     <value>Zadání</value>
   </data>
-  <data name="Level" xml:space="preserve">
-    <value>Úroveň</value>
-  </data>
   <data name="WarningExit" xml:space="preserve">
     <value>Stiskněte znovu zpět pro ukončení aplikace</value>
   </data>
   <data name="CasPocitani" xml:space="preserve">
     <value>Délka počítání:</value>
+  </data>
+  <data name="Rovnice" xml:space="preserve">
+    <value>Rovnice</value>
   </data>
 </root>

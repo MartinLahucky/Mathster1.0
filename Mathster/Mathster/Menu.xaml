@@ -53,7 +53,7 @@
                 </Grid.ColumnDefinitions>
                 <Button x:Name="RovniceButton" CornerRadius="57" HeightRequest="90" WidthRequest="90"
                         StyleClass="MenuTlacitka" VerticalOptions="Center" HorizontalOptions="Center" Padding="0"
-                        Grid.Column="0" Grid.Row="0"  Clicked="NahodneButton_OnClicked" />
+                        Grid.Column="0" Grid.Row="0"  Clicked="RovniceButton_OnClicked" />
                 <Button x:Name="NahodneButton" CornerRadius="57" HeightRequest="90" WidthRequest="90"
                         StyleClass="MenuTlacitka" VerticalOptions="Center" HorizontalOptions="Center" Padding="0"
                         Grid.Column="1" Grid.Row="0"  Clicked="NahodneButton_OnClicked" />
