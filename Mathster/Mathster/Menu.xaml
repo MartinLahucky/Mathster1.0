@@ -40,29 +40,35 @@
                 </Grid>
                 <Label x:Name="UzivatelLabel" HorizontalOptions="Center" FontSize="30" Margin="0,10,0,0" />
             </StackLayout>
-            <Button x:Name="NahodneButton" Margin="100,20,100,0" StyleClass="Tlacitka"
-                    VerticalOptions="EndAndExpand" CornerRadius="50" Clicked="NahodneButton_OnClicked" />
+
             <Grid Margin="40,10" VerticalOptions="End" HorizontalOptions="Center">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="130" />
-                    <RowDefinition Height="130" />
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="100" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
+                <Button x:Name="RovniceButton" CornerRadius="57" HeightRequest="90" WidthRequest="90"
+                        StyleClass="MenuTlacitka" VerticalOptions="Center" HorizontalOptions="Center" Padding="0"
+                        Grid.Column="0" Grid.Row="0"  Clicked="NahodneButton_OnClicked" />
+                <Button x:Name="NahodneButton" CornerRadius="57" HeightRequest="90" WidthRequest="90"
+                        StyleClass="MenuTlacitka" VerticalOptions="Center" HorizontalOptions="Center" Padding="0"
+                        Grid.Column="1" Grid.Row="0"  Clicked="NahodneButton_OnClicked" />
                 <Button x:Name="ScitaniButton" CornerRadius="57" HeightRequest="90" WidthRequest="90"
                         StyleClass="MenuTlacitka" VerticalOptions="Center" HorizontalOptions="Center" Padding="0"
-                        Grid.Column="0" Grid.Row="0" Clicked="ScitaniButton_OnClicked" />
+                        Grid.Column="0" Grid.Row="1" Clicked="ScitaniButton_OnClicked" />
                 <Button x:Name="OdcitaniButton" CornerRadius="57" HeightRequest="90" WidthRequest="90"
                         StyleClass="MenuTlacitka" VerticalOptions="Center" HorizontalOptions="Center" Padding="0"
-                        Grid.Column="1" Grid.Row="0" Clicked="OdcitaniButton_OnClicked" />
+                        Grid.Column="1" Grid.Row="1" Clicked="OdcitaniButton_OnClicked" />
                 <Button x:Name="NasobeniButton" CornerRadius="57" HeightRequest="90" WidthRequest="90"
                         StyleClass="MenuTlacitka" VerticalOptions="Center" HorizontalOptions="Center" Padding="0"
-                        Grid.Column="0" Grid.Row="1" Clicked="NasobeniButton_OnClicked" />
+                        Grid.Column="0" Grid.Row="2" Clicked="NasobeniButton_OnClicked" />
                 <Button x:Name="DeleniButton" CornerRadius="57" HeightRequest="90" WidthRequest="90"
                         StyleClass="MenuTlacitka" VerticalOptions="Center" HorizontalOptions="Center" Padding="0"
-                        Grid.Column="1" Grid.Row="1" Clicked="DeleniButton_OnClicked" />
+                        Grid.Column="1" Grid.Row="2" Clicked="DeleniButton_OnClicked" />
             </Grid>
         </StackLayout>
         <!-- </ScrollView> -->

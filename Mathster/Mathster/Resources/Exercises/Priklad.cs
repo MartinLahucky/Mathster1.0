@@ -5,17 +5,22 @@ namespace Mathster.Resources.Exercises
     public class Priklad
     {
         private byte id;
-        private int prvniCislo;
-        private int druheCislo;
+        private string zadani;
+        private string zadaniPodsebe;
         private float uzivateluvVstup;
+        private int vysledek;
+        private byte experience;
         private byte druhPrikladu;
         private long delkaPocitani;
 
-        public Priklad(int prvniCislo, int druheCislo, byte druhPrikladu)
+        public Priklad(byte id, byte druhPrikladu, string zadani, string zadaniPodsebe, byte experience, int vysledek)
         {
-            this.prvniCislo = prvniCislo;
-            this.druheCislo = druheCislo;
+            this.id = id;
             this.druhPrikladu = druhPrikladu;
+            this.zadani = zadani;
+            this.zadaniPodsebe = zadaniPodsebe;
+            this.experience = experience;
+            this.vysledek = vysledek;
         }
 
         public Priklad()
@@ -28,16 +33,16 @@ namespace Mathster.Resources.Exercises
             private set => id = value;
         }
 
-        public int PrvniCislo
+        public string Zadani
         {
-            get => prvniCislo;
-            private set => prvniCislo = value;
+            get => zadani;
+            set => zadani = value;
         }
 
-        public int DruheCislo
+        public string ZadaniPodsebe
         {
-            get => druheCislo;
-            private set => druheCislo = value;
+            get => zadaniPodsebe;
+            set => zadaniPodsebe = value;
         }
 
         public float UzivateluvVstup
@@ -46,6 +51,11 @@ namespace Mathster.Resources.Exercises
             set => uzivateluvVstup = value;
         }
 
+        public int Vysledek
+        {
+            get => vysledek;
+            set => vysledek = value;
+        }
         public byte DruhPrikladu
         {
             get => druhPrikladu;
@@ -62,39 +72,42 @@ namespace Mathster.Resources.Exercises
             int minDeleniANasobeni = 2, int maxDeleniANasobeni = 6)
         {
             Random random = new Random();
-            Priklad priklad = null;
             int prvniCislo = random.Next(minCisel, maxCisel);
             int druheCislo = random.Next(minCisel, maxCisel);
 
-            if (druhPrikladu == 1 || druhPrikladu == 2)
+            switch (druhPrikladu)
             {
-                priklad = new Priklad(prvniCislo, druheCislo, druhPrikladu);
-            }
-            else if (druhPrikladu == 3)
-            {
-                druheCislo = random.Next(minDeleniANasobeni, maxDeleniANasobeni);
-                priklad = new Priklad(prvniCislo, druheCislo, druhPrikladu);
-            }
-            else if (druhPrikladu == 4)
-            {
-                druheCislo = random.Next(minDeleniANasobeni, maxDeleniANasobeni);
-                while (prvniCislo % druheCislo != 0)
-                {
-                    prvniCislo = random.Next(minCisel, maxCisel);
-                }
+                case 1:
+                    return new Priklad(id, druhPrikladu, $"{prvniCislo} + {druheCislo} = ", $" {prvniCislo}\n+{druheCislo}\n—",
+                        (byte) prvniCislo.ToString().Length, prvniCislo + druheCislo);
+                case 2:
+                    return new Priklad(id,  druhPrikladu,$"{prvniCislo} - {druheCislo} = ", $" {prvniCislo}\n-{druheCislo}\n—",
+                        (byte) prvniCislo.ToString().Length, prvniCislo - druheCislo);
+                case 3:
+                    druheCislo = random.Next(minDeleniANasobeni, maxDeleniANasobeni);
+                    return new Priklad(id, druhPrikladu, $"{prvniCislo} X {druheCislo} = ", $" {prvniCislo}\nX{druheCislo}\n—",
+                        (byte) prvniCislo.ToString().Length, prvniCislo * druheCislo);
+                case 4:
+                    druheCislo = random.Next(minDeleniANasobeni, maxDeleniANasobeni);
+                    while (prvniCislo % druheCislo != 0)
+                    {
+                        prvniCislo = random.Next(minCisel, maxCisel);
+                    }
 
-                priklad = new Priklad(prvniCislo, druheCislo, druhPrikladu);
+                    return new Priklad(id, druhPrikladu, $"{prvniCislo} ÷ {druheCislo} = ", $" {prvniCislo}\n-{druheCislo}\n—",
+                        (byte) prvniCislo.ToString().Length, prvniCislo / druheCislo);
+                case 5:
+                    return null;
+                default:
+                    return null;
             }
-
-            priklad.Id = id;
-            return priklad;
         }
 
         public int GetExperience(bool spravne)
         {
             if (spravne)
             {
-                return (druhPrikladu * (druhPrikladu / 4) + 1) * prvniCislo.ToString().Length * 20;
+                return (druhPrikladu * (druhPrikladu / 4) + 1) * experience * 20;
             }
 
             return druhPrikladu * (druhPrikladu / 4) + 1;
@@ -107,56 +120,17 @@ namespace Mathster.Resources.Exercises
             druhPrikladu = Byte.Parse(random.Next(1, 5).ToString());
             return VygenerujPriklad(id, minCisel, maxCisel, druhPrikladu, minDeleniANasobeni, maxDeleniANasobeni);
         }
-
-        public int VratVysledek()
-        {
-            switch (druhPrikladu)
-            {
-                case 1:
-                    return prvniCislo + druheCislo;
-                case 2:
-                    return prvniCislo - druheCislo;
-                case 3:
-                    return prvniCislo * druheCislo;
-                case 4:
-                    return prvniCislo / druheCislo;
-                default:
-                    return 0;
-            }
-        }
-
+        
         public string VratPriklad()
         {
-            if (PrvniCislo >= 10000 || DruheCislo >= 10000 || UzivateluvVstup >= 10000)
-            {
-                switch (DruhPrikladu)
-                {
-                    case 1:
-                        return $"{PrvniCislo} + {DruheCislo} =\n= {UzivateluvVstup}";
-                    case 2:
-                        return $"{PrvniCislo} - {DruheCislo} =\n= {UzivateluvVstup}";
-                    case 3:
-                        return $"{PrvniCislo} X {DruheCislo} =\n= {UzivateluvVstup}";
-                    case 4:
-                        return $"{PrvniCislo} ÷ {DruheCislo} =\n= {UzivateluvVstup}";
-                    default:
-                        return "";
-                }
-            }
+            
+            //TODO dořešit velikosti všeho
+            // if (PrvniCislo >= 10000 || DruheCislo >= 10000 || UzivateluvVstup >= 10000)
+            // {
+            //     return $"{zadani}\n= {UzivateluvVstup}";
+            // }
 
-            switch (DruhPrikladu)
-            {
-                case 1:
-                    return $"{PrvniCislo} + {DruheCislo} = {UzivateluvVstup}";
-                case 2:
-                    return $"{PrvniCislo} - {DruheCislo} = {UzivateluvVstup}";
-                case 3:
-                    return $"{PrvniCislo} X {DruheCislo} = {UzivateluvVstup}";
-                case 4:
-                    return $"{PrvniCislo} ÷ {DruheCislo} = {UzivateluvVstup}";
-                default:
-                    return "";
-            }
+            return $"{zadani}{uzivateluvVstup}";
         }
     }
 }

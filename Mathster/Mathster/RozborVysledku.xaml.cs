@@ -32,62 +32,21 @@ namespace Mathster
             sec = sec - min * 60;
             CasLabel.Text = $"{min}min {sec}s";
 
-            if (fronta[id].PrvniCislo >= 10000)
+            //TODO dořešit pro větší čísla 
+            // if (fronta[id].PrvniCislo >= 10000)
+            // {
+            //     SpatnaOdpovedLabel.HeightRequest = 75;
+            //     ReseniLabel.HeightRequest = 75;
+            // }
+
+            ZadaniLabel.Text =
+                $"{fronta[id].Zadani}";
+            SpatnaOdpovedLabel.Text = $"{fronta[id].UzivateluvVstup}";
+            ReseniLabel.Text = $"{fronta[id].Vysledek}";
+            if (fronta[id].UzivateluvVstup == fronta[id].Vysledek)
             {
-                SpatnaOdpovedLabel.HeightRequest = 75;
-                ReseniLabel.HeightRequest = 75;
-            }
-
-            switch (fronta[id].DruhPrikladu)
-            {
-                case 1:
-                    ZadaniLabel.Text =
-                        $"{fronta[id].PrvniCislo} + {fronta[id].DruheCislo} = ";
-                    SpatnaOdpovedLabel.Text = $"{fronta[id].UzivateluvVstup}";
-                    ReseniLabel.Text = $"{fronta[id].PrvniCislo + fronta[id].DruheCislo}";
-                    if (fronta[id].UzivateluvVstup == fronta[id].PrvniCislo + fronta[id].DruheCislo)
-                    {
-                        NadSpatnaOdpovedLabel.IsVisible = false;
-                        SpatneFrame.IsVisible = false;
-                    }
-
-                    break;
-                case 2:
-                    ZadaniLabel.Text =
-                        $"{fronta[id].PrvniCislo} - {fronta[id].DruheCislo} = ";
-                    SpatnaOdpovedLabel.Text = $"{fronta[id].UzivateluvVstup}";
-                    ReseniLabel.Text = $"{fronta[id].PrvniCislo - fronta[id].DruheCislo}";
-                    if (fronta[id].UzivateluvVstup == fronta[id].PrvniCislo - fronta[id].DruheCislo)
-                    {
-                        NadSpatnaOdpovedLabel.IsVisible = false;
-                        SpatneFrame.IsVisible = false;
-                    }
-
-                    break;
-                case 3:
-                    ZadaniLabel.Text =
-                        $"{fronta[id].PrvniCislo} * {fronta[id].DruheCislo} = ";
-                    SpatnaOdpovedLabel.Text = $"{fronta[id].UzivateluvVstup}";
-                    ReseniLabel.Text = $"{fronta[id].PrvniCislo * fronta[id].DruheCislo}";
-                    if (fronta[id].UzivateluvVstup == fronta[id].PrvniCislo * fronta[id].DruheCislo)
-                    {
-                        NadSpatnaOdpovedLabel.IsVisible = false;
-                        SpatneFrame.IsVisible = false;
-                    }
-
-                    break;
-                case 4:
-                    ZadaniLabel.Text =
-                        $"{fronta[id].PrvniCislo} ÷ {fronta[id].DruheCislo} = ";
-                    SpatnaOdpovedLabel.Text = $"{fronta[id].UzivateluvVstup}";
-                    ReseniLabel.Text = $"{fronta[id].PrvniCislo / fronta[id].DruheCislo}";
-                    if (fronta[id].UzivateluvVstup == fronta[id].PrvniCislo / fronta[id].DruheCislo)
-                    {
-                        NadSpatnaOdpovedLabel.IsVisible = false;
-                        SpatneFrame.IsVisible = false;
-                    }
-
-                    break;
+                NadSpatnaOdpovedLabel.IsVisible = false;
+                SpatneFrame.IsVisible = false;
             }
 
             this.fronta = fronta;

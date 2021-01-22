@@ -35,22 +35,18 @@ namespace Mathster
             {
                 case 1:
                     Title = $"{AppResource.Scitani} | {id + 1}/{fronta.Count}";
-                    PrikladLabel.Text = $"{priklad.PrvniCislo} + {priklad.DruheCislo} = ";
                     break;
                 case 2:
                     Title = $"{AppResource.Odecitani} | {id + 1}/{fronta.Count}";
-                    PrikladLabel.Text = $"{priklad.PrvniCislo} - {priklad.DruheCislo} = ";
                     break;
                 case 3:
                     Title = $"{AppResource.Nasobeni} | {id + 1}/{fronta.Count}";
-                    PrikladLabel.Text = $"{priklad.PrvniCislo} X {priklad.DruheCislo} = ";
                     break;
                 case 4:
                     Title = $"{AppResource.Deleni} | {id + 1}/{fronta.Count}";
-                    PrikladLabel.Text = $"{priklad.PrvniCislo} ÷ {priklad.DruheCislo} = ";
                     break;
             }
-
+            PrikladLabel.Text = $"{priklad.Zadani}";
             this.fronta = fronta;
             ID = id;
 
@@ -124,43 +120,13 @@ namespace Mathster
             {
                 case false:
                     SecondLayer.Margin = new Thickness(60, -40, 60, 0);
-                    switch (priklad.DruhPrikladu)
-                    {
-                        case 1:
-                            PrikladLabel.Text = $" {priklad.PrvniCislo}\n+{priklad.DruheCislo}\n—";
-                            break;
-                        case 2:
-                            PrikladLabel.Text = $" {priklad.PrvniCislo}\n-{priklad.DruheCislo}\n—";
-                            break;
-                        case 3:
-                            PrikladLabel.Text = $" {priklad.PrvniCislo}\nX{priklad.DruheCislo}\n—";
-                            break;
-                        case 4:
-                            PrikladLabel.Text = $"{priklad.PrvniCislo}\n—\n{priklad.DruheCislo}";
-                            break;
-                    }
-
+                    PrikladLabel.Text = priklad.ZadaniPodsebe;
                     VysledekInput.FlowDirection = FlowDirection.RightToLeft;
                     podsebe = true;
                     break;
                 case true:
                     SecondLayer.Margin = new Thickness(60, 30, 60, 0);
-                    switch (priklad.DruhPrikladu)
-                    {
-                        case 1:
-                            PrikladLabel.Text = $"{priklad.PrvniCislo} + {priklad.DruheCislo} = ";
-                            break;
-                        case 2:
-                            PrikladLabel.Text = $"{priklad.PrvniCislo} - {priklad.DruheCislo} = ";
-                            break;
-                        case 3:
-                            PrikladLabel.Text = $"{priklad.PrvniCislo} X {priklad.DruheCislo} = ";
-                            break;
-                        case 4:
-                            PrikladLabel.Text = $"{priklad.PrvniCislo} ÷ {priklad.DruheCislo} = ";
-                            break;
-                    }
-
+                    PrikladLabel.Text = priklad.Zadani;
                     VysledekInput.FlowDirection = FlowDirection.LeftToRight;
                     podsebe = false;
                     break;

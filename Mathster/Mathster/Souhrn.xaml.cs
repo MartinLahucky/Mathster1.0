@@ -49,13 +49,14 @@ namespace Mathster
             {
                 bool spravne = true;
                 priklady.Add(new Vysledek(priklad.VratPriklad(), tabulkaNastaveni));
-                if (priklad.PrvniCislo >= 100 && priklad.UzivateluvVstup >= 1000 || priklad.PrvniCislo >= 10000 ||
-                    priklad.UzivateluvVstup >= 10000)
-                {
-                    VysledkyList.RowHeight = 80;
-                }
+                // TODO Dořešit velikost 
+                // if (priklad.PrvniCislo >= 100 && priklad.UzivateluvVstup >= 1000 || priklad.PrvniCislo >= 10000 ||
+                //     priklad.UzivateluvVstup >= 10000)
+                // {
+                //     VysledkyList.RowHeight = 80;
+                // }
 
-                if (priklad.VratVysledek() == priklad.UzivateluvVstup)
+                if (priklad.Vysledek == priklad.UzivateluvVstup)
                 {
                     pocitadloSpravne++;
                     zapis.AddGoodStats(priklad.DruhPrikladu, zapis);

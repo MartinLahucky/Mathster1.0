@@ -27,6 +27,8 @@ namespace Mathster
             NasobeniButton.Text = "×";
             DeleniButton.Text = "÷";
             NahodneButton.Text = "?";
+            RovniceButton.Text = "x=";
+            RovniceButton.FontSize = 33;
         }
 
         protected async override void OnAppearing()
