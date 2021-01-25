@@ -49,8 +49,7 @@ namespace Mathster
             {
                 bool spravne = true;
                 priklady.Add(new Vysledek(priklad.VratPriklad(), tabulkaNastaveni));
-                
-                //TODO udělat loooping systém pro zjisštění daných rozměrů a následně vše přizpůsobit 
+                // TODO Dořešit velikost 
                 if (priklad.Zadani.Length >= 13 || priklad.DruhPrikladu == 5)
                 {
                     VysledkyList.RowHeight = 80;

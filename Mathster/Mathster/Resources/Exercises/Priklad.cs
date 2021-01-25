@@ -203,7 +203,7 @@ namespace Mathster.Resources.Exercises
                 return $"{zadani}\nx = {uzivateluvVstup}";
             }
 
-            return "";
+            return $"{zadani}{uzivateluvVstup}";
         }
     }
 }
