@@ -23,6 +23,7 @@ namespace Mathster
         {
             InitializeComponent();
             MenuToolbarButton.IconImageSource = "round_house_white_18dp.png";
+            PodSebeButton.IconImageSource = "podsebe.png";
             DalsiButton.Text = ">";
             OdvezdatButton.Text = AppResource.Odevzdat;
             VysledekPropisInput.Text = String.Empty;
@@ -47,6 +48,10 @@ namespace Mathster
                     break;
                 case 5:
                     Title = $"{AppResource.Rovnice} | {id + 1}/{fronta.Count}";
+                    PodSebeButton.IconImageSource = "";
+                    PodSebeButton.IsEnabled = false;
+                    PodSebeButton.Priority = 0;
+                    MenuToolbarButton.Priority = 1;
                     break;
             }
             PrikladLabel.Text = $"{priklad.Zadani}";
