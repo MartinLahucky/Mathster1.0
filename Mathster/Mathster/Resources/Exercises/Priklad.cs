@@ -133,7 +133,7 @@ namespace Mathster.Resources.Exercises
             vysledek = random.Next(-3, 5);
             int nasobek = random.Next(2, 5), cisloNavic = random.Next(-20, 21), xNavic = random.Next(-20, 21);
             experience = (byte) nasobek.ToString().Length;
-            experience += (byte) +cisloNavic.ToString().Length;
+            experience += (byte) cisloNavic.ToString().Length;
             experience += (byte) xNavic.ToString().Length;
 
             switch (random.Next(0, 3))
