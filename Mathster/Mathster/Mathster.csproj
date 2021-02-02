@@ -11,6 +11,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
         <PackageReference Include="R.NET" Version="1.9.0" />
         <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.2" />
         <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
