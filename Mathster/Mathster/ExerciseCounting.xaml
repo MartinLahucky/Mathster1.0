@@ -37,6 +37,35 @@
                         </StackLayout>
                     </Frame>
 
+                     <!--       ↓ NA KVADRATICKÝ ROVNICE        -->
+
+                    <StackLayout Orientation="Horizontal" Margin="0,-126,0,60" HorizontalOptions="Center" IsVisible="False">
+                        <Frame CornerRadius="15" Padding="0" HorizontalOptions="Start" HasShadow="False">
+                            <StackLayout x:Name="ResultInputLayout1">
+                                <Label x:Name="ResultLabelInput1" HeightRequest="60" Margin="0,0,0,-66" 
+                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                                       StyleClass="ResultInput" />
+                                <customUi:CS_Entry x:Name="ResultInput1" Keyboard="Numeric" FontSize="30"
+                                                   HeightRequest="60" VerticalTextAlignment="Center"
+                                                   HorizontalTextAlignment="Center" BackgroundColor="Transparent"
+                                                   TextColor="Transparent" StyleClass="BlackText"
+                                                   TextChanged="ResultInput_OnTextChanged" />
+                            </StackLayout>
+                        </Frame>
+                            <Frame CornerRadius="15" Padding="0" HorizontalOptions="End" HasShadow="False">
+                            <StackLayout x:Name="ResultInputLayout2">
+                                <Label x:Name="ResultLabelInput2" HeightRequest="60" Margin="0,0,0,-66"
+                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                                       StyleClass="ResultInput" />
+                                <customUi:CS_Entry x:Name="ResultInput2" Keyboard="Numeric" FontSize="30"
+                                                   HeightRequest="60" VerticalTextAlignment="Center"
+                                                   HorizontalTextAlignment="Center" BackgroundColor="Transparent"
+                                                   TextColor="Transparent" StyleClass="BlackText"
+                                                   TextChanged="ResultInput_OnTextChanged" />
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                    
                     <Button x:Name="NextButton"
                             Clicked="NextButton_OnClicked"
                             Margin="20,0,20,20"
