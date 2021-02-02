@@ -6,7 +6,7 @@
     </item>
     <item>
         <bitmap
-            android:src="@drawable/ikonaStart"
+            android:src="@drawable/start_icon"
             android:tileMode="disabled"
             android:gravity="center" />
     </item>

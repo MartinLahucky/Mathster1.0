@@ -1,0 +1,146 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Yes" xml:space="preserve">
+        <value>Ano</value>
+    </data>
+    <data name="CountTime" xml:space="preserve">
+        <value>Délká počítání</value>
+    </data>
+    <data name="Total" xml:space="preserve">
+        <value>Celkem</value>
+    </data>
+    <data name="Next" xml:space="preserve">
+        <value>Další</value>
+    </data>
+    <data name="Division" xml:space="preserve">
+        <value>Dělení</value>
+    </data>
+    <data name="Name" xml:space="preserve">
+        <value>Jméno</value>
+    </data>
+    <data name="Menu" xml:space="preserve">
+        <value>Menu</value>
+    </data>
+    <data name="Random" xml:space="preserve">
+        <value>Náhodné</value>
+    </data>
+    <data name="Multiplication" xml:space="preserve">
+        <value>Násobení</value>
+    </data>
+    <data name="Ok" xml:space="preserve">
+        <value>Ok</value>
+    </data>
+    <data name="Settings" xml:space="preserve">
+        <value>Nastavení</value>
+    </data>
+    <data name="AboutApp" xml:space="preserve">
+        <value>O aplikaci</value>
+    </data>
+    <data name="No" xml:space="preserve">
+        <value>Ne</value>
+    </data>
+    <data name="AboutAppText" xml:space="preserve">
+        <value>Účelem aplikace je procvičovat a zrychlovat se v počtech. Aplikace je vhodná pro malé i velké počtáře.</value>
+    </data>
+    <data name="AppVersion" xml:space="preserve">
+        <value>Verze aplikace</value>
+    </data>
+    <data name="Subtraction" xml:space="preserve">
+        <value>Odečítání</value>
+    </data>
+    <data name="Submit" xml:space="preserve">
+        <value>Odevzdat</value>
+    </data>
+    <data name="Ratio" xml:space="preserve">
+        <value>Poměr</value>
+    </data>
+    <data name="Solution" xml:space="preserve">
+        <value>Řešení</value>
+    </data>
+    <data name="AboutUs" xml:space="preserve">
+        <value>O nás</value>
+    </data>
+    <data name="AboutUsText" xml:space="preserve">
+        <value>Jsme skupina bláznivých jedinců, co se dívají na věci z jiného úhlu a snaží se posouvat technologie dál.</value>
+    </data>
+    <data name="Alert" xml:space="preserve">
+        <value>Upozornění</value>
+    </data>
+    <data name="AlertResetStatistics" xml:space="preserve">
+        <value>Jste si jistí, že chcete resetovat statistiky? (Budou navždy pryč)</value>
+    </data>
+    <data name="Equation" xml:space="preserve">
+        <value>Rovnice</value>
+    </data>
+    <data name="Addition" xml:space="preserve">
+        <value>Sčítání</value>
+    </data>
+    <data name="Summary" xml:space="preserve">
+        <value>Přehled</value>
+    </data>
+    <data name="SolutionCorrect" xml:space="preserve">
+        <value>Správné řešení</value>
+    </data>
+    <data name="ResetStatistics" xml:space="preserve">
+        <value>Resetovat statistiky</value>
+    </data>
+    <data name="Statistics" xml:space="preserve">
+        <value>Statistiky</value>
+    </data>
+    <data name="AlertAllCorrect" xml:space="preserve">
+        <value>Všechny výsledky jsou správně. Velká gratulace!</value>
+    </data>
+    <data name="AlertAllWrong" xml:space="preserve">
+        <value>Bohužel, všechny výsledky jsou špatně. Měli by jste více procvičovat.</value>
+    </data>
+    <data name="AlertInputNumber" xml:space="preserve">
+        <value>Prosím zadejte číslo</value>
+    </data>
+    <data name="YourSolution" xml:space="preserve">
+        <value>Vaše řešení</value>
+    </data>
+    <data name="Results" xml:space="preserve">
+        <value>Výsledky</value>
+    </data>
+    <data name="DevFrontEndText" xml:space="preserve">
+        <value>Grafika: Martin Borka, Jan Řehoř, David Trkola</value>
+    </data>
+    <data name="DevBackEndText" xml:space="preserve">
+        <value>Programování: Martin Lahučký</value>
+    </data>
+    <data name="AlertExit" xml:space="preserve">
+        <value>Stiskněte znovu zpět pro ukončení aplikace</value>
+    </data>
+    <data name="EnterYourName" xml:space="preserve">
+        <value>Zadejte své jméno</value>
+    </data>
+    <data name="Assignment" xml:space="preserve">
+        <value>Zadání</value>
+    </data>
+    <data name="SelectNumSize" xml:space="preserve">
+        <value>Zvolte velikost čísel</value>
+    </data>
+    <data name="SelectDivMulSize" xml:space="preserve">
+        <value>Zvolte dělitel/násobitel</value>
+    </data>
+    <data name="SelectExercisesAmount" xml:space="preserve">
+        <value>Zvolte počet příkladů</value>
+    </data>
+    <data name="DarkMode" xml:space="preserve">
+        <value>Tmavý režim</value>
+    </data>
+    <data name="Gained" xml:space="preserve">
+        <value>Získáno </value>
+    </data>
+</root>

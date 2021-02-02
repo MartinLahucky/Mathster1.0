@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customUi="clr-namespace:Mathster.Resources.Custom_UI;assembly=Mathster"
+             x:Class="Mathster.Settings">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="MenuButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <StyleSheet Source="Resources/Styles/Components.css" />
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame StyleClass="FrameDarkPurple" Margin="30,0" CornerRadius="30" VerticalOptions="CenterAndExpand">
+                <StackLayout>
+                    <Label x:Name="NameLabel" StyleClass="TitleGreenLabel" HorizontalOptions="Center" />
+                    <customUi:CS_Entry x:Name="NameEntry" HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center" TextChanged="NameEntry_OnTextChanged" />
+                </StackLayout>
+            </Frame>
+            <Frame StyleClass="FrameDarkPurple" Margin="30,0" CornerRadius="30" VerticalOptions="StartAndExpand">
+                <StackLayout>
+                    <Label x:Name="DarkModeLabel" StyleClass="TitleGreenLabel" HorizontalOptions="Center" />
+                    <Switch x:Name="DarkModeSwitch" ThumbColor="white" OnColor="#7F7FFD"
+                            HorizontalOptions="CenterAndExpand" Margin="2,4,2,2" Toggled="DarkModeSwitch_Toggled" />
+                </StackLayout>
+            </Frame>
+            <Label x:Name="AboutAppLabel" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                   VerticalOptions="EndAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

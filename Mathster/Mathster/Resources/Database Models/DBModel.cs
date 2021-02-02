@@ -5,67 +5,67 @@ namespace Mathster.Resources.Database_Models
 {
     public class DBModel
     {
-        [PrimaryKey] public int ID { get; set; }
-        [MaxLength(12)] public string Jmeno { get; set; }
+        [PrimaryKey] [AutoIncrement] public int ID { get; set; }
+        [MaxLength(12)] public string Name { get; set; }
         public int Experience { get; set; }
-        public int CelkemPrikladu { get; set; }
-        public int CelkemScitani { get; set; }
-        public int CelkemScitaniSpravne { get; set; }
-        public int CelkemOdcitani { get; set; }
-        public int CelkemOdcitaniSpravne { get; set; }
-        public int CelkemNasobeni { get; set; }
-        public int CelkemNasobeniSpravne { get; set; }
-        public int CelkemDeleni { get; set; }
-        public int CelkemDeleniSpravne { get; set; }
-        public int CelkemPrikladuSpravne { get; set; }
+        public int TotalExercises { get; set; }
+        public int TotalAddExercises { get; set; }
+        public int TotalAddExercisesCorrect { get; set; }
+        public int TotalSub { get; set; }
+        public int TotalSubCorrect { get; set; }
+        public int TotalMul { get; set; }
+        public int TotalMulCorrect { get; set; }
+        public int TotalDiv { get; set; }
+        public int TotalDivCorrect { get; set; }
+        public int TotalExercisesCorrect { get; set; }
 
-        public void GetLevel(out int level, out double progres, DBModel tabulka)
+        public void GetLevel(out int level, out double progress, DBModel table)
         {
-            level = (int) Math.Sqrt(tabulka.Experience) / 20;
-            progres = Math.Sqrt(tabulka.Experience) / 20 - level;
+            level = (int) Math.Sqrt(table.Experience) / 20;
+            progress = Math.Sqrt(table.Experience) / 20 - level;
         }
 
-        public void AddGoodStats(byte druhPrikladu, DBModel tabulka)
+        public void AddGoodStats(byte exerciseType, DBModel table)
         {
-            switch (druhPrikladu)
+            switch (exerciseType)
             {
                 case 1:
-                    tabulka.CelkemScitaniSpravne++;
+                    table.TotalAddExercisesCorrect++;
                     break;
                 case 2:
-                    tabulka.CelkemOdcitaniSpravne++;
+                    table.TotalSubCorrect++;
                     break;
                 case 3:
-                    tabulka.CelkemNasobeniSpravne++;
+                    table.TotalMulCorrect++;
                     break;
                 case 4:
-                    tabulka.CelkemDeleniSpravne++;
+                    table.TotalDivCorrect++;
                     break;
             }
 
-            tabulka.CelkemPrikladuSpravne++;
-            AddStats(druhPrikladu, tabulka);
+            table.TotalExercisesCorrect++;
+            AddStats(exerciseType, table);
         }
 
-        public void AddStats(byte druhPrikladu, DBModel tabulka)
+        public void AddStats(byte exerciseType, DBModel table)
         {
-            switch (druhPrikladu)
+            switch (exerciseType)
             {
                 case 1:
-                    tabulka.CelkemScitani++;
+                    table.TotalAddExercises++;
                     break;
                 case 2:
-                    tabulka.CelkemOdcitani++;
+                    table.TotalSub++;
                     break;
                 case 3:
-                    tabulka.CelkemNasobeni++;
+                    table.TotalMul++;
                     break;
                 case 4:
-                    tabulka.CelkemDeleni++;
+                    table.TotalDiv++;
                     break;
             }
 
-            tabulka.CelkemPrikladu++;
+            table.TotalExercises++;
         }
     }
 }

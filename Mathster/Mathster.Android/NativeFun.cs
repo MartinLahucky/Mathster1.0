@@ -12,12 +12,12 @@ namespace Mathster
     {
         public void LongAlert(string message)
         {
-            Toast.MakeText(AndroidApp.Context, message, ToastLength.Long).Show();
+            Toast.MakeText(AndroidApp.Context, message, ToastLength.Long)?.Show();
         }
 
         public void ShortAlert(string message)
         {
-            Toast.MakeText(AndroidApp.Context, message, ToastLength.Short).Show();
+            Toast.MakeText(AndroidApp.Context, message, ToastLength.Short)?.Show();
         }
     }
 }

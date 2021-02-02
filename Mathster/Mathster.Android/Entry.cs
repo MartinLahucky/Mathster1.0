@@ -7,7 +7,7 @@ using Color = Android.Graphics.Color;
 
 namespace Mobile.Droid.Renderers
 {
-    // Bez téhle píčoviny se bude zorazovat nehezká čára pod Entry, což určitě není pěkné
+    // Without this terribleness there will be an ugly line under every entry 
     public class CustomEntryRenderer_Droid : EntryRenderer
     {
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)

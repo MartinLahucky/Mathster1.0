@@ -2,11 +2,11 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mathster.NastaveniPrikladu"
+             x:Class="Mathster.ExerciseSettings"
              x:Name="NastaveniPrikladuContentPage">
 
     <ContentPage.Resources>
-        <StyleSheet Source="Resources/Styles/Komponenty.css" />
+        <StyleSheet Source="Resources/Styles/Components.css" />
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
@@ -15,83 +15,81 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <!--počet příkladů:-->
             <ScrollView>
                 <StackLayout>
-
-                    <Frame x:Name="PocetPrikladuFrame" Margin="15,10,15,2" BackgroundColor="#4D4DFC" CornerRadius="40">
+                    <!--Amount of exercises-->
+                    <Frame x:Name="ExCountFrame" Margin="15,10,15,2" BackgroundColor="#4D4DFC" CornerRadius="40">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label x:Name="nazev1Label" StyleClass="NastaveniPrikladuNazevLabel"
+                                <Label x:Name="ExStaticLabel" StyleClass="ExerciseSettingsNameLabel"
                                        VerticalOptions="CenterAndExpand" />
-                                <Frame x:Name="Frame1" StyleClass="NastaveniPrikladuFrame"
+                                <Frame x:Name="Frame1" StyleClass="ExerciseSettingsFrame"
                                        HorizontalOptions="EndAndExpand">
-                                    <Label x:Name="pocetPrikladuLabel" StyleClass="NastaveniPrikladuLabel"
+                                    <Label x:Name="ExCountLabel" StyleClass="ExerciseSettingsLabel"
                                            VerticalOptions="Center" HorizontalOptions="Center" />
                                 </Frame>
                             </StackLayout>
 
-                            <Slider x:Name="pocetPrikladuSlider"
+                            <Slider x:Name="ExCountSlider"
                                     MaximumTrackColor="#484848"
                                     MinimumTrackColor="#FCA54D"
                                     ThumbColor="White"
-                                    ValueChanged="pocetPrikladu_ValueChanged" />
+                                    ValueChanged="ExCountSlider_OnValueChanged" />
                         </StackLayout>
                     </Frame>
 
 
-                    <!--počet cifer:-->
-                    <Frame x:Name="PocetCiferFrame" Margin="15,2,15,2" BackgroundColor="#4D4DFC" CornerRadius="40">
+                    <!--Number size-->
+                    <Frame x:Name="NumSizeFrame" Margin="15,2,15,2" BackgroundColor="#4D4DFC" CornerRadius="40">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label x:Name="nazev2Label" StyleClass="NastaveniPrikladuNazevLabel"
+                                <Label x:Name="NumSizeStaticLabel" StyleClass="ExerciseSettingsNameLabel"
                                        VerticalOptions="CenterAndExpand" />
-                                <Frame x:Name="Frame2" StyleClass="NastaveniPrikladuFrame"
+                                <Frame x:Name="Frame2" StyleClass="ExerciseSettingsFrame"
                                        HorizontalOptions="EndAndExpand">
-                                    <Label x:Name="pocetCiferLabel" StyleClass="NastaveniPrikladuLabel"
+                                    <Label x:Name="NumSizeCountLabel" StyleClass="ExerciseSettingsLabel"
                                            VerticalOptions="Center" HorizontalOptions="Center" />
                                 </Frame>
                             </StackLayout>
 
-                            <Slider x:Name="pocetCiferSlider"
+                            <Slider x:Name="NumSizeSlider"
                                     MaximumTrackColor="#484848"
                                     MinimumTrackColor="#FCA54D"
                                     ThumbColor="White"
-                                    ValueChanged="pocetCiferSlider_ValueChanged" />
+                                    ValueChanged="NumSizeSlider_OnValueChanged" />
                         </StackLayout>
                     </Frame>
 
 
-                    <!--velikost dělitele:-->
-                    <Frame x:Name="DeleniANasbeniFrame" Margin="15,2,15,2" BackgroundColor="#4D4DFC" CornerRadius="40">
+                    <!--Mul/Div size-->
+                    <Frame x:Name="MulDivFrame" Margin="15,2,15,2" BackgroundColor="#4D4DFC" CornerRadius="40">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label x:Name="nazev3Label" StyleClass="NastaveniPrikladuNazevLabel"
+                                <Label x:Name="MulDivStaticLabel" StyleClass="ExerciseSettingsNameLabel"
                                        VerticalOptions="CenterAndExpand" />
-                                <Frame x:Name="Frame3" StyleClass="NastaveniPrikladuFrame"
+                                <Frame x:Name="Frame3" StyleClass="ExerciseSettingsFrame"
                                        HorizontalOptions="EndAndExpand">
-                                    <Label x:Name="velikostDeliteleLabel" StyleClass="NastaveniPrikladuLabel"
+                                    <Label x:Name="MulDivCountLabel" StyleClass="ExerciseSettingsLabel"
                                            VerticalOptions="Center" HorizontalOptions="Center"
                                            HorizontalTextAlignment="Center" />
                                 </Frame>
                             </StackLayout>
-                            <Slider x:Name="velikostDeliteleSlider"
+                            <Slider x:Name="MulDivSlider"
                                     MaximumTrackColor="#484848"
                                     MinimumTrackColor="#FCA54D"
                                     ThumbColor="White"
-                                    ValueChanged="velikostDeliteleSlider_ValueChanged" />
+                                    ValueChanged="MulDivSlider_OnValueChanged" />
                         </StackLayout>
                     </Frame>
 
                 </StackLayout>
             </ScrollView>
 
-            <!--dolní button:-->
-
-            <Button x:Name="DalsiButton"
-                    Clicked="DalsiButton_OnClicked"
+            <!--Next button-->
+            <Button x:Name="NextButton"
+                    Clicked="NextButton_OnClicked"
                     Margin="80,0,80,20"
-                    StyleClass="Tlacitka"
+                    StyleClass="Button"
                     CornerRadius="30"
                     VerticalOptions="EndAndExpand" />
         </StackLayout>

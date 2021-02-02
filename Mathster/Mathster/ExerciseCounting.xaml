@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customUi="clr-namespace:Mathster.Resources.Custom_UI;assembly=Mathster"
+             x:Class="Mathster.ExerciseCounting">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="UnderButton" Order="Primary" Priority="1" Clicked="UnderButton_OnClicked" />
+        <ToolbarItem x:Name="MenuButton" Order="Primary" Priority="0" Clicked="MenuButton_OnClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <StyleSheet Source="Resources/Styles/Components.css" />
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout x:Name="MainLayout">
+            <ScrollView x:Name="View">
+                <StackLayout x:Name="SecondLayer" VerticalOptions="Center" Margin="60,30,60,0">
+                    <Frame CornerRadius="15" StyleClass="ExerciseLabel" Padding="0" Margin="0,60,0,30" HasShadow="False">
+                        <StackLayout x:Name="ExerciseLayout">
+                            <Label x:Name="ExerciseLabel" VerticalTextAlignment="Center" StyleClass="ExerciseLabel" />
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame CornerRadius="15" Padding="0" Margin="0,0,0,60" HasShadow="False">
+                        <StackLayout x:Name="ResultInputLayout">
+                            <Label x:Name="ResultLabelInput" HeightRequest="60" Margin="0,0,0,-66"
+                                   VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                                   StyleClass="ResultInput" />
+                            <customUi:CS_Entry x:Name="ResultInput" Keyboard="Numeric" FontSize="30"
+                                               HeightRequest="60" VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Center" BackgroundColor="Transparent"
+                                               TextColor="Transparent" StyleClass="BlackText"
+                                               TextChanged="ResultInput_OnTextChanged" />
+                        </StackLayout>
+                    </Frame>
+
+                    <Button x:Name="NextButton"
+                            Clicked="NextButton_OnClicked"
+                            Margin="20,0,20,20"
+                            StyleClass="Button"
+                            CornerRadius="30"
+                            VerticalOptions="EndAndExpand" />
+
+                    <Button x:Name="SubmitButton"
+                            Clicked="NextButton_OnClicked"
+                            Margin="20,0,20,20"
+                            StyleClass="Button"
+                            CornerRadius="30"
+                            VerticalOptions="EndAndExpand" />
+                    
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

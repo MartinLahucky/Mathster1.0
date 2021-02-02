@@ -8,7 +8,7 @@ using Environment = System.Environment;
 
 namespace Mathster.Android
 {
-    [Activity(Label = "Mathster", Icon = "@drawable/ikona", Theme = "@style/MainTheme.Splash", MainLauncher = true,
+    [Activity(Label = "Mathster", Icon = "@drawable/icon", Theme = "@style/MainTheme.Splash", MainLauncher = true,
         ScreenOrientation = ScreenOrientation.Portrait,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : FormsAppCompatActivity
@@ -27,24 +27,5 @@ namespace Mathster.Android
                 "mathster_db.sqlite");
             LoadApplication(new App(fullPath));
         }
-
-        // //Double press pro exit 
-        // private long lastPress;
-        // public override void OnBackPressed()
-        // {
-        //     // source https://stackoverflow.com/a/27124904/3814729
-        //     long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
-        //
-        //     // source https://stackoverflow.com/a/14006485/3814729
-        //     if (currentTime - lastPress > 5000)
-        //     {
-        //         Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
-        //         lastPress = currentTime;
-        //     }
-        //     else
-        //     {
-        //         base.OnBackPressed();
-        //     }
-        // }
     }
 }

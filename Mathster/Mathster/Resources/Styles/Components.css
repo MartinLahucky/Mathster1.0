@@ -1,5 +1,5 @@
 ﻿/* color = TextColor */
-.PrikladLabel {
+.ExerciseLabel {
     font-size: 30;
     text-align: center;
     width: 130;
@@ -7,7 +7,7 @@
     color: black;
 }
 
-.VysledekInput {
+.ResultInput {
     font-size: 30;
     text-align: center;
     width: 130;
@@ -15,13 +15,13 @@
     color: black;
 }
 
-.TextBezPozadi {
+.BlackText {
     font-size: 30;
     width: 130;
     color: black;
 }
 
-.Tlacitka {
+.Button {
     font-size: 30;
     background-color: #4D4DFC;
     color: white;
@@ -33,7 +33,7 @@
     color: white;
 }
 
-.MenuTlacitka {
+.MenuButton {
     font-size: 40;
     background-color: #4D4DFC;
     color: white;
@@ -46,36 +46,36 @@
     color: firebrick;
 }
 
-.FrameTmaveFialova {
+.FrameDarkPurple {
     border-color: #4D4DFC;
     background-color: #4D4DFC;
     color: white;
 }
 
-.NastaveniPrikladuLabel {
+.ExerciseSettingsLabel {
     font-size: 30;
     color: #4D4DFC;
 }
 
-.NastaveniPrikladuFrame {
+.ExerciseSettingsFrame {
     border-radius: 30;
     color: white;
     margin: 5;
     width: 50;
 }
 
-.NastaveniPrikladuNazevLabel {
+.ExerciseSettingsNameLabel {
     font-size: 25;
     color: #ffffff;
     margin: 10;
 }
 
-.ZelenyNadpidLabel {
+.TitleGreenLabel {
     color: #C9FF50;
     font-size: 25;
 }
 
-.FialovaNadpidLabel {
+.TitlePurpleLabel {
     color: #4D4DFC;
     font-size: 30;
 }

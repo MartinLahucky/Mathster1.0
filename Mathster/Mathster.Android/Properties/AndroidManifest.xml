@@ -3,5 +3,5 @@
 	<uses-sdk android:minSdkVersion="17" android:targetSdkVersion="29" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-	<application android:label="Mathster" android:supportsRtl="true" android:icon="@drawable/ikona"></application>
+	<application android:label="Mathster" android:supportsRtl="true" android:icon="@drawable/icon"></application>
 </manifest>

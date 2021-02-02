@@ -2,13 +2,13 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mathster.ONas">
+             x:Class="Mathster.AboutUs">
     <ContentPage.Resources>
-        <StyleSheet Source="Resources/Styles/Komponenty.css" />
+        <StyleSheet Source="Resources/Styles/Components.css" />
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="MenuToolbarButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
+        <ToolbarItem x:Name="MenuButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
@@ -16,20 +16,20 @@
             <StackLayout x:Name="SecondLayer" VerticalOptions="Center">
                 <StackLayout>
                     <Frame x:Name="InfoFrame1" Margin="30,20,30,20" HasShadow="False" CornerRadius="15"
-                           StyleClass="FrameTmaveFialova">
+                           StyleClass="FrameDarkPurple">
                         <StackLayout>
-                            <Label x:Name="ONasStaticLabel" Margin="0,0,0,10" FontSize="20"
+                            <Label x:Name="AboutUsStaticLabel" Margin="0,0,0,10" FontSize="20"
                                    VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
-                            <Label x:Name="ONasLabel" VerticalTextAlignment="Center" FontSize="15"
+                            <Label x:Name="AboutUsLabel" VerticalTextAlignment="Center" FontSize="15"
                                    HorizontalTextAlignment="Center" />
                         </StackLayout>
                     </Frame>
                     <Frame x:Name="InfoFrame2" Margin="30,20,30,0" HasShadow="False" CornerRadius="15"
-                           StyleClass="FrameTmaveFialova">
+                           StyleClass="FrameDarkPurple">
                         <StackLayout>
-                            <Label x:Name="OAplikaciStaticLabel" Margin="0,0,0,10" FontSize="20"
+                            <Label x:Name="AboutAppStaticLabel" Margin="0,0,0,10" FontSize="20"
                                    VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
-                            <Label x:Name="OAplikaciLabel" VerticalTextAlignment="Center" FontSize="15"
+                            <Label x:Name="AboutAppLabel" VerticalTextAlignment="Center" FontSize="15"
                                    HorizontalTextAlignment="Center" />
                         </StackLayout>
                     </Frame>

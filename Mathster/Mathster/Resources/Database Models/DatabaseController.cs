@@ -16,23 +16,22 @@ namespace Mathster.Resources.Database_Models
             {
                 if (await database.Table<DBModel>().CountAsync() == 0)
                 {
-                    DBModel tabulkaModel = new DBModel
+                    DBModel table = new DBModel
                     {
-                        ID = 0,
-                        Jmeno = String.Empty,
+                        Name = String.Empty,
                         Experience = 0,
-                        CelkemPrikladu = 0,
-                        CelkemScitani = 0,
-                        CelkemScitaniSpravne = 0,
-                        CelkemOdcitani = 0,
-                        CelkemOdcitaniSpravne = 0,
-                        CelkemNasobeni = 0,
-                        CelkemNasobeniSpravne = 0,
-                        CelkemDeleni = 0,
-                        CelkemDeleniSpravne = 0,
-                        CelkemPrikladuSpravne = 0,
+                        TotalExercises = 0,
+                        TotalAddExercises = 0,
+                        TotalAddExercisesCorrect = 0,
+                        TotalSub = 0,
+                        TotalSubCorrect = 0,
+                        TotalMul = 0,
+                        TotalMulCorrect = 0,
+                        TotalDiv = 0,
+                        TotalDivCorrect = 0,
+                        TotalExercisesCorrect = 0,
                     };
-                    await database.InsertAsync(tabulkaModel);
+                    await database.InsertAsync(table);
                 }
             });
             Task.WaitAll(task);
@@ -42,13 +41,13 @@ namespace Mathster.Resources.Database_Models
             {
                 if (await database.Table<SettingsModel>().CountAsync() == 0)
                 {
-                    SettingsModel tabulkaNastaveni = new SettingsModel
+                    SettingsModel settings = new SettingsModel
                     {
                         ID = 0,
                         DarkMode = false,
                         BackgroundHex = "#FAFAFA"
                     };
-                    await database.InsertAsync(tabulkaNastaveni);
+                    await database.InsertAsync(settings);
                 }
             });
             Task.WaitAll(task1);
@@ -64,21 +63,21 @@ namespace Mathster.Resources.Database_Models
             return await database.Table<SettingsModel>().Where(i => i.ID == id).FirstOrDefaultAsync();
         }
 
-        public Task<int> UpdateTable(DBModel zapis)
+        public Task<int> UpdateTable(DBModel table)
         {
-            if (zapis.ID == 0)
+            if (table.ID == 0)
             {
-                return database.UpdateAsync(zapis);
+                return database.UpdateAsync(table);
             }
             else
             {
-                return database.InsertAsync(zapis);
+                return database.InsertAsync(table);
             }
         }
 
-        public Task<int> UpdateSettings(SettingsModel zapis)
+        public Task<int> UpdateSettings(SettingsModel table)
         {
-            return database.UpdateAsync(zapis);
+            return database.UpdateAsync(table);
         }
     }
 }

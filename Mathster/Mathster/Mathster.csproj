@@ -14,22 +14,11 @@
         <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.2" />
         <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
         <PackageReference Include="Xam.Plugins.Forms.ProgressRing" Version="0.1.2" />
-        <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
-        <PackageReference Include="Xamarin.Forms" Version="4.8.0.1534" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.1931" />
     </ItemGroup>
 
     <ItemGroup>
-      <EmbeddedResource Update="NastaveniPrikladu.xaml">
-        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Menu.xaml">
-        <SubType>Designer</SubType>
-        <Generator></Generator>
-      </EmbeddedResource>
-      <EmbeddedResource Update="Priklady.xaml">
-        <SubType>Designer</SubType>
-        <Generator></Generator>
-      </EmbeddedResource>
       <EmbeddedResource Update="Helpers\Resources\AppResource.resx">
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>AppResource.Designer.cs</LastGenOutput>
@@ -42,23 +31,14 @@
         <SubType>Designer</SubType>
         <Generator></Generator>
       </EmbeddedResource>
-      <EmbeddedResource Update="Souhrn.xaml">
-        <SubType>Designer</SubType>
-        <Generator></Generator>
-      </EmbeddedResource>
-      <EmbeddedResource Update="ONas.xaml">
-        <SubType>Designer</SubType>
-        <Generator></Generator>
+      <EmbeddedResource Remove="RozborVysledku.xaml" />
+      <EmbeddedResource Update="Resources\Localization\Localization.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Localization.Designer.cs</LastGenOutput>
       </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Menu.xaml.cs">
-        <DependentUpon>Menu.xaml</DependentUpon>
-      </Compile>
-      <Compile Update="Priklady.xaml.cs">
-        <DependentUpon>Priklady.xaml</DependentUpon>
-      </Compile>
       <Compile Update="Helpers\Resources\AppResource.Designer.cs">
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
@@ -69,11 +49,10 @@
         <AutoGen>True</AutoGen>
         <DependentUpon>AppResource.cs-CZ.resx</DependentUpon>
       </Compile>
-      <Compile Update="Souhrn.xaml.cs">
-        <DependentUpon>Souhrn.xaml</DependentUpon>
-      </Compile>
-      <Compile Update="ONas.xaml.cs">
-        <DependentUpon>ONas.xaml</DependentUpon>
+      <Compile Update="Resources\Localization\Localization.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Localization.resx</DependentUpon>
       </Compile>
     </ItemGroup>
 </Project>

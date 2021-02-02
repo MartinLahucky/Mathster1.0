@@ -2,10 +2,9 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mathster.Souhrn"
-             NavigationPage.HasBackButton="False">
+             x:Class="Mathster.Summary">
     <ContentPage.Resources>
-        <StyleSheet Source="Resources/Styles/Komponenty.css" />
+        <StyleSheet Source="Resources/Styles/Components.css" />
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
@@ -18,9 +17,9 @@
             <StackLayout>
                 <StackLayout VerticalOptions="Center" Margin="20">
 
-                    <Label x:Name="NadpisSouhrnLabel" HorizontalOptions="Center" StyleClass="FialovaNadpidLabel" />
+                    <Label x:Name="TitleSummaryLabel" HorizontalOptions="Center" StyleClass="TitlePurpleLabel" />
 
-                    <Frame StyleClass="FrameTmaveFialova" CornerRadius="25" Padding="10,10,10,10">
+                    <Frame StyleClass="FrameDarkPurple" CornerRadius="25" Padding="10,10,10,10">
                         <StackLayout>
                             <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
                             <Grid>
@@ -35,43 +34,42 @@
                                     <ColumnDefinition Width="70*" />
                                 </Grid.ColumnDefinitions>
 
-                                <!-- dobře počet okýnko -->
-                                <Image Source="dobre_ikona.png" Grid.Column="0" Grid.Row="0" />
-                                <Button x:Name="DobrePocetButton" BackgroundColor="#FFFFFF" CornerRadius="25"
+                                <!-- correct counter -->
+                                <Image Source="correct_icon.png" Grid.Column="0" Grid.Row="0" />
+                                <Button x:Name="CorrectCountButton" BackgroundColor="#FFFFFF" CornerRadius="25"
                                         Grid.Column="0" Grid.Row="1" WidthRequest="200" HorizontalOptions="Center"
                                         VerticalOptions="Center" TextColor="Black" FontSize="30"
-                                        Clicked="DobreButton_OnClicked" />
+                                        Clicked="CorrectCountButton_OnClicked" />
 
 
-                                <!-- špatně počet okýnko -->
-                                <Image Source="spatne_ikona.png" Grid.Column="2" Grid.Row="0" />
-                                <Button x:Name="SpatnePocetButton" BackgroundColor="#FFFFFF" CornerRadius="25"
+                                <!-- wrong counter -->
+                                <Image Source="wrong_icon.png" Grid.Column="2" Grid.Row="0" />
+                                <Button x:Name="WrongCountButton" BackgroundColor="#FFFFFF" CornerRadius="25"
                                         Grid.Column="2" Grid.Row="1" WidthRequest="200" HorizontalOptions="Center"
                                         VerticalOptions="Center" TextColor="Black" FontSize="30"
-                                        Clicked="SpatneButton_OnClicked" />
+                                        Clicked="WrongCountButton_OnClicked" />
                             </Grid>
 
                             <!-- listview -->
                             <Frame Padding="0" Margin="0,30,0,0" HasShadow="False" CornerRadius="25">
-                                <!-- StyleClass="FrameTmaveFialova" -->
                                 <StackLayout>
-                                    <ListView x:Name="VysledkyList" HeightRequest="250"
-                                              ItemTapped="VysledkyList_OnItemTapped" BackgroundColor="#7F7FFD">
+                                    <ListView x:Name="ResultList" HeightRequest="250"
+                                              ItemTapped="ResultList_OnItemTapped" BackgroundColor="#7F7FFD">
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
                                                 <ViewCell>
-                                                    <StackLayout x:Name="Ohraniceni" BackgroundColor="#4d4dfc">
-                                                        <StackLayout x:Name="BarvaCellu"
-                                                                     BackgroundColor="{Binding BarvaCellu}"
+                                                    <StackLayout x:Name="BorderLayout" BackgroundColor="#4d4dfc">
+                                                        <StackLayout x:Name="CellColor"
+                                                                     BackgroundColor="{Binding CellColor}"
                                                                      Orientation="Horizontal">
                                                             <StackLayout BackgroundColor="#7F7FFD" Padding="0">
-                                                                <Image x:Name="VysledekImage"
+                                                                <Image x:Name="ResultImage"
                                                                        VerticalOptions="CenterAndExpand"
-                                                                       Source="{Binding StatusPrikladu}" Margin="15,0" />
+                                                                       Source="{Binding Image}" Margin="15,0" />
                                                             </StackLayout>
-                                                            <Label x:Name="VysledekLabel"
-                                                                   Text="{Binding TextovaPodobaPrikladu}" FontSize="30"
-                                                                   TextColor="{Binding BarvaTextu}" Padding="10,0,0,0" />
+                                                            <Label x:Name="ResultLabel"
+                                                                   Text="{Binding Assignment}" FontSize="30"
+                                                                   TextColor="{Binding TextColor}" Padding="10,0,0,0" />
                                                         </StackLayout>
                                                     </StackLayout>
                                                 </ViewCell>
@@ -83,7 +81,7 @@
                         </StackLayout>
                     </Frame>
                 </StackLayout>
-                <Button x:Name="MenuButton" Clicked="MenuButton_OnClicked" Margin="80,0,80,20" StyleClass="Tlacitka"
+                <Button x:Name="MenuButton" Clicked="MenuButton_OnClicked" Margin="80,0,80,20" StyleClass="Button"
                         CornerRadius="30" VerticalOptions="EndAndExpand" />
             </StackLayout>
         </ScrollView>
