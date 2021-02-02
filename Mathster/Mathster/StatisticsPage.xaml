@@ -5,9 +5,7 @@
              x:Class="Mathster.StatisticsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Hello, world!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

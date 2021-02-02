@@ -27,7 +27,7 @@ namespace Mathster
         public App(string databaseLocation)
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new MainPage())
+            MainPage = new NavigationPage(new StatisticsPage())
             {
                 BarTextColor = Color.FromHex("#C9FF50"),
             };

@@ -20,7 +20,7 @@ namespace Mathster.Resources.Custom_UI
         public void DrawFullProgressBar(SKCanvasView View, string backgroundColorHex, string progressBarColorHex,
             float ProgressBarThickness, float progress, string progressColorHex)
         {
-            // Bez tohohle se to nepostaví, buď redundantní kód nebo tahle ošklivost 
+            // This not nice nothing or redundant code 
             View.PaintSurface += (sender, args) =>
             {
                 canvas = args.Surface.Canvas;
@@ -34,7 +34,7 @@ namespace Mathster.Resources.Custom_UI
 
         public void DrawFullCircle(SKCanvasView View, string backgroundColorHex)
         {
-            // Bez tohohle se to nepostaví, buď redundantní kód nebo tahle ošklivost 
+            // This not nice nothing or redundant code 
             View.PaintSurface += (sender, args) =>
             {
                 canvas = args.Surface.Canvas;
@@ -45,31 +45,31 @@ namespace Mathster.Resources.Custom_UI
         }
 
         public void DrawChart(SKCanvasView View, string backgroundColorHex, string progressBarColorHex,
-            float ProgressBarThickness, float entry1, float entry2, float entry3, float entryMax, string entry1ColorHex,
+            float progressBarThickness, float entry1, float entry2, float entry3, float entryMax, string entry1ColorHex,
             string entry2ColorHex, string entry3ColorHex)
         {
             View.PaintSurface += (sender, args) =>
             {
                 float vysledek1, vysledek2, vysledek3;
-                VypocetVelikostCastiGrafu(entry1, entry2, entry3, entryMax, out vysledek1, out vysledek2,
+                ChartPartCalcualtion(entry1, entry2, entry3, entryMax, out vysledek1, out vysledek2,
                     out vysledek3);
                 canvas = args.Surface.Canvas;
                 CalculateCenter(args.Info);
                 canvas.Clear();
                 DrawFullCircle(backgroundColorHex);
-                DrawCircleBorder(ProgressBarThickness, progressBarColorHex);
-                DrawProgress(vysledek1, ProgressBarThickness, entry1ColorHex);
-                DrawProgress(vysledek2, ProgressBarThickness, entry2ColorHex);
-                DrawProgress(vysledek3, ProgressBarThickness, entry3ColorHex);
+                DrawCircleBorder(progressBarThickness, progressBarColorHex);
+                DrawProgress(vysledek1, progressBarThickness, entry1ColorHex);
+                DrawProgress(vysledek2, progressBarThickness, entry2ColorHex);
+                DrawProgress(vysledek3, progressBarThickness, entry3ColorHex);
             };
         }
 
-        private void VypocetVelikostCastiGrafu(float entry1, float entry2, float entry3, float max, out float vysledek1,
+        private void ChartPartCalcualtion(float entry1, float entry2, float entry3, float max, out float vysledek1,
             out float vysledek2, out float vysledek3)
         {
-            vysledek1 = ((entry1 + entry2 + entry3) / max) * 100;
-            vysledek2 = ((entry2 + entry3) / max) * 100;
-            vysledek3 = (entry3 / max) * 100;
+            vysledek1 = (entry1 + entry2 + entry3) / max * 100;
+            vysledek2 = (entry2 + entry3) / max * 100;
+            vysledek3 = entry3 / max * 100;
         }
 
         public SKRect Rect => new SKRect(Center.X - Redius, Center.Y - Redius, Center.X + Redius, Center.Y + Redius);
