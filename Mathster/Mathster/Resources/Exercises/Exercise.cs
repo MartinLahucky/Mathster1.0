@@ -18,6 +18,16 @@
         #region Constructors
 
         public Exercise() { }
+
+        protected Exercise(byte id, string assignment, int result, byte exerciseType, byte experience)
+        {
+            Id = id;
+            Assignment = assignment;
+            Result = result;
+            ExerciseType = exerciseType;
+            Experience = experience;
+        }
+
         public Exercise(byte id, string assignment, string assignmentUnder, int result, byte exerciseType, byte experience)
         {
             Id = id;
@@ -31,10 +41,18 @@
         #endregion
         
         #region Methods
-
-        // public abstract Exercise GenerateExercise();
+        
         public abstract string FormatExercise();
-        public abstract int GetExperience(bool correct);
+
+        public int GetExperience(bool correct)
+        {
+            if (correct)
+            {
+                return (ExerciseType * (ExerciseType / 4) + 1) * Experience * 20;
+            }
+
+            return ExerciseType * (ExerciseType / 4) + 1;
+        }
 
         #endregion
     }

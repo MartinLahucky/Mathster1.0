@@ -26,12 +26,12 @@ namespace Mathster
         {
             InitializeComponent();
             MenuToolbarButton.IconImageSource = "menu_icon.png";
+            this.queue = queue;
+            this.transaction = transaction;
+            
             Title = Localization.Summary;
             MenuButton.Text = Localization.Menu;
             TitleSummaryLabel.Text = Localization.Results;
-
-            this.queue = queue;
-            this.transaction = transaction;
 
             int experienceGained = 0;
             correctList = new List<Exercise>();
@@ -43,7 +43,7 @@ namespace Mathster
                 settings = await App.Database.GetSettings();
             });
             Task.WaitAll(task);
-            
+
             // For list view 
             Result[] exercises = new Result [queue.Length];
 
@@ -52,12 +52,12 @@ namespace Mathster
                 var ex = queue[i];
                 bool correct = true;
                 exercises[i] = new Result(ex.FormatExercise(), settings);
-            
-                if (ex.Assignment.Length >= 13 || ex.ExerciseType == 6)
+
+                if (ex.Assignment.Length >= 13 || ex.ExerciseType >= 5)
                 {
                     ResultList.RowHeight = 80;
                 }
-            
+
                 if (ex.Result == ex.UserInput)
                 {
                     table.AddGoodStats(ex.ExerciseType, table);
@@ -71,15 +71,21 @@ namespace Mathster
                     exercises[i].Image = "wrong_icon.png";
                     wrongList.Add(ex);
                 }
-                
+
                 experienceGained += ex.GetExperience(correct);
             }
+
             ResultList.ItemsSource = exercises;
-            table.Experience += experienceGained; 
+            table.Experience += experienceGained;
             CorrectCountButton.Text = correctList.Count.ToString();
             WrongCountButton.Text = wrongList.Count.ToString();
-            // TODO Maybe keep? 
-            DependencyService.Get<INativeFun>().LongAlert($"{Localization.Gained} {experienceGained}xp");
+
+            if (!transaction)
+            {
+                //TODO nejspíš odstranit? 
+                DependencyService.Get<INativeFun>().ShortAlert($"{Localization.Gained} {experienceGained} Xp");
+                Transaction();
+            }
         }
 
         private async void MenuButton_OnClicked(object sender, EventArgs e)
@@ -92,12 +98,29 @@ namespace Mathster
             }
         }
 
-        protected async override void OnDisappearing()
+        protected override void OnAppearing()
         {
-            base.OnDisappearing();
+            base.OnAppearing();
+            BackgroundColor = Color.FromHex(settings.BackgroundHex);
+            CorrectCountButton.BackgroundColor = Color.FromHex(settings.BackgroundHex);
+            WrongCountButton.BackgroundColor = Color.FromHex(settings.BackgroundHex);
+            if (settings.DarkMode)
+            {
+                TitleSummaryLabel.TextColor = Color.FromHex("#FFFFFF");
+                CorrectCountButton.TextColor = Color.FromHex("#FFFFFF");
+                WrongCountButton.TextColor = Color.FromHex("#FFFFFF");
+            }
+        }
+        
+        private void Transaction()
+        {
             if (!transaction)
             {
-                await App.Database.UpdateTable(table);
+                Task task = Task.Run(async () =>
+                {
+                    App.Database.UpdateTable(table);
+                });
+                Task.WaitAll(task);
                 transaction = true;
             }
         }

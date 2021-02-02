@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Mathster.Resources.Database_Models;
 using Mathster.Resources.Exercises;
 using Mathster.Resources.Localization;
 using Xamarin.Forms;
@@ -10,7 +11,7 @@ namespace Mathster
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExerciseSettings : ContentPage
     {
-        private byte ExType;
+        private byte exType;
 
         //  Default values
         private int ExSize = 5;
@@ -27,7 +28,7 @@ namespace Mathster
         {
             InitializeComponent();
 
-            this.ExType = exType;
+            this.exType = exType;
             NextButton.Text = Localization.Next;
             ExStaticLabel.Text = Localization.SelectExercisesAmount;
             NumSizeStaticLabel.Text = Localization.SelectNumSize;
@@ -52,6 +53,10 @@ namespace Mathster
 
             switch (exType)
             {
+                case 0:
+                    Title = Localization.Random;
+                    break;
+
                 case 1:
                     Title = Localization.Addition;
                     MulDivFrame.IsVisible = false;
@@ -70,16 +75,28 @@ namespace Mathster
                     Title = Localization.Division;
                     break;
 
-                case 5:
-                    Title = Localization.Random;
-                    break;
-                
-                case 6:
+                default:
                     Title = Localization.Equation;
                     NumSizeFrame.IsVisible = false;
                     MulDivFrame.IsVisible = false;
                     break;
-                
+            }
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            SettingsModel settings = await App.Database.GetSettings();
+            BackgroundColor = Color.FromHex(settings.BackgroundHex);
+            Frame1.BackgroundColor = Color.FromHex(settings.BackgroundHex);
+            Frame2.BackgroundColor = Color.FromHex(settings.BackgroundHex);
+            Frame3.BackgroundColor = Color.FromHex(settings.BackgroundHex);
+            if (settings.DarkMode)
+            {
+                ExCountLabel.TextColor = Color.White;
+                NumSizeCountLabel.TextColor = Color.White;
+                MulDivCountLabel.TextColor = Color.White;
             }
         }
 
@@ -136,76 +153,85 @@ namespace Mathster
         {
             int numMin, numMax;
             byte mulDivMin, mulDivMax;
-
-            switch ((int) NumSizeSlider.Value)
-            {
-                case 1:
-                    numMin = 1;
-                    numMax = 10;
-                    break;
-
-                case 2:
-                    numMin = 10;
-                    numMax = 100;
-                    break;
-
-                case 3:
-                    numMin = 100;
-                    numMax = 1000;
-                    break;
-
-                case 4:
-                    numMin = 1000;
-                    numMax = 10000;
-                    break;
-
-                case 5:
-                    numMin = 10000;
-                    numMax = 100000;
-                    break;
-
-                case 6:
-                    numMin = 100000;
-                    numMax = 1000000;
-                    break;
-
-                default:
-                    numMin = 1;
-                    numMax = 10;
-                    break;
-            }
-
-            switch ((int) MulDivSlider.Value)
-            {
-                case 1:
-                    mulDivMin = 2;
-                    mulDivMax = 6;
-                    break;
-
-                case 2:
-                    mulDivMin = 2;
-                    mulDivMax = 11;
-                    break;
-
-                case 3:
-                    mulDivMin = 2;
-                    mulDivMax = 21;
-                    break;
-
-                default:
-                    mulDivMin = 2;
-                    mulDivMax = 6;
-                    break;
-            }
-
-
             Exercise[] queue = new Exercise[(int) ExCountSlider.Value];
 
-            for (byte i = 0; i < (int) ExCountSlider.Value; i++)
+
+            if (exType >= 5)
             {
-                queue[i] = new BasicExercise().GenerateExercise(i, numMin, numMax, ExType, mulDivMin, mulDivMax);
+                for (byte i = 0; i < (int) ExCountSlider.Value; i++)
+                {
+                    queue[i] = new Equation().GenerateExercise(i, exType);
+                }
             }
-            
+            else
+            {
+                switch ((int) NumSizeSlider.Value)
+                {
+                    case 1:
+                        numMin = 1;
+                        numMax = 10;
+                        break;
+
+                    case 2:
+                        numMin = 10;
+                        numMax = 100;
+                        break;
+
+                    case 3:
+                        numMin = 100;
+                        numMax = 1000;
+                        break;
+
+                    case 4:
+                        numMin = 1000;
+                        numMax = 10000;
+                        break;
+
+                    case 5:
+                        numMin = 10000;
+                        numMax = 100000;
+                        break;
+
+                    case 6:
+                        numMin = 100000;
+                        numMax = 1000000;
+                        break;
+
+                    default:
+                        numMin = 1;
+                        numMax = 10;
+                        break;
+                }
+
+                switch ((int) MulDivSlider.Value)
+                {
+                    case 1:
+                        mulDivMin = 2;
+                        mulDivMax = 6;
+                        break;
+
+                    case 2:
+                        mulDivMin = 2;
+                        mulDivMax = 11;
+                        break;
+
+                    case 3:
+                        mulDivMin = 2;
+                        mulDivMax = 21;
+                        break;
+
+                    default:
+                        mulDivMin = 2;
+                        mulDivMax = 6;
+                        break;
+                }
+
+                for (byte i = 0; i < (int) ExCountSlider.Value; i++)
+                {
+                    queue[i] = new BasicExercise().GenerateExercise(i, numMin, numMax, exType, mulDivMin, mulDivMax);
+                }
+            }
+
             await Navigation.PushAsync(new ExerciseCounting(0, queue));
         }
     }

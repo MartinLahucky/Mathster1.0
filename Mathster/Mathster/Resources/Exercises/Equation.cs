@@ -1,27 +1,55 @@
 ﻿using System;
+using static Mathster.Resources.Helpers.Utilities;
 
 namespace Mathster.Resources.Exercises
 {
     public class Equation : Exercise
     {
+        #region Atributes
+
+        public float UserInput2 { get; set; }
+        public int Result2 { get;  set; }
+
+        #endregion
+
         #region Contructors
 
-        public Equation() {}
-
-        public Equation(byte id, string assignment, string assignmentUnder, int result, byte exerciseType,
-            byte experience) : base(id, assignment, assignmentUnder, result, exerciseType, experience)
+        public Equation()
         {
+        }
+
+        public Equation(byte id, string assignment,  int result, byte exerciseType,
+            byte experience) : base(id, assignment, result, exerciseType, experience)
+        {
+        }
+
+        public Equation(byte id, string assignment, int result, int result2, byte exerciseType,
+            byte experience) : base(id, assignment, result, exerciseType, experience)
+        {
+            Result2 = result2;
         }
 
         #endregion
 
-
-        public Exercise GenerateExercise(byte id, int numMin, int numMax)
+        public Exercise GenerateExercise(byte id, byte exercise)
         {
-            return null;
+            switch (exercise)
+            {
+                case 5:
+                    return GenerateEquationNormal(id);
+                
+                case 6:
+                    return GenerateQuadraticEquation(id);
+                
+                case 7:
+                    return GenerateSquareEquation(id);
+                
+                default:
+                    return null;
+            }
         }
 
-        private Exercise GenerateExerciseAdd()
+        private Exercise GenerateEquationNormal(byte id)
         {
             Random random = new Random();
 
@@ -82,18 +110,60 @@ namespace Mathster.Resources.Exercises
 
                     break;
             }
-            // TODO 
-            return new Equation();
+            
+            return new Equation(id, assignment, result, 5, experience);
+        }
+        
+        private Exercise GenerateSquareEquation(byte id)
+        {
+            Random random = new Random();
+            int res1 = random.Next(-10, 10), res2 = random.Next(-10, 10);
+            byte experience = (byte) ((res1.ToString().Length + res2.ToString().Length) * 3);
+            return new Equation(id, GenerateCompletingTheSquare(res1, res2), res1, res2, 7, experience);
         }
 
+        private Exercise GenerateQuadraticEquation(byte id,  int numMin = -10, int numMax = 10)
+        {
+            Random random = new Random();
+            int res1 = random.Next(numMin, numMax), res2 = random.Next(numMin, numMax);
+            byte experience = (byte) ((res1.ToString().Length + res2.ToString().Length) * 2);
+            return new Equation(id, CreateEquation(res1, res2), res1, res2, 6, experience);
+        }
+
+        // DOPLNĚNÍ NA ČTVEREC
+        // - tady u tohodle jsou dvě možnosti - jedna se z hlavy počítá docela těžce je tady ta jednodušší
+        // - řešení tady těchlentěch je ve skutečnosti celý výraz (například (x + 3)^2 - 10 ), ale jediné co se tu mění jsou 
+        // dvě čísla, takže ty jsem dal že jsou ty odpovědi co by uživatel zadával 
+        private string GenerateCompletingTheSquare(int res1, int res2)
+        {
+            return $"x^2{FormartNumber(2 * res1, "x")}{FormartNumber(res2 + res1 * res1)}";
+        }
+
+        // KVADRATICKÁ ROVNICE
+        private string CreateEquation(int res1, int res2)
+        {
+            return $"x^2{FormartNumber(-(res1 + res2), "x")}{FormartNumber(res1 * res2)} = 0";
+        }
+
+        // metoda na generování jednočlenu - šla by použít i v rovnicích co už jsme implementovali 
+
+        
         public override string FormatExercise()
         {
-            throw new System.NotImplementedException();
-        }
-
-        public override int GetExperience(bool correct)
-        {
-            throw new System.NotImplementedException();
+            switch (ExerciseType)
+            {
+                case 5:
+                    return $"{Assignment}\nx = {UserInput}";
+                
+                case 6:
+                    return $"x1 = {UserInput}\nx2 = {UserInput2}";
+                    
+                case 7:
+                    return $"{Assignment}\n= (x{FormartNumber(UserInput)})^2{FormartNumber(UserInput2)}";
+                
+                default:
+                    return null;
+            }
         }
     }
 }

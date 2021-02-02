@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Mathster.Resources.Database_Models;
 using Mathster.Resources.Localization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -20,6 +21,13 @@ namespace Mathster
             AboutAppLabel.Text = Localization.AboutAppText;
         }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            SettingsModel settings = await App.Database.GetSettings();
+            BackgroundColor = Color.FromHex(settings.BackgroundHex);
+        }
+        
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new MainPage());

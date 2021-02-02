@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Mathster.Resources.Database_Models;
 using Mathster.Resources.Exercises;
 using Mathster.Resources.Localization;
 using Xamarin.Forms;
@@ -77,6 +78,23 @@ namespace Mathster
             }
         }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            SettingsModel settings = await App.Database.GetSettings();
+            BackgroundColor = Color.FromHex(settings.BackgroundHex);
+            AssignmentLabelFrame.BackgroundColor = Color.FromHex(settings.BackgroundHex);
+            CorrectLayout.BackgroundColor = Color.FromHex(settings.BackgroundHex);
+            WrongLayout.BackgroundColor = Color.FromHex(settings.BackgroundHex);
+            if (settings.DarkMode)
+            {
+                BackgroundColor = Color.FromHex(settings.BackgroundHex);
+                AssignmentLabel.TextColor = Color.White;
+                CorrectLabel.TextColor = Color.White;
+                WrongLabel.TextColor = Color.White;
+            }
+        }
+        
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new MainPage());

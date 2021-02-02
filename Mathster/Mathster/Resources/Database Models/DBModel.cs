@@ -5,7 +5,7 @@ namespace Mathster.Resources.Database_Models
 {
     public class DBModel
     {
-        [PrimaryKey] [AutoIncrement] public int ID { get; set; }
+        [PrimaryKey] [AutoIncrement] public int Id { get; set; }
         [MaxLength(12)] public string Name { get; set; }
         public int Experience { get; set; }
         public int TotalExercises { get; set; }

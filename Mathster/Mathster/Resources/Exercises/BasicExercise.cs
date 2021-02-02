@@ -9,10 +9,7 @@ namespace Mathster.Resources.Exercises
         public BasicExercise() { }
 
         private BasicExercise(byte id, string assignment, string assignmentUnder, int result, byte exerciseType,
-            byte experience) : base(id, assignment, assignmentUnder, result, exerciseType, experience)
-        {
-
-        }
+            byte experience) : base(id, assignment, assignmentUnder, result, exerciseType, experience) { }
 
         #endregion
 
@@ -53,7 +50,7 @@ namespace Mathster.Resources.Exercises
                         $" {firstNum}\n-{secondNum}\n—",
                         firstNum / secondNum, exerciseType, (byte) firstNum.ToString().Length);
 
-                case 5:
+                case 0:
                     return GenerateExercise(id, numMin, numMax, (byte) random.Next(1, 5), mulDivMin, mulDivMax);
             }
 
@@ -62,27 +59,12 @@ namespace Mathster.Resources.Exercises
 
         public override string FormatExercise()
         {
-            if (Assignment.Length >= 13 && !(ExerciseType == 5))
+            if (Assignment.Length >= 13)
             {
                 return $"{Assignment}\n= {UserInput}";
             }
 
-            if (ExerciseType == 5)
-            {
-                return $"{Assignment}\nx = {UserInput}";
-            }
-
             return $"{Assignment}{UserInput}";
-        }
-
-        public override int GetExperience(bool correct)
-        {
-            if (correct)
-            {
-                return (ExerciseType * (ExerciseType / 4) + 1) * Experience * 20;
-            }
-
-            return ExerciseType * (ExerciseType / 4) + 1;
         }
 
         #endregion

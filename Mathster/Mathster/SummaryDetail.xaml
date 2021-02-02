@@ -44,7 +44,7 @@
                             <Frame x:Name="WrongFrame" CornerRadius="30" Margin="20,0,20,0" Padding="0">
                                 <StackLayout x:Name="WrongLayout" Orientation="Horizontal" Padding="0">
                                     <StackLayout BackgroundColor="#7F7FFD" Padding="0" Margin="0">
-                                        <Image VerticalOptions="CenterAndExpand" Source="spatne_ikona.png"
+                                        <Image VerticalOptions="CenterAndExpand" Source="wrong_icon.png"
                                                Margin="15,0" />
                                     </StackLayout>
                                     <Label x:Name="WrongLabel" TextColor="Black" FontSize="30"

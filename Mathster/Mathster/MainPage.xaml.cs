@@ -56,6 +56,10 @@ namespace Mathster
             Button button = (Button) sender;
             switch (button.Text)
             {
+                case "?":
+                    await Navigation.PushAsync(new ExerciseSettings(0));
+                    break;
+                
                 case "+":
                     await Navigation.PushAsync(new ExerciseSettings(1));
                     break;
@@ -71,13 +75,9 @@ namespace Mathster
                 case "÷":
                     await Navigation.PushAsync(new ExerciseSettings(4));
                     break;
-                
-                case "?":
-                    await Navigation.PushAsync(new ExerciseSettings(5));
-                    break;
-                
+
                 case "x=":
-                    await Navigation.PushAsync(new ExerciseSettings(6));
+                    await Navigation.PushAsync(new ExerciseSettings(5));
                     break;
             }
         }

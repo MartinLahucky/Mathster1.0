@@ -53,19 +53,19 @@ namespace Mathster.Resources.Database_Models
             Task.WaitAll(task1);
         }
 
-        public async Task<DBModel> GetTable(int id = 0)
+        public async Task<DBModel> GetTable()
         {
-            return await database.Table<DBModel>().Where(i => i.ID == id).FirstOrDefaultAsync();
+            return await database.Table<DBModel>().FirstOrDefaultAsync();
         }
 
-        public async Task<SettingsModel> GetSettings(int id = 0)
+        public async Task<SettingsModel> GetSettings()
         {
-            return await database.Table<SettingsModel>().Where(i => i.ID == id).FirstOrDefaultAsync();
+            return await database.Table<SettingsModel>().FirstOrDefaultAsync();
         }
 
         public Task<int> UpdateTable(DBModel table)
         {
-            if (table.ID == 0)
+            if (table.Id == 0)
             {
                 return database.UpdateAsync(table);
             }

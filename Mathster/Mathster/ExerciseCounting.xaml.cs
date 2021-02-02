@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Mathster.Resources.Database_Models;
 using Mathster.Resources.Exercises;
 using Mathster.Resources.Localization;
 using Xamarin.Forms;
@@ -32,7 +33,6 @@ namespace Mathster
             this.queue = queue;
             this.id = id;
 
-            
             switch (queue[id].ExerciseType)
             {
                 case 1:
@@ -51,7 +51,7 @@ namespace Mathster
                     SetTitle(Localization.Division);
                     break;
 
-                case 5:
+                default:
                     SetTitle(Localization.Equation);
                     UnderButton.IconImageSource = "";
                     UnderButton.IsEnabled = false;
@@ -69,11 +69,18 @@ namespace Mathster
                 NextButton.IsVisible = false;
             }
         }
-
-        protected override void OnAppearing()
+        
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
             ResultInput.Focus();
+            SettingsModel settings = await App.Database.GetSettings();
+            BackgroundColor = Color.FromHex(settings.BackgroundHex);
+            if (settings.DarkMode)
+            {
+                ExerciseLabel.TextColor = Color.White;
+                ResultLabelInput.TextColor = Color.White;
+            }
         }
 
         private void SetTitle(string operation)
@@ -101,6 +108,7 @@ namespace Mathster
                     ResultInput.FlowDirection = FlowDirection.RightToLeft;
                     under = true;
                     break;
+
                 case true:
                     SecondLayer.Margin = new Thickness(60, 30, 60, 0);
                     ExerciseLabel.Text = queue[id].Assignment;
@@ -223,9 +231,8 @@ namespace Mathster
                     }
                 }
             }
-            catch // (Exception exception)
+            catch
             {
-                // await DisplayAlert(AppResource.Upozorneni, exception.Message, AppResource.Ok);
                 await DisplayAlert(Localization.Alert, Localization.AlertInputNumber, Localization.Ok);
             }
         }
