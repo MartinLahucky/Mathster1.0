@@ -9,8 +9,8 @@ namespace Mathster.Resources.Database_Models
         [MaxLength(12)] public string Name { get; set; }
         public int Experience { get; set; }
         public int TotalExercises { get; set; }
-        public int TotalAddExercises { get; set; }
-        public int TotalAddExercisesCorrect { get; set; }
+        public int TotalAdd { get; set; }
+        public int TotalAddCorrect { get; set; }
         public int TotalSub { get; set; }
         public int TotalSubCorrect { get; set; }
         public int TotalMul { get; set; }
@@ -30,7 +30,7 @@ namespace Mathster.Resources.Database_Models
             switch (exerciseType)
             {
                 case 1:
-                    table.TotalAddExercisesCorrect++;
+                    table.TotalAddCorrect++;
                     break;
                 case 2:
                     table.TotalSubCorrect++;
@@ -52,7 +52,7 @@ namespace Mathster.Resources.Database_Models
             switch (exerciseType)
             {
                 case 1:
-                    table.TotalAddExercises++;
+                    table.TotalAdd++;
                     break;
                 case 2:
                     table.TotalSub++;

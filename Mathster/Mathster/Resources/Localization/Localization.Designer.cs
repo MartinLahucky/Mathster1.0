@@ -205,7 +205,7 @@ namespace Mathster.Resources.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Interface and Graphics: Martin Borka, Jan Řehoř, David Trkola.
+        ///   Looks up a localized string similar to Interface and Graphics: Martin Borka, Jan Řehoř.
         /// </summary>
         internal static string DevFrontEndText {
             get {

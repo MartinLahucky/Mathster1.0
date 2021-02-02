@@ -82,7 +82,7 @@ namespace Mathster.Resources.Exercises
 
                     break;
             }
-
+            // TODO 
             return new Equation();
         }
 

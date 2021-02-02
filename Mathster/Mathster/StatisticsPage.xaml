@@ -2,10 +2,93 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              x:Class="Mathster.StatisticsPage">
+    <ContentPage.Resources>
+        <StyleSheet Source="Resources/Styles/Components.css" />
+    </ContentPage.Resources>
+
     <ContentPage.Content>
-        <StackLayout>
-            
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Frame StyleClass="FrameDarkPurple" Margin="30" CornerRadius="30" VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand">
+                    <StackLayout>
+                        <Label x:Name="TitleLabel" StyleClass="TitleGreenLabel" HorizontalOptions="CenterAndExpand" />
+
+                        <Grid>
+                            <forms:SKCanvasView x:Name="Chart" HeightRequest="160" WidthRequest="10"
+                                                Margin="30" Grid.Column="0" Grid.Row="0"
+                                                VerticalOptions="CenterAndExpand" />
+                            <StackLayout Padding="45,20" HorizontalOptions="Center" Grid.Column="0" Grid.Row="0"
+                                         VerticalOptions="Center">
+                                <Label x:Name="TotalOperationCounterLabel" Margin="0" StyleClass="LevelButtonMenu"
+                                       BackgroundColor="Transparent" />
+                            </StackLayout>
+                        </Grid>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                                <Image x:Name="AddImage" Source="correct_icon.png" />
+                                <Label x:Name="AddLabel" Text="+" TextColor="#FCA54D" FontSize="50"
+                                       VerticalOptions="Center" />
+                                <Frame Margin="0" HorizontalOptions="FillAndExpand"
+                                       BackgroundColor="#7F7FFD" CornerRadius="30">
+                                    <Label x:Name="AddCountLabel" FontSize="30" VerticalOptions="Center"
+                                           HorizontalTextAlignment="Center" />
+                                </Frame>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
+                                <Image x:Name="SubImage" Source="wrong_icon.png" />
+                                <Label x:Name="SubLabel" Text="-" Margin="8,0,8,0" TextColor="#FFFFFF" FontSize="60"
+                                       VerticalOptions="Center" />
+                                <Frame Margin="0" HorizontalOptions="FillAndExpand"
+                                       BackgroundColor="#7F7FFD" CornerRadius="30">
+                                    <Label x:Name="SubCountLabel" FontSize="30" VerticalOptions="Center"
+                                           HorizontalTextAlignment="Center" />
+                                </Frame>
+                            </StackLayout>
+
+                            <StackLayout x:Name="MulLayout" IsVisible="False" Orientation="Horizontal" Grid.Row="1"
+                                         Grid.Column="0">
+                                <Label Text="×" TextColor="#C9FF50" FontSize="50"
+                                       VerticalOptions="Center" />
+                                <Frame Margin="0" HorizontalOptions="FillAndExpand"
+                                       BackgroundColor="#7F7FFD" CornerRadius="30">
+                                    <Label x:Name="MulCountLabel" FontSize="30" VerticalOptions="Center"
+                                           HorizontalTextAlignment="Center" />
+                                </Frame>
+                            </StackLayout>
+
+                            <StackLayout x:Name="DivLayout" IsVisible="False" Orientation="Horizontal" Grid.Row="1"
+                                         Grid.Column="1">
+                                <Label Text="÷" TextColor="#262630" FontSize="60"
+                                       VerticalOptions="Center" />
+                                <Frame Margin="0" HorizontalOptions="FillAndExpand"
+                                       BackgroundColor="#7F7FFD" CornerRadius="30">
+                                    <Label x:Name="DivCountLabel" FontSize="30" VerticalOptions="Center"
+                                           HorizontalTextAlignment="Center" />
+                                </Frame>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+                <StackLayout Margin="30,20,30,0">
+                    <Button x:Name="ResetStatsButton" BorderWidth="2" StyleClass="RestartButton" CornerRadius="5"
+                            FontSize="20" Margin="0,0,0,20" Clicked="ResetStatsButton_OnClicked" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -33,7 +33,6 @@ namespace Mathster
             this.id = id;
 
             
-            
             switch (queue[id].ExerciseType)
             {
                 case 1:
