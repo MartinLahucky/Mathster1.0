@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Mathster.Resources.Custom_UI;
+using static Mathster.Resources.Helpers.Utilities;
 using Mathster.Resources.Database_Models;
 using Mathster.Resources.Exercises;
 using Mathster.Resources.Localization;
@@ -28,10 +29,6 @@ namespace Mathster
             SubmitButton.Text = Localization.Submit;
             ResultLabelInput.Text = String.Empty;
             ResultInput.Text = String.Empty;
-            ResultLabelInput1.Text = String.Empty;
-            ResultInput1.Text = String.Empty;
-            ResultLabelInput2.Text = String.Empty;
-            ResultInput2.Text = String.Empty;
             beginTime = DateTime.UtcNow.Ticks;
             ExerciseLabel.Text = queue[id].Assignment;
 
@@ -228,9 +225,32 @@ namespace Mathster
             }
         }
 
-        private void QuadraticInput_OnTextChanged(object sender, TextChangedEventArgs e)
+        private void EquationInput_OnTextChanged(object sender, TextChangedEventArgs e)
         {
             
+            switch (queue[id].ExerciseType)
+            {
+                case 6:
+                    if (e.NewTextValue.Length > 4)
+                    {
+                        if (ResultInput1 == (CS_Entry) sender)
+                        {
+                            ResultInput1.Text = e.OldTextValue;
+                        }
+                        else if (ResultInput2 == (CS_Entry) sender)
+                        {
+                            ResultInput2.Text = e.OldTextValue;
+                        }
+                    }
+                    break;
+                // TODO Implement
+                case 7:
+                    if (ResultInput1 == (CS_Entry) sender)
+                    {
+                        // ResultLabelInput.Text = $"= (x{FormartNumber(int.Parse(e.NewTextValue))})^2{FormartNumber(res2)}";
+                    }
+                    break;
+            }
         }
         private async void NextButton_OnClicked(object sender, EventArgs e)
         {

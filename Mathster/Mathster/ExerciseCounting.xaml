@@ -40,37 +40,36 @@
 
                     <!--       Input for Quadratic Equations  start       -->
 
-                    <StackLayout x:Name="QudraticLayout" IsEnabled="False" Orientation="Horizontal" Margin="0,0,0,60"
-                                 HorizontalOptions="Center"
-                                 IsVisible="False">
+                    <StackLayout x:Name="QudraticLayout" IsVisible="False" Orientation="Horizontal" Margin="0,0,0,60"
+                                 HorizontalOptions="Center">
                         <Frame CornerRadius="15" Padding="0" HorizontalOptions="Start" HasShadow="False">
                             <StackLayout>
-                                <Label x:Name="ResultLabelInput1" HeightRequest="60" Margin="0,0,0,-66"
-                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
-                                       StyleClass="ResultInput" />
+                                <Label x:Name="ResultLabelInput1" Text="x1 = " HeightRequest="60" Margin="0,0,0,-66"
+                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                                       StyleClass="EquationInput" />
                                 <customUi:CS_Entry x:Name="ResultInput1" Keyboard="Numeric" FontSize="30"
                                                    HeightRequest="60" VerticalTextAlignment="Center"
-                                                   HorizontalTextAlignment="Center" BackgroundColor="Transparent"
+                                                   HorizontalTextAlignment="End" BackgroundColor="Transparent"
                                                    StyleClass="BlackText"
-                                                   TextChanged="QuadraticInput_OnTextChanged" />
+                                                   TextChanged="EquationInput_OnTextChanged" />
                             </StackLayout>
 
                         </Frame>
                         <Frame CornerRadius="15" Padding="0" HorizontalOptions="End" HasShadow="False">
                             <StackLayout>
-                                <Label x:Name="ResultLabelInput2" HeightRequest="60" Margin="0,0,0,-66"
-                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
-                                       StyleClass="ResultInput" />
+                                <Label x:Name="ResultLabelInput2" Text="x2 = " HeightRequest="60" Margin="0,0,0,-66"
+                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
+                                       StyleClass="EquationInput" />
                                 <customUi:CS_Entry x:Name="ResultInput2" Keyboard="Numeric" FontSize="30"
                                                    HeightRequest="60" VerticalTextAlignment="Center"
-                                                   HorizontalTextAlignment="Center" BackgroundColor="Transparent"
+                                                   HorizontalTextAlignment="End" BackgroundColor="Transparent"
                                                    StyleClass="BlackText"
-                                                   TextChanged="QuadraticInput_OnTextChanged" />
+                                                   TextChanged="EquationInput_OnTextChanged" />
                             </StackLayout>
                         </Frame>
                     </StackLayout>
 
-                    <!--       Input for Quadratic Equations  start       -->
+                    <!--       Input for Quadratic Equations  end       -->
 
                     <Button x:Name="NextButton"
                             Clicked="NextButton_OnClicked"
