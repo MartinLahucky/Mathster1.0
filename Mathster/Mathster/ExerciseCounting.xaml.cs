@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Mathster.Resources.Custom_UI;
 using Mathster.Resources.Database_Models;
 using Mathster.Resources.Exercises;
 using Mathster.Resources.Localization;
@@ -27,6 +28,10 @@ namespace Mathster
             SubmitButton.Text = Localization.Submit;
             ResultLabelInput.Text = String.Empty;
             ResultInput.Text = String.Empty;
+            ResultLabelInput1.Text = String.Empty;
+            ResultInput1.Text = String.Empty;
+            ResultLabelInput2.Text = String.Empty;
+            ResultInput2.Text = String.Empty;
             beginTime = DateTime.UtcNow.Ticks;
             ExerciseLabel.Text = queue[id].Assignment;
 
@@ -57,6 +62,16 @@ namespace Mathster
                     UnderButton.IsEnabled = false;
                     UnderButton.Priority = 0;
                     MenuButton.Priority = 1;
+
+                    switch (queue[id].ExerciseType)
+                    {
+                        case 6:
+                            NormalInput.IsVisible = false;
+                            ResultInputLayout.IsVisible = false;
+                            QudraticLayout.IsVisible = true;
+                            break;
+                    }
+                    
                     break;
             }
 
@@ -73,13 +88,23 @@ namespace Mathster
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            ResultInput.Focus();
+            if (queue[id].ExerciseType == 6)
+            {
+                ResultInput1.Focus();
+            }
+            else
+            {
+                ResultInput.Focus();
+            }
+            
             SettingsModel settings = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(settings.BackgroundHex);
             if (settings.DarkMode)
             {
                 ExerciseLabel.TextColor = Color.White;
                 ResultLabelInput.TextColor = Color.White;
+                ResultInput1.TextColor = Color.White;
+                ResultInput2.TextColor = Color.White;
             }
         }
 
@@ -203,6 +228,10 @@ namespace Mathster
             }
         }
 
+        private void QuadraticInput_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
         private async void NextButton_OnClicked(object sender, EventArgs e)
         {
             try

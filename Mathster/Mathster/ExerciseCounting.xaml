@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:customUi="clr-namespace:Mathster.Resources.Custom_UI;assembly=Mathster"
              x:Class="Mathster.ExerciseCounting">
-    
+
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="UnderButton" Order="Primary" Priority="1" Clicked="UnderButton_OnClicked" />
         <ToolbarItem x:Name="MenuButton" Order="Primary" Priority="0" Clicked="MenuButton_OnClicked" />
@@ -18,13 +18,14 @@
         <StackLayout x:Name="MainLayout">
             <ScrollView x:Name="View">
                 <StackLayout x:Name="SecondLayer" VerticalOptions="Center" Margin="60,30,60,0">
-                    <Frame CornerRadius="15" StyleClass="ExerciseLabel" Padding="0" Margin="0,60,0,30" HasShadow="False">
+                    <Frame CornerRadius="15" StyleClass="ExerciseLabel" Padding="0" Margin="0,60,0,30"
+                           HasShadow="False">
                         <StackLayout x:Name="ExerciseLayout">
                             <Label x:Name="ExerciseLabel" VerticalTextAlignment="Center" StyleClass="ExerciseLabel" />
                         </StackLayout>
                     </Frame>
 
-                    <Frame CornerRadius="15" Padding="0" Margin="0,0,0,60" HasShadow="False">
+                    <Frame x:Name="NormalInput" CornerRadius="15" Padding="0" Margin="0,0,0,60" HasShadow="False">
                         <StackLayout x:Name="ResultInputLayout">
                             <Label x:Name="ResultLabelInput" HeightRequest="60" Margin="0,0,0,-66"
                                    VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
@@ -37,35 +38,40 @@
                         </StackLayout>
                     </Frame>
 
-                     <!--       ↓ NA KVADRATICKÝ ROVNICE        -->
+                    <!--       Input for Quadratic Equations  start       -->
 
-                    <StackLayout Orientation="Horizontal" Margin="0,-126,0,60" HorizontalOptions="Center" IsVisible="False">
+                    <StackLayout x:Name="QudraticLayout" IsEnabled="False" Orientation="Horizontal" Margin="0,0,0,60"
+                                 HorizontalOptions="Center"
+                                 IsVisible="False">
                         <Frame CornerRadius="15" Padding="0" HorizontalOptions="Start" HasShadow="False">
-                            <StackLayout x:Name="ResultInputLayout1">
-                                <Label x:Name="ResultLabelInput1" HeightRequest="60" Margin="0,0,0,-66" 
+                            <StackLayout>
+                                <Label x:Name="ResultLabelInput1" HeightRequest="60" Margin="0,0,0,-66"
                                        VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
                                        StyleClass="ResultInput" />
                                 <customUi:CS_Entry x:Name="ResultInput1" Keyboard="Numeric" FontSize="30"
                                                    HeightRequest="60" VerticalTextAlignment="Center"
                                                    HorizontalTextAlignment="Center" BackgroundColor="Transparent"
-                                                   TextColor="Transparent" StyleClass="BlackText"
-                                                   TextChanged="ResultInput_OnTextChanged" />
+                                                   StyleClass="BlackText"
+                                                   TextChanged="QuadraticInput_OnTextChanged" />
                             </StackLayout>
+
                         </Frame>
-                            <Frame CornerRadius="15" Padding="0" HorizontalOptions="End" HasShadow="False">
-                            <StackLayout x:Name="ResultInputLayout2">
+                        <Frame CornerRadius="15" Padding="0" HorizontalOptions="End" HasShadow="False">
+                            <StackLayout>
                                 <Label x:Name="ResultLabelInput2" HeightRequest="60" Margin="0,0,0,-66"
                                        VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
                                        StyleClass="ResultInput" />
                                 <customUi:CS_Entry x:Name="ResultInput2" Keyboard="Numeric" FontSize="30"
                                                    HeightRequest="60" VerticalTextAlignment="Center"
                                                    HorizontalTextAlignment="Center" BackgroundColor="Transparent"
-                                                   TextColor="Transparent" StyleClass="BlackText"
-                                                   TextChanged="ResultInput_OnTextChanged" />
+                                                   StyleClass="BlackText"
+                                                   TextChanged="QuadraticInput_OnTextChanged" />
                             </StackLayout>
                         </Frame>
                     </StackLayout>
-                    
+
+                    <!--       Input for Quadratic Equations  start       -->
+
                     <Button x:Name="NextButton"
                             Clicked="NextButton_OnClicked"
                             Margin="20,0,20,20"
@@ -79,7 +85,7 @@
                             StyleClass="Button"
                             CornerRadius="30"
                             VerticalOptions="EndAndExpand" />
-                    
+
                 </StackLayout>
             </ScrollView>
         </StackLayout>
