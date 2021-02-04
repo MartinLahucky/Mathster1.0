@@ -170,7 +170,7 @@ namespace Mathster.Resources.Exercises
                     return $"{Assignment}\nx1 = {UserInput}\nx2 = {UserInput2}";
 
                 case 7:
-                    return $"{Assignment}\n= (x{FormatNumber(UserInput)})^2{FormatNumber(UserInput2)}";
+                    return $"{Assignment}=\n (x{FormatNumber(UserInput)})^2{FormatNumber(UserInput2)}";
 
                 default:
                     return null;

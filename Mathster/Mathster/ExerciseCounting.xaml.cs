@@ -75,6 +75,7 @@ namespace Mathster
                             NormalInput.IsVisible = false;
                             ResultInputLayout.IsVisible = false;
                             QudraticLayout.IsVisible = true;
+                            ExerciseLabel.Padding = new Thickness(-200,0,-200,5);
                             ResultLabelInput1.Text = "a: ";
                             ResultLabelInput2.Text = "b: ";
                             queue[id].UserInput = 0;
@@ -253,7 +254,7 @@ namespace Mathster
                     break;
 
                 case 7:
-                    if (e.NewTextValue.Length > 2)
+                    if (e.NewTextValue.Length > 3)
                     {
                         input.Text = e.OldTextValue;
                     }
