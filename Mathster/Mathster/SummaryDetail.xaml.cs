@@ -51,15 +51,10 @@ namespace Mathster
             sec = sec - min * 60;
             TimeLabel.Text = $"{min}min {sec}s";
 
-            if (exercise.Assignment.Length >= 13 || exercise.ExerciseType == 5)
+            if (exercise.Assignment.Length >= 13 || exercise.ExerciseType >= 5)
             {
                 WrongLabel.HeightRequest = 75;
                 CorrectLabel.HeightRequest = 75;
-            }
-            else if (exercise.ExerciseType >= 6)
-            {
-                WrongLabel.HeightRequest = 80;
-                CorrectLabel.HeightRequest = 80;
             }
 
             AssignmentLabel.Text = exercise.Assignment;
