@@ -6,7 +6,7 @@
         {
             if (number == 0)
             {
-                return "";
+                return " ";
             }
 
             if (number > 0)
@@ -16,17 +16,12 @@
 
             return $" {number}{variable}";
         }
-        
-        public static string FormatNumber(string number)
-        {
-            return number;
-        }
-        
+
         public static string FormatNumber(float number)
         {
             if (number == 0)
             {
-                return "";
+                return " ";
             }
 
             if (number > 0)

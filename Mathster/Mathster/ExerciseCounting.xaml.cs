@@ -70,7 +70,7 @@ namespace Mathster
                             ResultLabelInput1.Text = "x1 = ";
                             ResultLabelInput2.Text = "x2 = ";
                             break;
-                        
+
                         case 7:
                             NormalInput.IsVisible = false;
                             ResultInputLayout.IsVisible = false;
@@ -99,7 +99,7 @@ namespace Mathster
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            if (queue[id].ExerciseType == 6)
+            if (queue[id].ExerciseType >= 6)
             {
                 ResultInput1.Focus();
             }
@@ -241,35 +241,37 @@ namespace Mathster
 
         private void EquationInput_OnTextChanged(object sender, TextChangedEventArgs e)
         {
+            var input = (CS_Entry) sender;
             switch (queue[id].ExerciseType)
             {
                 case 6:
                     if (e.NewTextValue.Length > 4)
                     {
-                        if (ResultInput1 == (CS_Entry) sender)
-                        {
-                            ResultInput1.Text = e.OldTextValue;
-                        }
-                        else if (ResultInput2 == (CS_Entry) sender)
-                        {
-                            ResultInput2.Text = e.OldTextValue;
-                        }
+                        input.Text = e.OldTextValue;
                     }
 
                     break;
-                // TODO Implement
-                case 7:
-                    // TODO
-                    if (ResultInput1 == (CS_Entry) sender)
-                    {
-                        queue[id].UserInput = float.Parse(e.NewTextValue);
-                    }
-                    else if (ResultInput2 == (CS_Entry) sender)
-                    {
-                        queue[id].UserInput2 = float.Parse(e.NewTextValue);
-                    }
-                    ExerciseLabel.Text = queue[id].FormatAssigmentUserInput();
 
+                case 7:
+                    if (e.NewTextValue.Length > 2)
+                    {
+                        input.Text = e.OldTextValue;
+                    }
+                    if (ResultInput1 == input && float.TryParse(e.NewTextValue, out var text))
+                    {
+                        queue[id].UserInput = text;
+                    }
+                    else if (ResultInput2 == input && float.TryParse(e.NewTextValue, out var text2))
+                    {
+                        queue[id].UserInput2 = text2;
+                    }
+                    else
+                    {
+                        queue[id].UserInput = 0;
+                        queue[id].UserInput2 = 0;
+                    }
+
+                    ExerciseLabel.Text = queue[id].FormatAssigmentUserInput();
                     break;
             }
         }
