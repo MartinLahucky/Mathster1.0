@@ -40,7 +40,7 @@ namespace Mathster
                 "ratio_icon.png", Color.FromHex(settings.BackgroundHex));
             LoadPage(Localization.LinearEquation, table.TotalLinearCorrect, table.TotalLinear, "linear_icon.png",
                 Color.FromHex(settings.BackgroundHex));
-            LoadPage(Localization.QuadraticEquation, table.TotalQuadraticCorrect, table.TotalQuadraticCorrect,
+            LoadPage(Localization.QuadraticEquation, table.TotalQuadraticCorrect, table.TotalQuadratic,
                 "quadratic_icon.png",
                 Color.FromHex(settings.BackgroundHex));
             LoadPage(Localization.CompleteTheSquare, table.TotalSquareCorrect, table.TotalSquare, "square_icon.png",

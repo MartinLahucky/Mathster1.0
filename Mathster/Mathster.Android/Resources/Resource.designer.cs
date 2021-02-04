@@ -16616,31 +16616,28 @@ namespace Mathster
 			public const int statistics_icon = 2131165547;
 			
 			// aapt resource value: 0x7F07016C
-			public const int stonks = 2131165548;
+			public const int sub_icon = 2131165548;
 			
 			// aapt resource value: 0x7F07016D
-			public const int sub_icon = 2131165549;
+			public const int summary_icon = 2131165549;
 			
 			// aapt resource value: 0x7F07016E
-			public const int summary_icon = 2131165550;
+			public const int test_custom_background = 2131165550;
 			
 			// aapt resource value: 0x7F07016F
-			public const int test_custom_background = 2131165551;
+			public const int tooltip_frame_dark = 2131165551;
 			
 			// aapt resource value: 0x7F070170
-			public const int tooltip_frame_dark = 2131165552;
+			public const int tooltip_frame_light = 2131165552;
 			
 			// aapt resource value: 0x7F070171
-			public const int tooltip_frame_light = 2131165553;
+			public const int total_icon = 2131165553;
 			
 			// aapt resource value: 0x7F070172
-			public const int total_icon = 2131165554;
+			public const int under_icon = 2131165554;
 			
 			// aapt resource value: 0x7F070173
-			public const int under_icon = 2131165555;
-			
-			// aapt resource value: 0x7F070174
-			public const int wrong_icon = 2131165556;
+			public const int wrong_icon = 2131165555;
 			
 			static Drawable()
 			{
