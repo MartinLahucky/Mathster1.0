@@ -20,7 +20,6 @@ namespace Mathster
         private bool transaction;
         private List<Exercise> correctList;
         private List<Exercise> wrongList;
-        private List<Exercise> xd;
 
         public Summary(Exercise[] queue, bool transaction)
         {
@@ -62,7 +61,7 @@ namespace Mathster
                     ResultList.RowHeight = 115;
                 }
 
-                if (ex.Result == ex.UserInput)
+                if (ex.Result == ex.UserInput && ex.Result2 == ex.UserInput2)
                 {
                     table.AddGoodStats(ex.ExerciseType, table);
                     exercises[i].Image = "correct_icon.png";
@@ -116,12 +115,11 @@ namespace Mathster
             }
         }
 
-        private void Transaction()
+        private async void Transaction()
         {
             if (!transaction)
             {
-                Task task = Task.Run(async () => { App.Database.UpdateTable(table); });
-                Task.WaitAll(task);
+                await App.Database.UpdateTable(table);
                 transaction = true;
             }
         }

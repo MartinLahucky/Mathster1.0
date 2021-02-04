@@ -66,7 +66,7 @@ namespace Mathster
             WrongLabel.Text = exercise.FormatUserInput();
             CorrectLabel.Text = exercise.FormatResult();
 
-            if (exercise.UserInput == exercise.Result)
+            if (exercise.UserInput == exercise.Result && exercise.UserInput2 == exercise.Result2)
             {
                 WrongStaticLabel.IsVisible = false;
                 WrongFrame.IsVisible = false;

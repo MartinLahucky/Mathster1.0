@@ -43,7 +43,6 @@ namespace Mathster.Resources.Database_Models
                 {
                     SettingsModel settings = new SettingsModel
                     {
-                        ID = 0,
                         DarkMode = false,
                         BackgroundHex = "#FAFAFA"
                     };
@@ -65,14 +64,7 @@ namespace Mathster.Resources.Database_Models
 
         public Task<int> UpdateTable(DBModel table)
         {
-            if (table.Id == 0)
-            {
-                return database.UpdateAsync(table);
-            }
-            else
-            {
-                return database.InsertAsync(table);
-            }
+            return database.UpdateAsync(table);
         }
 
         public Task<int> UpdateSettings(SettingsModel table)

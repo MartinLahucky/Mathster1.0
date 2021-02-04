@@ -188,7 +188,7 @@ namespace Mathster.Resources.Exercises
                     return $"x1 = {UserInput}  x2 = {UserInput2}";
 
                 case 7:
-                    return null;
+                    return $"= (x{FormartNumber(UserInput)})^2{FormartNumber(UserInput2)}";
 
                 default:
                     return null;
@@ -206,7 +206,7 @@ namespace Mathster.Resources.Exercises
                     return $"x1 = {Result}  x2 = {Result2}";
 
                 case 7:
-                    return null;
+                    return $"= (x{FormartNumber(Result)})^2{FormartNumber(Result2)}";
 
                 default:
                     return null;
