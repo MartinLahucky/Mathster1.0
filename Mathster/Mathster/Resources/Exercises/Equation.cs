@@ -129,13 +129,13 @@ namespace Mathster.Resources.Exercises
         // dvě čísla, takže ty jsem dal že jsou ty odpovědi co by uživatel zadával 
         private string GenerateCompletingTheSquare(int res1, int res2)
         {
-            return $"x^2{FormartNumber(2 * res1, "x")}{FormartNumber(res2 + res1 * res1)}";
+            return $"x^2{FormatNumber(2 * res1, "x")}{FormatNumber(res2 + res1 * res1)}";
         }
 
         // KVADRATICKÁ ROVNICE
         private string CreateEquation(int res1, int res2)
         {
-            return $"x^2{FormartNumber(-(res1 + res2), "x")}{FormartNumber(res1 * res2)} = 0";
+            return $"x^2{FormatNumber(-(res1 + res2), "x")}{FormatNumber(res1 * res2)} = 0";
         }
 
         // metoda na generování jednočlenu - šla by použít i v rovnicích co už jsme implementovali 
@@ -152,7 +152,7 @@ namespace Mathster.Resources.Exercises
                     return $"{Assignment}\nx1 = {Result}\nx2 = {Result2}";
 
                 case 7:
-                    return $"{Assignment}\n= (x{FormartNumber(Result)})^2{FormartNumber(Result2)}";
+                    return $"{Assignment}\n= (x{FormatNumber(Result)})^2{FormatNumber(Result2)}";
 
                 default:
                     return null;
@@ -170,7 +170,7 @@ namespace Mathster.Resources.Exercises
                     return $"{Assignment}\nx1 = {UserInput}\nx2 = {UserInput2}";
 
                 case 7:
-                    return $"{Assignment}\n= (x{FormartNumber(UserInput)})^2{FormartNumber(UserInput2)}";
+                    return $"{Assignment}\n= (x{FormatNumber(UserInput)})^2{FormatNumber(UserInput2)}";
 
                 default:
                     return null;
@@ -188,7 +188,7 @@ namespace Mathster.Resources.Exercises
                     return $"x1 = {UserInput}  x2 = {UserInput2}";
 
                 case 7:
-                    return $"= (x{FormartNumber(UserInput)})^2{FormartNumber(UserInput2)}";
+                    return $"= (x{FormatNumber(UserInput)})^2{FormatNumber(UserInput2)}";
 
                 default:
                     return null;
@@ -206,7 +206,7 @@ namespace Mathster.Resources.Exercises
                     return $"x1 = {Result}  x2 = {Result2}";
 
                 case 7:
-                    return $"= (x{FormartNumber(Result)})^2{FormartNumber(Result2)}";
+                    return $"= (x{FormatNumber(Result)})^2{FormatNumber(Result2)}";
 
                 default:
                     return null;

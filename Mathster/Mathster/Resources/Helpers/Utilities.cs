@@ -2,7 +2,7 @@
 {
     public static class Utilities
     {
-        public static string FormartNumber(float number, string variable)
+        public static string FormatNumber(float number, string variable)
         {
             if (number == 0)
             {
@@ -17,7 +17,12 @@
             return $" {number}{variable}";
         }
         
-        public static string FormartNumber(float number)
+        public static string FormatNumber(string number)
+        {
+            return number;
+        }
+        
+        public static string FormatNumber(float number)
         {
             if (number == 0)
             {

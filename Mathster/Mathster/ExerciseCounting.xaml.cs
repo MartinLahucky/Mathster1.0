@@ -7,6 +7,8 @@ using Mathster.Resources.Exercises;
 using Mathster.Resources.Localization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static Mathster.Resources.Helpers.Utilities;
+
 
 namespace Mathster
 {
@@ -65,6 +67,19 @@ namespace Mathster
                             NormalInput.IsVisible = false;
                             ResultInputLayout.IsVisible = false;
                             QudraticLayout.IsVisible = true;
+                            ResultLabelInput1.Text = "x1 = ";
+                            ResultLabelInput2.Text = "x2 = ";
+                            break;
+                        
+                        case 7:
+                            NormalInput.IsVisible = false;
+                            ResultInputLayout.IsVisible = false;
+                            QudraticLayout.IsVisible = true;
+                            ResultLabelInput1.Text = "a: ";
+                            ResultLabelInput2.Text = "b: ";
+                            queue[id].UserInput = 0;
+                            queue[id].UserInput2 = 0;
+                            ExerciseLabel.Text = queue[id].FormatAssigmentUserInput();
                             break;
                     }
 
@@ -244,10 +259,16 @@ namespace Mathster
                     break;
                 // TODO Implement
                 case 7:
+                    // TODO
                     if (ResultInput1 == (CS_Entry) sender)
                     {
-                        // ResultLabelInput.Text = $"= (x{FormartNumber(int.Parse(e.NewTextValue))})^2{FormartNumber(res2)}";
+                        queue[id].UserInput = float.Parse(e.NewTextValue);
                     }
+                    else if (ResultInput2 == (CS_Entry) sender)
+                    {
+                        queue[id].UserInput2 = float.Parse(e.NewTextValue);
+                    }
+                    ExerciseLabel.Text = queue[id].FormatAssigmentUserInput();
 
                     break;
             }
