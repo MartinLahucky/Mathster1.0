@@ -58,8 +58,8 @@ namespace Mathster
             }
             else if (exercise.ExerciseType >= 6)
             {
-                WrongLabel.HeightRequest = 110;
-                CorrectLabel.HeightRequest = 110;
+                WrongLabel.HeightRequest = 80;
+                CorrectLabel.HeightRequest = 80;
             }
 
             AssignmentLabel.Text = exercise.Assignment;
