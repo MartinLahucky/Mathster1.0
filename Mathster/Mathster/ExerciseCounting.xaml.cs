@@ -291,7 +291,7 @@ namespace Mathster
             try
             {
                 queue[id].CountLenght = DateTime.UtcNow.Ticks - beginTime;
-                if (queue[id].ExerciseType == 6)
+                if (queue[id].ExerciseType >= 6)
                 {
                     Equation equation = (Equation) queue[id];
                     equation.UserInput = float.Parse(ResultInput1.Text);
