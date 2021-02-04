@@ -5,26 +5,19 @@ namespace Mathster.Resources.Exercises
 {
     public class Equation : Exercise
     {
-        #region Atributes
-
-        public float UserInput2 { get; set; }
-        public int Result2 { get;  set; }
-
-        #endregion
-
         #region Contructors
 
         public Equation()
         {
         }
 
-        public Equation(byte id, string assignment,  int result, byte exerciseType,
+        public Equation(byte id, string assignment, int result, byte exerciseType,
             byte experience) : base(id, assignment, result, exerciseType, experience)
         {
         }
 
         public Equation(byte id, string assignment, int result, int result2, byte exerciseType,
-            byte experience) : base(id, assignment, result, exerciseType, experience)
+            byte experience) : base(id, assignment, result, result2, exerciseType, experience)
         {
             Result2 = result2;
         }
@@ -37,13 +30,13 @@ namespace Mathster.Resources.Exercises
             {
                 case 5:
                     return GenerateEquationNormal(id);
-                
+
                 case 6:
                     return GenerateQuadraticEquation(id);
-                
+
                 case 7:
                     return GenerateSquareEquation(id);
-                
+
                 default:
                     return null;
             }
@@ -110,10 +103,10 @@ namespace Mathster.Resources.Exercises
 
                     break;
             }
-            
+
             return new Equation(id, assignment, result, 5, experience);
         }
-        
+
         private Exercise GenerateSquareEquation(byte id)
         {
             Random random = new Random();
@@ -122,7 +115,7 @@ namespace Mathster.Resources.Exercises
             return new Equation(id, GenerateCompletingTheSquare(res1, res2), res1, res2, 7, experience);
         }
 
-        private Exercise GenerateQuadraticEquation(byte id,  int numMin = -10, int numMax = 10)
+        private Exercise GenerateQuadraticEquation(byte id, int numMin = -10, int numMax = 10)
         {
             Random random = new Random();
             int res1 = random.Next(numMin, numMax), res2 = random.Next(numMin, numMax);
@@ -147,20 +140,74 @@ namespace Mathster.Resources.Exercises
 
         // metoda na generování jednočlenu - šla by použít i v rovnicích co už jsme implementovali 
 
-        
-        public override string FormatExercise()
+
+        public override string FormatAssigmentResult()
+        {
+            switch (ExerciseType)
+            {
+                case 5:
+                    return $"{Assignment}\nx = {Result}";
+
+                case 6:
+                    return $"{Assignment}\nx1 = {Result}\nx2 = {Result2}";
+
+                case 7:
+                    return $"{Assignment}\n= (x{FormartNumber(Result)})^2{FormartNumber(Result2)}";
+
+                default:
+                    return null;
+            }
+        }
+
+        public override string FormatAssigmentUserInput()
         {
             switch (ExerciseType)
             {
                 case 5:
                     return $"{Assignment}\nx = {UserInput}";
-                
+
                 case 6:
-                    return $"x1 = {UserInput}\nx2 = {UserInput2}";
-                    
+                    return $"{Assignment}\nx1 = {UserInput}\nx2 = {UserInput2}";
+
                 case 7:
                     return $"{Assignment}\n= (x{FormartNumber(UserInput)})^2{FormartNumber(UserInput2)}";
-                
+
+                default:
+                    return null;
+            }
+        }
+
+        public override string FormatUserInput()
+        {
+            switch (ExerciseType)
+            {
+                case 5:
+                    return $"{UserInput}";
+
+                case 6:
+                    return $"x1 = {UserInput}  x2 = {UserInput2}";
+
+                case 7:
+                    return null;
+
+                default:
+                    return null;
+            }
+        }
+
+        public override string FormatResult()
+        {
+            switch (ExerciseType)
+            {
+                case 5:
+                    return $"{Result}";
+
+                case 6:
+                    return $"x1 = {Result}  x2 = {Result2}";
+
+                case 7:
+                    return null;
+
                 default:
                     return null;
             }

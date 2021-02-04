@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Mathster.Resources.Custom_UI;
-using static Mathster.Resources.Helpers.Utilities;
 using Mathster.Resources.Database_Models;
 using Mathster.Resources.Exercises;
 using Mathster.Resources.Localization;
@@ -68,7 +67,7 @@ namespace Mathster
                             QudraticLayout.IsVisible = true;
                             break;
                     }
-                    
+
                     break;
             }
 
@@ -81,7 +80,7 @@ namespace Mathster
                 NextButton.IsVisible = false;
             }
         }
-        
+
         protected override async void OnAppearing()
         {
             base.OnAppearing();
@@ -93,7 +92,7 @@ namespace Mathster
             {
                 ResultInput.Focus();
             }
-            
+
             SettingsModel settings = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(settings.BackgroundHex);
             if (settings.DarkMode)
@@ -227,7 +226,6 @@ namespace Mathster
 
         private void EquationInput_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            
             switch (queue[id].ExerciseType)
             {
                 case 6:
@@ -242,6 +240,7 @@ namespace Mathster
                             ResultInput2.Text = e.OldTextValue;
                         }
                     }
+
                     break;
                 // TODO Implement
                 case 7:
@@ -249,15 +248,27 @@ namespace Mathster
                     {
                         // ResultLabelInput.Text = $"= (x{FormartNumber(int.Parse(e.NewTextValue))})^2{FormartNumber(res2)}";
                     }
+
                     break;
             }
         }
+
         private async void NextButton_OnClicked(object sender, EventArgs e)
         {
             try
             {
-                queue[id].UserInput = float.Parse(ResultLabelInput.Text);
                 queue[id].CountLenght = DateTime.UtcNow.Ticks - beginTime;
+                if (queue[id].ExerciseType == 6)
+                {
+                    Equation equation = (Equation) queue[id];
+                    equation.UserInput = float.Parse(ResultInput1.Text);
+                    equation.UserInput2 = float.Parse(ResultInput2.Text);
+                }
+                else
+                {
+                    queue[id].UserInput = float.Parse(ResultLabelInput.Text);
+                }
+
                 Button button = (Button) sender;
 
                 if (button.Text == ">")

@@ -8,7 +8,9 @@
         public string Assignment {get; set;}
         public string AssignmentUnder {get; set;}
         public int Result {get; set;}
+        public int Result2 {get; set;}
         public float UserInput {get; set;}
+        public float UserInput2 { get; set; }
         public byte ExerciseType {get; set;}
         public byte Experience {get; set;}
         public long CountLenght {get; set;}
@@ -38,11 +40,24 @@
             Experience = experience;
         }
 
+        protected Exercise(byte id, string assignment, int result, int result2, byte exerciseType, byte experience)
+        {
+            Id = id;
+            Assignment = assignment;
+            Result = result;
+            Result2 = result2;
+            ExerciseType = exerciseType;
+            Experience = experience;
+        }
+
         #endregion
         
         #region Methods
         
-        public abstract string FormatExercise();
+        public abstract string FormatAssigmentResult();
+        public abstract string FormatAssigmentUserInput();
+        public abstract string FormatUserInput();
+        public abstract string FormatResult();
 
         public int GetExperience(bool correct)
         {

@@ -6,10 +6,14 @@ namespace Mathster.Resources.Exercises
     {
         #region Constructors
 
-        public BasicExercise() { }
+        public BasicExercise()
+        {
+        }
 
         private BasicExercise(byte id, string assignment, string assignmentUnder, int result, byte exerciseType,
-            byte experience) : base(id, assignment, assignmentUnder, result, exerciseType, experience) { }
+            byte experience) : base(id, assignment, assignmentUnder, result, exerciseType, experience)
+        {
+        }
 
         #endregion
 
@@ -57,7 +61,17 @@ namespace Mathster.Resources.Exercises
             return null;
         }
 
-        public override string FormatExercise()
+        public override string FormatAssigmentResult()
+        {
+            if (Assignment.Length >= 13)
+            {
+                return $"{Assignment}\n= {Result}";
+            }
+
+            return $"{Assignment}{Result}";
+        }
+
+        public override string FormatAssigmentUserInput()
         {
             if (Assignment.Length >= 13)
             {
@@ -65,6 +79,16 @@ namespace Mathster.Resources.Exercises
             }
 
             return $"{Assignment}{UserInput}";
+        }
+
+        public override string FormatUserInput()
+        {
+            return $"{UserInput}";
+        }
+
+        public override string FormatResult()
+        {
+            return $"{Result}";
         }
 
         #endregion

@@ -28,7 +28,7 @@ namespace Mathster
             MenuToolbarButton.IconImageSource = "menu_icon.png";
             this.queue = queue;
             this.transaction = transaction;
-            
+
             Title = Localization.Summary;
             MenuButton.Text = Localization.Menu;
             TitleSummaryLabel.Text = Localization.Results;
@@ -51,11 +51,15 @@ namespace Mathster
             {
                 var ex = queue[i];
                 bool correct = true;
-                exercises[i] = new Result(ex.FormatExercise(), settings);
+                exercises[i] = new Result(ex.FormatAssigmentUserInput(), settings);
 
-                if (ex.Assignment.Length >= 13 || ex.ExerciseType >= 5)
+                if (ex.Assignment.Length >= 10 && ex.Assignment.Length <= 12 || ex.ExerciseType == 5)
                 {
                     ResultList.RowHeight = 80;
+                }
+                else if (ex.ExerciseType >= 6)
+                {
+                    ResultList.RowHeight = 115;
                 }
 
                 if (ex.Result == ex.UserInput)
@@ -111,15 +115,12 @@ namespace Mathster
                 WrongCountButton.TextColor = Color.FromHex("#FFFFFF");
             }
         }
-        
+
         private void Transaction()
         {
             if (!transaction)
             {
-                Task task = Task.Run(async () =>
-                {
-                    App.Database.UpdateTable(table);
-                });
+                Task task = Task.Run(async () => { App.Database.UpdateTable(table); });
                 Task.WaitAll(task);
                 transaction = true;
             }

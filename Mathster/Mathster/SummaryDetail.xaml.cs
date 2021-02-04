@@ -26,9 +26,8 @@ namespace Mathster
             AssignmentStaticLabel.Text = Localization.Assignment;
             CorrectStaticLabel.Text = Localization.SolutionCorrect;
             WrongStaticLabel.Text = Localization.YourSolution;
-            
-            Exercise exercise;
 
+            Exercise exercise;
 
             if (list != null)
             {
@@ -52,16 +51,21 @@ namespace Mathster
             sec = sec - min * 60;
             TimeLabel.Text = $"{min}min {sec}s";
 
-            if (exercise.Assignment.Length >= 13)
+            if (exercise.Assignment.Length >= 13 || exercise.ExerciseType == 5)
             {
                 WrongLabel.HeightRequest = 75;
                 CorrectLabel.HeightRequest = 75;
             }
+            else if (exercise.ExerciseType >= 6)
+            {
+                WrongLabel.HeightRequest = 110;
+                CorrectLabel.HeightRequest = 110;
+            }
 
-            AssignmentLabel.Text =
-                $"{exercise.Assignment}";
-            WrongLabel.Text = $"{exercise.UserInput}";
-            CorrectLabel.Text = $"{exercise.Result}";
+            AssignmentLabel.Text = exercise.Assignment;
+            WrongLabel.Text = exercise.FormatUserInput();
+            CorrectLabel.Text = exercise.FormatResult();
+
             if (exercise.UserInput == exercise.Result)
             {
                 WrongStaticLabel.IsVisible = false;
@@ -94,7 +98,7 @@ namespace Mathster
                 WrongLabel.TextColor = Color.White;
             }
         }
-        
+
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new MainPage());
