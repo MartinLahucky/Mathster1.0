@@ -85,6 +85,10 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\correct_icon.png" />
     <AndroidResource Include="Resources\drawable\icon.png" />
+    <AndroidResource Include="Resources\drawable\linear_icon.png" />
+    <AndroidResource Include="Resources\drawable\add_icon.png" />
+    <AndroidResource Include="Resources\drawable\quadratic_icon.png" />
+    <AndroidResource Include="Resources\drawable\square_icon.png" />
     <AndroidResource Include="Resources\drawable\start_icon.png" />
     <AndroidResource Include="Resources\drawable\info_icon.png" />
     <AndroidResource Include="Resources\drawable\under_icon.png" />
@@ -109,9 +113,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\arrow_left.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\add_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\div_icon.png" />
