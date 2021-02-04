@@ -30,6 +30,12 @@ namespace Mathster.Resources.Database_Models
                         TotalDiv = 0,
                         TotalDivCorrect = 0,
                         TotalExercisesCorrect = 0,
+                        TotalLinear = 0,
+                        TotalLinearCorrect = 0,
+                        TotalQuadratic = 0,
+                        TotalQuadraticCorrect = 0,
+                        TotalSquare = 0,
+                        TotalSquareCorrect = 0,
                     };
                     await database.InsertAsync(table);
                 }

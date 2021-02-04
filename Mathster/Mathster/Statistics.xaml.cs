@@ -38,6 +38,13 @@ namespace Mathster
                 Color.FromHex(settings.BackgroundHex));
             LoadPage(Localization.Ratio, table.TotalAdd, table.TotalSub, table.TotalMul, table.TotalDiv,
                 "ratio_icon.png", Color.FromHex(settings.BackgroundHex));
+            LoadPage(Localization.LinearEquation, table.TotalLinearCorrect, table.TotalLinear, "linear_icon.png",
+                Color.FromHex(settings.BackgroundHex));
+            LoadPage(Localization.QuadraticEquation, table.TotalQuadraticCorrect, table.TotalQuadraticCorrect,
+                "quadratic_icon.png",
+                Color.FromHex(settings.BackgroundHex));
+            LoadPage(Localization.CompleteTheSquare, table.TotalSquareCorrect, table.TotalSquare, "square_icon.png",
+                Color.FromHex(settings.BackgroundHex));
         }
 
         private void LoadPage(string title, int amountCorrect, int amountTotal, string imageSource, Color color)
