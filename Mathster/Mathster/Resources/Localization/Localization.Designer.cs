@@ -178,6 +178,15 @@ namespace Mathster.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Complete the square.
+        /// </summary>
+        internal static string CompleteTheSquare {
+            get {
+                return ResourceManager.GetString("CompleteTheSquare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Counting time.
         /// </summary>
         internal static string CountTime {
@@ -250,6 +259,15 @@ namespace Mathster.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Linear equation.
+        /// </summary>
+        internal static string LinearEquation {
+            get {
+                return ResourceManager.GetString("LinearEquation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Menu.
         /// </summary>
         internal static string Menu {
@@ -300,6 +318,15 @@ namespace Mathster.Resources.Localization {
         internal static string Ok {
             get {
                 return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quadratic equation.
+        /// </summary>
+        internal static string QuadraticEquation {
+            get {
+                return ResourceManager.GetString("QuadraticEquation", resourceCulture);
             }
         }
         

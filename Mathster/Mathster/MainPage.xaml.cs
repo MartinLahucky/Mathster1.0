@@ -77,7 +77,7 @@ namespace Mathster
                     break;
 
                 case "x=":
-                    await Navigation.PushAsync(new ExerciseSettings(6));
+                    await Navigation.PushAsync(new ExerciseSettings(5));
                     break;
             }
         }

@@ -143,4 +143,13 @@
     <data name="Gained" xml:space="preserve">
         <value>Získáno </value>
     </data>
+    <data name="LinearEquation" xml:space="preserve">
+        <value>Lineární rovnice</value>
+    </data>
+    <data name="QuadraticEquation" xml:space="preserve">
+        <value>Kvadratické rovnice </value>
+    </data>
+    <data name="CompleteTheSquare" xml:space="preserve">
+        <value>Doplnění na čtverec</value>
+    </data>
 </root>

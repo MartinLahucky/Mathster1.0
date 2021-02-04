@@ -51,6 +51,11 @@ namespace Mathster
             MulDivSlider.IsEnabled = false;
             EquationSelectFrame.IsVisible = false;
 
+            RadioButton1.Content = Localization.LinearEquation;
+            RadioButton2.Content = Localization.QuadraticEquation;
+            RadioButton3.Content = Localization.CompleteTheSquare;
+
+
             switch (exType)
             {
                 case 0:
@@ -159,6 +164,16 @@ namespace Mathster
 
             if (exType >= 5)
             {
+                // Gets type of the equation
+                foreach (var radioButton in RadioGroup.Children)
+                {
+                    RadioButton rb = (RadioButton) radioButton;
+                    if (rb.IsChecked)
+                    {
+                        exType = byte.Parse(rb.Value.ToString());
+                    }
+                }
+
                 for (byte i = 0; i < (int) ExCountSlider.Value; i++)
                 {
                     queue[i] = new Equation().GenerateExercise(i, exType);

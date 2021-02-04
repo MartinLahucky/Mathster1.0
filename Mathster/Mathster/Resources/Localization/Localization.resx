@@ -150,4 +150,13 @@
     <data name="Gained" xml:space="preserve">
         <value>Gianed </value>
     </data>
+    <data name="LinearEquation" xml:space="preserve">
+        <value>Linear equation</value>
+    </data>
+    <data name="QuadraticEquation" xml:space="preserve">
+        <value>Quadratic equation</value>
+    </data>
+    <data name="CompleteTheSquare" xml:space="preserve">
+        <value>Complete the square</value>
+    </data>
 </root>
