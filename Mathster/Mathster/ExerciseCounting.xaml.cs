@@ -4,6 +4,7 @@ using System.Linq;
 using Mathster.Resources.Custom_UI;
 using Mathster.Resources.Database_Models;
 using Mathster.Resources.Exercises;
+using Mathster.Resources.Helpers;
 using Mathster.Resources.Localization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -317,7 +318,7 @@ namespace Mathster
             }
             catch
             {
-                await DisplayAlert(Localization.Alert, Localization.AlertInputNumber, Localization.Ok);
+                DependencyService.Get<INativeFun>().ShortAlert($"{Localization.AlertInputNumber}");
             }
         }
     }
