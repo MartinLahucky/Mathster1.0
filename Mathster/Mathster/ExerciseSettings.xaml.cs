@@ -49,7 +49,7 @@ namespace Mathster
             MulDivSlider.Maximum = MulDivSizeMax;
             MulDivSlider.Minimum = 1;
             MulDivSlider.IsEnabled = false;
-
+            EquationSelectFrame.IsVisible = false;
 
             switch (exType)
             {
@@ -77,6 +77,7 @@ namespace Mathster
 
                 default:
                     Title = Localization.Equation;
+                    EquationSelectFrame.IsVisible = true;
                     NumSizeFrame.IsVisible = false;
                     MulDivFrame.IsVisible = false;
                     break;

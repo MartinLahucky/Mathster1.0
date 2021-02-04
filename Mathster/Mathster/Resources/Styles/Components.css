@@ -87,3 +87,11 @@
     color: #4D4DFC;
     font-size: 30;
 }
+
+.RadioButton{
+    color: #ffffff;
+    font-size: 25;
+    padding: 2;
+    vertical-align:top;
+    horiz-align: center;
+}
