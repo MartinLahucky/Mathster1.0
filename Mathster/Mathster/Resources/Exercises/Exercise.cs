@@ -3,23 +3,25 @@
     public abstract class Exercise
     {
         #region Atributes
-        
-        public byte Id {get; set;}
-        public string Assignment {get; set;}
-        public string AssignmentUnder {get; set;}
-        public int Result {get; set;}
-        public int Result2 {get; set;}
-        public float UserInput {get; set;}
+
+        public byte Id { get; set; }
+        public string Assignment { get; set; }
+        public string AssignmentUnder { get; set; }
+        public int Result { get; set; }
+        public int Result2 { get; set; }
+        public float UserInput { get; set; }
         public float UserInput2 { get; set; }
-        public byte ExerciseType {get; set;}
-        public byte Experience {get; set;}
-        public long CountLenght {get; set;}
+        public byte ExerciseType { get; set; }
+        public byte Experience { get; set; }
+        public long CountLenght { get; set; }
 
         #endregion
 
         #region Constructors
 
-        public Exercise() { }
+        public Exercise()
+        {
+        }
 
         protected Exercise(byte id, string assignment, int result, byte exerciseType, byte experience)
         {
@@ -30,7 +32,8 @@
             Experience = experience;
         }
 
-        public Exercise(byte id, string assignment, string assignmentUnder, int result, byte exerciseType, byte experience)
+        public Exercise(byte id, string assignment, string assignmentUnder, int result, byte exerciseType,
+            byte experience)
         {
             Id = id;
             Assignment = assignment;
@@ -51,9 +54,9 @@
         }
 
         #endregion
-        
+
         #region Methods
-        
+
         public abstract string FormatAssigmentResult();
         public abstract string FormatAssigmentUserInput();
         public abstract string FormatUserInput();

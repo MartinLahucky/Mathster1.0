@@ -53,10 +53,10 @@
                 </Grid.ColumnDefinitions>
                 <Button x:Name="EquationButton" CornerRadius="57" HeightRequest="90" WidthRequest="90"
                         StyleClass="MenuButton" VerticalOptions="Center" HorizontalOptions="Center" Padding="0"
-                        Grid.Column="0" Grid.Row="0"  Clicked="SelectExercise" />
+                        Grid.Column="0" Grid.Row="0" Clicked="SelectExercise" />
                 <Button x:Name="RandomButton" CornerRadius="57" HeightRequest="90" WidthRequest="90"
                         StyleClass="MenuButton" VerticalOptions="Center" HorizontalOptions="Center" Padding="0"
-                        Grid.Column="1" Grid.Row="0"  Clicked="SelectExercise" />
+                        Grid.Column="1" Grid.Row="0" Clicked="SelectExercise" />
                 <Button x:Name="AddButton" CornerRadius="57" HeightRequest="90" WidthRequest="90"
                         StyleClass="MenuButton" VerticalOptions="Center" HorizontalOptions="Center" Padding="0"
                         Grid.Column="0" Grid.Row="1" Clicked="SelectExercise" />

@@ -10,7 +10,7 @@
     <ContentPage.Resources>
         <StyleSheet Source="Resources/Styles/Components.css" />
     </ContentPage.Resources>
-    
+
     <ContentPage.Content>
         <StackLayout x:Name="MainLayout" Margin="20,20,20,10">
             <ScrollView x:Name="View">
@@ -23,15 +23,18 @@
                                     <Label x:Name="TimeStaticLabel" BackgroundColor="Transparent" FontSize="22"
                                            Margin="10" Padding="20,0,0,0" VerticalTextAlignment="Center"
                                            TextColor="White" />
-                                    <Label x:Name="TimeLabel" TextColor="#C9FF50" FontSize="22" VerticalOptions="Center"
+                                    <Label x:Name="TimeLabel" TextColor="#C9FF50" FontSize="22"
+                                           VerticalOptions="Center"
                                            Padding="5,5" />
                                 </StackLayout>
                             </Frame>
 
-                            <Label x:Name="AssignmentStaticLabel" BackgroundColor="Transparent" FontSize="25" Margin="10"
+                            <Label x:Name="AssignmentStaticLabel" BackgroundColor="Transparent" FontSize="25"
+                                   Margin="10"
                                    Padding="20,0" VerticalTextAlignment="Center" TextColor="White" />
                             <Frame x:Name="AssignmentLabelFrame" CornerRadius="30" Margin="20,0,20,20" Padding="0">
-                                <Label x:Name="AssignmentLabel" TextColor="Black" FontSize="30" VerticalOptions="Center"
+                                <Label x:Name="AssignmentLabel" TextColor="Black" FontSize="30"
+                                       VerticalOptions="Center"
                                        Padding="20,5" />
                             </Frame>
                         </StackLayout>
@@ -57,7 +60,8 @@
                             <Frame CornerRadius="30" Margin="20,0,20,20" Padding="0">
                                 <StackLayout x:Name="CorrectLayout" Orientation="Horizontal" Padding="0" Margin="0">
                                     <StackLayout BackgroundColor="#7F7FFD" Padding="0" Margin="0">
-                                        <Image VerticalOptions="CenterAndExpand" Source="correct_icon.png" Margin="15,0" />
+                                        <Image VerticalOptions="CenterAndExpand" Source="correct_icon.png"
+                                               Margin="15,0" />
                                     </StackLayout>
                                     <Label x:Name="CorrectLabel" TextColor="Black" FontSize="30"
                                            VerticalOptions="Center" VerticalTextAlignment="Center" Padding="5" />

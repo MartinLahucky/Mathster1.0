@@ -43,6 +43,7 @@ namespace Mathster.Resources.Custom_UI
                 DrawFullCircle(backgroundColorHex);
             };
         }
+
         //TODO create a class for entry and colorHex --> All these parameters will be stored in array 
         public void DrawChart(SKCanvasView view, string backgroundColorHex, string progressBarColorHex,
             float progressBarThickness, float entry1, float entry2, float entry3, float entryMax, string entry1ColorHex,
@@ -78,7 +79,7 @@ namespace Mathster.Resources.Custom_UI
             return chartPartsCalculated;
         }
          */
-        
+
         private void ChartPartCalcualtion(float entry1, float entry2, float entry3, float max, out float result1,
             out float result2, out float result3)
         {

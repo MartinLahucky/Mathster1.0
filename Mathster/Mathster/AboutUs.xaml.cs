@@ -16,7 +16,8 @@ namespace Mathster
             MenuButton.IconImageSource = "menu_icon.png";
             Title = Localization.AboutApp;
             AboutUsStaticLabel.Text = Localization.AboutUs;
-            AboutUsLabel.Text = $"{Localization.AboutUsText}\n \n{Localization.DevFrontEndText}\n{Localization.DevBackEndText}";
+            AboutUsLabel.Text =
+                $"{Localization.AboutUsText}\n \n{Localization.DevFrontEndText}\n{Localization.DevBackEndText}";
             AboutAppStaticLabel.Text = Localization.AboutApp;
             AboutAppLabel.Text = Localization.AboutAppText;
         }
@@ -27,7 +28,7 @@ namespace Mathster
             SettingsModel settings = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(settings.BackgroundHex);
         }
-        
+
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new MainPage());

@@ -162,13 +162,13 @@ namespace Mathster
         {
             // I have no idea what I'm doing 
             // Creating list with number and navigation in the number 
-            
+
             // Making sure that big numbers doesn't break this
             if (e.NewTextValue.Length >= 11)
             {
                 ResultInput.Text = e.OldTextValue;
             }
-            
+
             List<string> num = new List<string>();
             string numText = ResultInput.Text;
             // Check, if number not empty

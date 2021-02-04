@@ -21,7 +21,8 @@
                     <Frame CornerRadius="15" StyleClass="ExerciseLabel" Padding="0" Margin="0,60,0,30"
                            HasShadow="False">
                         <StackLayout x:Name="ExerciseLayout" Padding="0">
-                            <Label x:Name="ExerciseLabel" Padding="0" VerticalTextAlignment="Center" StyleClass="ExerciseLabel" />
+                            <Label x:Name="ExerciseLabel" Padding="0" VerticalTextAlignment="Center"
+                                   StyleClass="ExerciseLabel" />
                         </StackLayout>
                     </Frame>
 

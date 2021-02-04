@@ -17,10 +17,11 @@ namespace Mathster
             MenuButton.IconImageSource = "menu_icon.png";
             Title = Localization.Settings;
             NameEntry.Placeholder = Localization.EnterYourName;
-            NameEntry.PlaceholderColor = Color.White;;
+            NameEntry.PlaceholderColor = Color.White;
+            ;
             NameLabel.Text = Localization.Name;
             DarkModeLabel.Text = Localization.DarkMode;
-            
+
             Task task = Task.Run(async () =>
             {
                 DBModel table = await App.Database.GetTable();
@@ -62,7 +63,7 @@ namespace Mathster
                 AboutAppLabel.TextColor = Color.White;
             }
         }
-        
+
         protected override async void OnDisappearing()
         {
             base.OnDisappearing();
@@ -83,7 +84,7 @@ namespace Mathster
             table.Name = newName;
             await App.Database.UpdateTable(table);
         }
-        
+
         private async void DarkModeSwitch_Toggled(object sender, ToggledEventArgs e)
         {
             SettingsModel settings = await App.Database.GetSettings();

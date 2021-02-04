@@ -12,6 +12,7 @@ namespace Mathster
     public partial class MainPage : ContentPage
     {
         private long lastPress;
+
         public MainPage()
         {
             InitializeComponent();
@@ -45,12 +46,12 @@ namespace Mathster
             {
                 UserLabel.Text = table.Name;
             }
+
             table.GetLevel(out int level, out double progress, table);
             LevelButton.Text = level.ToString();
             ProgressBar.AnimatedProgress = progress;
-
         }
-        
+
         private async void SelectExercise(object sender, EventArgs e)
         {
             Button button = (Button) sender;
@@ -59,19 +60,19 @@ namespace Mathster
                 case "?":
                     await Navigation.PushAsync(new ExerciseSettings(0));
                     break;
-                
+
                 case "+":
                     await Navigation.PushAsync(new ExerciseSettings(1));
                     break;
-                
+
                 case "-":
                     await Navigation.PushAsync(new ExerciseSettings(2));
                     break;
-                
+
                 case "×":
                     await Navigation.PushAsync(new ExerciseSettings(3));
                     break;
-                
+
                 case "÷":
                     await Navigation.PushAsync(new ExerciseSettings(4));
                     break;
@@ -96,8 +97,9 @@ namespace Mathster
                         {
                             Navigation.RemovePage(page);
                         }
+
                         break;
-                
+
                     case "File: settings_icon.png":
                         await Navigation.PushAsync(new Settings());
                         break;
@@ -105,9 +107,9 @@ namespace Mathster
                     case "File: info_icon.png":
                         await Navigation.PushAsync(new AboutUs());
                         break;
-                
+
                     default:
-                        await Navigation.PushAsync(new Statistics()); 
+                        await Navigation.PushAsync(new Statistics());
                         break;
                 }
             }
@@ -116,7 +118,7 @@ namespace Mathster
                 await Navigation.PushAsync(new Statistics());
             }
         }
-        
+
         protected override bool OnBackButtonPressed()
         {
             long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
