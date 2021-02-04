@@ -8,8 +8,6 @@ using Mathster.Resources.Helpers;
 using Mathster.Resources.Localization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using static Mathster.Resources.Helpers.Utilities;
-
 
 namespace Mathster
 {
