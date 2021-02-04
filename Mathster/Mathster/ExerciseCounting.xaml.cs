@@ -76,7 +76,7 @@ namespace Mathster
                             NormalInput.IsVisible = false;
                             ResultInputLayout.IsVisible = false;
                             QudraticLayout.IsVisible = true;
-                            ExerciseLabel.Padding = new Thickness(-200,0,-200,5);
+                            ExerciseLabel.Padding = new Thickness(-200, 0, -200, 5);
                             ResultLabelInput1.Text = "a: ";
                             ResultLabelInput2.Text = "b: ";
                             queue[id].UserInput = 0;
@@ -259,6 +259,7 @@ namespace Mathster
                     {
                         input.Text = e.OldTextValue;
                     }
+
                     if (ResultInput1 == input && float.TryParse(e.NewTextValue, out var text))
                     {
                         queue[id].UserInput = text;
