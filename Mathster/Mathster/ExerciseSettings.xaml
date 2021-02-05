@@ -83,26 +83,11 @@
                     </Frame>
 
                     <Frame x:Name="EquationSelectFrame" Margin="15,2,15,2" BackgroundColor="#4D4DFC" CornerRadius="40">
-                        <Grid x:Name="RadioGroup" VerticalOptions="End" HorizontalOptions="Center" Margin="0" Padding="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="5*"/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            
-                            <RadioButton Grid.Row="0" Grid.Column="0" x:Name="RadioButton1" Value="5" StyleClass="RadioButton" IsChecked="True" Margin="0" VerticalOptions="Center"/>
-                            <RadioButton Grid.Row="1" Grid.Column="0" x:Name="RadioButton2" Value="6" StyleClass="RadioButton" Margin="0" VerticalOptions="Center"/>
-                            <RadioButton Grid.Row="2" Grid.Column="0" x:Name="RadioButton3" Value="7" StyleClass="RadioButton" Margin="0" VerticalOptions="Center"/>
-                            
-                            <Image Grid.Row="0" Grid.Column="1" Source="linear_icon.png" Aspect="AspectFit" VerticalOptions="Center" Margin="0,-140"/>
-                            <Image Grid.Row="1" Grid.Column="1" Source="quadratic_icon.png" Aspect="AspectFit" VerticalOptions="Center" Margin="0,-140"/>
-                            <Image Grid.Row="2" Grid.Column="1" Source="square_icon.png" Aspect="AspectFit" VerticalOptions="Center" Margin="0,-140"/>
-                            
-                        </Grid>
+                        <StackLayout x:Name="RadioGroup" VerticalOptions="End" HorizontalOptions="Center" Margin="0" Padding="0">
+                            <RadioButton x:Name="RadioButton1" Value="5" StyleClass="RadioButton" IsChecked="True" Margin="0" VerticalOptions="Center"/>
+                            <RadioButton x:Name="RadioButton2" Value="6" StyleClass="RadioButton" Margin="0" VerticalOptions="Center"/>
+                            <RadioButton x:Name="RadioButton3" Value="7" StyleClass="RadioButton" Margin="0" VerticalOptions="Center"/>
+                        </StackLayout>
                     </Frame>
                 </StackLayout>
             </ScrollView>
