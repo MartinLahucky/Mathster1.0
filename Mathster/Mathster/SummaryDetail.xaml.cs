@@ -26,6 +26,7 @@ namespace Mathster
             AssignmentStaticLabel.Text = Localization.Assignment;
             CorrectStaticLabel.Text = Localization.SolutionCorrect;
             WrongStaticLabel.Text = Localization.YourSolution;
+            Title = $"{Localization.Summary} | {id + 1}/{queue.Count()}";
 
             Exercise exercise;
 
