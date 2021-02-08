@@ -74,6 +74,7 @@
     <Compile Include="Entry.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="NativeFun.cs" />
+    <Compile Include="RadioButton.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

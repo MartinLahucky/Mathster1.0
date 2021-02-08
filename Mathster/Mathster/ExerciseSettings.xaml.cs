@@ -55,7 +55,6 @@ namespace Mathster
             RadioButton2.Content = Localization.QuadraticEquation;
             RadioButton3.Content = Localization.CompleteTheSquare;
 
-
             switch (exType)
             {
                 case 0:
