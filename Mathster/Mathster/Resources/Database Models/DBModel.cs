@@ -103,5 +103,26 @@ namespace Mathster.Resources.Database_Models
 
             table.TotalExercises++;
         }
+
+        public void ResetDB()
+        {
+            Experience = 0;
+            TotalExercises = 0;
+            TotalAdd = 0;
+            TotalAddCorrect = 0;
+            TotalSub = 0;
+            TotalSubCorrect = 0;
+            TotalMul = 0;
+            TotalMulCorrect = 0;
+            TotalDiv = 0;
+            TotalDivCorrect = 0;
+            TotalExercisesCorrect = 0;
+            TotalLinear = 0;
+            TotalLinearCorrect = 0;
+            TotalQuadratic = 0;
+            TotalQuadraticCorrect = 0;
+            TotalSquare = 0;
+            TotalSquareCorrect = 0;
+        }
     }
 }
