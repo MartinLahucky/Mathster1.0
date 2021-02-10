@@ -57,7 +57,7 @@ namespace Mathster
                     ResultList.RowHeight = 80;
                 }
                 
-                if (ex.Result == ex.UserInput && ex.Result2 == ex.UserInput2)
+                if (ex.Result == ex.UserInput && ex.Result2 == ex.UserInput2 && ex.Result2 == ex.UserInput && ex.Result == ex.UserInput2)
                 {
                     table.AddGoodStats(ex.ExerciseType, table);
                     exercises[i].Image = "correct_icon.png";
