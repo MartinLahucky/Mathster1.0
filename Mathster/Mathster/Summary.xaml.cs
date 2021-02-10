@@ -52,9 +52,13 @@ namespace Mathster
                 bool correct = true;
                 exercises[i] = new Result(ex.FormatAssigmentUserInput(), settings);
                 
-                if (ex.FormatAssigmentUserInput().Length > 15 || ex.ExerciseType == 5)
+                if (ex.FormatAssigmentUserInput().Length > 15 && ex.ExerciseType == 5 || ex.ExerciseType == 5)
                 {
                     ResultList.RowHeight = 80;
+                }
+                else if (ex.ExerciseType >= 6)
+                {
+                    ResultList.RowHeight = 110;
                 }
                 
                 if (ex.Result == ex.UserInput && ex.Result2 == ex.UserInput2 && ex.Result2 == ex.UserInput && ex.Result == ex.UserInput2)

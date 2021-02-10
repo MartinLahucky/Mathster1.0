@@ -26,7 +26,7 @@ namespace Mathster
             AssignmentStaticLabel.Text = Localization.Assignment;
             CorrectStaticLabel.Text = Localization.SolutionCorrect;
             WrongStaticLabel.Text = Localization.YourSolution;
-            Title = $"{Localization.Summary} | {id + 1}/{queue.Count()}";
+            Title = $"{Localization.Summary} | {id + 1}/{queue.Length}";
 
             Exercise exercise;
 
@@ -62,7 +62,8 @@ namespace Mathster
             WrongLabel.Text = exercise.FormatUserInput();
             CorrectLabel.Text = exercise.FormatResult();
 
-            if (exercise.UserInput == exercise.Result && exercise.UserInput2 == exercise.Result2 && exercise.Result2 == exercise.UserInput && exercise.Result == exercise.UserInput2)
+            if (exercise.UserInput == exercise.Result && exercise.UserInput2 == exercise.Result2 &&
+                exercise.Result2 == exercise.UserInput && exercise.Result == exercise.UserInput2)
             {
                 WrongStaticLabel.IsVisible = false;
                 WrongFrame.IsVisible = false;

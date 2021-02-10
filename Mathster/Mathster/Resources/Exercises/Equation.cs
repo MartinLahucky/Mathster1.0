@@ -90,12 +90,15 @@ namespace Mathster.Resources.Exercises
                         case (true, true):
                             assignment = $"{numMul + xExtra}x +{numExtra} = {result * numMul + numExtra} +{xExtra}x";
                             break;
+
                         case (true, false):
                             assignment = $"{numMul + xExtra}x +{numExtra} = {result * numMul + numExtra} {xExtra}x";
                             break;
+
                         case (false, true):
                             assignment = $"{numMul + xExtra}x {numExtra} = {result * numMul + numExtra} +{xExtra}x";
                             break;
+
                         case (false, false):
                             assignment = $"{numMul + xExtra}x {numExtra} = {result * numMul + numExtra} {xExtra}x";
                             break;
