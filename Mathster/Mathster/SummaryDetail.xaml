@@ -47,8 +47,14 @@
                             <Frame x:Name="WrongFrame" CornerRadius="30" Margin="20,0,20,0" Padding="0">
                                 <StackLayout x:Name="WrongLayout" Orientation="Horizontal" Padding="0">
                                     <StackLayout BackgroundColor="#7F7FFD" Padding="0" Margin="0">
-                                        <Image VerticalOptions="CenterAndExpand" Source="wrong_icon.png"
-                                               Margin="15,0" />
+                                        
+                                        <!-- špatná odpověď znak -->
+                                      <StackLayout Margin="5,0,1,0" Padding="5"  BackgroundColor="Transparent" >
+                                          <Path Data="M16.0222 10.1545L7.2819 1.41421C6.50085 0.633165 5.23452 0.633164 4.45347 1.41421L1.41422 4.45347C0.633168 5.23451 0.633169 6.50085 1.41422 7.28189L15.961 21.8287C16.742 22.6097 16.742 23.876 15.961 24.6571L1.41422 39.2038C0.633171 39.9849 0.63317 41.2512 1.41422 42.0323L4.45347 45.0715C5.23452 45.8526 6.50085 45.8526 7.2819 45.0715L16.0222 36.3312L21.0995 31.254L21.8287 30.5248C22.6097 29.7437 23.876 29.7437 24.6571 30.5248L39.2039 45.0715C39.9849 45.8526 41.2512 45.8526 42.0323 45.0715L45.0715 42.0323C45.8526 41.2512 45.8526 39.9849 45.0715 39.2038L36.3312 30.4635L31.254 25.3863L30.5248 24.6571C29.7437 23.876 29.7437 22.6097 30.5248 21.8287L31.254 21.0995L36.3312 16.0222L45.0715 7.28189C45.8526 6.50084 45.8526 5.23451 45.0715 4.45347L42.0323 1.41421C41.2512 0.633165 39.9849 0.633166 39.2039 1.41421L24.6571 15.961C23.876 16.742 22.6097 16.742 21.8287 15.961L21.0995 15.2318L16.0222 10.1545Z" Fill="#FCA54D"/>
+                                      </StackLayout>
+                                        
+                                        <!-- <Image VerticalOptions="CenterAndExpand" Source="wrong_icon.png" -->
+                                        <!--        Margin="15,0" /> -->
                                     </StackLayout>
                                     <Label x:Name="WrongLabel" TextColor="Black" FontSize="30"
                                            VerticalOptions="Center" VerticalTextAlignment="Center" Padding="5" />
@@ -60,8 +66,14 @@
                             <Frame CornerRadius="30" Margin="20,0,20,20" Padding="0">
                                 <StackLayout x:Name="CorrectLayout" Orientation="Horizontal" Padding="0" Margin="0">
                                     <StackLayout BackgroundColor="#7F7FFD" Padding="0" Margin="0">
-                                        <Image VerticalOptions="CenterAndExpand" Source="correct_icon.png"
-                                               Margin="15,0" />
+                                        
+                                        <!-- správná odpovšd znak -->
+                                        <StackLayout  Margin="5, 4" Padding="0,-10,0,0" BackgroundColor="Transparent">
+                                        <Path  Data="M5.09519 30.8142C5.84952 30.0082 7.11419 29.9658 7.9208 30.7195L19.0258 41.0952C19.8324 41.8488 21.0971 41.8064 21.8514 41.0005L46.1013 15.0914C46.8561 14.2849 48.1217 14.243 48.9281 14.9978L53.5507 19.3244C54.3572 20.0792 54.3991 21.3448 53.6443 22.1513L28.0175 49.5315L23.1761 54.7042C22.4213 55.5106 21.1557 55.5525 20.3492 54.7977L1.71279 37.3548C0.906349 36.6 0.864481 35.3344 1.61928 34.5279L5.09519 30.8142Z" Fill="#C9FF50"/>
+                                        </StackLayout>
+
+                                        <!-- <Image VerticalOptions="CenterAndExpand" Source="correct_icon.png" -->
+                                        <!-- Margin="15,0" /> -->
                                     </StackLayout>
                                     <Label x:Name="CorrectLabel" TextColor="Black" FontSize="30"
                                            VerticalOptions="Center" VerticalTextAlignment="Center" Padding="5" />
