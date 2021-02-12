@@ -56,6 +56,17 @@ namespace Mathster.Resources.Database_Models
                 }
             });
             Task.WaitAll(task1);
+
+            database.CreateTableAsync<ObjectsModel>().Wait();
+            Task task2 = Task.Run(async () =>
+            {
+                if (await database.Table<ObjectsModel>().CountAsync() == 0)
+                {
+                    ObjectsModel objects = new ObjectsModel();
+                    await database.InsertAsync(objects);
+                }
+            });
+            Task.WaitAll(task2);
         }
 
         public async Task<DBModel> GetTable()
@@ -66,6 +77,11 @@ namespace Mathster.Resources.Database_Models
         public async Task<SettingsModel> GetSettings()
         {
             return await database.Table<SettingsModel>().FirstOrDefaultAsync();
+        }
+
+        public async Task<ObjectsModel> GetObjects()
+        {
+            return await database.Table<ObjectsModel>().FirstOrDefaultAsync();
         }
 
         public Task<int> UpdateTable(DBModel table)

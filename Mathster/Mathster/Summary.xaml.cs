@@ -7,6 +7,7 @@ using Mathster.Resources.Exercises;
 using Mathster.Resources.Helpers;
 using Mathster.Resources.Localization;
 using Xamarin.Forms;
+using Xamarin.Forms.Shapes;
 using Xamarin.Forms.Xaml;
 
 namespace Mathster
@@ -17,6 +18,7 @@ namespace Mathster
         private Exercise[] queue;
         private DBModel table;
         private SettingsModel settings;
+        private ObjectsModel objects;
         private bool transaction;
         private List<Exercise> correctList;
         private List<Exercise> wrongList;
@@ -24,6 +26,19 @@ namespace Mathster
         public Summary(Exercise[] queue, bool transaction)
         {
             InitializeComponent();
+            Task task = Task.Run(async () =>
+            {
+                table = await App.Database.GetTable();
+                settings = await App.Database.GetSettings();
+                objects = await App.Database.GetObjects();
+            });
+            Task.WaitAll(task);
+
+            // SVG loaded from DB 
+            ObjCorrect.Data = objects.ObjCorrect;
+            ObjWrong.Data = objects.ObjWrong;
+            
+            
             MenuToolbarButton.IconImageSource = "menu_icon.png";
             this.queue = queue;
             this.transaction = transaction;
@@ -35,13 +50,6 @@ namespace Mathster
             int experienceGained = 0;
             correctList = new List<Exercise>();
             wrongList = new List<Exercise>();
-
-            Task task = Task.Run(async () =>
-            {
-                table = await App.Database.GetTable();
-                settings = await App.Database.GetSettings();
-            });
-            Task.WaitAll(task);
 
             // For list view 
             Result[] exercises = new Result [queue.Length];
@@ -61,17 +69,19 @@ namespace Mathster
                     ResultList.RowHeight = 110;
                 }
                 
-                if (ex.Result == ex.UserInput && ex.Result2 == ex.UserInput2 && ex.Result2 == ex.UserInput && ex.Result == ex.UserInput2)
+                if (ex.Result == ex.UserInput && ex.Result2 == ex.UserInput2 || ex.Result2 == ex.UserInput && ex.Result == ex.UserInput2)
                 {
                     table.AddGoodStats(ex.ExerciseType, table);
-                    exercises[i].Image = "correct_icon.png";
+                    exercises[i].Obj = objects.ObjCorrect;
+                    exercises[i].ObjColor = new SolidColorBrush(Color.FromHex("#C9FF50"));
                     correctList.Add(ex);
                 }
                 else
                 {
                     correct = false;
                     table.AddStats(ex.ExerciseType, table);
-                    exercises[i].Image = "wrong_icon.png";
+                    exercises[i].Obj = objects.ObjWrong;
+                    exercises[i].ObjColor = new SolidColorBrush(Color.FromHex("#FCA54D"));
                     wrongList.Add(ex);
                 }
 
@@ -159,8 +169,9 @@ namespace Mathster
     public class Result
     {
         public string Assignment { get; set; }
-        public string Image { get; set; }
+        public Geometry Obj { get; set; }
         public Color CellColor { get; set; }
+        public Brush ObjColor { get; set; }
         public Color TextColor { get; set; }
 
         public Result(string assignment, SettingsModel settings)

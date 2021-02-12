@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Mathster.Resources.Database_Models;
 using Mathster.Resources.Exercises;
 using Mathster.Resources.Localization;
@@ -28,6 +29,14 @@ namespace Mathster
             WrongStaticLabel.Text = Localization.YourSolution;
             Title = $"{Localization.Summary} | {id + 1}/{queue.Length}";
 
+            Task task = Task.Run(async () =>
+            {
+                var objs = await App.Database.GetObjects();
+                ObjCorrect.Data = objs.ObjCorrect;
+                ObjWrong.Data = objs.ObjWrong;
+            });
+            Task.WaitAll(task);
+            
             Exercise exercise;
 
             if (list != null)
