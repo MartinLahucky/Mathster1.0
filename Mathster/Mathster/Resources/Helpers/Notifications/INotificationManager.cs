@@ -5,8 +5,7 @@ namespace Mathster.Resources.Helpers.Notifications
     public interface INotificationManager
     {
         event EventHandler NotificationReceived;
-        void Initialize();
-        void SendNotification(string title, string message, DateTime? notifyTime = null);
+        void SendNotification(string title, string message, DateTime? notifyTime = null, long? repeatTime = null);
         void ReceiveNotification(string title, string message);
     }
 }

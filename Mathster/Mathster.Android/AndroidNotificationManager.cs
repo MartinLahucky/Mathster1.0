@@ -4,14 +4,16 @@ using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using AndroidX.Core.App;
-using Mathster;
+using Java.Lang;
+using Mathster.Android;
 using Mathster.Resources.Helpers.Notifications;
 using Xamarin.Forms;
 using AndroidApp = Android.App.Application;
+using String = Java.Lang.String;
 
 [assembly: Dependency(typeof(AndroidNotificationManager))]
 
-namespace Mathster
+namespace Mathster.Android
 {
     public class AndroidNotificationManager : INotificationManager
     {
@@ -23,7 +25,7 @@ namespace Mathster
         public const string MessageKey = "message";
 
         private bool channelInitialized;
-        private int messageId;
+        private int notificationId;
         private int pendingIntentId;
 
         NotificationManager manager;
@@ -32,13 +34,8 @@ namespace Mathster
 
         public static AndroidNotificationManager Instance { get; private set; }
 
-        public void Initialize()
-        {
-            CreateNotificationChannel();
-            Instance = this;
-        }
-
-        public void SendNotification(string title, string message, DateTime? notifyTime = null)
+        public void SendNotification(string title, string message, DateTime? notifyTime = null,
+            long? repeatTime = null)
         {
             if (!channelInitialized)
             {
@@ -50,12 +47,26 @@ namespace Mathster
                 Intent intent = new Intent(AndroidApp.Context, typeof(AlarmHandler));
                 intent.PutExtra(TitleKey, title);
                 intent.PutExtra(MessageKey, message);
-                Instance = this; // Without this notifications with delay don't work 
-                PendingIntent pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, pendingIntentId++, intent,
-                    PendingIntentFlags.CancelCurrent);
+                Instance = this; // Without this notifications with delay won't work 
                 long triggerTime = GetNotifyTime(notifyTime.Value);
                 AlarmManager alarmManager = AndroidApp.Context.GetSystemService(Context.AlarmService) as AlarmManager;
-                alarmManager?.Set(AlarmType.RtcWakeup, triggerTime, pendingIntent);
+                if (repeatTime != null)
+                {
+                    if (triggerTime < JavaSystem.CurrentTimeMillis())
+                    {
+                        triggerTime += repeatTime.Value;
+                    }
+
+                    PendingIntent pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, pendingIntentId++,
+                        intent, PendingIntentFlags.Immutable);
+                    alarmManager?.SetRepeating(AlarmType.RtcWakeup, triggerTime, repeatTime.Value, pendingIntent);
+                }
+                else
+                {
+                    PendingIntent pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, pendingIntentId++,
+                        intent, PendingIntentFlags.CancelCurrent);
+                    alarmManager?.Set(AlarmType.RtcWakeup, triggerTime, pendingIntent);
+                }
             }
             else
             {
@@ -78,29 +89,33 @@ namespace Mathster
             Intent intent = new Intent(AndroidApp.Context, typeof(MainActivity));
             intent.PutExtra(TitleKey, title);
             intent.PutExtra(MessageKey, message);
-
+            // Starts up the activity (app) 
             PendingIntent pendingIntent = PendingIntent.GetActivity(AndroidApp.Context, pendingIntentId++, intent,
                 PendingIntentFlags.UpdateCurrent);
-
+            // Building the notifictaion
             NotificationCompat.Builder builder = new NotificationCompat.Builder(AndroidApp.Context, ChannelId)
-                .SetContentIntent(pendingIntent)
-                .SetContentTitle(title)
-                .SetContentText(message)
-                .SetLargeIcon(BitmapFactory.DecodeResource(AndroidApp.Context.Resources, Resource.Drawable.icon))
-                .SetSmallIcon(Resource.Drawable.icon)
-                .SetDefaults((int) NotificationDefaults.Sound | (int) NotificationDefaults.Vibrate);
+                .SetAutoCancel(true) // Dismiss the notification from the notification area when the user clicks on it
+                .SetContentIntent(pendingIntent) // Start up this activity when the user clicks the intent
+                .SetContentTitle(title) // Set the title
+                .SetContentText(message) // The message to display
+                .SetLargeIcon(BitmapFactory.DecodeResource(AndroidApp.Context.Resources,
+                    Resource.Drawable.icon)) //Big icon  
+                .SetSmallIcon(Resource.Drawable.icon) // This is the icon to display
+                .SetDefaults((int) NotificationDefaults.Sound | // This sets sound and
+                             (int) NotificationDefaults.Vibrate); // vibrations to what phones uses right now (default) 
 
             Notification notification = builder.Build();
-            manager.Notify(messageId++, notification);
+            manager.Notify(notificationId++, notification);
         }
 
-        void CreateNotificationChannel()
+        private void CreateNotificationChannel()
         {
             manager = (NotificationManager) AndroidApp.Context.GetSystemService(Context.NotificationService);
 
+            // Notification channels are new in API 26 (and not a part of the support library)
             if (Build.VERSION.SdkInt >= BuildVersionCodes.O)
             {
-                var channelNameJava = new Java.Lang.String(ChannelName);
+                var channelNameJava = new String(ChannelName);
                 var channel = new NotificationChannel(ChannelId, channelNameJava, NotificationImportance.Default)
                 {
                     Description = ChannelDescription
@@ -111,7 +126,7 @@ namespace Mathster
             channelInitialized = true;
         }
 
-        long GetNotifyTime(DateTime notifyTime)
+        private long GetNotifyTime(DateTime notifyTime)
         {
             DateTime utcTime = TimeZoneInfo.ConvertTimeToUtc(notifyTime);
             double epochDiff = (new DateTime(1970, 1, 1) - DateTime.MinValue).TotalSeconds;

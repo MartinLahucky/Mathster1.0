@@ -1,13 +1,13 @@
 ﻿using Android.Content;
 using Android.Content.Res;
-using Mathster;
+using Mathster.Android;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Color = Android.Graphics.Color;
 
 [assembly: ExportRenderer(typeof(RadioButton), typeof(CustomRadioButtonRenderer))]
 
-namespace Mathster
+namespace Mathster.Android
 {
     public class CustomRadioButtonRenderer : RadioButtonRenderer
     {

@@ -151,6 +151,24 @@ namespace Mathster.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Come Practise.
+        /// </summary>
+        internal static string AlertPractice {
+            get {
+                return ResourceManager.GetString("AlertPractice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It&apos;s been more then 1 day since your last pactise.
+        /// </summary>
+        internal static string AlertPracticeText {
+            get {
+                return ResourceManager.GetString("AlertPracticeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to reset statistics? (They will be gone forever).
         /// </summary>
         internal static string AlertResetStatistics {

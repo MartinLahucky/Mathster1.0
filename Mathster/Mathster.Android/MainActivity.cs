@@ -8,7 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Environment = System.Environment;
 
-namespace Mathster
+namespace Mathster.Android
 {
     [Activity(Label = "Mathster", Icon = "@drawable/icon", Theme = "@style/MainTheme.Splash", MainLauncher = true,
         ScreenOrientation = ScreenOrientation.Portrait,
@@ -31,7 +31,7 @@ namespace Mathster
             LoadApplication(new App(fullPath));
             CreateNotificationFromIntent(Intent);
         }
-        
+
         protected override void OnNewIntent(Intent intent)
         {
             CreateNotificationFromIntent(intent);

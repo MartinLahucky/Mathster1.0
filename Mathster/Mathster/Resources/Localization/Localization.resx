@@ -159,4 +159,10 @@
     <data name="CompleteTheSquare" xml:space="preserve">
         <value>Complete the square</value>
     </data>
+    <data name="AlertPractice" xml:space="preserve">
+        <value>Come Practise</value>
+    </data>
+    <data name="AlertPracticeText" xml:space="preserve">
+        <value>It's been more then 1 day since your last pactise</value>
+    </data>
 </root>
