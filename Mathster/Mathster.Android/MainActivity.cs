@@ -1,16 +1,19 @@
 ﻿using System.IO;
 using Android.App;
+using Android.Content;
 using Android.Content.PM;
 using Android.OS;
+using Mathster.Resources.Helpers.Notifications;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Environment = System.Environment;
 
-namespace Mathster.Android
+namespace Mathster
 {
     [Activity(Label = "Mathster", Icon = "@drawable/icon", Theme = "@style/MainTheme.Splash", MainLauncher = true,
         ScreenOrientation = ScreenOrientation.Portrait,
-        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, LaunchMode = LaunchMode.SingleTop
+    )]
     public class MainActivity : FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -26,6 +29,22 @@ namespace Mathster.Android
             string fullPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal),
                 "mathster_db.sqlite");
             LoadApplication(new App(fullPath));
+            CreateNotificationFromIntent(Intent);
+        }
+        
+        protected override void OnNewIntent(Intent intent)
+        {
+            CreateNotificationFromIntent(intent);
+        }
+
+        void CreateNotificationFromIntent(Intent intent)
+        {
+            if (intent?.Extras != null)
+            {
+                string title = intent.GetStringExtra(AndroidNotificationManager.TitleKey);
+                string message = intent.GetStringExtra(AndroidNotificationManager.MessageKey);
+                DependencyService.Get<INotificationManager>().ReceiveNotification(title, message);
+            }
         }
     }
 }

@@ -71,9 +71,11 @@
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="28.0.0.3" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlarmHandler.cs" />
     <Compile Include="Entry.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="NativeFun.cs" />
+    <Compile Include="AndroidNotificationManager.cs" />
     <Compile Include="RadioButton.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
