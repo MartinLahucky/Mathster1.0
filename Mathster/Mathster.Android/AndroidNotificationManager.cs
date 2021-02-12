@@ -22,7 +22,7 @@ namespace Mathster
         public const string TitleKey = "title";
         public const string MessageKey = "message";
 
-        private bool channelInitialized ;
+        private bool channelInitialized;
         private int messageId;
         private int pendingIntentId;
 
@@ -50,7 +50,7 @@ namespace Mathster
                 Intent intent = new Intent(AndroidApp.Context, typeof(AlarmHandler));
                 intent.PutExtra(TitleKey, title);
                 intent.PutExtra(MessageKey, message);
-                Instance = this;  // Without this notifications with delay don't work 
+                Instance = this; // Without this notifications with delay don't work 
                 PendingIntent pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, pendingIntentId++, intent,
                     PendingIntentFlags.CancelCurrent);
                 long triggerTime = GetNotifyTime(notifyTime.Value);
@@ -65,7 +65,7 @@ namespace Mathster
 
         public void ReceiveNotification(string title, string message)
         {
-            var args = new NotificationEventArgs()
+            var args = new NotificationEventArgs
             {
                 Title = title,
                 Message = message,
