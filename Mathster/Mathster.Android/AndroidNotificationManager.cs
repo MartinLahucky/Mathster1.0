@@ -15,7 +15,8 @@ using String = Java.Lang.String;
 
 namespace Mathster.Android
 {
-    public class AndroidNotificationManager : INotificationManager
+    [Service]
+    public class AndroidNotificationManager : Service, INotificationManager
     {
         private const string ChannelId = "default";
         private const string ChannelName = "Default";
@@ -34,8 +35,30 @@ namespace Mathster.Android
 
         public static AndroidNotificationManager Instance { get; private set; }
 
-        public void SendNotification(string title, string message, DateTime? notifyTime = null,
-            long? repeatTime = null)
+        private Intent Intent { get; set; }
+
+        public override IBinder OnBind(Intent intent)
+        {
+            Intent = intent;
+            return null;
+        }
+
+        public void StartService(string title, string message, DateTime? notifyTime = null, long? repeatTime = null)
+        {
+            var intent = new Intent(AndroidApp.Context, typeof(AndroidNotificationManager));
+            SendNotification(title, message, notifyTime, repeatTime);
+
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.O)
+            {
+                AndroidApp.Context.StartForegroundService(intent);
+            }
+            else
+            {
+                AndroidApp.Context.StartService(intent);
+            }
+        }
+        
+        public void SendNotification(string title, string message, DateTime? notifyTime = null, long? repeatTime = null)
         {
             if (!channelInitialized)
             {
@@ -49,7 +72,7 @@ namespace Mathster.Android
                 intent.PutExtra(MessageKey, message);
                 Instance = this; // Without this notifications with delay won't work 
                 long triggerTime = GetNotifyTime(notifyTime.Value);
-                AlarmManager alarmManager = AndroidApp.Context.GetSystemService(Context.AlarmService) as AlarmManager;
+                AlarmManager alarmManager = AndroidApp.Context.GetSystemService(AlarmService) as AlarmManager;
                 if (repeatTime != null)
                 {
                     if (triggerTime < JavaSystem.CurrentTimeMillis())
@@ -110,7 +133,7 @@ namespace Mathster.Android
 
         private void CreateNotificationChannel()
         {
-            manager = (NotificationManager) AndroidApp.Context.GetSystemService(Context.NotificationService);
+            manager = (NotificationManager) AndroidApp.Context.GetSystemService(NotificationService);
 
             // Notification channels are new in API 26 (and not a part of the support library)
             if (Build.VERSION.SdkInt >= BuildVersionCodes.O)

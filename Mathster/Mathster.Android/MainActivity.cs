@@ -37,7 +37,7 @@ namespace Mathster.Android
             CreateNotificationFromIntent(intent);
         }
 
-        void CreateNotificationFromIntent(Intent intent)
+        private static void CreateNotificationFromIntent(Intent intent)
         {
             if (intent?.Extras != null)
             {
