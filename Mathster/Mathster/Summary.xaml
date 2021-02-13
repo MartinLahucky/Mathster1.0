@@ -68,11 +68,13 @@
                                                         <StackLayout x:Name="CellColor"
                                                                      BackgroundColor="{Binding CellColor}"
                                                                      Orientation="Horizontal">
-                                                            <StackLayout BackgroundColor="#7F7FFD" Padding="0">
-                                                                <Path x:Name="ResultObj"
+                                                            <StackLayout BackgroundColor="#7F7FFD" Padding="0,-9,0,0" VerticalOptions="Center" HorizontalOptions="Center">
+                                                                <Path x:Name="ResultObj" Width="60"
                                                                       VerticalOptions="CenterAndExpand"
                                                                       Data="{Binding Obj}" Fill="{Binding ObjColor}"
-                                                                      Margin="15,0" />
+                                                                     Margin="{Binding Margin}"
+                                                                      />
+                                                                <!-- Margin="10,0"  -->
                                                             </StackLayout>
                                                             <Label x:Name="ResultLabel"
                                                                    Text="{Binding Assignment}" FontSize="30"

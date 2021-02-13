@@ -25,7 +25,6 @@ namespace Mathster.Android
 		
 		public static void UpdateIdValues()
 		{
-			global::Plugin.LocalNotifications.Resource.Drawable.plugin_lc_smallicon = global::Mathster.Android.Resource.Drawable.plugin_lc_smallicon;
 			global::ProgressRingControl.Forms.Plugin.Android.Resource.Animation.abc_fade_in = global::Mathster.Android.Resource.Animation.abc_fade_in;
 			global::ProgressRingControl.Forms.Plugin.Android.Resource.Animation.abc_fade_out = global::Mathster.Android.Resource.Animation.abc_fade_out;
 			global::ProgressRingControl.Forms.Plugin.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::Mathster.Android.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -16608,52 +16607,49 @@ namespace Mathster.Android
 			public const int notify_panel_notification_icon_bg = 2131165543;
 			
 			// aapt resource value: 0x7F070168
-			public const int plugin_lc_smallicon = 2131165544;
+			public const int quadratic_icon = 2131165544;
 			
 			// aapt resource value: 0x7F070169
-			public const int quadratic_icon = 2131165545;
+			public const int ratio_icon = 2131165545;
 			
 			// aapt resource value: 0x7F07016A
-			public const int ratio_icon = 2131165546;
+			public const int settings_icon = 2131165546;
 			
 			// aapt resource value: 0x7F07016B
-			public const int settings_icon = 2131165547;
+			public const int splash_screen = 2131165547;
 			
 			// aapt resource value: 0x7F07016C
-			public const int splash_screen = 2131165548;
+			public const int square_icon = 2131165548;
 			
 			// aapt resource value: 0x7F07016D
-			public const int square_icon = 2131165549;
+			public const int start_icon = 2131165549;
 			
 			// aapt resource value: 0x7F07016E
-			public const int start_icon = 2131165550;
+			public const int statistics_icon = 2131165550;
 			
 			// aapt resource value: 0x7F07016F
-			public const int statistics_icon = 2131165551;
+			public const int sub_icon = 2131165551;
 			
 			// aapt resource value: 0x7F070170
-			public const int sub_icon = 2131165552;
+			public const int summary_icon = 2131165552;
 			
 			// aapt resource value: 0x7F070171
-			public const int summary_icon = 2131165553;
+			public const int test_custom_background = 2131165553;
 			
 			// aapt resource value: 0x7F070172
-			public const int test_custom_background = 2131165554;
+			public const int tooltip_frame_dark = 2131165554;
 			
 			// aapt resource value: 0x7F070173
-			public const int tooltip_frame_dark = 2131165555;
+			public const int tooltip_frame_light = 2131165555;
 			
 			// aapt resource value: 0x7F070174
-			public const int tooltip_frame_light = 2131165556;
+			public const int total_icon = 2131165556;
 			
 			// aapt resource value: 0x7F070175
-			public const int total_icon = 2131165557;
+			public const int under_icon = 2131165557;
 			
 			// aapt resource value: 0x7F070176
-			public const int under_icon = 2131165558;
-			
-			// aapt resource value: 0x7F070177
-			public const int wrong_icon = 2131165559;
+			public const int wrong_icon = 2131165558;
 			
 			static Drawable()
 			{

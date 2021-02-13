@@ -75,6 +75,8 @@ namespace Mathster
                     exercises[i].Obj = objects.ObjCorrect;
                     exercises[i].ObjColor = new SolidColorBrush(Color.FromHex("#C9FF50"));
                     correctList.Add(ex);
+                    exercises[i].Margin =1 ;
+
                 }
                 else
                 {
@@ -83,6 +85,7 @@ namespace Mathster
                     exercises[i].Obj = objects.ObjWrong;
                     exercises[i].ObjColor = new SolidColorBrush(Color.FromHex("#FCA54D"));
                     wrongList.Add(ex);
+                    exercises[i].Margin =8 ;
                 }
 
                 experienceGained += ex.GetExperience(correct);
@@ -173,6 +176,7 @@ namespace Mathster
         public Color CellColor { get; set; }
         public Brush ObjColor { get; set; }
         public Color TextColor { get; set; }
+        public int Margin { get; set; }
 
         public Result(string assignment, SettingsModel settings)
         {
