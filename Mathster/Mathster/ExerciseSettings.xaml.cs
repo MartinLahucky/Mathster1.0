@@ -11,7 +11,7 @@ namespace Mathster
     public partial class ExerciseSettings : ContentPage
     {
         //  Default values
-        private int ExSize = 5;
+        private int exSize = 5;
         private readonly int ExSizeMax = 20;
         private byte exType;
 
@@ -19,7 +19,7 @@ namespace Mathster
         private readonly int mulDivSizeMax = 3;
 
 
-        private int NumSize = 2;
+        private int numSize = 2;
         private readonly int NumSizeMax = 6;
 
         public ExerciseSettings(byte exType)
@@ -33,15 +33,15 @@ namespace Mathster
             MulDivStaticLabel.Text = Localization.SelectDivMulSize;
             MenuToolbarButton.IconImageSource = "menu_icon.png";
 
-            ExCountSlider.Value = ExSize;
+            ExCountSlider.Value = exSize;
             ExCountSlider.Maximum = ExSizeMax;
             ExCountSlider.Minimum = 1;
-            ExCountLabel.Text = ExSize.ToString();
+            ExCountLabel.Text = exSize.ToString();
 
-            NumSizeSlider.Value = NumSize;
+            NumSizeSlider.Value = numSize;
             NumSizeSlider.Maximum = NumSizeMax;
             NumSizeSlider.Minimum = 1;
-            NumSizeCountLabel.Text = NumSize.ToString();
+            NumSizeCountLabel.Text = numSize.ToString();
 
             MulDivSlider.Value = mulDivSize;
             MulDivSlider.Maximum = mulDivSizeMax;
@@ -112,14 +112,14 @@ namespace Mathster
 
         private void ExCountSlider_OnValueChanged(object sender, ValueChangedEventArgs e)
         {
-            ExSize = (int) ExCountSlider.Value;
-            ExCountLabel.Text = ExSize.ToString();
+            exSize = (int) ExCountSlider.Value;
+            ExCountLabel.Text = exSize.ToString();
         }
 
         private void NumSizeSlider_OnValueChanged(object sender, ValueChangedEventArgs e)
         {
-            NumSize = (int) NumSizeSlider.Value;
-            if (NumSize == 1)
+            numSize = (int) NumSizeSlider.Value;
+            if (numSize == 1)
             {
                 MulDivSlider.Value = 1;
                 MulDivSlider.IsEnabled = false;
@@ -129,7 +129,7 @@ namespace Mathster
                 MulDivSlider.IsEnabled = true;
             }
 
-            NumSizeCountLabel.Text = NumSize.ToString();
+            NumSizeCountLabel.Text = numSize.ToString();
         }
 
         private void MulDivSlider_OnValueChanged(object sender, ValueChangedEventArgs e)
@@ -151,10 +151,7 @@ namespace Mathster
 
         private async void NextButton_OnClicked(object sender, EventArgs e)
         {
-            int numMin, numMax;
-            byte mulDivMin, mulDivMax;
             var queue = new Exercise[(int) ExCountSlider.Value];
-
 
             if (exType >= 5)
             {
@@ -170,6 +167,7 @@ namespace Mathster
             }
             else
             {
+                int numMin, numMax;
                 switch ((int) NumSizeSlider.Value)
                 {
                     case 1:
@@ -208,6 +206,7 @@ namespace Mathster
                         break;
                 }
 
+                byte mulDivMin, mulDivMax;
                 switch ((int) MulDivSlider.Value)
                 {
                     case 1:

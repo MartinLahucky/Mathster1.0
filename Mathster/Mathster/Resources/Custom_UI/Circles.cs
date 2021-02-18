@@ -62,26 +62,45 @@ namespace Mathster.Resources.Custom_UI
                 canvas.Clear();
                 DrawFullCircle(backgroundColorHex);
                 DrawCircleBorder(progressBarThickness, progressBarColorHex);
+
+
                 DrawProgress(result1, progressBarThickness, entry1ColorHex);
                 DrawProgress(result2, progressBarThickness, entry2ColorHex);
                 DrawProgress(result3, progressBarThickness, entry3ColorHex);
             };
         }
 
-        /*
-        private ChartPart[] ChartPartCalcualtion(ChartPart[] chartParts, float max)
-        {
-            ChartPart[] chartPartsCalculated = new ChartPart[chartParts.Length];
-            float value = 0;
-            for (int i = chartParts.Length; i > 0; i--)
-            {
-                value += chartParts[i].PartValue;
-                chartPartsCalculated[i].PartValue = value / max * 100;
-            }
+        // public void DrawChart(SKCanvasView view, string backgroundColorHex, string progressBarColorHex,
+        //     float progressBarThickness, ChartPart[] chartParts, float entryMax)
+        // {
+        //     view.PaintSurface += (sender, args) =>
+        //     {
+        //         canvas = args.Surface.Canvas;
+        //         CalculateCenter(args.Info);
+        //         canvas.Clear();
+        //         DrawFullCircle(backgroundColorHex);
+        //         DrawCircleBorder(progressBarThickness, progressBarColorHex);
+        //
+        //         var parts = ChartPartCalcualtion(chartParts, entryMax);
+        //
+        //         foreach (var part in parts) DrawProgress(part.PartValue, progressBarThickness, part.ColorHex);
+        //     };
+        // }
+        //
+        //
+        // private ChartPart[] ChartPartCalcualtion(ChartPart[] chartParts, float max)
+        // {
+        //     ChartPart[] chartPartsCalculated = new ChartPart[chartParts.Length];
+        //     float value = 0;
+        //     for (int i = chartParts.Length; i > 0; i--)
+        //     {
+        //         value += chartParts[i].PartValue;
+        //         chartPartsCalculated[i].PartValue = value / max * 100;
+        //     }
+        //
+        //     return chartPartsCalculated;
+        // }
 
-            return chartPartsCalculated;
-        }
-         */
 
         private void ChartPartCalcualtion(float entry1, float entry2, float entry3, float max, out float result1,
             out float result2, out float result3)
@@ -125,4 +144,17 @@ namespace Mathster.Resources.Custom_UI
                 new SKPaint {StrokeWidth = progressBarThickness, Color = SKColor.Parse(colorHex), IsStroke = true});
         }
     }
+    
+    // // Inner class
+    // public class ChartPart
+    // {
+    //     public float PartValue { get; set; }
+    //     public string ColorHex { get; set; }
+    //
+    //     public ChartPart(float partValue, string colorHex)
+    //     {
+    //         PartValue = partValue;
+    //         ColorHex = colorHex;
+    //     }
+    // }
 }
