@@ -221,7 +221,7 @@ namespace Mathster
 
         private void EquationInput_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            var input = (CS_Entry) sender;
+            var input = (Entry) sender;
             switch (queue[id].ExerciseType)
             {
                 case 6:

@@ -5,9 +5,9 @@ namespace Mathster.Resources.Database_Models
 {
     public class ObjectsModel
     {
+        // This is a copy one 
         // public readonly Geometry Obj = (Geometry) new PathGeometryConverter().ConvertFromInvariantString("");
-
-        // TODO Create objects --> This is a copy one 
+        
         public readonly Geometry ObjAdd = (Geometry) new PathGeometryConverter().ConvertFromInvariantString(
             "M24 2C24 0.895431 23.1046 0 22 0H17C15.8954 0 15 0.89543 15 2V13C15 14.1046 14.1046 15 13 15L2 15C0.895431 15 0 15.8954 0 17V22C0 23.1046 0.89543 24 2 24H9.75H14.625V24C14.8321 24 15 24.1679 15 24.375V37C15 38.1046 15.8954 39 17 39H22C23.1046 39 24 38.1046 24 37V29.25V24.375V24.375C24 24.1679 24.1679 24 24.375 24V24H29.25H37C38.1046 24 39 23.1046 39 22V17C39 15.8954 38.1046 15 37 15L24.375 15C24.1679 15 24 14.8321 24 14.625V14.625V9.75V2Z");
 

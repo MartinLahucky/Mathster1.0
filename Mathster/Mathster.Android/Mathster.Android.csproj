@@ -88,20 +88,77 @@
         <None Include="Properties\AndroidManifest.xml" />
     </ItemGroup>
     <ItemGroup>
-        <AndroidResource Include="Resources\drawable\correct_icon.png" />
+        <AndroidResource Include="Resources\drawable\add_icon.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\arrow_left.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\arrow_right.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\div_icon.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
         <AndroidResource Include="Resources\drawable\icon.png" />
-        <AndroidResource Include="Resources\drawable\linear_icon.png" />
-        <AndroidResource Include="Resources\drawable\add_icon.png" />
-        <AndroidResource Include="Resources\drawable\quadratic_icon.png" />
-        <AndroidResource Include="Resources\drawable\square_icon.png" />
+        <AndroidResource Include="Resources\drawable\info_icon.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\linear_icon.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\menu_icon.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\mul_icon.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\quadratic_icon.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\ratio_icon.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\settings_icon.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\square_icon.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
         <AndroidResource Include="Resources\drawable\start_icon.png" />
-        <AndroidResource Include="Resources\drawable\info_icon.png" />
-        <AndroidResource Include="Resources\drawable\under_icon.png" />
-        <AndroidResource Include="Resources\drawable\menu_icon.png" />
-        <AndroidResource Include="Resources\drawable\settings_icon.png" />
-        <AndroidResource Include="Resources\drawable\wrong_icon.png" />
         <AndroidResource Include="Resources\drawable\splash_screen.xml" />
-        <AndroidResource Include="Resources\drawable\statistics_icon.png" />
+        <AndroidResource Include="Resources\drawable\statistics_icon.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\sub_icon.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\summary_icon.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\total_icon.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
+        <AndroidResource Include="Resources\drawable\under_icon.png">
+          <SubType>Designer</SubType>
+          <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+        </AndroidResource>
         <AndroidResource Include="Resources\layout\Tabbar.axml" />
         <AndroidResource Include="Resources\layout\Toolbar.axml" />
         <AndroidResource Include="Resources\values\styles.xml" />
@@ -112,30 +169,6 @@
             <Project>{B2E83137-B60D-4A85-9B18-79358BAA99F2}</Project>
             <Name>Mathster</Name>
         </ProjectReference>
-    </ItemGroup>
-    <ItemGroup>
-        <AndroidResource Include="Resources\drawable\arrow_right.png" />
-    </ItemGroup>
-    <ItemGroup>
-        <AndroidResource Include="Resources\drawable\arrow_left.png" />
-    </ItemGroup>
-    <ItemGroup>
-        <AndroidResource Include="Resources\drawable\div_icon.png" />
-    </ItemGroup>
-    <ItemGroup>
-        <AndroidResource Include="Resources\drawable\mul_icon.png" />
-    </ItemGroup>
-    <ItemGroup>
-        <AndroidResource Include="Resources\drawable\sub_icon.png" />
-    </ItemGroup>
-    <ItemGroup>
-        <AndroidResource Include="Resources\drawable\summary_icon.png" />
-    </ItemGroup>
-    <ItemGroup>
-        <AndroidResource Include="Resources\drawable\total_icon.png" />
-    </ItemGroup>
-    <ItemGroup>
-        <AndroidResource Include="Resources\drawable\ratio_icon.png" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

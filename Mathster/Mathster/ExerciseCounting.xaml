@@ -31,7 +31,7 @@
                             <Label x:Name="ResultLabelInput" HeightRequest="60" Margin="0,0,0,-66"
                                    VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
                                    StyleClass="ResultInput" />
-                            <customUi:CS_Entry x:Name="ResultInput" Keyboard="Numeric" FontSize="30"
+                            <Entry x:Name="ResultInput" Keyboard="Numeric" FontSize="30"
                                                HeightRequest="60" VerticalTextAlignment="Center"
                                                HorizontalTextAlignment="Center" BackgroundColor="Transparent"
                                                TextColor="Transparent" StyleClass="BlackText"
@@ -48,7 +48,7 @@
                                 <Label x:Name="ResultLabelInput1" HeightRequest="60" Margin="0,0,0,-66"
                                        VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
                                        StyleClass="EquationInput" />
-                                <customUi:CS_Entry x:Name="ResultInput1" Keyboard="Numeric" FontSize="30"
+                                <Entry x:Name="ResultInput1" Keyboard="Numeric" FontSize="30"
                                                    HeightRequest="60" VerticalTextAlignment="Center"
                                                    HorizontalTextAlignment="End" BackgroundColor="Transparent"
                                                    StyleClass="BlackText"
@@ -61,7 +61,7 @@
                                 <Label x:Name="ResultLabelInput2" HeightRequest="60" Margin="0,0,0,-66"
                                        VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
                                        StyleClass="EquationInput" />
-                                <customUi:CS_Entry x:Name="ResultInput2" Keyboard="Numeric" FontSize="30"
+                                <Entry x:Name="ResultInput2" Keyboard="Numeric" FontSize="30"
                                                    HeightRequest="60" VerticalTextAlignment="Center"
                                                    HorizontalTextAlignment="End" BackgroundColor="Transparent"
                                                    StyleClass="BlackText"

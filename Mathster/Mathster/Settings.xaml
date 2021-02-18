@@ -16,7 +16,7 @@
             <Frame StyleClass="FrameDarkPurple" Margin="30,0" CornerRadius="30" VerticalOptions="CenterAndExpand">
                 <StackLayout>
                     <Label x:Name="NameLabel" StyleClass="TitleGreenLabel" HorizontalOptions="Center" />
-                    <customUi:CS_Entry x:Name="NameEntry" HorizontalTextAlignment="Center"
+                    <Entry x:Name="NameEntry" HorizontalTextAlignment="Center"
                                        VerticalTextAlignment="Center" TextChanged="NameEntry_OnTextChanged" />
                 </StackLayout>
             </Frame>

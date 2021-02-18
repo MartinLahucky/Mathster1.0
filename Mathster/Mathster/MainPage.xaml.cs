@@ -2,6 +2,7 @@
 using System.Linq;
 using Mathster.Resources.Helpers;
 using Mathster.Resources.Localization;
+// using Mathster.Resources.Images;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,10 +18,11 @@ namespace Mathster
             InitializeComponent();
             Title = Localization.Menu;
 
-            MenuToolbarButton.IconImageSource = "menu_icon.png";
-            SettingsButton.IconImageSource = "settings_icon.png";
-            StatsToolbarButton.IconImageSource = "statistics_icon.png";
-            AboutToolbarButton.IconImageSource = "info_icon.png";
+            var assembly = typeof(MainPage);
+            MenuToolbarButton.IconImageSource = ImageSource.FromResource("Mathster.Resources.Images.menu_icon.png", assembly);
+            SettingsButton.IconImageSource = ImageSource.FromResource("Mathster.Resources.Images.settings_icon.png", assembly);
+            StatsToolbarButton.IconImageSource = ImageSource.FromResource("Mathster.Resources.Images.statistics_icon.png", assembly);
+            AboutToolbarButton.IconImageSource = ImageSource.FromResource("Mathster.Resources.Images.info_icon.png", assembly);
 
             AddButton.Text = "+";
             SubButton.Text = "-";
