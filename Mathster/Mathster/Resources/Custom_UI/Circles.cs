@@ -8,17 +8,17 @@ namespace Mathster.Resources.Custom_UI
     {
         private readonly Func<SKImageInfo, SKPoint> centerFunc;
 
-        public Circles(float radius, Func<SKImageInfo, SKPoint> centerfunc)
+        public Circles(float radius, Func<SKImageInfo, SKPoint> center)
         {
-            centerFunc = centerfunc;
+            centerFunc = center;
             Radius = radius;
         }
 
-        public SKPoint Center { get; set; }
-        public float Radius { get; set; }
+        private SKPoint Center { get; set; }
+        private float Radius { get; set; }
         private SKCanvas canvas { get; set; }
 
-        public SKRect Rect => new(Center.X - Radius, Center.Y - Radius, Center.X + Radius, Center.Y + Radius);
+        private SKRect Rect => new(Center.X - Radius, Center.Y - Radius, Center.X + Radius, Center.Y + Radius);
 
         public void DrawFullProgressBar(SKCanvasView view, string backgroundColorHex, string progressBarColorHex,
             float progressBarThickness, float progress, string progressColorHex)
@@ -54,9 +54,8 @@ namespace Mathster.Resources.Custom_UI
         {
             view.PaintSurface += (sender, args) =>
             {
-                float result1, result2, result3;
-                ChartPartCalculation(entry1, entry2, entry3, entryMax, out result1, out result2,
-                    out result3);
+                ChartPartCalculation(entry1, entry2, entry3, entryMax, out var result1, out var result2,
+                    out var result3);
                 canvas = args.Surface.Canvas;
                 CalculateCenter(args.Info);
                 canvas.Clear();
@@ -110,7 +109,7 @@ namespace Mathster.Resources.Custom_UI
             result3 = entry3 / max * 100;
         }
 
-        public void CalculateCenter(SKImageInfo argsInfo)
+        private void CalculateCenter(SKImageInfo argsInfo)
         {
             Center = centerFunc.Invoke(argsInfo);
         }
