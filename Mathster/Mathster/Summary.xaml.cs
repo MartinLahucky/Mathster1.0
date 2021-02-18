@@ -15,18 +15,17 @@ namespace Mathster
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Summary : ContentPage
     {
-        private Exercise[] queue;
-        private DBModel table;
-        private SettingsModel settings;
+        private readonly List<Exercise> correctList, wrongList;
         private ObjectsModel objects;
+        private readonly Exercise[] queue;
+        private SettingsModel settings;
+        private DBModel table;
         private bool transaction;
-        private List<Exercise> correctList;
-        private List<Exercise> wrongList;
 
         public Summary(Exercise[] queue, bool transaction)
         {
             InitializeComponent();
-            Task task = Task.Run(async () =>
+            var task = Task.Run(async () =>
             {
                 table = await App.Database.GetTable();
                 settings = await App.Database.GetSettings();
@@ -37,8 +36,8 @@ namespace Mathster
             // SVG loaded from DB 
             ObjCorrect.Data = objects.ObjCorrect;
             ObjWrong.Data = objects.ObjWrong;
-            
-            
+
+
             MenuToolbarButton.IconImageSource = "menu_icon.png";
             this.queue = queue;
             this.transaction = transaction;
@@ -47,36 +46,31 @@ namespace Mathster
             MenuButton.Text = Localization.Menu;
             TitleSummaryLabel.Text = Localization.Results;
 
-            int experienceGained = 0;
+            var experienceGained = 0;
             correctList = new List<Exercise>();
             wrongList = new List<Exercise>();
 
             // For list view 
-            Result[] exercises = new Result [queue.Length];
+            var exercises = new Result [queue.Length];
 
-            for (int i = 0; i < queue.Length; i++)
+            for (var i = 0; i < queue.Length; i++)
             {
                 var ex = queue[i];
-                bool correct = true;
+                var correct = true;
                 exercises[i] = new Result(ex.FormatAssigmentUserInput(), settings);
-                
+
                 if (ex.FormatAssigmentUserInput().Length > 15 && ex.ExerciseType == 5 || ex.ExerciseType == 5)
-                {
                     ResultList.RowHeight = 80;
-                }
-                else if (ex.ExerciseType >= 6)
-                {
-                    ResultList.RowHeight = 110;
-                }
-                
-                if (ex.Result == ex.UserInput && ex.Result2 == ex.UserInput2 || ex.Result2 == ex.UserInput && ex.Result == ex.UserInput2)
+                else if (ex.ExerciseType >= 6) ResultList.RowHeight = 110;
+
+                if (ex.Result == ex.UserInput && ex.Result2 == ex.UserInput2 ||
+                    ex.Result2 == ex.UserInput && ex.Result == ex.UserInput2)
                 {
                     table.AddGoodStats(ex.ExerciseType, table);
                     exercises[i].Obj = objects.ObjCorrect;
                     exercises[i].ObjColor = new SolidColorBrush(Color.FromHex("#C9FF50"));
                     correctList.Add(ex);
-                    exercises[i].Margin =1 ;
-
+                    exercises[i].Margin = 1;
                 }
                 else
                 {
@@ -85,7 +79,7 @@ namespace Mathster
                     exercises[i].Obj = objects.ObjWrong;
                     exercises[i].ObjColor = new SolidColorBrush(Color.FromHex("#FCA54D"));
                     wrongList.Add(ex);
-                    exercises[i].Margin =8 ;
+                    exercises[i].Margin = 8;
                 }
 
                 experienceGained += ex.GetExperience(correct);
@@ -108,10 +102,7 @@ namespace Mathster
         {
             await Navigation.PushAsync(new MainPage());
             var existingPages = Navigation.NavigationStack.ToList();
-            foreach (var page in existingPages)
-            {
-                Navigation.RemovePage(page);
-            }
+            foreach (var page in existingPages) Navigation.RemovePage(page);
         }
 
         protected override void OnAppearing()
@@ -163,7 +154,7 @@ namespace Mathster
 
         private async void ResultList_OnItemTapped(object sender, ItemTappedEventArgs e)
         {
-            byte selectedItem = byte.Parse(e.ItemIndex.ToString());
+            var selectedItem = byte.Parse(e.ItemIndex.ToString());
             await Navigation.PushAsync(new SummaryDetail(selectedItem, queue, transaction));
             if (sender is ListView lv) lv.SelectedItem = null;
         }
@@ -171,25 +162,21 @@ namespace Mathster
 
     public class Result
     {
+        public Result(string assignment, SettingsModel settings)
+        {
+            Assignment = assignment;
+            CellColor = Color.FromHex(settings.BackgroundHex);
+            if (settings.DarkMode)
+                TextColor = Color.FromHex("#FFFFFF");
+            else
+                TextColor = Color.Black;
+        }
+
         public string Assignment { get; set; }
         public Geometry Obj { get; set; }
         public Color CellColor { get; set; }
         public Brush ObjColor { get; set; }
         public Color TextColor { get; set; }
         public int Margin { get; set; }
-
-        public Result(string assignment, SettingsModel settings)
-        {
-            Assignment = assignment;
-            CellColor = Color.FromHex(settings.BackgroundHex);
-            if (settings.DarkMode)
-            {
-                TextColor = Color.FromHex("#FFFFFF");
-            }
-            else
-            {
-                TextColor = Color.Black;
-            }
-        }
     }
 }

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Mathster.Resources.Custom_UI;
-using Mathster.Resources.Database_Models;
 using Mathster.Resources.Exercises;
 using Mathster.Resources.Helpers;
 using Mathster.Resources.Localization;
@@ -14,11 +13,11 @@ namespace Mathster
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExerciseCounting : ContentPage
     {
+        private readonly long beginTime;
         private byte id;
-        private long beginTime;
-        private Exercise[] queue;
-        private bool under = false;
-        private bool underChanged = false;
+        private readonly Exercise[] queue;
+        private bool under;
+        private bool underChanged;
 
         public ExerciseCounting(byte id, Exercise[] queue)
         {
@@ -27,8 +26,8 @@ namespace Mathster
             UnderButton.IconImageSource = "under_icon.png";
             NextButton.Text = ">";
             SubmitButton.Text = Localization.Submit;
-            ResultLabelInput.Text = String.Empty;
-            ResultInput.Text = String.Empty;
+            ResultLabelInput.Text = string.Empty;
+            ResultInput.Text = string.Empty;
             beginTime = DateTime.UtcNow.Ticks;
             ExerciseLabel.Text = queue[id].Assignment;
 
@@ -87,28 +86,20 @@ namespace Mathster
             }
 
             if (id < queue.Length - 1)
-            {
                 SubmitButton.IsVisible = false;
-            }
             else
-            {
                 NextButton.IsVisible = false;
-            }
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
             if (queue[id].ExerciseType >= 6)
-            {
                 ResultInput1.Focus();
-            }
             else
-            {
                 ResultInput.Focus();
-            }
 
-            SettingsModel settings = await App.Database.GetSettings();
+            var settings = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(settings.BackgroundHex);
             if (settings.DarkMode)
             {
@@ -130,10 +121,7 @@ namespace Mathster
         {
             await Navigation.PushAsync(new MainPage());
             var existingPages = Navigation.NavigationStack.ToList();
-            foreach (var page in existingPages)
-            {
-                Navigation.RemovePage(page);
-            }
+            foreach (var page in existingPages) Navigation.RemovePage(page);
         }
 
         private void UnderButton_OnClicked(object sender, EventArgs e)
@@ -164,18 +152,15 @@ namespace Mathster
             // Creating list with number and navigation in the number 
 
             // Making sure that big numbers doesn't break this
-            if (e.NewTextValue.Length >= 11)
-            {
-                ResultInput.Text = e.OldTextValue;
-            }
+            if (e.NewTextValue.Length >= 11) ResultInput.Text = e.OldTextValue;
 
-            List<string> num = new List<string>();
-            string numText = ResultInput.Text;
+            var num = new List<string>();
+            var numText = ResultInput.Text;
             // Check, if number not empty
             if (ResultInput.Text == "")
             {
                 underChanged = false;
-                ResultLabelInput.Text = String.Empty;
+                ResultLabelInput.Text = string.Empty;
             }
             else
             {
@@ -185,10 +170,7 @@ namespace Mathster
                     {
                         case true:
                             // Loading correct number
-                            for (int i = 0; i < numText.Length; i++)
-                            {
-                                num.Add(numText[i].ToString());
-                            }
+                            for (var i = 0; i < numText.Length; i++) num.Add(numText[i].ToString());
 
                             // If the number is negative, writes minus 1st  
                             if (num[0] == "-")
@@ -201,12 +183,8 @@ namespace Mathster
                             ResultLabelInput.Text = num[num.Count - 1];
                             // Check if not only 1 symbol 
                             if (num.Count != 1)
-                            {
-                                for (int i = num.Count - 2; i >= 0; i--)
-                                {
+                                for (var i = num.Count - 2; i >= 0; i--)
                                     ResultLabelInput.Text += num[i];
-                                }
-                            }
 
                             underChanged = true;
                             break;
@@ -222,28 +200,21 @@ namespace Mathster
                             }
 
                             // Loading correct number format
-                            for (int i = 0; i < numText.Length; i++)
-                            {
-                                num.Add(numText[i].ToString());
-                            }
+                            for (var i = 0; i < numText.Length; i++) num.Add(numText[i].ToString());
 
                             // Again IDK what magic is this  
                             ResultLabelInput.Text = num[0];
                             if (num.Count != 1)
-                            {
-                                for (int i = 1; i < numText.Length; i++)
-                                {
+                                for (var i = 1; i < numText.Length; i++)
                                     ResultLabelInput.Text += num[i];
-                                }
-                            }
 
                             break;
                     }
                 }
                 catch
                 {
-                    ResultLabelInput.Text = String.Empty;
-                    ResultInput.Text = String.Empty;
+                    ResultLabelInput.Text = string.Empty;
+                    ResultInput.Text = string.Empty;
                 }
             }
         }
@@ -254,18 +225,12 @@ namespace Mathster
             switch (queue[id].ExerciseType)
             {
                 case 6:
-                    if (e.NewTextValue.Length > 4)
-                    {
-                        input.Text = e.OldTextValue;
-                    }
+                    if (e.NewTextValue.Length > 4) input.Text = e.OldTextValue;
 
                     break;
 
                 case 7:
-                    if (e.NewTextValue.Length > 3)
-                    {
-                        input.Text = e.OldTextValue;
-                    }
+                    if (e.NewTextValue.Length > 3) input.Text = e.OldTextValue;
 
                     if (ResultInput1 == input && float.TryParse(e.NewTextValue, out var text))
                     {
@@ -293,7 +258,7 @@ namespace Mathster
                 queue[id].CountLenght = DateTime.UtcNow.Ticks - beginTime;
                 if (queue[id].ExerciseType >= 6)
                 {
-                    Equation equation = (Equation) queue[id];
+                    var equation = (Equation) queue[id];
                     equation.UserInput = float.Parse(ResultInput1.Text);
                     equation.UserInput2 = float.Parse(ResultInput2.Text);
                 }
@@ -302,26 +267,20 @@ namespace Mathster
                     queue[id].UserInput = float.Parse(ResultLabelInput.Text);
                 }
 
-                Button button = (Button) sender;
+                var button = (Button) sender;
 
                 if (button.Text == ">")
                 {
                     id++;
                     await Navigation.PushAsync(new ExerciseCounting(id, queue));
                     var existingPages = Navigation.NavigationStack.ToList();
-                    foreach (var page in existingPages)
-                    {
-                        Navigation.RemovePage(page);
-                    }
+                    foreach (var page in existingPages) Navigation.RemovePage(page);
                 }
                 else
                 {
                     await Navigation.PushAsync(new Summary(queue, false));
                     var existingPages = Navigation.NavigationStack.ToList();
-                    foreach (var page in existingPages)
-                    {
-                        Navigation.RemovePage(page);
-                    }
+                    foreach (var page in existingPages) Navigation.RemovePage(page);
                 }
             }
             catch

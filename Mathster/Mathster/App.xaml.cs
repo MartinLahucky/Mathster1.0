@@ -14,27 +14,24 @@ namespace Mathster
         private static DatabaseController database;
         public static string DatabaseLocation = string.Empty;
 
-        public static DatabaseController Database
-        {
-            get
-            {
-                if (database == null)
-                {
-                    database = new DatabaseController();
-                }
-
-                return database;
-            }
-        }
-
         public App(string databaseLocation)
         {
             InitializeComponent();
             MainPage = new NavigationPage(new MainPage())
             {
-                BarTextColor = Color.FromHex("#C9FF50"),
+                BarTextColor = Color.FromHex("#C9FF50")
             };
             DatabaseLocation = databaseLocation;
+        }
+
+        public static DatabaseController Database
+        {
+            get
+            {
+                if (database == null) database = new DatabaseController();
+
+                return database;
+            }
         }
 
         protected override void OnStart()

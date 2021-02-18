@@ -47,12 +47,13 @@
                             <Frame x:Name="WrongFrame" CornerRadius="30" Margin="20,0,20,0" Padding="0">
                                 <StackLayout x:Name="WrongLayout" Orientation="Horizontal" Padding="0">
                                     <StackLayout BackgroundColor="#7F7FFD" Padding="0" Margin="0">
-                                        
+
                                         <!-- špatná odpověď znak -->
-                                      <StackLayout Margin="5,0,1,0" Padding="5"  BackgroundColor="Transparent" HorizontalOptions="Center">
-                                          <Path x:Name="ObjWrong" Fill="#FCA54D"/>
-                                      </StackLayout>
-                                        
+                                        <StackLayout Margin="5,0,1,0" Padding="5" BackgroundColor="Transparent"
+                                                     HorizontalOptions="Center">
+                                            <Path x:Name="ObjWrong" Fill="#FCA54D" />
+                                        </StackLayout>
+
                                         <!-- <Image VerticalOptions="CenterAndExpand" Source="wrong_icon.png" -->
                                         <!--        Margin="15,0" /> -->
                                     </StackLayout>
@@ -66,10 +67,11 @@
                             <Frame CornerRadius="30" Margin="20,0,20,20" Padding="0">
                                 <StackLayout x:Name="CorrectLayout" Orientation="Horizontal" Padding="0" Margin="0">
                                     <StackLayout BackgroundColor="#7F7FFD" Padding="0" Margin="0">
-                                        
+
                                         <!-- správná odpovšd znak -->
-                                        <StackLayout  Margin="5, 4" Padding="0,-10,0,0" BackgroundColor="Transparent" HorizontalOptions="Center">
-                                        <Path x:Name="ObjCorrect" Fill="#C9FF50"/>
+                                        <StackLayout Margin="5, 4" Padding="0,-10,0,0" BackgroundColor="Transparent"
+                                                     HorizontalOptions="Center">
+                                            <Path x:Name="ObjCorrect" Fill="#C9FF50" />
                                         </StackLayout>
 
                                         <!-- <Image VerticalOptions="CenterAndExpand" Source="correct_icon.png" -->

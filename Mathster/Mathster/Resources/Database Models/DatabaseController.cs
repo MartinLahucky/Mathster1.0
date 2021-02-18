@@ -1,24 +1,23 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using SQLite;
 
 namespace Mathster.Resources.Database_Models
 {
     public class DatabaseController
     {
-        readonly SQLiteAsyncConnection database;
+        private readonly SQLiteAsyncConnection database;
 
         public DatabaseController()
         {
             database = new SQLiteAsyncConnection(App.DatabaseLocation);
             database.CreateTableAsync<DBModel>().Wait();
-            Task task = Task.Run(async () =>
+            var task = Task.Run(async () =>
             {
                 if (await database.Table<DBModel>().CountAsync() == 0)
                 {
-                    DBModel table = new DBModel
+                    var table = new DBModel
                     {
-                        Name = String.Empty,
+                        Name = string.Empty,
                         Experience = 0,
                         TotalExercises = 0,
                         TotalAdd = 0,
@@ -35,7 +34,7 @@ namespace Mathster.Resources.Database_Models
                         TotalQuadratic = 0,
                         TotalQuadraticCorrect = 0,
                         TotalSquare = 0,
-                        TotalSquareCorrect = 0,
+                        TotalSquareCorrect = 0
                     };
                     await database.InsertAsync(table);
                 }
@@ -43,11 +42,11 @@ namespace Mathster.Resources.Database_Models
             Task.WaitAll(task);
 
             database.CreateTableAsync<SettingsModel>().Wait();
-            Task task1 = Task.Run(async () =>
+            var task1 = Task.Run(async () =>
             {
                 if (await database.Table<SettingsModel>().CountAsync() == 0)
                 {
-                    SettingsModel settings = new SettingsModel
+                    var settings = new SettingsModel
                     {
                         DarkMode = false,
                         BackgroundHex = "#FAFAFA"
@@ -58,11 +57,11 @@ namespace Mathster.Resources.Database_Models
             Task.WaitAll(task1);
 
             database.CreateTableAsync<ObjectsModel>().Wait();
-            Task task2 = Task.Run(async () =>
+            var task2 = Task.Run(async () =>
             {
                 if (await database.Table<ObjectsModel>().CountAsync() == 0)
                 {
-                    ObjectsModel objects = new ObjectsModel();
+                    var objects = new ObjectsModel();
                     await database.InsertAsync(objects);
                 }
             });

@@ -16,8 +16,8 @@ namespace Mathster.Android
                 var wakeLock = pm?.NewWakeLock(WakeLockFlags.Partial, "GCM Broadcast Reciever Tag");
                 wakeLock?.Acquire();
                 // Notification process
-                string title = intent.GetStringExtra(AndroidNotificationManager.TitleKey);
-                string message = intent.GetStringExtra(AndroidNotificationManager.MessageKey);
+                var title = intent.GetStringExtra(AndroidNotificationManager.TitleKey);
+                var message = intent.GetStringExtra(AndroidNotificationManager.MessageKey);
                 AndroidNotificationManager.Instance.Show(title, message);
                 // Release the device 
                 wakeLock?.Release();

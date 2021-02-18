@@ -26,7 +26,7 @@ namespace Mathster.Android
             Forms.Init(this, savedInstanceState);
 
             // Database Declaration
-            string fullPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal),
+            var fullPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal),
                 "mathster_db.sqlite");
             LoadApplication(new App(fullPath));
             CreateNotificationFromIntent(Intent);
@@ -41,8 +41,8 @@ namespace Mathster.Android
         {
             if (intent?.Extras != null)
             {
-                string title = intent.GetStringExtra(AndroidNotificationManager.TitleKey);
-                string message = intent.GetStringExtra(AndroidNotificationManager.MessageKey);
+                var title = intent.GetStringExtra(AndroidNotificationManager.TitleKey);
+                var message = intent.GetStringExtra(AndroidNotificationManager.MessageKey);
                 DependencyService.Get<INotificationManager>().ReceiveNotification(title, message);
             }
         }

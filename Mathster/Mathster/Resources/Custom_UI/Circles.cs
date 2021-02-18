@@ -7,15 +7,18 @@ namespace Mathster.Resources.Custom_UI
     public class Circles
     {
         private readonly Func<SKImageInfo, SKPoint> centerFunc;
-        public SKPoint Center { get; set; }
-        public float Redius { get; set; }
-        private SKCanvas canvas { get; set; }
 
-        public Circles(float redius, Func<SKImageInfo, SKPoint> centerfunc)
+        public Circles(float radius, Func<SKImageInfo, SKPoint> centerfunc)
         {
             centerFunc = centerfunc;
-            Redius = redius;
+            Radius = radius;
         }
+
+        public SKPoint Center { get; set; }
+        public float Radius { get; set; }
+        private SKCanvas canvas { get; set; }
+
+        public SKRect Rect => new(Center.X - Radius, Center.Y - Radius, Center.X + Radius, Center.Y + Radius);
 
         public void DrawFullProgressBar(SKCanvasView view, string backgroundColorHex, string progressBarColorHex,
             float progressBarThickness, float progress, string progressColorHex)
@@ -88,8 +91,6 @@ namespace Mathster.Resources.Custom_UI
             result3 = entry3 / max * 100;
         }
 
-        public SKRect Rect => new SKRect(Center.X - Redius, Center.Y - Redius, Center.X + Redius, Center.Y + Redius);
-
         public void CalculateCenter(SKImageInfo argsInfo)
         {
             Center = centerFunc.Invoke(argsInfo);
@@ -97,8 +98,8 @@ namespace Mathster.Resources.Custom_UI
 
         private void DrawFullCircle(string backgroundColorHex)
         {
-            canvas.DrawCircle(Center, Redius,
-                new SKPaint()
+            canvas.DrawCircle(Center, Radius,
+                new SKPaint
                 {
                     Style = SKPaintStyle.Fill,
                     Color = SKColor.Parse(backgroundColorHex)
@@ -107,8 +108,8 @@ namespace Mathster.Resources.Custom_UI
 
         private void DrawCircleBorder(float progressBarThickness, string colorHex)
         {
-            canvas.DrawCircle(Center, Redius,
-                new SKPaint()
+            canvas.DrawCircle(Center, Radius,
+                new SKPaint
                 {
                     StrokeWidth = progressBarThickness,
                     Color = SKColor.Parse(colorHex),
@@ -121,7 +122,7 @@ namespace Mathster.Resources.Custom_UI
             Func<float> step = () => progress;
             var angle = step.Invoke() * 3.6f;
             canvas.DrawArc(Rect, 270, angle, false,
-                new SKPaint() {StrokeWidth = progressBarThickness, Color = SKColor.Parse(colorHex), IsStroke = true});
+                new SKPaint {StrokeWidth = progressBarThickness, Color = SKColor.Parse(colorHex), IsStroke = true});
         }
     }
 }

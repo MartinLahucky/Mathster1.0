@@ -26,22 +26,16 @@ namespace Mathster.Android
         public const string MessageKey = "message";
 
         private bool channelInitialized;
+
+        private NotificationManager manager;
         private int notificationId;
         private int pendingIntentId;
-
-        NotificationManager manager;
-
-        public event EventHandler NotificationReceived;
 
         public static AndroidNotificationManager Instance { get; private set; }
 
         private Intent Intent { get; set; }
 
-        public override IBinder OnBind(Intent intent)
-        {
-            Intent = intent;
-            return null;
-        }
+        public event EventHandler NotificationReceived;
 
         public void StartService(string title, string message, DateTime? notifyTime = null, long? repeatTime = null)
         {
@@ -49,44 +43,34 @@ namespace Mathster.Android
             SendNotification(title, message, notifyTime, repeatTime);
 
             if (Build.VERSION.SdkInt >= BuildVersionCodes.O)
-            {
                 AndroidApp.Context.StartForegroundService(intent);
-            }
             else
-            {
                 AndroidApp.Context.StartService(intent);
-            }
         }
-        
+
         public void SendNotification(string title, string message, DateTime? notifyTime = null, long? repeatTime = null)
         {
-            if (!channelInitialized)
-            {
-                CreateNotificationChannel();
-            }
+            if (!channelInitialized) CreateNotificationChannel();
 
             if (notifyTime != null)
             {
-                Intent intent = new Intent(AndroidApp.Context, typeof(AlarmHandler));
+                var intent = new Intent(AndroidApp.Context, typeof(AlarmHandler));
                 intent.PutExtra(TitleKey, title);
                 intent.PutExtra(MessageKey, message);
                 Instance = this; // Without this notifications with delay won't work 
-                long triggerTime = GetNotifyTime(notifyTime.Value);
-                AlarmManager alarmManager = AndroidApp.Context.GetSystemService(AlarmService) as AlarmManager;
+                var triggerTime = GetNotifyTime(notifyTime.Value);
+                var alarmManager = AndroidApp.Context.GetSystemService(AlarmService) as AlarmManager;
                 if (repeatTime != null)
                 {
-                    if (triggerTime < JavaSystem.CurrentTimeMillis())
-                    {
-                        triggerTime += repeatTime.Value;
-                    }
+                    if (triggerTime < JavaSystem.CurrentTimeMillis()) triggerTime += repeatTime.Value;
 
-                    PendingIntent pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, pendingIntentId++,
+                    var pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, pendingIntentId++,
                         intent, PendingIntentFlags.Immutable);
                     alarmManager?.SetRepeating(AlarmType.RtcWakeup, triggerTime, repeatTime.Value, pendingIntent);
                 }
                 else
                 {
-                    PendingIntent pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, pendingIntentId++,
+                    var pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, pendingIntentId++,
                         intent, PendingIntentFlags.CancelCurrent);
                     alarmManager?.Set(AlarmType.RtcWakeup, triggerTime, pendingIntent);
                 }
@@ -102,21 +86,27 @@ namespace Mathster.Android
             var args = new NotificationEventArgs
             {
                 Title = title,
-                Message = message,
+                Message = message
             };
             NotificationReceived?.Invoke(null, args);
         }
 
+        public override IBinder OnBind(Intent intent)
+        {
+            Intent = intent;
+            return null;
+        }
+
         public void Show(string title, string message)
         {
-            Intent intent = new Intent(AndroidApp.Context, typeof(MainActivity));
+            var intent = new Intent(AndroidApp.Context, typeof(MainActivity));
             intent.PutExtra(TitleKey, title);
             intent.PutExtra(MessageKey, message);
             // Starts up the activity (app) 
-            PendingIntent pendingIntent = PendingIntent.GetActivity(AndroidApp.Context, pendingIntentId++, intent,
+            var pendingIntent = PendingIntent.GetActivity(AndroidApp.Context, pendingIntentId++, intent,
                 PendingIntentFlags.UpdateCurrent);
             // Building the notifictaion
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(AndroidApp.Context, ChannelId)
+            var builder = new NotificationCompat.Builder(AndroidApp.Context, ChannelId)
                 .SetAutoCancel(true) // Dismiss the notification from the notification area when the user clicks on it
                 .SetContentIntent(pendingIntent) // Start up this activity when the user clicks the intent
                 .SetContentTitle(title) // Set the title
@@ -127,7 +117,7 @@ namespace Mathster.Android
                 .SetDefaults((int) NotificationDefaults.Sound | // This sets sound and
                              (int) NotificationDefaults.Vibrate); // vibrations to what phones uses right now (default) 
 
-            Notification notification = builder.Build();
+            var notification = builder.Build();
             manager.Notify(notificationId++, notification);
         }
 
@@ -151,9 +141,9 @@ namespace Mathster.Android
 
         private long GetNotifyTime(DateTime notifyTime)
         {
-            DateTime utcTime = TimeZoneInfo.ConvertTimeToUtc(notifyTime);
-            double epochDiff = (new DateTime(1970, 1, 1) - DateTime.MinValue).TotalSeconds;
-            long utcAlarmTime = utcTime.AddSeconds(-epochDiff).Ticks / 10000;
+            var utcTime = TimeZoneInfo.ConvertTimeToUtc(notifyTime);
+            var epochDiff = (new DateTime(1970, 1, 1) - DateTime.MinValue).TotalSeconds;
+            var utcAlarmTime = utcTime.AddSeconds(-epochDiff).Ticks / 10000;
             return utcAlarmTime; // milliseconds
         }
     }

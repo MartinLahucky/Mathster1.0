@@ -1,6 +1,5 @@
 ﻿using System;
 using Mathster.Resources.Custom_UI;
-using Mathster.Resources.Database_Models;
 using Mathster.Resources.Localization;
 using SkiaSharp;
 using Xamarin.Forms;
@@ -11,7 +10,7 @@ namespace Mathster
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StatisticsPage : ContentPage
     {
-        private Circles chart;
+        private readonly Circles chart;
 
         public StatisticsPage(string title, int amountCorrect, int amountTotal)
         {
@@ -26,9 +25,9 @@ namespace Mathster
             SubLabel.IsVisible = false;
 
             if (amountTotal == 0) amountTotal = 1;
-            chart = new Circles(180, (info) => new SKPoint((float) info.Width / 2, (float) info.Height / 2));
+            chart = new Circles(180, info => new SKPoint((float) info.Width / 2, (float) info.Height / 2));
             chart.DrawFullProgressBar(Chart, "#7F7FFD", "#FCA54D", 40f,
-                amountCorrect / (float) (amountTotal) * 100f, "#C9FF50");
+                amountCorrect / (float) amountTotal * 100f, "#C9FF50");
         }
 
         public StatisticsPage(string title, int add, int sub, int mul, int div)
@@ -47,7 +46,7 @@ namespace Mathster
             AddImage.IsVisible = false;
             SubImage.IsVisible = false;
 
-            chart = new Circles(180, (info) => new SKPoint((float) info.Width / 2, (float) info.Height / 2));
+            chart = new Circles(180, info => new SKPoint((float) info.Width / 2, (float) info.Height / 2));
             chart.DrawChart(Chart, "#7F7FFD", "#FCA54D", 40f, mul, div, sub,
                 add + sub + mul + div, "#C9FF50", "#262630", "#FFFFFF");
         }
@@ -57,7 +56,7 @@ namespace Mathster
             if (await DisplayAlert(Localization.Alert, Localization.AlertResetStatistics, Localization.Yes,
                 Localization.No))
             {
-                DBModel table = await App.Database.GetTable();
+                var table = await App.Database.GetTable();
                 table.ResetDB();
                 await App.Database.UpdateTable(table);
                 await Navigation.PushAsync(new MainPage());

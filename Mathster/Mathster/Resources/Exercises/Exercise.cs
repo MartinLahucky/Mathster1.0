@@ -64,10 +64,7 @@
 
         public int GetExperience(bool correct)
         {
-            if (correct)
-            {
-                return (ExerciseType * (ExerciseType / 4) + 1) * Experience * 20;
-            }
+            if (correct) return (ExerciseType * (ExerciseType / 4) + 1) * Experience * 20;
 
             return ExerciseType * (ExerciseType / 4) + 1;
         }

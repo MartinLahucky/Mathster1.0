@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using Mathster.Resources.Database_Models;
 using Mathster.Resources.Helpers;
 using Mathster.Resources.Localization;
 using Xamarin.Forms;
@@ -35,26 +34,22 @@ namespace Mathster
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            SettingsModel settings = await App.Database.GetSettings();
+            var settings = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            DBModel table = await App.Database.GetTable();
+            var table = await App.Database.GetTable();
             if (string.IsNullOrEmpty(table.Name))
-            {
                 UserLabel.Text = "Mathster";
-            }
             else
-            {
                 UserLabel.Text = table.Name;
-            }
 
-            table.GetLevel(out int level, out double progress, table);
+            table.GetLevel(out var level, out var progress, table);
             LevelButton.Text = level.ToString();
             ProgressBar.AnimatedProgress = progress;
         }
 
         private async void SelectExercise(object sender, EventArgs e)
         {
-            Button button = (Button) sender;
+            var button = (Button) sender;
             switch (button.Text)
             {
                 case "?":
@@ -87,16 +82,13 @@ namespace Mathster
         {
             try
             {
-                ToolbarItem i = (ToolbarItem) sender;
+                var i = (ToolbarItem) sender;
                 switch (i.IconImageSource.ToString())
                 {
                     case "File: menu_icon.png":
                         await Navigation.PushAsync(new MainPage());
                         var existingPages = Navigation.NavigationStack.ToList();
-                        foreach (var page in existingPages)
-                        {
-                            Navigation.RemovePage(page);
-                        }
+                        foreach (var page in existingPages) Navigation.RemovePage(page);
 
                         break;
 
@@ -121,7 +113,7 @@ namespace Mathster
 
         protected override bool OnBackButtonPressed()
         {
-            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
+            var currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
             if (currentTime - lastPress > 3000)
             {

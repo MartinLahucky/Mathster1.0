@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using Mathster.Resources.Database_Models;
 using Mathster.Resources.Localization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -25,7 +24,7 @@ namespace Mathster
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            SettingsModel settings = await App.Database.GetSettings();
+            var settings = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(settings.BackgroundHex);
         }
 
@@ -33,10 +32,7 @@ namespace Mathster
         {
             await Navigation.PushAsync(new MainPage());
             var existingPages = Navigation.NavigationStack.ToList();
-            foreach (var page in existingPages)
-            {
-                Navigation.RemovePage(page);
-            }
+            foreach (var page in existingPages) Navigation.RemovePage(page);
         }
     }
 }

@@ -11,15 +11,15 @@ namespace Mathster
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Statistics : TabbedPage
     {
-        private DBModel table;
         private SettingsModel settings;
+        private DBModel table;
 
         public Statistics()
         {
             InitializeComponent();
             Title = Localization.Statistics;
 
-            Task task = Task.Run(async () =>
+            var task = Task.Run(async () =>
             {
                 table = await App.Database.GetTable();
                 settings = await App.Database.GetSettings();
@@ -63,10 +63,7 @@ namespace Mathster
         {
             await Navigation.PushAsync(new MainPage());
             var existingPages = Navigation.NavigationStack.ToList();
-            foreach (var page in existingPages)
-            {
-                Navigation.RemovePage(page);
-            }
+            foreach (var page in existingPages) Navigation.RemovePage(page);
         }
     }
 }

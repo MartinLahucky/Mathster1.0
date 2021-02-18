@@ -5,25 +5,6 @@ namespace Mathster.Resources.Exercises
 {
     public class Equation : Exercise
     {
-        #region Contructors
-
-        public Equation()
-        {
-        }
-
-        public Equation(byte id, string assignment, int result, byte exerciseType,
-            byte experience) : base(id, assignment, result, exerciseType, experience)
-        {
-        }
-
-        public Equation(byte id, string assignment, int result, int result2, byte exerciseType,
-            byte experience) : base(id, assignment, result, result2, exerciseType, experience)
-        {
-            Result2 = result2;
-        }
-
-        #endregion
-
         public Exercise GenerateExercise(byte id, byte exercise)
         {
             switch (exercise)
@@ -44,43 +25,35 @@ namespace Mathster.Resources.Exercises
 
         private Exercise GenerateEquationNormal(byte id)
         {
-            Random random = new Random();
+            var random = new Random();
 
             int result = random.Next(-3, 5),
                 numMul = random.Next(2, 5),
                 numExtra = random.Next(-20, 21),
                 xExtra = random.Next(-20, 21);
 
-            byte experience = (byte) numMul.ToString().Length;
+            var experience = (byte) numMul.ToString().Length;
             experience += (byte) numExtra.ToString().Length;
             experience += (byte) xExtra.ToString().Length;
 
-            string assignment = String.Empty;
+            var assignment = string.Empty;
 
             switch (random.Next(0, 3))
             {
                 case 0:
                     if (numExtra >= 0)
-                    {
                         assignment = $"{numMul}x +{numExtra} = ";
-                    }
                     else
-                    {
                         assignment = $"{numMul}x {numExtra} = ";
-                    }
 
                     assignment += $"{numMul * result + numExtra}";
                     break;
 
                 case 1:
                     if (xExtra >= 0)
-                    {
                         assignment = $"{numMul + xExtra}x = {numMul * result} +{xExtra}x";
-                    }
                     else
-                    {
                         assignment = $"{numMul + xExtra}x = {numMul * result} {xExtra}x";
-                    }
 
                     break;
 
@@ -112,17 +85,17 @@ namespace Mathster.Resources.Exercises
 
         private Exercise GenerateSquareEquation(byte id)
         {
-            Random random = new Random();
+            var random = new Random();
             int res1 = random.Next(-10, 10), res2 = random.Next(-10, 10);
-            byte experience = (byte) ((res1.ToString().Length + res2.ToString().Length) * 3);
+            var experience = (byte) ((res1.ToString().Length + res2.ToString().Length) * 3);
             return new Equation(id, GenerateCompletingTheSquare(res1, res2), res1, res2, 7, experience);
         }
 
         private Exercise GenerateQuadraticEquation(byte id, int numMin = -10, int numMax = 10)
         {
-            Random random = new Random();
+            var random = new Random();
             int res1 = random.Next(numMin, numMax), res2 = random.Next(numMin, numMax);
-            byte experience = (byte) ((res1.ToString().Length + res2.ToString().Length) * 2);
+            var experience = (byte) ((res1.ToString().Length + res2.ToString().Length) * 2);
             return new Equation(id, CreateEquation(res1, res2), res1, res2, 6, experience);
         }
 
@@ -215,5 +188,24 @@ namespace Mathster.Resources.Exercises
                     return null;
             }
         }
+
+        #region Contructors
+
+        public Equation()
+        {
+        }
+
+        public Equation(byte id, string assignment, int result, byte exerciseType,
+            byte experience) : base(id, assignment, result, exerciseType, experience)
+        {
+        }
+
+        public Equation(byte id, string assignment, int result, int result2, byte exerciseType,
+            byte experience) : base(id, assignment, result, result2, exerciseType, experience)
+        {
+            Result2 = result2;
+        }
+
+        #endregion
     }
 }

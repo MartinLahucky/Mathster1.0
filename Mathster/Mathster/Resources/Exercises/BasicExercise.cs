@@ -22,7 +22,7 @@ namespace Mathster.Resources.Exercises
         public BasicExercise GenerateExercise(byte id, int numMin, int numMax, byte exerciseType, byte mulDivMin = 0,
             byte mulDivMax = 0)
         {
-            Random random = new Random();
+            var random = new Random();
 
             int firstNum = random.Next(numMin, numMax), secondNum = random.Next(numMin, numMax);
             switch (exerciseType)
@@ -45,10 +45,7 @@ namespace Mathster.Resources.Exercises
 
                 case 4:
                     secondNum = random.Next(mulDivMin, mulDivMax);
-                    while (firstNum % secondNum != 0)
-                    {
-                        firstNum = random.Next(numMin, numMax);
-                    }
+                    while (firstNum % secondNum != 0) firstNum = random.Next(numMin, numMax);
 
                     return new BasicExercise(id, $"{firstNum} ÷ {secondNum} = ",
                         $" {firstNum}\n-{secondNum}\n—",
@@ -63,20 +60,14 @@ namespace Mathster.Resources.Exercises
 
         public override string FormatAssigmentResult()
         {
-            if (Assignment.Length >= 13)
-            {
-                return $"{Assignment}\n= {Result}";
-            }
+            if (Assignment.Length >= 13) return $"{Assignment}\n= {Result}";
 
             return $"{Assignment}{Result}";
         }
 
         public override string FormatAssigmentUserInput()
         {
-            if (Assignment.Length >= 13)
-            {
-                return $"{Assignment}\n= {UserInput}";
-            }
+            if (Assignment.Length >= 13) return $"{Assignment}\n= {UserInput}";
 
             return $"{Assignment}{UserInput}";
         }

@@ -12,7 +12,7 @@ namespace Mathster.iOS
     // User Interface of the application, as well as listening (and optionally responding) to 
     // application events from iOS.
     [Register("AppDelegate")]
-    public partial class AppDelegate : FormsApplicationDelegate
+    public class AppDelegate : FormsApplicationDelegate
     {
         //
         // This method is invoked when the application has loaded and is ready to run. In this 
@@ -26,10 +26,10 @@ namespace Mathster.iOS
             Forms.Init();
             ProgressRingRenderer.Init();
             // Database Declaration
-            string dbName = "mathster_db.sqlite";
-            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "..",
+            var dbName = "mathster_db.sqlite";
+            var folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "..",
                 "Library");
-            string fullPath = Path.Combine(folderPath, dbName);
+            var fullPath = Path.Combine(folderPath, dbName);
 
             LoadApplication(new App(fullPath));
 

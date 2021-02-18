@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Mathster.Resources.Database_Models;
 using Mathster.Resources.Exercises;
 using Mathster.Resources.Localization;
 using Xamarin.Forms;
@@ -14,9 +13,9 @@ namespace Mathster
     public partial class SummaryDetail : ContentPage
     {
         private byte id;
-        private Exercise[] queue;
-        private List<Exercise> list;
-        private bool transaction;
+        private readonly List<Exercise> list;
+        private readonly Exercise[] queue;
+        private readonly bool transaction;
 
 
         public SummaryDetail(byte id, Exercise[] queue, bool transaction, List<Exercise> list = null)
@@ -29,32 +28,26 @@ namespace Mathster
             WrongStaticLabel.Text = Localization.YourSolution;
             Title = $"{Localization.Summary} | {id + 1}/{queue.Length}";
 
-            Task task = Task.Run(async () =>
+            var task = Task.Run(async () =>
             {
                 var objs = await App.Database.GetObjects();
                 ObjCorrect.Data = objs.ObjCorrect;
                 ObjWrong.Data = objs.ObjWrong;
             });
             Task.WaitAll(task);
-            
+
             Exercise exercise;
 
             if (list != null)
             {
                 exercise = list[id];
                 this.list = list;
-                if (id == list.Count - 1)
-                {
-                    NextButton.IsVisible = false;
-                }
+                if (id == list.Count - 1) NextButton.IsVisible = false;
             }
             else
             {
                 exercise = queue[id];
-                if (id == queue.Length - 1)
-                {
-                    NextButton.IsVisible = false;
-                }
+                if (id == queue.Length - 1) NextButton.IsVisible = false;
             }
 
             long sec = exercise.CountLenght / TimeSpan.TicksPerSecond, min = sec / 60;
@@ -82,16 +75,13 @@ namespace Mathster
             this.transaction = transaction;
             this.id = id;
 
-            if (id == 0)
-            {
-                PreviousButton.IsVisible = false;
-            }
+            if (id == 0) PreviousButton.IsVisible = false;
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            SettingsModel settings = await App.Database.GetSettings();
+            var settings = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(settings.BackgroundHex);
             AssignmentLabelFrame.BackgroundColor = Color.FromHex(settings.BackgroundHex);
             CorrectLayout.BackgroundColor = Color.FromHex(settings.BackgroundHex);
@@ -109,10 +99,7 @@ namespace Mathster
         {
             await Navigation.PushAsync(new MainPage());
             var existingPages = Navigation.NavigationStack.ToList();
-            foreach (var page in existingPages)
-            {
-                Navigation.RemovePage(page);
-            }
+            foreach (var page in existingPages) Navigation.RemovePage(page);
         }
 
         private async void PreviousButton_OnClicked(object sender, EventArgs e)

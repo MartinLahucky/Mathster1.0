@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using Mathster.Resources.Database_Models;
 using Mathster.Resources.Exercises;
 using Mathster.Resources.Localization;
 using Xamarin.Forms;
@@ -11,18 +10,17 @@ namespace Mathster
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExerciseSettings : ContentPage
     {
-        private byte exType;
-
         //  Default values
         private int ExSize = 5;
-        private int ExSizeMax = 20;
+        private readonly int ExSizeMax = 20;
+        private byte exType;
+
+        private int mulDivSize = 2;
+        private readonly int mulDivSizeMax = 3;
 
 
         private int NumSize = 2;
-        private int NumSizeMax = 6;
-
-        private int MulDivSize = 2;
-        private int MulDivSizeMax = 3;
+        private readonly int NumSizeMax = 6;
 
         public ExerciseSettings(byte exType)
         {
@@ -45,8 +43,8 @@ namespace Mathster
             NumSizeSlider.Minimum = 1;
             NumSizeCountLabel.Text = NumSize.ToString();
 
-            MulDivSlider.Value = MulDivSize;
-            MulDivSlider.Maximum = MulDivSizeMax;
+            MulDivSlider.Value = mulDivSize;
+            MulDivSlider.Maximum = mulDivSizeMax;
             MulDivSlider.Minimum = 1;
             MulDivSlider.IsEnabled = false;
             EquationSelectFrame.IsVisible = false;
@@ -92,7 +90,7 @@ namespace Mathster
         {
             base.OnAppearing();
 
-            SettingsModel settings = await App.Database.GetSettings();
+            var settings = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(settings.BackgroundHex);
             Frame1.BackgroundColor = Color.FromHex(settings.BackgroundHex);
             Frame2.BackgroundColor = Color.FromHex(settings.BackgroundHex);
@@ -109,10 +107,7 @@ namespace Mathster
         {
             await Navigation.PushAsync(new MainPage());
             var existingPages = Navigation.NavigationStack.ToList();
-            foreach (var page in existingPages)
-            {
-                Navigation.RemovePage(page);
-            }
+            foreach (var page in existingPages) Navigation.RemovePage(page);
         }
 
         private void ExCountSlider_OnValueChanged(object sender, ValueChangedEventArgs e)
@@ -139,8 +134,8 @@ namespace Mathster
 
         private void MulDivSlider_OnValueChanged(object sender, ValueChangedEventArgs e)
         {
-            MulDivSize = (int) MulDivSlider.Value;
-            switch (MulDivSize)
+            mulDivSize = (int) MulDivSlider.Value;
+            switch (mulDivSize)
             {
                 case 1:
                     MulDivCountLabel.Text = 5.ToString();
@@ -158,7 +153,7 @@ namespace Mathster
         {
             int numMin, numMax;
             byte mulDivMin, mulDivMax;
-            Exercise[] queue = new Exercise[(int) ExCountSlider.Value];
+            var queue = new Exercise[(int) ExCountSlider.Value];
 
 
             if (exType >= 5)
@@ -166,17 +161,12 @@ namespace Mathster
                 // Gets type of the equation
                 foreach (var radioButton in RadioGroup.Children)
                 {
-                    RadioButton rb = (RadioButton) radioButton;
-                    if (rb.IsChecked)
-                    {
-                        exType = byte.Parse(rb.Value.ToString());
-                    }
+                    var rb = (RadioButton) radioButton;
+                    if (rb.IsChecked) exType = byte.Parse(rb.Value.ToString());
                 }
 
                 for (byte i = 0; i < (int) ExCountSlider.Value; i++)
-                {
                     queue[i] = new Equation().GenerateExercise(i, exType);
-                }
             }
             else
             {
@@ -242,9 +232,7 @@ namespace Mathster
                 }
 
                 for (byte i = 0; i < (int) ExCountSlider.Value; i++)
-                {
                     queue[i] = new BasicExercise().GenerateExercise(i, numMin, numMax, exType, mulDivMin, mulDivMax);
-                }
             }
 
             await Navigation.PushAsync(new ExerciseCounting(0, queue));
