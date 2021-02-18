@@ -104,7 +104,7 @@ namespace Mathster.Resources.Database_Models
             table.TotalExercises++;
         }
 
-        public void ResetDB()
+        public void ResetDb()
         {
             Experience = 0;
             TotalExercises = 0;

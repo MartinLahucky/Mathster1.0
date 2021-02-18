@@ -57,7 +57,7 @@ namespace Mathster
                 Localization.No))
             {
                 var table = await App.Database.GetTable();
-                table.ResetDB();
+                table.ResetDb();
                 await App.Database.UpdateTable(table);
                 await Navigation.PushAsync(new MainPage());
             }
