@@ -55,7 +55,7 @@ namespace Mathster.Resources.Custom_UI
             view.PaintSurface += (sender, args) =>
             {
                 float result1, result2, result3;
-                ChartPartCalcualtion(entry1, entry2, entry3, entryMax, out result1, out result2,
+                ChartPartCalculation(entry1, entry2, entry3, entryMax, out result1, out result2,
                     out result3);
                 canvas = args.Surface.Canvas;
                 CalculateCenter(args.Info);
@@ -81,14 +81,14 @@ namespace Mathster.Resources.Custom_UI
         //         DrawFullCircle(backgroundColorHex);
         //         DrawCircleBorder(progressBarThickness, progressBarColorHex);
         //
-        //         var parts = ChartPartCalcualtion(chartParts, entryMax);
+        //         var parts = ChartPartCalculation(chartParts, entryMax);
         //
         //         foreach (var part in parts) DrawProgress(part.PartValue, progressBarThickness, part.ColorHex);
         //     };
         // }
         //
         //
-        // private ChartPart[] ChartPartCalcualtion(ChartPart[] chartParts, float max)
+        // private ChartPart[] ChartPartCalculation(ChartPart[] chartParts, float max)
         // {
         //     ChartPart[] chartPartsCalculated = new ChartPart[chartParts.Length];
         //     float value = 0;
@@ -102,7 +102,7 @@ namespace Mathster.Resources.Custom_UI
         // }
 
 
-        private void ChartPartCalcualtion(float entry1, float entry2, float entry3, float max, out float result1,
+        private void ChartPartCalculation(float entry1, float entry2, float entry3, float max, out float result1,
             out float result2, out float result3)
         {
             result1 = (entry1 + entry2 + entry3) / max * 100;
