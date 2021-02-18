@@ -11,7 +11,9 @@ namespace Mathster.Android
     // Without this terribleness there will be an ugly line under every entry 
     public class CustomEntryRenderer : EntryRenderer
     {
-        public CustomEntryRenderer(Context context) : base(context) { }
+        public CustomEntryRenderer(Context context) : base(context)
+        {
+        }
 
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {

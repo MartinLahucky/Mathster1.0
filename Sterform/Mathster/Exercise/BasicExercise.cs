@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mathster.Resources.Exercises
+namespace Sterform.Mathster.Exercise
 {
     public class BasicExercise : Exercise
     {

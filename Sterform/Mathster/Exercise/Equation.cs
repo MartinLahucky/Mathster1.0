@@ -1,7 +1,7 @@
 ﻿using System;
-using static Mathster.Resources.Helpers.Utilities;
+using static Sterform.Utilities;
 
-namespace Mathster.Resources.Exercises
+namespace Sterform.Mathster.Exercise
 {
     public class Equation : Exercise
     {

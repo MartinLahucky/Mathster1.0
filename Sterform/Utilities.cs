@@ -1,4 +1,4 @@
-﻿namespace Mathster.Resources.Helpers
+﻿namespace Sterform
 {
     public static class Utilities
     {

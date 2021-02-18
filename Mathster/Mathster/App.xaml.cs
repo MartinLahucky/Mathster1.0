@@ -11,7 +11,7 @@ namespace Mathster
 {
     public partial class App : Application
     {
-        private static DatabaseController database;
+        private static DatabaseController _database;
         public static string DatabaseLocation = string.Empty;
 
         public App(string databaseLocation)
@@ -28,9 +28,9 @@ namespace Mathster
         {
             get
             {
-                if (database == null) database = new DatabaseController();
+                if (_database == null) _database = new DatabaseController();
 
-                return database;
+                return _database;
             }
         }
 

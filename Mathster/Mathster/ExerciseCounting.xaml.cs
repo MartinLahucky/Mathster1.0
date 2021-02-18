@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Mathster.Resources.Custom_UI;
-using Mathster.Resources.Exercises;
 using Mathster.Resources.Helpers;
 using Mathster.Resources.Localization;
+using Sterform.Mathster.Exercise;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

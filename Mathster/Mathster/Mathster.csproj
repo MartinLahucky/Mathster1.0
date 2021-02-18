@@ -55,4 +55,8 @@
         <DependentUpon>Localization.resx</DependentUpon>
       </Compile>
     </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Sterform\Sterform.csproj" />
+    </ItemGroup>
 </Project>

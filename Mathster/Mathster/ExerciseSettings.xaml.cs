@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
-using Mathster.Resources.Exercises;
 using Mathster.Resources.Localization;
+using Sterform.Mathster.Exercise;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

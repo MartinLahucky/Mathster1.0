@@ -1,4 +1,4 @@
-﻿namespace Mathster.Resources.Exercises
+﻿namespace Sterform.Mathster.Exercise
 {
     public abstract class Exercise
     {
