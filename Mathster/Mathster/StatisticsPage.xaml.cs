@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Mathster.Resources.Custom_UI;
 using Mathster.Resources.Localization;
 using SkiaSharp;
@@ -23,6 +24,15 @@ namespace Mathster
 
             AddLabel.IsVisible = false;
             SubLabel.IsVisible = false;
+            var task = Task.Run(async () =>
+            {
+                var objs = await App.Database.GetObjects();
+                ObjCorrect.Data = objs.ObjCorrect;
+                ObjWrong.Data = objs.ObjWrong;
+            });
+            Task.WaitAll(task);
+            
+
 
             if (amountTotal == 0) amountTotal = 1;
             chart = new Circles(180, info => new SKPoint((float) info.Width / 2, (float) info.Height / 2));
@@ -43,8 +53,9 @@ namespace Mathster
 
             MulLayout.IsVisible = true;
             DivLayout.IsVisible = true;
-            AddImage.IsVisible = false;
-            SubImage.IsVisible = false;
+            ObjCorrect.IsVisible = false;
+            ObjWrong.IsVisible = false;
+            
 
             chart = new Circles(180, info => new SKPoint((float) info.Width / 2, (float) info.Height / 2));
             chart.DrawChart(Chart, "#7F7FFD", "#FCA54D", 40f, mul, div, sub,

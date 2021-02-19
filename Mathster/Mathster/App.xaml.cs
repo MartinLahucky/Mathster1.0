@@ -26,12 +26,7 @@ namespace Mathster
 
         public static DatabaseController Database
         {
-            get
-            {
-                if (_database == null) _database = new DatabaseController();
-
-                return _database;
-            }
+            get { return _database ?? (_database = new DatabaseController()); }
         }
 
         protected override void OnStart()
@@ -43,8 +38,8 @@ namespace Mathster
         {
             // Handle when your app sleeps
             // If the app sleeps, every 24 hours from last usage will send reminding notification  
-            DependencyService.Get<INotificationManager>().StartService(Localization.AlertPractice,
-                Localization.AlertPracticeText, DateTime.Now.AddSeconds(10));
+            // DependencyService.Get<INotificationManager>().StartService(Localization.AlertPractice,
+            //     Localization.AlertPracticeText, DateTime.Now.AddSeconds(10));
         }
 
         protected override void OnResume()

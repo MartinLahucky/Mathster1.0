@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mathster.NotificationsTestPage"
+             Title="Testovací stránka - Notifikace">
+    <ContentPage.Resources>
+        <StyleSheet Source="Resources/Styles/Components.css" />
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="MenuButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20,20">
+                <Button StyleClass="Button" Text="Pošli notifikaci" CornerRadius="30" Clicked="SendNotNow_OnClicked" />
+
+                <Entry x:Name="SendNotDelayInput" Placeholder="ČAS V SEKUNDÁCH" Keyboard="Numeric"
+                       HeightRequest="60" VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center" BackgroundColor="Yellow"
+                       TextColor="Black" StyleClass="BlackText" />
+                <Button StyleClass="Button" Text="Notifikace se spožděním (Nepoběží na pozadí)" CornerRadius="30"
+                        Clicked="SendNotDelay_OnClicked" />
+
+                <Entry x:Name="SendTaskDelayInput" Placeholder="ČAS V SEKUNDÁCH" Keyboard="Numeric"
+                       HeightRequest="60" VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center" BackgroundColor="Yellow"
+                       TextColor="Black" StyleClass="BlackText" />
+                <Button StyleClass="Button" Text="Notifikace se spožděním (Poběží na pozadí)" CornerRadius="30"
+                        Clicked="SendTaskDelay_OnClicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

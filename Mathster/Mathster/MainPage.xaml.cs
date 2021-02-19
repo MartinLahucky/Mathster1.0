@@ -20,6 +20,7 @@ namespace Mathster
             SettingsButton.IconImageSource = "settings_icon.png";
             StatsToolbarButton.IconImageSource = "statistics_icon.png";
             AboutToolbarButton.IconImageSource = "info_icon.png";
+            TestButton.Text = "Test";
 
             AddButton.Text = "+";
             SubButton.Text = "-";
@@ -36,11 +37,7 @@ namespace Mathster
             var settings = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(settings.BackgroundHex);
             var table = await App.Database.GetTable();
-            if (string.IsNullOrEmpty(table.Name))
-                UserLabel.Text = "Mathster";
-            else
-                UserLabel.Text = table.Name;
-
+            UserLabel.Text = string.IsNullOrEmpty(table.Name) ? "Mathster" : table.Name;
             table.GetLevel(out var level, out var progress, table);
             LevelButton.Text = level.ToString();
             ProgressBar.AnimatedProgress = progress;
@@ -77,6 +74,11 @@ namespace Mathster
             }
         }
 
+        private async void Test(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NotificationsTestPage());
+        }
+        
         private async void SelectPage(object sender, EventArgs e)
         {
             try
@@ -88,7 +90,6 @@ namespace Mathster
                         await Navigation.PushAsync(new MainPage());
                         var existingPages = Navigation.NavigationStack.ToList();
                         foreach (var page in existingPages) Navigation.RemovePage(page);
-
                         break;
 
                     case "File: settings_icon.png":

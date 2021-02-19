@@ -37,10 +37,10 @@ namespace Mathster.Android
 
         public event EventHandler NotificationReceived;
 
-        public void StartService(string title, string message, DateTime? notifyTime = null, long? repeatTime = null)
+        public void StartService(string title, string message, DateTime? notifyTime = null)
         {
             var intent = new Intent(AndroidApp.Context, typeof(AndroidNotificationManager));
-            SendNotification(title, message, notifyTime, repeatTime);
+            SendNotification(title, message, notifyTime);
 
             if (Build.VERSION.SdkInt >= BuildVersionCodes.O)
                 AndroidApp.Context.StartForegroundService(intent);
@@ -48,8 +48,11 @@ namespace Mathster.Android
                 AndroidApp.Context.StartService(intent);
         }
 
-        public void SendNotification(string title, string message, DateTime? notifyTime = null, long? repeatTime = null)
+        public void SendNotification(string title, string message, DateTime? notifyTime = null)
         {
+            // For future reference: 
+            // https://nftb.saturdaymp.com/today-i-learned-how-to-create-a-local-notification-in-xamarin-android/
+            
             if (!channelInitialized) CreateNotificationChannel();
 
             if (notifyTime != null)
@@ -60,25 +63,38 @@ namespace Mathster.Android
                 Instance = this; // Without this notifications with delay won't work 
                 var triggerTime = GetNotifyTime(notifyTime.Value);
                 var alarmManager = AndroidApp.Context.GetSystemService(AlarmService) as AlarmManager;
-                if (repeatTime != null)
-                {
-                    if (triggerTime < JavaSystem.CurrentTimeMillis()) triggerTime += repeatTime.Value;
-
-                    var pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, pendingIntentId++,
-                        intent, PendingIntentFlags.Immutable);
-                    alarmManager?.SetRepeating(AlarmType.RtcWakeup, triggerTime, repeatTime.Value, pendingIntent);
-                }
-                else
-                {
-                    var pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, pendingIntentId++,
-                        intent, PendingIntentFlags.CancelCurrent);
-                    alarmManager?.Set(AlarmType.RtcWakeup, triggerTime, pendingIntent);
-                }
+                var pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, pendingIntentId++,
+                    intent, PendingIntentFlags.CancelCurrent);
+                alarmManager?.Set(AlarmType.RtcWakeup, triggerTime, pendingIntent);
             }
             else
             {
                 Show(title, message);
             }
+        }
+        
+        // TODO Test
+        private static void RegisterNotification(DateTime scheduleTime)
+        {
+            if (DateTime.Now > scheduleTime)
+            {
+                scheduleTime = scheduleTime.AddMinutes(1);
+            }
+
+            var alarmIntent = new Intent(Instance, typeof(AlarmManager));
+            var pendingIntent = PendingIntent.GetBroadcast(Instance,
+                0,
+                alarmIntent,
+                PendingIntentFlags.UpdateCurrent);
+
+            var alarmManager = (AlarmManager)Instance.GetSystemService(AlarmService);
+            
+            var notifyTimeInInMilliseconds = GetNotifyTime(scheduleTime);
+
+            alarmManager?.SetInexactRepeating(AlarmType.RtcWakeup,
+                notifyTimeInInMilliseconds,
+                AlarmManager.IntervalDay,
+                pendingIntent);
         }
 
         public void ReceiveNotification(string title, string message)
@@ -139,7 +155,7 @@ namespace Mathster.Android
             channelInitialized = true;
         }
 
-        private long GetNotifyTime(DateTime notifyTime)
+        private static long GetNotifyTime(DateTime notifyTime)
         {
             var utcTime = TimeZoneInfo.ConvertTimeToUtc(notifyTime);
             var epochDiff = (new DateTime(1970, 1, 1) - DateTime.MinValue).TotalSeconds;

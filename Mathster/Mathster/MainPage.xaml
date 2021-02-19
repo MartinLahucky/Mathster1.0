@@ -11,6 +11,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="MenuToolbarButton" Order="Primary" Priority="1" Clicked="SelectPage" />
+        <ToolbarItem x:Name="TestButton" Order="Primary" Priority="0" Clicked="Test" />
         <ToolbarItem x:Name="SettingsButton" Order="Primary" Priority="0" Clicked="SelectPage" />
         <ToolbarItem x:Name="StatsToolbarButton" Order="Primary" Priority="0" Clicked="SelectPage" />
         <ToolbarItem x:Name="AboutToolbarButton" Order="Primary" Priority="0" Clicked="SelectPage" />

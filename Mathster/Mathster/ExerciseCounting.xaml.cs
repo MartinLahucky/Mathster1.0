@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Mathster.Resources.Custom_UI;
 using Mathster.Resources.Helpers;
 using Mathster.Resources.Localization;
 using Sterform.Mathster.Exercise;
@@ -151,7 +150,7 @@ namespace Mathster
             // I have no idea what I'm doing 
             // Creating list with number and navigation in the number 
 
-            // Making sure that big numbers doesn't break this
+            // Making sure that big numbers don't break this
             if (e.NewTextValue.Length >= 11) ResultInput.Text = e.OldTextValue;
 
             var num = new List<string>();
@@ -180,7 +179,7 @@ namespace Mathster
                             }
 
                             // Writing first character 
-                            ResultLabelInput.Text = num[num.Count - 1];
+                            ResultLabelInput.Text = num[^1];
                             // Check if not only 1 symbol 
                             if (num.Count != 1)
                                 for (var i = num.Count - 2; i >= 0; i--)
@@ -194,13 +193,14 @@ namespace Mathster
                             if (underChanged)
                             {
                                 // Adding last character e.NewTextValue[e.NewTextValue.Length -1]
-                                numText = ResultLabelInput.Text + e.NewTextValue[e.NewTextValue.Length - 1];
+                                numText = ResultLabelInput.Text + e.NewTextValue[^1];
                                 ResultInput.Text = numText;
                                 underChanged = false;
                             }
 
                             // Loading correct number format
-                            for (var i = 0; i < numText.Length; i++) num.Add(numText[i].ToString());
+                            foreach (var t in numText)
+                                num.Add(t.ToString());
 
                             // Again IDK what magic is this  
                             ResultLabelInput.Text = num[0];
