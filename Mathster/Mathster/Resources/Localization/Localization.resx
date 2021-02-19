@@ -165,4 +165,7 @@
     <data name="AlertPracticeText" xml:space="preserve">
         <value>It's been more then 1 day since your last pactise</value>
     </data>
+    <data name="Author" xml:space="preserve">
+        <value>Author: Martin Lahučký</value>
+    </data>
 </root>
