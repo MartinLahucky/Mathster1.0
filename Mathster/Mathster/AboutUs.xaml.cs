@@ -16,7 +16,10 @@ namespace Mathster
             Title = Localization.AboutApp;
             AboutUsStaticLabel.Text = Localization.AboutUs;
             AboutUsLabel.Text =
-                $"{Localization.AboutUsText}\n \n{Localization.DevFrontEndText}\n{Localization.DevBackEndText}";
+                $"{Localization.AboutUsText}\n" +
+                $"\n{Localization.Author}" + 
+                $"\n{Localization.DevFrontEndText}" +
+                $"\n{Localization.DevBackEndText}";
             AboutAppStaticLabel.Text = Localization.AboutApp;
             AboutAppLabel.Text = Localization.AboutAppText;
         }

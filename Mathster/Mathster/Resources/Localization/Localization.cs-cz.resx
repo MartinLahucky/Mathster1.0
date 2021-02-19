@@ -158,4 +158,7 @@
     <data name="AlertPracticeText" xml:space="preserve">
         <value>Byl to více než den co jste neprocvičovali </value>
     </data>
+    <data name="Author" xml:space="preserve">
+        <value>Autor: Martin Lahučký</value>
+    </data>
 </root>

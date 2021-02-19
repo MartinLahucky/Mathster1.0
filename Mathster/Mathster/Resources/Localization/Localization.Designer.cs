@@ -196,6 +196,15 @@ namespace Mathster.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Author: Martin Lahučký.
+        /// </summary>
+        internal static string Author {
+            get {
+                return ResourceManager.GetString("Author", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Complete the square.
         /// </summary>
         internal static string CompleteTheSquare {

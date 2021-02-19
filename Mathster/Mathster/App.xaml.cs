@@ -1,7 +1,4 @@
-﻿using System;
-using Mathster.Resources.Database_Models;
-using Mathster.Resources.Helpers.Notifications;
-using Mathster.Resources.Localization;
+﻿using Mathster.Resources.Database_Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
