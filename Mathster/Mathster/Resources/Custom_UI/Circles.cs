@@ -47,7 +47,7 @@ namespace Mathster.Resources.Custom_UI
             };
         }
 
-        //TODO create a class for entry and colorHex --> All these parameters will be stored in array 
+         
         public void DrawChart(SKCanvasView view, string backgroundColorHex, string progressBarColorHex,
             float progressBarThickness, float entry1, float entry2, float entry3, float entryMax, string entry1ColorHex,
             string entry2ColorHex, string entry3ColorHex)
@@ -67,6 +67,7 @@ namespace Mathster.Resources.Custom_UI
             };
         }
 
+        // // Create a class for entry and colorHex --> All these parameters will be stored in array
         // public void DrawChart(SKCanvasView view, string backgroundColorHex, string progressBarColorHex,
         //     float progressBarThickness, ChartPart[] chartParts, float entryMax)
         // {
