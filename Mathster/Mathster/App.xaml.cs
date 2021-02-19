@@ -26,7 +26,7 @@ namespace Mathster
 
         public static DatabaseController Database
         {
-            get { return _database ?? (_database = new DatabaseController()); }
+            get { return _database ??= new DatabaseController(); }
         }
 
         protected override void OnStart()
