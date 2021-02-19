@@ -37,9 +37,10 @@ namespace Mathster
         protected override void OnSleep()
         {
             // Handle when your app sleeps
-            // If the app sleeps, every 24 hours from last usage will send reminding notification  
-            // DependencyService.Get<INotificationManager>().StartService(Localization.AlertPractice,
-            //     Localization.AlertPracticeText, DateTime.Now.AddSeconds(10));
+            // If the app sleeps, 24 hours from last usage will send reminding notification  
+            // TODO Add a looping 
+            DependencyService.Get<INotificationManager>().StartService(Localization.AlertPractice,
+                Localization.AlertPracticeText, DateTime.Now.AddDays(1));
         }
 
         protected override void OnResume()
