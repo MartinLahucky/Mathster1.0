@@ -35,8 +35,8 @@
                                 </Grid.ColumnDefinitions>
 
                                 <!-- correct counter -->
-                                <StackLayout Margin="5, 4" Padding="0,-10,0,0" BackgroundColor="Transparent"
-                                             HorizontalOptions="Center">
+                                <StackLayout   Margin="5" Padding="0,0,0,-2"
+                                            BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center">
                                     <Path x:Name="ObjCorrect" Fill="#C9FF50" />
                                 </StackLayout>
                                 <Button x:Name="CorrectCountButton" BackgroundColor="#FFFFFF" CornerRadius="25"
@@ -46,8 +46,8 @@
 
 
                                 <!-- wrong counter -->
-                                <StackLayout Grid.Column="2" Grid.Row="0" Margin="5,0,1,0" Padding="5"
-                                             BackgroundColor="Transparent" HorizontalOptions="Center">
+                                <StackLayout Grid.Column="2" Grid.Row="0" Margin="5"
+                                             BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center">
                                     <Path x:Name="ObjWrong" Fill="#FCA54D" />
                                 </StackLayout>
                                 <Button x:Name="WrongCountButton" BackgroundColor="#FFFFFF" CornerRadius="25"
@@ -68,14 +68,15 @@
                                                         <StackLayout x:Name="CellColor"
                                                                      BackgroundColor="{Binding CellColor}"
                                                                      Orientation="Horizontal">
-                                                            <StackLayout BackgroundColor="#7F7FFD" Padding="0,-9,0,0"
-                                                                         VerticalOptions="Center"
+                                                            <StackLayout BackgroundColor="#7F7FFD" x:Name="Stack"
+                                                                         VerticalOptions="Center" Padding="{Binding Pad}"
                                                                          HorizontalOptions="Center">
-                                                                <Path x:Name="ResultObj" WidthRequest="60"
+                                                                <Path x:Name="ResultObj" 
                                                                       VerticalOptions="CenterAndExpand"
                                                                       Data="{Binding Obj}" Fill="{Binding ObjColor}"
-                                                                      Margin="{Binding Margin}" />
+                                                                      />
                                                                 <!-- Margin="10,0"  -->
+                                                                      
                                                             </StackLayout>
                                                             <Label x:Name="ResultLabel"
                                                                    Text="{Binding Assignment}" FontSize="30"
