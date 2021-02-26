@@ -4,7 +4,6 @@ using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using AndroidX.Core.App;
-using Java.Lang;
 using Mathster.Android;
 using Mathster.Resources.Helpers.Notifications;
 using Xamarin.Forms;
@@ -52,7 +51,7 @@ namespace Mathster.Android
         {
             // For future reference: 
             // https://nftb.saturdaymp.com/today-i-learned-how-to-create-a-local-notification-in-xamarin-android/
-            
+
             if (!channelInitialized) CreateNotificationChannel();
 
             if (notifyTime != null)
@@ -72,7 +71,7 @@ namespace Mathster.Android
                 Show(title, message);
             }
         }
-        
+
         // TODO Test
         private static void RegisterNotification(DateTime scheduleTime)
         {
@@ -87,8 +86,7 @@ namespace Mathster.Android
                 alarmIntent,
                 PendingIntentFlags.UpdateCurrent);
 
-            var alarmManager = (AlarmManager)Instance.GetSystemService(AlarmService);
-            
+            var alarmManager = (AlarmManager) Instance.GetSystemService(AlarmService);
             var notifyTimeInInMilliseconds = GetNotifyTime(scheduleTime);
 
             alarmManager?.SetInexactRepeating(AlarmType.RtcWakeup,
@@ -123,14 +121,14 @@ namespace Mathster.Android
                 PendingIntentFlags.UpdateCurrent);
             // Building the notifictaion
             var builder = new NotificationCompat.Builder(AndroidApp.Context, ChannelId)
-                .SetAutoCancel(true) // Dismiss the notification from the notification area when the user clicks on it
-                .SetContentIntent(pendingIntent) // Start up this activity when the user clicks the intent
-                .SetContentTitle(title) // Set the title
-                .SetContentText(message) // The message to display
+                .SetAutoCancel(true) // Dismiss the notification from the notification area when the user clicks on it 
+                .SetContentIntent(pendingIntent) // Start up this activity when the user clicks the intent 
+                .SetContentTitle(title) // Set the title 
+                .SetContentText(message) // The message to display 
                 .SetLargeIcon(BitmapFactory.DecodeResource(AndroidApp.Context.Resources,
-                    Resource.Drawable.icon)) //Big icon  
-                .SetSmallIcon(Resource.Drawable.icon) // This is the icon to display
-                .SetDefaults((int) NotificationDefaults.Sound | // This sets sound and
+                    Resource.Drawable.icon)) //Big icon 
+                .SetSmallIcon(Resource.Drawable.icon) // This is the icon to display 
+                .SetDefaults((int) NotificationDefaults.Sound | // This sets sound and 
                              (int) NotificationDefaults.Vibrate); // vibrations to what phones uses right now (default) 
 
             var notification = builder.Build();
