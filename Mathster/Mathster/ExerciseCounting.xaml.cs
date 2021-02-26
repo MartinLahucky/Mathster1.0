@@ -113,7 +113,7 @@ namespace Mathster
 
         private void SetTitle(string operation)
         {
-            Title = $"{operation} | {id + 1}/{queue.Count()}";
+            Title = $"{operation} | {id + 1}/{queue.Length}";
         }
 
         private async void MenuButton_OnClicked(object sender, EventArgs e)
