@@ -107,7 +107,7 @@ namespace Mathster
             }
             catch //(Exception exception)
             {
-                await Navigation.PushAsync(new Statistics());
+                // DependencyService.Get<INativeFun>().LongAlert(exception.Message);
             }
         }
 

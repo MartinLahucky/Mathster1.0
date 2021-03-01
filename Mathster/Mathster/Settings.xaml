@@ -28,7 +28,7 @@
                             HorizontalOptions="CenterAndExpand" Margin="2,4,2,2" Toggled="DarkModeSwitch_Toggled" />
                 </StackLayout>
             </Frame>
-            <Label x:Name="AboutAppLabel" TextColor="{AppThemeBinding Dark=White}" VerticalTextAlignment="Center"
+            <Label x:Name="AboutAppLabel" TextColor="{AppThemeBinding Light=Gray, Dark=White}" VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center"
                    VerticalOptions="EndAndExpand" />
         </StackLayout>
