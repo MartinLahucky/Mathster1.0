@@ -44,10 +44,11 @@
                                     <Path x:Name="ObjCorrect" Fill="#C9FF50" />
                                 </StackLayout>
                                 <Button x:Name="CorrectCountButton"
-                                        BackgroundColor="#FFFFFF"
+                                        BackgroundColor="{AppThemeBinding Light='#FAFAFA', Dark='#262630'}"
                                         CornerRadius="25"
                                         Grid.Column="0" Grid.Row="1" WidthRequest="200" HorizontalOptions="Center"
-                                        VerticalOptions="Center" TextColor="Black" FontSize="30"
+                                        VerticalOptions="Center" TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                                        FontSize="30"
                                         Clicked="CorrectCountButton_OnClicked" />
 
 
@@ -58,10 +59,11 @@
                                     <Path x:Name="ObjWrong" Fill="#FCA54D" />
                                 </StackLayout>
                                 <Button x:Name="WrongCountButton"
-                                        BackgroundColor="#FFFFFF"
+                                        BackgroundColor="{AppThemeBinding Light='#FAFAFA', Dark='#262630'}"
                                         CornerRadius="25"
                                         Grid.Column="2" Grid.Row="1" WidthRequest="200" HorizontalOptions="Center"
-                                        VerticalOptions="Center" TextColor="Black" FontSize="30"
+                                        VerticalOptions="Center" TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                                        FontSize="30"
                                         Clicked="WrongCountButton_OnClicked" />
                             </Grid>
 
