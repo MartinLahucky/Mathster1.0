@@ -16,9 +16,8 @@ namespace Mathster
     public partial class Summary : ContentPage
     {
         private readonly List<Exercise> correctList, wrongList;
-        private ObjectsModel objects;
         private readonly Exercise[] queue;
-        private SettingsModel settings;
+        private ObjectsModel objects;
         private DBModel table;
         private bool transaction;
 
@@ -28,7 +27,6 @@ namespace Mathster
             var task = Task.Run(async () =>
             {
                 table = await App.Database.GetTable();
-                settings = await App.Database.GetSettings();
                 objects = await App.Database.GetObjects();
             });
             Task.WaitAll(task);
@@ -57,7 +55,7 @@ namespace Mathster
             {
                 var ex = queue[i];
                 var correct = true;
-                exercises[i] = new Result(ex.FormatAssigmentUserInput(), settings);
+                exercises[i] = new Result(ex.FormatAssigmentUserInput());
 
                 if (ex.FormatAssigmentUserInput().Length > 15 && ex.ExerciseType == 5 || ex.ExerciseType == 5)
                     ResultList.RowHeight = 80;
@@ -70,8 +68,8 @@ namespace Mathster
                     exercises[i].Obj = objects.ObjCorrect;
                     exercises[i].ObjColor = new SolidColorBrush(Color.FromHex("#C9FF50"));
                     correctList.Add(ex);
-                    Padding  = new Thickness(10, 0);
-                    
+                    Padding = new Thickness(10, 0);
+
                     exercises[i].Pad = 3;
                 }
                 else
@@ -105,20 +103,6 @@ namespace Mathster
             await Navigation.PushAsync(new MainPage());
             var existingPages = Navigation.NavigationStack.ToList();
             foreach (var page in existingPages) Navigation.RemovePage(page);
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            CorrectCountButton.BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            WrongCountButton.BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            if (settings.DarkMode)
-            {
-                TitleSummaryLabel.TextColor = Color.FromHex("#FFFFFF");
-                CorrectCountButton.TextColor = Color.FromHex("#FFFFFF");
-                WrongCountButton.TextColor = Color.FromHex("#FFFFFF");
-            }
         }
 
         private async void Transaction()
@@ -164,21 +148,14 @@ namespace Mathster
 
     public class Result
     {
-        public Result(string assignment, SettingsModel settings)
+        public Result(string assignment)
         {
             Assignment = assignment;
-            CellColor = Color.FromHex(settings.BackgroundHex);
-            if (settings.DarkMode)
-                TextColor = Color.FromHex("#FFFFFF");
-            else
-                TextColor = Color.Black;
         }
 
         public string Assignment { get; set; }
         public Geometry Obj { get; set; }
-        public Color CellColor { get; set; }
         public Brush ObjColor { get; set; }
-        public Color TextColor { get; set; }
         public int Pad { get; set; }
     }
 }

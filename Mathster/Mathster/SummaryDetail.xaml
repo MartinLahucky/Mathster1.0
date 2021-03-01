@@ -2,7 +2,9 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mathster.SummaryDetail">
+             x:Class="Mathster.SummaryDetail"
+             BackgroundColor="{AppThemeBinding Light='#FAFAFA', Dark='#262630'}">
+
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="MenuButton" Order="Primary" Priority="1" Clicked="MenuButton_OnClicked" />
     </ContentPage.ToolbarItems>
@@ -12,8 +14,8 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout x:Name="MainLayout" Margin="20,20,20,10">
-            <ScrollView x:Name="View">
+        <StackLayout Margin="20,20,20,10">
+            <ScrollView>
                 <StackLayout>
                     <Frame CornerRadius="30" Padding="0" Margin="0,0,0,10" HasShadow="False" BackgroundColor="#4d4dfc">
                         <StackLayout>
@@ -32,8 +34,11 @@
                             <Label x:Name="AssignmentStaticLabel" BackgroundColor="Transparent" FontSize="25"
                                    Margin="10"
                                    Padding="20,0" VerticalTextAlignment="Center" TextColor="White" />
-                            <Frame x:Name="AssignmentLabelFrame" CornerRadius="30" Margin="20,0,20,20" Padding="0">
-                                <Label x:Name="AssignmentLabel" TextColor="Black" FontSize="30"
+                            <Frame
+                                BackgroundColor="{AppThemeBinding Light='#FAFAFA', Dark='#262630'}"
+                                CornerRadius="30" Margin="20,0,20,20" Padding="0">
+                                <Label x:Name="AssignmentLabel" TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                                       FontSize="30"
                                        VerticalOptions="Center"
                                        Padding="20,5" />
                             </Frame>
@@ -45,7 +50,9 @@
                             <Label x:Name="WrongStaticLabel" BackgroundColor="Transparent" FontSize="25"
                                    Margin="10" Padding="20,0" VerticalTextAlignment="Center" TextColor="White" />
                             <Frame x:Name="WrongFrame" CornerRadius="30" Margin="20,0,20,0" Padding="0">
-                                <StackLayout x:Name="WrongLayout" Orientation="Horizontal" Padding="0">
+                                <StackLayout x:Name="WrongLayout"
+                                             BackgroundColor="{AppThemeBinding Light='#FAFAFA', Dark='#262630'}"
+                                             Orientation="Horizontal" Padding="0">
                                     <StackLayout BackgroundColor="#7F7FFD" Padding="0" Margin="0">
 
                                         <!-- špatná odpověď znak -->
@@ -57,7 +64,8 @@
                                         <!-- <Image VerticalOptions="CenterAndExpand" Source="wrong_icon.png" -->
                                         <!--        Margin="15,0" /> -->
                                     </StackLayout>
-                                    <Label x:Name="WrongLabel" TextColor="Black" FontSize="30"
+                                    <Label x:Name="WrongLabel" TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                                           FontSize="30"
                                            VerticalOptions="Center" VerticalTextAlignment="Center" Padding="5" />
                                 </StackLayout>
                             </Frame>
@@ -65,7 +73,8 @@
                             <Label x:Name="CorrectStaticLabel" BackgroundColor="Transparent" FontSize="25" Margin="10"
                                    Padding="20,0" VerticalTextAlignment="Center" TextColor="White" />
                             <Frame CornerRadius="30" Margin="20,0,20,20" Padding="0">
-                                <StackLayout x:Name="CorrectLayout" Orientation="Horizontal" Padding="0" Margin="0">
+                                <StackLayout BackgroundColor="{AppThemeBinding Light='#FAFAFA', Dark='#262630'}"
+                                             Orientation="Horizontal" Padding="0" Margin="0">
                                     <StackLayout BackgroundColor="#7F7FFD" Padding="0" Margin="0">
 
                                         <!-- správná odpovšd znak -->
@@ -77,7 +86,8 @@
                                         <!-- <Image VerticalOptions="CenterAndExpand" Source="correct_icon.png" -->
                                         <!-- Margin="15,0" /> -->
                                     </StackLayout>
-                                    <Label x:Name="CorrectLabel" TextColor="Black" FontSize="30"
+                                    <Label x:Name="CorrectLabel" TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                                           FontSize="30"
                                            VerticalOptions="Center" VerticalTextAlignment="Center" Padding="5" />
                                 </StackLayout>
                             </Frame>

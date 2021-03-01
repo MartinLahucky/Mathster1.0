@@ -2,7 +2,9 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mathster.AboutUs">
+             x:Class="Mathster.AboutUs"
+             BackgroundColor="{AppThemeBinding Light='#FAFAFA', Dark='#262630'}">
+
     <ContentPage.Resources>
         <StyleSheet Source="Resources/Styles/Components.css" />
     </ContentPage.Resources>

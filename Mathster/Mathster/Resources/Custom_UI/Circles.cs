@@ -15,7 +15,7 @@ namespace Mathster.Resources.Custom_UI
         }
 
         private SKPoint Center { get; set; }
-        private float Radius { get; set; }
+        private float Radius { get; }
         private SKCanvas Canvas { get; set; }
 
         private SKRect Rect => new(Center.X - Radius, Center.Y - Radius, Center.X + Radius, Center.Y + Radius);
@@ -47,7 +47,7 @@ namespace Mathster.Resources.Custom_UI
             };
         }
 
-         
+
         public void DrawChart(SKCanvasView view, string backgroundColorHex, string progressBarColorHex,
             float progressBarThickness, float entry1, float entry2, float entry3, float entryMax, string entry1ColorHex,
             string entry2ColorHex, string entry3ColorHex)
@@ -142,7 +142,7 @@ namespace Mathster.Resources.Custom_UI
                 new SKPaint {StrokeWidth = progressBarThickness, Color = SKColor.Parse(colorHex), IsStroke = true});
         }
     }
-    
+
     // // Inner class
     // public class ChartPart
     // {

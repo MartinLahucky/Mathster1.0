@@ -44,16 +44,10 @@ namespace Mathster
             foreach (var page in existingPages) Navigation.RemovePage(page);
         }
 
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
-            var settings = await App.Database.GetSettings();
-            BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            if (settings.DarkMode)
-            {
-                DarkModeSwitch.IsToggled = true;
-                AboutAppLabel.TextColor = Color.White;
-            }
+            DarkModeSwitch.IsToggled = Application.Current.UserAppTheme == OSAppTheme.Dark;
         }
 
         protected override async void OnDisappearing()
@@ -74,21 +68,8 @@ namespace Mathster
         private async void DarkModeSwitch_Toggled(object sender, ToggledEventArgs e)
         {
             var settings = await App.Database.GetSettings();
-
-            if (e.Value)
-            {
-                settings.BackgroundHex = "#262630";
-                settings.DarkMode = true;
-                AboutAppLabel.TextColor = Color.White;
-            }
-            else
-            {
-                settings.BackgroundHex = "#FAFAFA";
-                settings.DarkMode = false;
-                AboutAppLabel.TextColor = Color.Default;
-            }
-
-            BackgroundColor = Color.FromHex(settings.BackgroundHex);
+            Application.Current.UserAppTheme = e.Value ? OSAppTheme.Dark : OSAppTheme.Light;
+            settings.Theme = Application.Current.UserAppTheme;
             await App.Database.UpdateSettings(settings);
         }
 

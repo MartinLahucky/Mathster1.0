@@ -72,13 +72,20 @@ namespace Mathster.Android
             }
         }
 
+        public void ReceiveNotification(string title, string message)
+        {
+            var args = new NotificationEventArgs
+            {
+                Title = title,
+                Message = message
+            };
+            NotificationReceived?.Invoke(null, args);
+        }
+
         // TODO Test
         private static void RegisterNotification(DateTime scheduleTime)
         {
-            if (DateTime.Now > scheduleTime)
-            {
-                scheduleTime = scheduleTime.AddMinutes(1);
-            }
+            if (DateTime.Now > scheduleTime) scheduleTime = scheduleTime.AddMinutes(1);
 
             var alarmIntent = new Intent(Instance, typeof(AlarmManager));
             var pendingIntent = PendingIntent.GetBroadcast(Instance,
@@ -93,16 +100,6 @@ namespace Mathster.Android
                 notifyTimeInInMilliseconds,
                 AlarmManager.IntervalDay,
                 pendingIntent);
-        }
-
-        public void ReceiveNotification(string title, string message)
-        {
-            var args = new NotificationEventArgs
-            {
-                Title = title,
-                Message = message
-            };
-            NotificationReceived?.Invoke(null, args);
         }
 
         public override IBinder OnBind(Intent intent)

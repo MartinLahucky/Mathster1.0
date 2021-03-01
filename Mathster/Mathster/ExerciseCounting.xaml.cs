@@ -13,8 +13,8 @@ namespace Mathster
     public partial class ExerciseCounting : ContentPage
     {
         private readonly long beginTime;
-        private byte id;
         private readonly Exercise[] queue;
+        private byte id;
         private bool under;
         private bool underChanged;
 
@@ -90,25 +90,13 @@ namespace Mathster
                 NextButton.IsVisible = false;
         }
 
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
             if (queue[id].ExerciseType >= 6)
                 ResultInput1.Focus();
             else
                 ResultInput.Focus();
-
-            var settings = await App.Database.GetSettings();
-            BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            if (settings.DarkMode)
-            {
-                ExerciseLabel.TextColor = Color.White;
-                ResultLabelInput.TextColor = Color.White;
-                ResultLabelInput1.TextColor = Color.White;
-                ResultLabelInput2.TextColor = Color.White;
-                ResultInput1.TextColor = Color.White;
-                ResultInput2.TextColor = Color.White;
-            }
         }
 
         private void SetTitle(string operation)

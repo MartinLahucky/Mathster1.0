@@ -10,7 +10,9 @@ namespace Mathster.Android
 {
     public class CustomRadioButtonRenderer : RadioButtonRenderer
     {
-        public CustomRadioButtonRenderer(Context context) : base(context) { }
+        public CustomRadioButtonRenderer(Context context) : base(context)
+        {
+        }
 
         // TODO Repair Render
         protected override void OnElementChanged(ElementChangedEventArgs<RadioButton> e)

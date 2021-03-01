@@ -35,7 +35,7 @@ namespace Mathster
         {
             base.OnAppearing();
             var settings = await App.Database.GetSettings();
-            BackgroundColor = Color.FromHex(settings.BackgroundHex);
+            Application.Current.UserAppTheme = settings.Theme;
             var table = await App.Database.GetTable();
             UserLabel.Text = string.IsNullOrEmpty(table.Name) ? "Mathster" : table.Name;
             table.GetLevel(out var level, out var progress, table);
@@ -78,7 +78,7 @@ namespace Mathster
         {
             await Navigation.PushAsync(new NotificationsTestPage());
         }
-        
+
         private async void SelectPage(object sender, EventArgs e)
         {
             try

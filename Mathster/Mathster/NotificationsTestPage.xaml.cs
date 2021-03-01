@@ -33,7 +33,7 @@ namespace Mathster
 
         private void SendNotDelay_OnClicked(object sender, EventArgs e)
         {
-            int getTime = string.IsNullOrEmpty(SendNotDelayInput.Text) ? 0 : int.Parse(SendNotDelayInput.Text);
+            var getTime = string.IsNullOrEmpty(SendNotDelayInput.Text) ? 0 : int.Parse(SendNotDelayInput.Text);
             var task = Task.Run(async () =>
             {
                 DependencyService.Get<INotificationManager>().SendNotification(
@@ -46,7 +46,7 @@ namespace Mathster
 
         private void SendTaskDelay_OnClicked(object sender, EventArgs e)
         {
-            int getTime = string.IsNullOrEmpty(SendTaskDelayInput.Text) ? 0 : int.Parse(SendTaskDelayInput.Text);
+            var getTime = string.IsNullOrEmpty(SendTaskDelayInput.Text) ? 0 : int.Parse(SendTaskDelayInput.Text);
             DependencyService.Get<INotificationManager>().StartService(
                 $"Požadavek na notifikaci: {DateTime.Now.TimeOfDay}",
                 $"Notifikace by měla zaznít v: {DateTime.Now.AddSeconds(getTime).TimeOfDay}",

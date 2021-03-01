@@ -2,8 +2,8 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:customUi="clr-namespace:Mathster.Resources.Custom_UI;assembly=Mathster"
-             x:Class="Mathster.ExerciseCounting">
+             x:Class="Mathster.ExerciseCounting"
+             BackgroundColor="{AppThemeBinding Light='#FAFAFA', Dark='#262630'}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="UnderButton" Order="Primary" Priority="1" Clicked="UnderButton_OnClicked" />
@@ -21,21 +21,24 @@
                     <Frame CornerRadius="15" StyleClass="ExerciseLabel" Padding="0" Margin="0,60,0,30"
                            HasShadow="False">
                         <StackLayout x:Name="ExerciseLayout" Padding="0">
-                            <Label x:Name="ExerciseLabel" Padding="0" VerticalTextAlignment="Center"
+                            <Label x:Name="ExerciseLabel" TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                                   Padding="0" VerticalTextAlignment="Center"
                                    StyleClass="ExerciseLabel" />
                         </StackLayout>
                     </Frame>
 
                     <Frame x:Name="NormalInput" CornerRadius="15" Padding="0" Margin="0,0,0,60" HasShadow="False">
                         <StackLayout x:Name="ResultInputLayout">
-                            <Label x:Name="ResultLabelInput" HeightRequest="60" Margin="0,0,0,-66"
+                            <Label x:Name="ResultLabelInput" TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                                   HeightRequest="60" Margin="0,0,0,-66"
                                    VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
                                    StyleClass="ResultInput" />
+
                             <Entry x:Name="ResultInput" Keyboard="Numeric" FontSize="30"
-                                               HeightRequest="60" VerticalTextAlignment="Center"
-                                               HorizontalTextAlignment="Center" BackgroundColor="Transparent"
-                                               TextColor="Transparent" StyleClass="BlackText"
-                                               TextChanged="ResultInput_OnTextChanged" />
+                                   HeightRequest="60" VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center" BackgroundColor="Transparent"
+                                   TextColor="Transparent" StyleClass="BlackText"
+                                   TextChanged="ResultInput_OnTextChanged" />
                         </StackLayout>
                     </Frame>
 
@@ -45,27 +48,31 @@
                                  HorizontalOptions="Center">
                         <Frame CornerRadius="15" Padding="0" HorizontalOptions="Start" HasShadow="False">
                             <StackLayout>
-                                <Label x:Name="ResultLabelInput1" HeightRequest="60" Margin="0,0,0,-66"
+                                <Label x:Name="ResultLabelInput1" TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                                       HeightRequest="60" Margin="0,0,0,-66"
                                        VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
                                        StyleClass="EquationInput" />
-                                <Entry x:Name="ResultInput1" Keyboard="Numeric" FontSize="30"
-                                                   HeightRequest="60" VerticalTextAlignment="Center"
-                                                   HorizontalTextAlignment="End" BackgroundColor="Transparent"
-                                                   StyleClass="BlackText"
-                                                   TextChanged="EquationInput_OnTextChanged" />
+                                <Entry x:Name="ResultInput1" TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                                       Keyboard="Numeric" FontSize="30"
+                                       HeightRequest="60" VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="End" BackgroundColor="Transparent"
+                                       StyleClass="BlackText"
+                                       TextChanged="EquationInput_OnTextChanged" />
                             </StackLayout>
 
                         </Frame>
                         <Frame CornerRadius="15" Padding="0" HorizontalOptions="End" HasShadow="False">
                             <StackLayout>
-                                <Label x:Name="ResultLabelInput2" HeightRequest="60" Margin="0,0,0,-66"
+                                <Label x:Name="ResultLabelInput2" TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                                       HeightRequest="60" Margin="0,0,0,-66"
                                        VerticalTextAlignment="Center" HorizontalTextAlignment="Start"
                                        StyleClass="EquationInput" />
-                                <Entry x:Name="ResultInput2" Keyboard="Numeric" FontSize="30"
-                                                   HeightRequest="60" VerticalTextAlignment="Center"
-                                                   HorizontalTextAlignment="End" BackgroundColor="Transparent"
-                                                   StyleClass="BlackText"
-                                                   TextChanged="EquationInput_OnTextChanged" />
+                                <Entry x:Name="ResultInput2" TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                                       Keyboard="Numeric" FontSize="30"
+                                       HeightRequest="60" VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="End" BackgroundColor="Transparent"
+                                       StyleClass="BlackText"
+                                       TextChanged="EquationInput_OnTextChanged" />
                             </StackLayout>
                         </Frame>
                     </StackLayout>

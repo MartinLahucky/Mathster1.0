@@ -31,7 +31,6 @@ namespace Mathster
                 ObjWrong.Data = objs.ObjWrong;
             });
             Task.WaitAll(task);
-            
 
 
             if (amountTotal == 0) amountTotal = 1;
@@ -55,7 +54,7 @@ namespace Mathster
             DivLayout.IsVisible = true;
             ObjCorrect.IsVisible = false;
             ObjWrong.IsVisible = false;
-            
+
 
             chart = new Circles(180, info => new SKPoint((float) info.Width / 2, (float) info.Height / 2));
             chart.DrawChart(Chart, "#7F7FFD", "#FCA54D", 40f, mul, div, sub,

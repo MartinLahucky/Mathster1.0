@@ -10,17 +10,18 @@ namespace Mathster
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExerciseSettings : ContentPage
     {
+        private readonly int ExSizeMax = 20;
+        private readonly int mulDivSizeMax = 3;
+        private readonly int NumSizeMax = 6;
+
         //  Default values
         private int exSize = 5;
-        private readonly int ExSizeMax = 20;
         private byte exType;
 
         private int mulDivSize = 2;
-        private readonly int mulDivSizeMax = 3;
 
 
         private int numSize = 2;
-        private readonly int NumSizeMax = 6;
 
         public ExerciseSettings(byte exType)
         {
@@ -83,23 +84,6 @@ namespace Mathster
                     NumSizeFrame.IsVisible = false;
                     MulDivFrame.IsVisible = false;
                     break;
-            }
-        }
-
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-
-            var settings = await App.Database.GetSettings();
-            BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            Frame1.BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            Frame2.BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            Frame3.BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            if (settings.DarkMode)
-            {
-                ExCountLabel.TextColor = Color.White;
-                NumSizeCountLabel.TextColor = Color.White;
-                MulDivCountLabel.TextColor = Color.White;
             }
         }
 

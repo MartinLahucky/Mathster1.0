@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using SQLite;
+using Xamarin.Forms;
 
 namespace Mathster.Resources.Database_Models
 {
@@ -32,8 +33,7 @@ namespace Mathster.Resources.Database_Models
                 {
                     var settings = new SettingsModel
                     {
-                        DarkMode = false,
-                        BackgroundHex = "#FAFAFA"
+                        Theme = OSAppTheme.Light
                     };
                     await database.InsertAsync(settings);
                 }

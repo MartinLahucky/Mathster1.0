@@ -12,10 +12,10 @@ namespace Mathster
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SummaryDetail : ContentPage
     {
-        private byte id;
         private readonly List<Exercise> list;
         private readonly Exercise[] queue;
         private readonly bool transaction;
+        private byte id;
 
 
         public SummaryDetail(byte id, Exercise[] queue, bool transaction, List<Exercise> list = null)
@@ -78,22 +78,6 @@ namespace Mathster
             if (id == 0) PreviousButton.IsVisible = false;
         }
 
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            var settings = await App.Database.GetSettings();
-            BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            AssignmentLabelFrame.BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            CorrectLayout.BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            WrongLayout.BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            if (settings.DarkMode)
-            {
-                BackgroundColor = Color.FromHex(settings.BackgroundHex);
-                AssignmentLabel.TextColor = Color.White;
-                CorrectLabel.TextColor = Color.White;
-                WrongLabel.TextColor = Color.White;
-            }
-        }
 
         private async void MenuButton_OnClicked(object sender, EventArgs e)
         {

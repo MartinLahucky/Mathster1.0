@@ -3,7 +3,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mathster.ExerciseSettings"
-             x:Name="NastaveniPrikladuContentPage">
+             x:Name="NastaveniPrikladuContentPage"
+             BackgroundColor="{AppThemeBinding Light='#FAFAFA', Dark='#262630'}">
 
     <ContentPage.Resources>
         <StyleSheet Source="Resources/Styles/Components.css" />
@@ -23,9 +24,13 @@
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name="ExStaticLabel" StyleClass="ExerciseSettingsNameLabel"
                                        VerticalOptions="CenterAndExpand" />
-                                <Frame x:Name="Frame1" StyleClass="ExerciseSettingsFrame"
+                                <Frame x:Name="Frame1"
+                                       BackgroundColor="{AppThemeBinding Light='#FAFAFA', Dark='#262630'}"
+                                       StyleClass="ExerciseSettingsFrame"
                                        HorizontalOptions="EndAndExpand">
-                                    <Label x:Name="ExCountLabel" StyleClass="ExerciseSettingsLabel"
+                                    <Label x:Name="ExCountLabel"
+                                           TextColor="{AppThemeBinding Light='#4D4DFC', Dark=White}"
+                                           StyleClass="ExerciseSettingsLabel"
                                            VerticalOptions="Center" HorizontalOptions="Center" />
                                 </Frame>
                             </StackLayout>
@@ -45,9 +50,13 @@
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name="NumSizeStaticLabel" StyleClass="ExerciseSettingsNameLabel"
                                        VerticalOptions="CenterAndExpand" />
-                                <Frame x:Name="Frame2" StyleClass="ExerciseSettingsFrame"
+                                <Frame x:Name="Frame2"
+                                       BackgroundColor="{AppThemeBinding Light='#FAFAFA', Dark='#262630'}"
+                                       StyleClass="ExerciseSettingsFrame"
                                        HorizontalOptions="EndAndExpand">
-                                    <Label x:Name="NumSizeCountLabel" StyleClass="ExerciseSettingsLabel"
+                                    <Label x:Name="NumSizeCountLabel"
+                                           TextColor="{AppThemeBinding Light='#4D4DFC', Dark=White}"
+                                           StyleClass="ExerciseSettingsLabel"
                                            VerticalOptions="Center" HorizontalOptions="Center" />
                                 </Frame>
                             </StackLayout>
@@ -67,9 +76,13 @@
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name="MulDivStaticLabel" StyleClass="ExerciseSettingsNameLabel"
                                        VerticalOptions="CenterAndExpand" />
-                                <Frame x:Name="Frame3" StyleClass="ExerciseSettingsFrame"
+                                <Frame x:Name="Frame3"
+                                       BackgroundColor="{AppThemeBinding Light='#FAFAFA', Dark='#262630'}"
+                                       StyleClass="ExerciseSettingsFrame"
                                        HorizontalOptions="EndAndExpand">
-                                    <Label x:Name="MulDivCountLabel" StyleClass="ExerciseSettingsLabel"
+                                    <Label x:Name="MulDivCountLabel"
+                                           TextColor="{AppThemeBinding Light='#4D4DFC', Dark=White}"
+                                           StyleClass="ExerciseSettingsLabel"
                                            VerticalOptions="Center" HorizontalOptions="Center"
                                            HorizontalTextAlignment="Center" />
                                 </Frame>

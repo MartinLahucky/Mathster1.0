@@ -3,7 +3,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
-             x:Class="Mathster.StatisticsPage">
+             x:Class="Mathster.StatisticsPage"
+             BackgroundColor="{AppThemeBinding Light='#FAFAFA', Dark='#262630'}">
+
     <ContentPage.Resources>
         <StyleSheet Source="Resources/Styles/Components.css" />
     </ContentPage.Resources>

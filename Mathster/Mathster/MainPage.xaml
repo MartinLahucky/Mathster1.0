@@ -4,7 +4,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:plugin="clr-namespace:ProgressRingControl.Forms.Plugin;assembly=ProgressRing.Forms.Plugin"
              x:Class="Mathster.MainPage"
-             NavigationPage.HasBackButton="False">
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="{AppThemeBinding Light='#FAFAFA', Dark='#262630'}">
+
     <ContentPage.Resources>
         <StyleSheet Source="Resources/Styles/Components.css" />
     </ContentPage.Resources>

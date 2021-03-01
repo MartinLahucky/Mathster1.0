@@ -3,8 +3,7 @@
     font-size: 30;
     text-align: center;
     width: 130;
-    background-color: #7F7FFD;
-    color: black;
+    background-color: #7f7ffd;
 }
 
 .ResultInput {
@@ -12,7 +11,6 @@
     text-align: center;
     width: 130;
     background-color: #FCA54D;
-    color: black;
 }
 
 .EquationInput {
@@ -26,7 +24,6 @@
 .BlackText {
     font-size: 30;
     width: 130;
-    color: black;
 }
 
 .Button {
@@ -62,12 +59,10 @@
 
 .ExerciseSettingsLabel {
     font-size: 30;
-    color: #4D4DFC;
 }
 
 .ExerciseSettingsFrame {
     border-radius: 30;
-    color: white;
     margin: 5;
     width: 50;
 }
@@ -84,7 +79,6 @@
 }
 
 .TitlePurpleLabel {
-    color: #4D4DFC;
     font-size: 30;
 }
 
