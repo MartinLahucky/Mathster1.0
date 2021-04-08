@@ -118,14 +118,12 @@ namespace Mathster
                 case false:
                     SecondLayer.Margin = new Thickness(60, -40, 60, 0);
                     ExerciseLabel.Text = queue[id].AssignmentUnder;
-                    ResultInput.FlowDirection = FlowDirection.RightToLeft;
                     under = true;
                     break;
 
                 case true:
                     SecondLayer.Margin = new Thickness(60, 30, 60, 0);
                     ExerciseLabel.Text = queue[id].Assignment;
-                    ResultInput.FlowDirection = FlowDirection.LeftToRight;
                     under = false;
                     break;
             }
@@ -135,9 +133,6 @@ namespace Mathster
 
         private void ResultInput_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            // I have no idea what I'm doing 
-            // Creating list with number and navigation in the number 
-
             // Making sure that big numbers don't break this
             if (e.NewTextValue.Length >= 11) ResultInput.Text = e.OldTextValue;
 
@@ -156,10 +151,10 @@ namespace Mathster
                     switch (under)
                     {
                         case true:
-                            // Loading correct number
+                            // Loading correct number 
                             for (var i = 0; i < numText.Length; i++) num.Add(numText[i].ToString());
 
-                            // If the number is negative, writes minus 1st  
+                            // If the number is negative, writes minus 1st 
                             if (num[0] == "-")
                             {
                                 num.Remove("-");
@@ -177,20 +172,20 @@ namespace Mathster
                             break;
 
                         case false:
-                            // Not reversing number when under mode changed
+                            // Not reversing number when under mode changed 
                             if (underChanged)
                             {
-                                // Adding last character e.NewTextValue[e.NewTextValue.Length -1]
+                                // Adding last character e.NewTextValue[e.NewTextValue.Length -1] 
                                 numText = ResultLabelInput.Text + e.NewTextValue[^1];
                                 ResultInput.Text = numText;
                                 underChanged = false;
                             }
 
-                            // Loading correct number format
+                            // Loading correct number format 
                             foreach (var t in numText)
                                 num.Add(t.ToString());
 
-                            // Again IDK what magic is this  
+                            // Again IDK what magic is this 
                             ResultLabelInput.Text = num[0];
                             if (num.Count != 1)
                                 for (var i = 1; i < numText.Length; i++)

@@ -5,6 +5,27 @@ namespace Sterform.Mathster.Exercise
 {
     public class Equation : Exercise
     {
+        #region Contructors
+
+        public Equation()
+        {
+        }
+
+        public Equation(byte id, string assignment, int result, byte exerciseType,
+            byte experience) : base(id, assignment, result, exerciseType, experience)
+        {
+        }
+
+        public Equation(byte id, string assignment, int result, int result2, byte exerciseType,
+            byte experience) : base(id, assignment, result, result2, exerciseType, experience)
+        {
+            Result2 = result2;
+        }
+
+        #endregion
+        
+        #region Methods
+
         public Exercise GenerateExercise(byte id, byte exercise)
         {
             switch (exercise)
@@ -187,23 +208,6 @@ namespace Sterform.Mathster.Exercise
                 default:
                     return null;
             }
-        }
-
-        #region Contructors
-
-        public Equation()
-        {
-        }
-
-        public Equation(byte id, string assignment, int result, byte exerciseType,
-            byte experience) : base(id, assignment, result, exerciseType, experience)
-        {
-        }
-
-        public Equation(byte id, string assignment, int result, int result2, byte exerciseType,
-            byte experience) : base(id, assignment, result, result2, exerciseType, experience)
-        {
-            Result2 = result2;
         }
 
         #endregion

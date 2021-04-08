@@ -51,11 +51,9 @@ namespace Sterform.Mathster.Exercise
                         $" {firstNum}\n-{secondNum}\n—",
                         firstNum / secondNum, exerciseType, (byte) firstNum.ToString().Length);
 
-                case 0:
+                default:
                     return GenerateExercise(id, numMin, numMax, (byte) random.Next(1, 5), mulDivMin, mulDivMax);
             }
-
-            return null;
         }
 
         public override string FormatAssigmentResult()
