@@ -71,10 +71,9 @@ namespace Sterform.Mathster.Exercise
                     break;
 
                 case 1:
-                    if (xExtra >= 0)
-                        assignment = $"{numMul + xExtra}x = {numMul * result} +{xExtra}x";
-                    else
-                        assignment = $"{numMul + xExtra}x = {numMul * result} {xExtra}x";
+                    assignment = xExtra >= 0
+                        ? $"{numMul + xExtra}x = {numMul * result} +{xExtra}x"
+                        : $"{numMul + xExtra}x = {numMul * result} {xExtra}x";
 
                     break;
 

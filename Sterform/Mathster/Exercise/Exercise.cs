@@ -19,7 +19,7 @@
 
         #region Constructors
 
-        public Exercise()
+        protected Exercise()
         {
         }
 
@@ -32,7 +32,7 @@
             Experience = experience;
         }
 
-        public Exercise(byte id, string assignment, string assignmentUnder, int result, byte exerciseType,
+        protected Exercise(byte id, string assignment, string assignmentUnder, int result, byte exerciseType,
             byte experience)
         {
             Id = id;
