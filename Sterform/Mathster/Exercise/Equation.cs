@@ -11,12 +11,12 @@ namespace Sterform.Mathster.Exercise
         {
         }
 
-        public Equation(byte id, string assignment, int result, byte exerciseType,
+        private Equation(byte id, string assignment, int result, byte exerciseType,
             byte experience) : base(id, assignment, result, exerciseType, experience)
         {
         }
 
-        public Equation(byte id, string assignment, int result, int result2, byte exerciseType,
+        private Equation(byte id, string assignment, int result, int result2, byte exerciseType,
             byte experience) : base(id, assignment, result, result2, exerciseType, experience)
         {
             Result2 = result2;
@@ -57,16 +57,12 @@ namespace Sterform.Mathster.Exercise
             experience += (byte) numExtra.ToString().Length;
             experience += (byte) xExtra.ToString().Length;
 
-            var assignment = string.Empty;
+            string assignment;
 
             switch (random.Next(0, 3))
             {
                 case 0:
-                    if (numExtra >= 0)
-                        assignment = $"{numMul}x +{numExtra} = ";
-                    else
-                        assignment = $"{numMul}x {numExtra} = ";
-
+                    assignment = numExtra >= 0 ? $"{numMul}x +{numExtra} = " : $"{numMul}x {numExtra} = ";
                     assignment += $"{numMul * result + numExtra}";
                     break;
 
