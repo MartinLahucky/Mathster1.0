@@ -14,8 +14,8 @@ namespace Mathster
     public partial class ExerciseCounting : ContentPage
     {
         private readonly long beginTime;
-        private byte id;
         private readonly Exercise[] queue;
+        private byte id;
         private bool under;
         private bool underChanged;
 
@@ -101,15 +101,13 @@ namespace Mathster
 
             var settings = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            if (settings.DarkMode)
-            {
-                ExerciseLabel.TextColor = Color.White;
-                ResultLabelInput.TextColor = Color.White;
-                ResultLabelInput1.TextColor = Color.White;
-                ResultLabelInput2.TextColor = Color.White;
-                ResultInput1.TextColor = Color.White;
-                ResultInput2.TextColor = Color.White;
-            }
+            if (!settings.DarkMode) return;
+            ExerciseLabel.TextColor = Color.White;
+            ResultLabelInput.TextColor = Color.White;
+            ResultLabelInput1.TextColor = Color.White;
+            ResultLabelInput2.TextColor = Color.White;
+            ResultInput1.TextColor = Color.White;
+            ResultInput2.TextColor = Color.White;
         }
 
         private void SetTitle(string operation)
@@ -180,7 +178,7 @@ namespace Mathster
                             }
 
                             // Writing first character 
-                            ResultLabelInput.Text = num[num.Count - 1];
+                            ResultLabelInput.Text = num[^1];
                             // Check if not only 1 symbol 
                             if (num.Count != 1)
                                 for (var i = num.Count - 2; i >= 0; i--)
@@ -200,7 +198,7 @@ namespace Mathster
                             }
 
                             // Loading correct number format
-                            for (var i = 0; i < numText.Length; i++) num.Add(numText[i].ToString());
+                            num.AddRange(numText.Select(t => t.ToString()));
 
                             // Again IDK what magic is this  
                             ResultLabelInput.Text = num[0];

@@ -10,17 +10,18 @@ namespace Mathster
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExerciseSettings : ContentPage
     {
+        private const int ExSizeMax = 20;
+        private const int MulDivSizeMax = 3;
+        private const int NumSizeMax = 6;
+
         //  Default values
         private int exSize = 5;
-        private readonly int ExSizeMax = 20;
         private byte exType;
 
         private int mulDivSize = 2;
-        private readonly int mulDivSizeMax = 3;
 
 
         private int numSize = 2;
-        private readonly int NumSizeMax = 6;
 
         public ExerciseSettings(byte exType)
         {
@@ -44,7 +45,7 @@ namespace Mathster
             NumSizeCountLabel.Text = numSize.ToString();
 
             MulDivSlider.Value = mulDivSize;
-            MulDivSlider.Maximum = mulDivSizeMax;
+            MulDivSlider.Maximum = MulDivSizeMax;
             MulDivSlider.Minimum = 1;
             MulDivSlider.IsEnabled = false;
             EquationSelectFrame.IsVisible = false;

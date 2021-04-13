@@ -16,8 +16,8 @@ namespace Mathster
     public partial class Summary : ContentPage
     {
         private readonly List<Exercise> correctList, wrongList;
-        private ObjectsModel objects;
         private readonly Exercise[] queue;
+        private ObjectsModel objects;
         private SettingsModel settings;
         private DBModel table;
         private bool transaction;
@@ -109,12 +109,10 @@ namespace Mathster
             BackgroundColor = Color.FromHex(settings.BackgroundHex);
             CorrectCountButton.BackgroundColor = Color.FromHex(settings.BackgroundHex);
             WrongCountButton.BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            if (settings.DarkMode)
-            {
-                TitleSummaryLabel.TextColor = Color.FromHex("#FFFFFF");
-                CorrectCountButton.TextColor = Color.FromHex("#FFFFFF");
-                WrongCountButton.TextColor = Color.FromHex("#FFFFFF");
-            }
+            if (!settings.DarkMode) return;
+            TitleSummaryLabel.TextColor = Color.FromHex("#FFFFFF");
+            CorrectCountButton.TextColor = Color.FromHex("#FFFFFF");
+            WrongCountButton.TextColor = Color.FromHex("#FFFFFF");
         }
 
         private async void Transaction()

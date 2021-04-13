@@ -15,7 +15,7 @@ namespace Mathster.Resources.Custom_UI
         }
 
         private SKPoint Center { get; set; }
-        private float Radius { get; set; }
+        private float Radius { get; }
         private SKCanvas Canvas { get; set; }
 
         private SKRect Rect => new(Center.X - Radius, Center.Y - Radius, Center.X + Radius, Center.Y + Radius);
@@ -54,8 +54,8 @@ namespace Mathster.Resources.Custom_UI
         {
             view.PaintSurface += (sender, args) =>
             {
-                ChartPartCalculations(entry1, entry2, entry3, entryMax,  out float result1, out float result2,
-                    out float result3);
+                ChartPartCalculations(entry1, entry2, entry3, entryMax, out var result1, out var result2,
+                    out var result3);
                 Canvas = args.Surface.Canvas;
                 CalculateCenter(args.Info);
                 Canvas.Clear();
