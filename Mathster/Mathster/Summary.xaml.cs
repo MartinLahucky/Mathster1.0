@@ -90,12 +90,10 @@ namespace Mathster
             CorrectCountButton.Text = correctList.Count.ToString();
             WrongCountButton.Text = wrongList.Count.ToString();
 
-            if (!transaction)
-            {
-                //TODO nejspíš odstranit? 
-                DependencyService.Get<INativeFun>().ShortAlert($"{Localization.Gained} {experienceGained} Xp");
-                Transaction();
-            }
+            if (transaction) return;
+            //TODO nejspíš odstranit? 
+            DependencyService.Get<INativeFun>().ShortAlert($"{Localization.Gained} {experienceGained} Xp");
+            Transaction();
         }
 
         private async void MenuButton_OnClicked(object sender, EventArgs e)
@@ -121,11 +119,9 @@ namespace Mathster
 
         private async void Transaction()
         {
-            if (!transaction)
-            {
-                await App.Database.UpdateTable(table);
-                transaction = true;
-            }
+            if (transaction) return;
+            await App.Database.UpdateTable(table);
+            transaction = true;
         }
 
         private async void CorrectCountButton_OnClicked(object sender, EventArgs e)
@@ -166,10 +162,7 @@ namespace Mathster
         {
             Assignment = assignment;
             CellColor = Color.FromHex(settings.BackgroundHex);
-            if (settings.DarkMode)
-                TextColor = Color.FromHex("#FFFFFF");
-            else
-                TextColor = Color.Black;
+            TextColor = settings.DarkMode ? Color.FromHex("#FFFFFF") : Color.Black;
         }
 
         public string Assignment { get; set; }

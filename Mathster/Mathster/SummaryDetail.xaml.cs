@@ -86,13 +86,11 @@ namespace Mathster
             AssignmentLabelFrame.BackgroundColor = Color.FromHex(settings.BackgroundHex);
             CorrectLayout.BackgroundColor = Color.FromHex(settings.BackgroundHex);
             WrongLayout.BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            if (settings.DarkMode)
-            {
-                BackgroundColor = Color.FromHex(settings.BackgroundHex);
-                AssignmentLabel.TextColor = Color.White;
-                CorrectLabel.TextColor = Color.White;
-                WrongLabel.TextColor = Color.White;
-            }
+            if (!settings.DarkMode) return;
+            BackgroundColor = Color.FromHex(settings.BackgroundHex);
+            AssignmentLabel.TextColor = Color.White;
+            CorrectLabel.TextColor = Color.White;
+            WrongLabel.TextColor = Color.White;
         }
 
         private async void MenuButton_OnClicked(object sender, EventArgs e)

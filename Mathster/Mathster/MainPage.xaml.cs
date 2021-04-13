@@ -37,11 +37,7 @@ namespace Mathster
             var settings = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(settings.BackgroundHex);
             var table = await App.Database.GetTable();
-            if (string.IsNullOrEmpty(table.Name))
-                UserLabel.Text = "Mathster";
-            else
-                UserLabel.Text = table.Name;
-
+            UserLabel.Text = string.IsNullOrEmpty(table.Name) ? "Mathster" : table.Name;
             table.GetLevel(out var level, out var progress, table);
             LevelButton.Text = level.ToString();
             ProgressBar.AnimatedProgress = progress;
@@ -114,7 +110,6 @@ namespace Mathster
         protected override bool OnBackButtonPressed()
         {
             var currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
-
             if (currentTime - lastPress > 3000)
             {
                 DependencyService.Get<INativeFun>().LongAlert(Localization.AlertExit);

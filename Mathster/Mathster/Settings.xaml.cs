@@ -49,11 +49,9 @@ namespace Mathster
             base.OnAppearing();
             var settings = await App.Database.GetSettings();
             BackgroundColor = Color.FromHex(settings.BackgroundHex);
-            if (settings.DarkMode)
-            {
-                DarkModeSwitch.IsToggled = true;
-                AboutAppLabel.TextColor = Color.White;
-            }
+            if (!settings.DarkMode) return;
+            DarkModeSwitch.IsToggled = true;
+            AboutAppLabel.TextColor = Color.White;
         }
 
         protected override async void OnDisappearing()

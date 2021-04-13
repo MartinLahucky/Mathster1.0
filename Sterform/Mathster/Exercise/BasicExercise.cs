@@ -60,16 +60,12 @@ namespace Sterform.Mathster.Exercise
 
         public override string FormatAssigmentResult()
         {
-            if (Assignment.Length >= 13) return $"{Assignment}\n= {Result}";
-
-            return $"{Assignment}{Result}";
+            return Assignment.Length >= 13 ? $"{Assignment}\n= {Result}" : $"{Assignment}{Result}";
         }
 
         public override string FormatAssigmentUserInput()
         {
-            if (Assignment.Length >= 13) return $"{Assignment}\n= {UserInput}";
-
-            return $"{Assignment}{UserInput}";
+            return Assignment.Length >= 13 ? $"{Assignment}\n= {UserInput}" : $"{Assignment}{UserInput}";
         }
 
         public override string FormatUserInput()

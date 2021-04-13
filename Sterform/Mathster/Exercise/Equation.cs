@@ -28,20 +28,13 @@ namespace Sterform.Mathster.Exercise
 
         public Exercise GenerateExercise(byte id, byte exercise)
         {
-            switch (exercise)
+            return exercise switch
             {
-                case 5:
-                    return GenerateEquationNormal(id);
-
-                case 6:
-                    return GenerateQuadraticEquation(id);
-
-                case 7:
-                    return GenerateSquareEquation(id);
-
-                default:
-                    return null;
-            }
+                5 => GenerateEquationNormal(id),
+                6 => GenerateQuadraticEquation(id),
+                7 => GenerateSquareEquation(id),
+                _ => null
+            };
         }
 
         private Exercise GenerateEquationNormal(byte id)
@@ -135,74 +128,46 @@ namespace Sterform.Mathster.Exercise
 
         public override string FormatAssigmentResult()
         {
-            switch (ExerciseType)
+            return ExerciseType switch
             {
-                case 5:
-                    return $"{Assignment}\nx = {Result}";
-
-                case 6:
-                    return $"{Assignment}\nx1 = {Result}\nx2 = {Result2}";
-
-                case 7:
-                    return $"{Assignment}\n= (x{FormatNumber(Result)})^2{FormatNumber(Result2)}";
-
-                default:
-                    return null;
-            }
+                5 => $"{Assignment}\nx = {Result}",
+                6 => $"{Assignment}\nx1 = {Result}\nx2 = {Result2}",
+                7 => $"{Assignment}\n= (x{FormatNumber(Result)})^2{FormatNumber(Result2)}",
+                _ => null
+            };
         }
 
         public override string FormatAssigmentUserInput()
         {
-            switch (ExerciseType)
+            return ExerciseType switch
             {
-                case 5:
-                    return $"{Assignment}\nx = {UserInput}";
-
-                case 6:
-                    return $"{Assignment}\nx1 = {UserInput}\nx2 = {UserInput2}";
-
-                case 7:
-                    return $"{Assignment}=\n (x{FormatNumber(UserInput)})^2{FormatNumber(UserInput2)}";
-
-                default:
-                    return null;
-            }
+                5 => $"{Assignment}\nx = {UserInput}",
+                6 => $"{Assignment}\nx1 = {UserInput}\nx2 = {UserInput2}",
+                7 => $"{Assignment}=\n (x{FormatNumber(UserInput)})^2{FormatNumber(UserInput2)}",
+                _ => null
+            };
         }
 
         public override string FormatUserInput()
         {
-            switch (ExerciseType)
+            return ExerciseType switch
             {
-                case 5:
-                    return $"{UserInput}";
-
-                case 6:
-                    return $"x1 = {UserInput}  x2 = {UserInput2}";
-
-                case 7:
-                    return $"= (x{FormatNumber(UserInput)})^2{FormatNumber(UserInput2)}";
-
-                default:
-                    return null;
-            }
+                5 => $"{UserInput}",
+                6 => $"x1 = {UserInput}  x2 = {UserInput2}",
+                7 => $"= (x{FormatNumber(UserInput)})^2{FormatNumber(UserInput2)}",
+                _ => null
+            };
         }
 
         public override string FormatResult()
         {
-            switch (ExerciseType)
+            return ExerciseType switch
             {
-                case 5:
-                    return $"{Result}";
-
-                case 6:
-                    return $"x1 = {Result}  x2 = {Result2}";
-
-                case 7:
-                    return $"= (x{FormatNumber(Result)})^2{FormatNumber(Result2)}";
-
-                default:
-                    return null;
-            }
+                5 => $"{Result}",
+                6 => $"x1 = {Result}  x2 = {Result2}",
+                7 => $"= (x{FormatNumber(Result)})^2{FormatNumber(Result2)}",
+                _ => null
+            };
         }
 
         # endregion

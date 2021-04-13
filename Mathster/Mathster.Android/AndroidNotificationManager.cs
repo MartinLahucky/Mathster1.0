@@ -21,15 +21,12 @@ namespace Mathster.Android
         private const string ChannelId = "default";
         private const string ChannelName = "Default";
         private const string ChannelDescription = "The default channel for notifications.";
-
         public const string TitleKey = "title";
         public const string MessageKey = "message";
-
-        private bool _channelInitialized;
-
-        private NotificationManager _manager;
-        private int _notificationId;
-        private int _pendingIntentId;
+        private bool channelInitialized;
+        private NotificationManager manager;
+        private int notificationId;
+        private int pendingIntentId;
 
         public static AndroidNotificationManager Instance { get; private set; }
 
@@ -50,7 +47,7 @@ namespace Mathster.Android
 
         public void SendNotification(string title, string message, DateTime? notifyTime = null, long? repeatTime = null)
         {
-            if (!_channelInitialized) CreateNotificationChannel();
+            if (!channelInitialized) CreateNotificationChannel();
 
             if (notifyTime != null)
             {
@@ -64,13 +61,13 @@ namespace Mathster.Android
                 {
                     if (triggerTime < JavaSystem.CurrentTimeMillis()) triggerTime += repeatTime.Value;
 
-                    var pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, _pendingIntentId++,
+                    var pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, pendingIntentId++,
                         intent, PendingIntentFlags.Immutable);
                     alarmManager?.SetRepeating(AlarmType.RtcWakeup, triggerTime, repeatTime.Value, pendingIntent);
                 }
                 else
                 {
-                    var pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, _pendingIntentId++,
+                    var pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, pendingIntentId++,
                         intent, PendingIntentFlags.CancelCurrent);
                     alarmManager?.Set(AlarmType.RtcWakeup, triggerTime, pendingIntent);
                 }
@@ -103,7 +100,7 @@ namespace Mathster.Android
             intent.PutExtra(TitleKey, title);
             intent.PutExtra(MessageKey, message);
             // Starts up the activity (app) 
-            var pendingIntent = PendingIntent.GetActivity(AndroidApp.Context, _pendingIntentId++, intent,
+            var pendingIntent = PendingIntent.GetActivity(AndroidApp.Context, pendingIntentId++, intent,
                 PendingIntentFlags.UpdateCurrent);
             // Building the notifictaion
             var builder = new NotificationCompat.Builder(AndroidApp.Context, ChannelId)
@@ -118,12 +115,12 @@ namespace Mathster.Android
                              (int) NotificationDefaults.Vibrate); // vibrations to what phones uses right now (default) 
 
             var notification = builder.Build();
-            _manager.Notify(_notificationId++, notification);
+            manager.Notify(notificationId++, notification);
         }
 
         private void CreateNotificationChannel()
         {
-            _manager = (NotificationManager) AndroidApp.Context.GetSystemService(NotificationService);
+            manager = (NotificationManager) AndroidApp.Context.GetSystemService(NotificationService);
 
             // Notification channels are new in API 26 (and not a part of the support library)
             if (Build.VERSION.SdkInt >= BuildVersionCodes.O)
@@ -133,10 +130,10 @@ namespace Mathster.Android
                 {
                     Description = ChannelDescription
                 };
-                _manager?.CreateNotificationChannel(channel);
+                manager?.CreateNotificationChannel(channel);
             }
 
-            _channelInitialized = true;
+            channelInitialized = true;
         }
 
         private long GetNotifyTime(DateTime notifyTime)

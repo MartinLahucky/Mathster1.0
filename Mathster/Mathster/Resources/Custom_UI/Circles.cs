@@ -8,17 +8,17 @@ namespace Mathster.Resources.Custom_UI
     {
         private readonly Func<SKImageInfo, SKPoint> centerFunc;
 
-        public Circles(float radius, Func<SKImageInfo, SKPoint> centerfunc)
+        public Circles(float radius, Func<SKImageInfo, SKPoint> centerfold)
         {
-            centerFunc = centerfunc;
+            centerFunc = centerfold;
             Radius = radius;
         }
 
-        public SKPoint Center { get; set; }
-        public float Radius { get; set; }
-        private SKCanvas canvas { get; set; }
+        private SKPoint Center { get; set; }
+        private float Radius { get; set; }
+        private SKCanvas Canvas { get; set; }
 
-        public SKRect Rect => new(Center.X - Radius, Center.Y - Radius, Center.X + Radius, Center.Y + Radius);
+        private SKRect Rect => new(Center.X - Radius, Center.Y - Radius, Center.X + Radius, Center.Y + Radius);
 
         public void DrawFullProgressBar(SKCanvasView view, string backgroundColorHex, string progressBarColorHex,
             float progressBarThickness, float progress, string progressColorHex)
@@ -26,9 +26,9 @@ namespace Mathster.Resources.Custom_UI
             // This not nice nothing or redundant code 
             view.PaintSurface += (sender, args) =>
             {
-                canvas = args.Surface.Canvas;
+                Canvas = args.Surface.Canvas;
                 CalculateCenter(args.Info);
-                canvas.Clear();
+                Canvas.Clear();
                 DrawFullCircle(backgroundColorHex);
                 DrawCircleBorder(progressBarThickness, progressBarColorHex);
                 DrawProgress(progress, progressBarThickness, progressColorHex);
@@ -40,9 +40,9 @@ namespace Mathster.Resources.Custom_UI
             // This ugliness or redundant code 
             view.PaintSurface += (sender, args) =>
             {
-                canvas = args.Surface.Canvas;
+                Canvas = args.Surface.Canvas;
                 CalculateCenter(args.Info);
-                canvas.Clear();
+                Canvas.Clear();
                 DrawFullCircle(backgroundColorHex);
             };
         }
@@ -54,12 +54,11 @@ namespace Mathster.Resources.Custom_UI
         {
             view.PaintSurface += (sender, args) =>
             {
-                float result1, result2, result3;
-                ChartPartCalcualtion(entry1, entry2, entry3, entryMax, out result1, out result2,
-                    out result3);
-                canvas = args.Surface.Canvas;
+                ChartPartCalculations(entry1, entry2, entry3, entryMax,  out float result1, out float result2,
+                    out float result3);
+                Canvas = args.Surface.Canvas;
                 CalculateCenter(args.Info);
-                canvas.Clear();
+                Canvas.Clear();
                 DrawFullCircle(backgroundColorHex);
                 DrawCircleBorder(progressBarThickness, progressBarColorHex);
                 DrawProgress(result1, progressBarThickness, entry1ColorHex);
@@ -83,7 +82,7 @@ namespace Mathster.Resources.Custom_UI
         }
          */
 
-        private void ChartPartCalcualtion(float entry1, float entry2, float entry3, float max, out float result1,
+        private void ChartPartCalculations(float entry1, float entry2, float entry3, float max, out float result1,
             out float result2, out float result3)
         {
             result1 = (entry1 + entry2 + entry3) / max * 100;
@@ -91,14 +90,14 @@ namespace Mathster.Resources.Custom_UI
             result3 = entry3 / max * 100;
         }
 
-        public void CalculateCenter(SKImageInfo argsInfo)
+        private void CalculateCenter(SKImageInfo argsInfo)
         {
             Center = centerFunc.Invoke(argsInfo);
         }
 
         private void DrawFullCircle(string backgroundColorHex)
         {
-            canvas.DrawCircle(Center, Radius,
+            Canvas.DrawCircle(Center, Radius,
                 new SKPaint
                 {
                     Style = SKPaintStyle.Fill,
@@ -108,7 +107,7 @@ namespace Mathster.Resources.Custom_UI
 
         private void DrawCircleBorder(float progressBarThickness, string colorHex)
         {
-            canvas.DrawCircle(Center, Radius,
+            Canvas.DrawCircle(Center, Radius,
                 new SKPaint
                 {
                     StrokeWidth = progressBarThickness,
@@ -121,7 +120,7 @@ namespace Mathster.Resources.Custom_UI
         {
             Func<float> step = () => progress;
             var angle = step.Invoke() * 3.6f;
-            canvas.DrawArc(Rect, 270, angle, false,
+            Canvas.DrawArc(Rect, 270, angle, false,
                 new SKPaint {StrokeWidth = progressBarThickness, Color = SKColor.Parse(colorHex), IsStroke = true});
         }
     }

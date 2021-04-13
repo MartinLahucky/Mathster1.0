@@ -39,12 +39,10 @@ namespace Mathster.Android
 
         private static void CreateNotificationFromIntent(Intent intent)
         {
-            if (intent?.Extras != null)
-            {
-                var title = intent.GetStringExtra(AndroidNotificationManager.TitleKey);
-                var message = intent.GetStringExtra(AndroidNotificationManager.MessageKey);
-                DependencyService.Get<INotificationManager>().ReceiveNotification(title, message);
-            }
+            if (intent?.Extras == null) return;
+            var title = intent.GetStringExtra(AndroidNotificationManager.TitleKey);
+            var message = intent.GetStringExtra(AndroidNotificationManager.MessageKey);
+            DependencyService.Get<INotificationManager>().ReceiveNotification(title, message);
         }
     }
 }

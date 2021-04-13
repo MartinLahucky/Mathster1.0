@@ -53,14 +53,12 @@ namespace Mathster
 
         private async void ResetStatsButton_OnClicked(object sender, EventArgs eventArgs)
         {
-            if (await DisplayAlert(Localization.Alert, Localization.AlertResetStatistics, Localization.Yes,
-                Localization.No))
-            {
-                var table = await App.Database.GetTable();
-                table.ResetDb();
-                await App.Database.UpdateTable(table);
-                await Navigation.PushAsync(new MainPage());
-            }
+            if (!await DisplayAlert(Localization.Alert, Localization.AlertResetStatistics, Localization.Yes,
+                Localization.No)) return;
+            var table = await App.Database.GetTable();
+            table.ResetDb();
+            await App.Database.UpdateTable(table);
+            await Navigation.PushAsync(new MainPage());
         }
     }
 }
