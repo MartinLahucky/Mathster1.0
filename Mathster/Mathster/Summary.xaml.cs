@@ -91,7 +91,6 @@ namespace Mathster
             WrongCountButton.Text = wrongList.Count.ToString();
 
             if (transaction) return;
-            //TODO nejspíš odstranit? 
             DependencyService.Get<INativeFun>().ShortAlert($"{Localization.Gained} {experienceGained} Xp");
             Transaction();
         }

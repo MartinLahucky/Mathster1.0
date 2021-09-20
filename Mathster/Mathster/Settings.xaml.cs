@@ -17,7 +17,6 @@ namespace Mathster
             Title = Localization.Settings;
             NameEntry.Placeholder = Localization.EnterYourName;
             NameEntry.PlaceholderColor = Color.White;
-            ;
             NameLabel.Text = Localization.Name;
             DarkModeLabel.Text = Localization.DarkMode;
 
@@ -25,10 +24,7 @@ namespace Mathster
             {
                 var table = await App.Database.GetTable();
 
-                if (table.Name == "")
-                    NameEntry.Text = string.Empty;
-                else
-                    NameEntry.Text = table.Name;
+                NameEntry.Text = table.Name == "" ? string.Empty : table.Name;
             });
             Task.WaitAll(task);
             AboutAppLabel.Text = $"{Localization.AppVersion}: Closed Beta 1.3";

@@ -17,10 +17,7 @@ namespace Mathster
         //  Default values
         private int exSize = 5;
         private byte exType;
-
         private int mulDivSize = 2;
-
-
         private int numSize = 2;
 
         public ExerciseSettings(byte exType)
@@ -113,13 +110,13 @@ namespace Mathster
 
         private void ExCountSlider_OnValueChanged(object sender, ValueChangedEventArgs e)
         {
-            exSize = (int) ExCountSlider.Value;
+            exSize = (int)ExCountSlider.Value;
             ExCountLabel.Text = exSize.ToString();
         }
 
         private void NumSizeSlider_OnValueChanged(object sender, ValueChangedEventArgs e)
         {
-            numSize = (int) NumSizeSlider.Value;
+            numSize = (int)NumSizeSlider.Value;
             if (numSize == 1)
             {
                 MulDivSlider.Value = 1;
@@ -135,7 +132,7 @@ namespace Mathster
 
         private void MulDivSlider_OnValueChanged(object sender, ValueChangedEventArgs e)
         {
-            mulDivSize = (int) MulDivSlider.Value;
+            mulDivSize = (int)MulDivSlider.Value;
             switch (mulDivSize)
             {
                 case 1:
@@ -152,7 +149,7 @@ namespace Mathster
 
         private async void NextButton_OnClicked(object sender, EventArgs e)
         {
-            var queue = new Exercise[(int) ExCountSlider.Value];
+            var queue = new Exercise[(int)ExCountSlider.Value];
 
 
             if (exType >= 5)
@@ -160,18 +157,18 @@ namespace Mathster
                 // Gets type of the equation
                 foreach (var radioButton in RadioGroup.Children)
                 {
-                    var rb = (RadioButton) radioButton;
+                    var rb = (RadioButton)radioButton;
                     if (rb.IsChecked) exType = byte.Parse(rb.Value.ToString());
                 }
 
-                for (byte i = 0; i < (int) ExCountSlider.Value; i++)
+                for (byte i = 0; i < (int)ExCountSlider.Value; i++)
                     queue[i] = new Equation().GenerateExercise(i, exType);
             }
             else
             {
                 int numMin;
                 int numMax;
-                switch ((int) NumSizeSlider.Value)
+                switch ((int)NumSizeSlider.Value)
                 {
                     case 1:
                         numMin = 1;
@@ -211,7 +208,7 @@ namespace Mathster
 
                 byte mulDivMax;
                 byte mulDivMin;
-                switch ((int) MulDivSlider.Value)
+                switch ((int)MulDivSlider.Value)
                 {
                     case 1:
                         mulDivMin = 2;
@@ -234,7 +231,7 @@ namespace Mathster
                         break;
                 }
 
-                for (byte i = 0; i < (int) ExCountSlider.Value; i++)
+                for (byte i = 0; i < (int)ExCountSlider.Value; i++)
                     queue[i] = new BasicExercise().GenerateExercise(i, numMin, numMax, exType, mulDivMin, mulDivMax);
             }
 

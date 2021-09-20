@@ -45,7 +45,7 @@ namespace Mathster
 
         private async void SelectExercise(object sender, EventArgs e)
         {
-            var button = (Button) sender;
+            var button = (Button)sender;
             switch (button.Text)
             {
                 case "?":
@@ -78,7 +78,7 @@ namespace Mathster
         {
             try
             {
-                var i = (ToolbarItem) sender;
+                var i = (ToolbarItem)sender;
                 switch (i.IconImageSource.ToString())
                 {
                     case "File: menu_icon.png":

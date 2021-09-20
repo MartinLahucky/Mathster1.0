@@ -50,13 +50,13 @@ namespace Mathster
         private void LoadPage(string title, int amountCorrect, int amountTotal, string imageSource, Color color)
         {
             Children.Add(new StatisticsPage(title, amountCorrect, amountTotal)
-                {IconImageSource = imageSource, BackgroundColor = color});
+                { IconImageSource = imageSource, BackgroundColor = color });
         }
 
         private void LoadPage(string title, int add, int sub, int mul, int div, string imageSource, Color color)
         {
             Children.Add(new StatisticsPage(title, add, sub, mul, div)
-                {IconImageSource = imageSource, BackgroundColor = color});
+                { IconImageSource = imageSource, BackgroundColor = color });
         }
 
         private async void MenuButton_OnClicked(object sender, EventArgs e)

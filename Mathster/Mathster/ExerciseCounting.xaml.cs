@@ -219,7 +219,7 @@ namespace Mathster
 
         private void EquationInput_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            var input = (CS_Entry) sender;
+            var input = (CS_Entry)sender;
             switch (queue[id].ExerciseType)
             {
                 case 6:
@@ -256,7 +256,7 @@ namespace Mathster
                 queue[id].CountLenght = DateTime.UtcNow.Ticks - beginTime;
                 if (queue[id].ExerciseType >= 6)
                 {
-                    var equation = (Equation) queue[id];
+                    var equation = (Equation)queue[id];
                     equation.UserInput = float.Parse(ResultInput1.Text);
                     equation.UserInput2 = float.Parse(ResultInput2.Text);
                 }
@@ -265,7 +265,7 @@ namespace Mathster
                     queue[id].UserInput = float.Parse(ResultLabelInput.Text);
                 }
 
-                var button = (Button) sender;
+                var button = (Button)sender;
 
                 if (button.Text == ">")
                 {
