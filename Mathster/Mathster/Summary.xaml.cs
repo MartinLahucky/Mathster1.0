@@ -63,8 +63,35 @@ namespace Mathster
                     ResultList.RowHeight = 80;
                 else if (ex.ExerciseType >= 6) ResultList.RowHeight = 110;
 
-                if (ex.Result == ex.UserInput && ex.Result2 == ex.UserInput2 ||
-                    ex.Result2 == ex.UserInput && ex.Result == ex.UserInput2)
+                // TODO: udělat metodu (něco na styl "bool wasAnsCorrect(Exercise exercise)"), aby tady nebyl
+                // redundantní kód na výpočet toho, jestli byla otázka správně, jelikož se liší to určení u různých typů
+                // příkladu
+                // (ještě se to opakuje v SummaryDetail.xaml.cs řádek 63, kde je do toho ale zahrnutý i formátování - řádek 74)
+                bool ansWasCorrect;
+                
+                // Exercise type that requires one input from user (+,-,×,÷, lin equations)
+                if (ex.ExerciseType <= 5)
+                {
+                    ansWasCorrect = ex.UserInput == ex.Result;
+                }
+                // Exercise type requires two inputs from user (quadratic equations, completing the square)
+                else
+                {
+                    // Two inputs that need to be in a specific order (completing the square)
+                    if (ex.ExerciseType == 7)
+                    {
+                        ansWasCorrect = ex.UserInput == ex.Result &&
+                                        ex.UserInput2 == ex.Result2;
+                    }
+                    // Two inputs, can be in whatever order (quadratic equations)
+                    else
+                    {
+                        ansWasCorrect = (ex.UserInput == ex.Result && ex.UserInput2 == ex.Result2) ||
+                                        (ex.UserInput == ex.Result2 && ex.UserInput2 == ex.Result);
+                    }
+                }
+                
+                if (ansWasCorrect)
                 {
                     table.AddGoodStats(ex.ExerciseType, table);
                     exercises[i].Obj = objects.ObjCorrect;
