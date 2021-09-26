@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Mathster.Resources.Localization;
@@ -54,18 +55,40 @@ namespace Mathster
             sec = sec - min * 60;
             TimeLabel.Text = $"{min}min {sec}s";
 
-            if (exercise.Assignment.Length >= 13 || exercise.ExerciseType >= 5)
-            {
-                WrongLabel.HeightRequest = 75;
-                CorrectLabel.HeightRequest = 75;
-            }
-
             AssignmentLabel.Text = exercise.Assignment;
             WrongLabel.Text = exercise.FormatUserInput();
             CorrectLabel.Text = exercise.FormatResult();
+            
+            // TODO: uvést jakej ExerciseType je jaký cvičení (možná to někde je, ale nemohl jsem to najít), možná něco na styl enum
+            bool ansWasCorrect = false;
 
-            if (exercise.UserInput == exercise.Result && exercise.UserInput2 == exercise.Result2 &&
-                exercise.Result2 == exercise.UserInput && exercise.Result == exercise.UserInput2)
+            // Exercise type that requires one input from user (+,-,×,÷, lin equations)
+            if (exercise.ExerciseType <= 5)
+            {
+                ansWasCorrect = exercise.UserInput == exercise.Result;
+            }
+            // Exercise type requires two inputs from user (quadratic equations, completing the square)
+            else
+            {
+                // Formatting
+                WrongLabel.HeightRequest = 75;
+                CorrectLabel.HeightRequest = 75;
+                
+                // Two inputs that need to be in a specific order (completing the square)
+                if (exercise.ExerciseType == 7)
+                {
+                    ansWasCorrect = exercise.UserInput == exercise.Result &&
+                                    exercise.UserInput2 == exercise.Result2;
+                }
+                // Two inputs, can be in whatever order (quadratic equations)
+                else
+                {
+                    ansWasCorrect = (exercise.UserInput == exercise.Result && exercise.UserInput2 == exercise.Result2) ||
+                                    (exercise.UserInput == exercise.Result2 && exercise.UserInput2 == exercise.Result);
+                }
+            }
+
+            if (ansWasCorrect)
             {
                 WrongStaticLabel.IsVisible = false;
                 WrongFrame.IsVisible = false;
