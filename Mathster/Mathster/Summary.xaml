@@ -37,7 +37,7 @@
                                 <!-- correct counter -->
                                 <StackLayout Margin="5, 4" Padding="0,-10,0,0" BackgroundColor="Transparent"
                                              HorizontalOptions="Center">
-                                    <Path x:Name="ObjCorrect" Fill="#C9FF50" />
+                                    <Path x:Name="ObjCorrect" Fill="#C9FF50"/>
                                 </StackLayout>
                                 <Button x:Name="CorrectCountButton" BackgroundColor="#FFFFFF" CornerRadius="25"
                                         Grid.Column="0" Grid.Row="1" WidthRequest="200" HorizontalOptions="Center"
@@ -65,22 +65,23 @@
                                             <DataTemplate>
                                                 <ViewCell>
                                                     <StackLayout x:Name="BorderLayout" BackgroundColor="#4d4dfc">
-                                                        <StackLayout x:Name="CellColor"
-                                                                     BackgroundColor="{Binding CellColor}"
-                                                                     Orientation="Horizontal">
-                                                            <StackLayout BackgroundColor="#7F7FFD" Padding="0,-9,0,0"
-                                                                         VerticalOptions="Center"
-                                                                         HorizontalOptions="Center">
-                                                                <Path x:Name="ResultObj" WidthRequest="60"
-                                                                      VerticalOptions="CenterAndExpand"
-                                                                      Data="{Binding Obj}" Fill="{Binding ObjColor}"
-                                                                      Margin="{Binding Margin}" />
-                                                                <!-- Margin="10,0"  -->
-                                                            </StackLayout>
-                                                            <Label x:Name="ResultLabel"
+                                                        <Grid x:Name="CellColor"
+                                                              BackgroundColor="{Binding CellColor}"
+                                                              Padding="0"
+                                                              Margin="0">
+                                                            <Grid.ColumnDefinitions> 
+                                                               <ColumnDefinition Width="*"/>
+                                                               <ColumnDefinition Width="5*"/>
+                                                           </Grid.ColumnDefinitions>
+                                                            <BoxView Grid.Column="0" Background="#7F7FFD" Margin="0"/>
+                                                            <Path Grid.Column="0" x:Name="ResultObj" WidthRequest="60"
+                                                                  VerticalOptions="Center"
+                                                                  Data="{Binding Obj}" Fill="{Binding ObjColor}"
+                                                                  Margin="5" Aspect="Uniform"/>
+                                                            <Label Grid.Column="1" x:Name="ResultLabel"
                                                                    Text="{Binding Assignment}" FontSize="30"
                                                                    TextColor="{Binding TextColor}" Padding="10,0,0,0" />
-                                                        </StackLayout>
+                                                        </Grid>
                                                     </StackLayout>
                                                 </ViewCell>
                                             </DataTemplate>
