@@ -67,24 +67,13 @@ namespace Sterform.Mathster.Exercise
                     break;
 
                 default:
-                    switch (numExtra >= 0, xExtra >= 0)
+                    assignment = (numExtra >= 0, xExtra >= 0) switch
                     {
-                        case (true, true):
-                            assignment = $"{numMul + xExtra}x +{numExtra} = {result * numMul + numExtra} +{xExtra}x";
-                            break;
-
-                        case (true, false):
-                            assignment = $"{numMul + xExtra}x +{numExtra} = {result * numMul + numExtra} {xExtra}x";
-                            break;
-
-                        case (false, true):
-                            assignment = $"{numMul + xExtra}x {numExtra} = {result * numMul + numExtra} +{xExtra}x";
-                            break;
-
-                        case (false, false):
-                            assignment = $"{numMul + xExtra}x {numExtra} = {result * numMul + numExtra} {xExtra}x";
-                            break;
-                    }
+                        (true, true) => $"{numMul + xExtra}x +{numExtra} = {result * numMul + numExtra} +{xExtra}x",
+                        (true, false) => $"{numMul + xExtra}x +{numExtra} = {result * numMul + numExtra} {xExtra}x",
+                        (false, true) => $"{numMul + xExtra}x {numExtra} = {result * numMul + numExtra} +{xExtra}x",
+                        (false, false) => $"{numMul + xExtra}x {numExtra} = {result * numMul + numExtra} {xExtra}x"
+                    };
 
                     break;
             }

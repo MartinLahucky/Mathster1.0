@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Mathster.Resources.Localization;
@@ -60,7 +59,7 @@ namespace Mathster
             CorrectLabel.Text = exercise.FormatResult();
             
             // TODO: uvést jakej ExerciseType je jaký cvičení (možná to někde je, ale nemohl jsem to najít), možná něco na styl enum
-            bool ansWasCorrect = false;
+            var ansWasCorrect = false;
 
             // Exercise type that requires one input from user (+,-,×,÷, lin equations)
             if (exercise.ExerciseType <= 5)
