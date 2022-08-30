@@ -14,7 +14,6 @@
         <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
         <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
         <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-        <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
         <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
         <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
         <LangVersion>default</LangVersion>
@@ -32,7 +31,6 @@
         <EnableLLVM>false</EnableLLVM>
         <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
         <BundleAssemblies>false</BundleAssemblies>
-        <AndroidSupportedAbis>armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
         <DebugSymbols>false</DebugSymbols>
@@ -48,7 +46,6 @@
         <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
         <BundleAssemblies>false</BundleAssemblies>
         <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
-        <AndroidSupportedAbis>armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
         <MandroidI18n />
     </PropertyGroup>
     <ItemGroup>
@@ -65,7 +62,7 @@
         <PackageReference Include="Xamarin.AndroidX.MediaRouter" Version="1.2.1" />
         <PackageReference Include="Xamarin.AndroidX.Palette" Version="1.0.0.6" />
         <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
-        <PackageReference Include="Xamarin.Forms" Version="5.0.0.1931" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
         <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
         <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.3" />
         <PackageReference Include="Xamarin.Android.Support.v4" Version="28.0.0.3" />
@@ -109,7 +106,7 @@
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\Mathster\Mathster.csproj">
-            <Project>{B2E83137-B60D-4A85-9B18-79358BAA99F2}</Project>
+            <Project>{DDAFF193-2019-421F-9A16-A9315B3CFBAE}</Project>
             <Name>Mathster</Name>
         </ProjectReference>
     </ItemGroup>

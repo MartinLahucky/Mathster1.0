@@ -68,7 +68,7 @@ namespace Mathster.Resources.Custom_UI
         }
 
         /*
-        private ChartPart[] ChartPartCalcualtion(ChartPart[] chartParts, float max)
+        private ChartPart[] ChartPartCalculation(ChartPart[] chartParts, float max)
         {
             ChartPart[] chartPartsCalculated = new ChartPart[chartParts.Length];
             float value = 0;
@@ -121,7 +121,7 @@ namespace Mathster.Resources.Custom_UI
             Func<float> step = () => progress;
             var angle = step.Invoke() * 3.6f;
             Canvas.DrawArc(Rect, 270, angle, false,
-                new SKPaint {StrokeWidth = progressBarThickness, Color = SKColor.Parse(colorHex), IsStroke = true});
+                new SKPaint { StrokeWidth = progressBarThickness, Color = SKColor.Parse(colorHex), IsStroke = true });
         }
     }
 }

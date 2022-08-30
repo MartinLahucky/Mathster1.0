@@ -112,11 +112,11 @@
         <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
         <PackageReference Include="Xam.Plugins.Forms.ProgressRing" Version="0.1.2" />
         <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
-        <PackageReference Include="Xamarin.Forms" Version="5.0.0.1931" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\Mathster\Mathster.csproj">
-            <Project>{B2E83137-B60D-4A85-9B18-79358BAA99F2}</Project>
+            <Project>{DDAFF193-2019-421F-9A16-A9315B3CFBAE}</Project>
             <Name>Mathster</Name>
         </ProjectReference>
     </ItemGroup>
